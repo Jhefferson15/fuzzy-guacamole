@@ -1,0 +1,1498 @@
+{
+    "L03": {
+        "A": {
+            "sumario": [
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Verbo e Advérbio",
+                    "pagina_inicio_livro": 6,
+                    "assuntos_abordados": [
+                        "Verbo e Advérbio",
+                        "Derivados do presente do indicativo",
+                        "Pretérito Perfeito do Indicativo",
+                        "Derivados do pretérito perfeito do indicativo",
+                        "Pretérito imperfeito do indicativo",
+                        "Futuro do presente",
+                        "Futuro do pretérito",
+                        "Formas nominais dos verbos",
+                        "Advérbio"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Conjunção, Preposição e Interjeição",
+                    "pagina_inicio_livro": 22,
+                    "assuntos_abordados": [
+                        "Conjunção, Preposição e Interjeição",
+                        "Conjunções coordenativas",
+                        "Conjunções subordinativas",
+                        "Preposição",
+                        "Locuções prepositivas",
+                        "Combinações entre preposição e artigo",
+                        "Interjeição"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Morfossintaxe e Sujeito",
+                    "pagina_inicio_livro": 33,
+                    "assuntos_abordados": [
+                        " Morfossintaxe e Sujeito",
+                        " Frase, oração e período",
+                        " Funções sintáticas",
+                        " Sujeito",
+                        " Classificação do sujeito",
+                        " Sujeito determinado",
+                        " Sujeito indeterminado",
+                        " Orações sem sujeito",
+                        " Verbos impessoais"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Transiti vidade Verbal e Predicado",
+                    "pagina_inicio_livro": 44,
+                    "assuntos_abordados": [
+                        "Transitividade Verbal e Predicado",
+                        "Transitividade verbal",
+                        "Valência verbal",
+                        "Tipos de predicado"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Present Conti nuos Tense And Past Conti nuos Tense",
+                    "pagina_inicio_livro": 162,
+                    "assuntos_abordados": [
+                        "Present Continuos Tense And Past Continuos Tense",
+                        "Present Continuos Tense",
+                        "Past Continuous Tense",
+                        "Phrasal verbs"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Present Perfect And Present Perfect Conti nuous",
+                    "pagina_inicio_livro": 167,
+                    "assuntos_abordados": [
+                        "Present Perfect And Present Perfect Continuous",
+                        "Present Perfect",
+                        "Affirmative, negative and interrogative",
+                        "Contractions",
+                        "Simple past x present perfect",
+                        "Present Perfect Continuous",
+                        "Structure of the present perfect continuous",
+                        "Phrasal verbs"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Future Tense",
+                    "pagina_inicio_livro": 173,
+                    "assuntos_abordados": [
+                        "Future Tense",
+                        "Future simple",
+                        "Usos do future simple",
+                        "Future with ‘going to’",
+                        "Usos do future with ‘going to’",
+                        "Future continuous",
+                        "Usos do future continuous",
+                        "Future perfect",
+                        "Future perfect continuous"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Modal Verbs",
+                    "pagina_inicio_livro": 181,
+                    "assuntos_abordados": [
+                        "Modal Verbs",
+                        "Can",
+                        "Could",
+                        "May 2",
+                        "Might",
+                        "Must",
+                        "Must not",
+                        "Should and ought to",
+                        "Shall",
+                        "Will",
+                        "Would"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Japão e Tigres Asiáticos",
+                    "pagina_inicio_livro": 188,
+                    "assuntos_abordados": [
+                        "Japão e Tigres Asiáticos",
+                        "Japão",
+                        "O Japão e os europeus",
+                        "O Japão e os EUA",
+                        "A reconstrução no pós-Segunda Guerra Mundial",
+                        "As imposições no pós-Guerra",
+                        "Principais fatores para o desenvolvimento econômico dos Tigres Asiáticos",
+                        "Coreia do Sul",
+                        "Hong Kong",
+                        "Singapura",
+                        "Taiwan"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Alianças Comerciais Globais e Crise da União Europeia",
+                    "pagina_inicio_livro": 197,
+                    "assuntos_abordados": [
+                        "Alianças comerciais globais e crise da União Europeia",
+                        "NAFTA",
+                        "APEC",
+                        "Aliança do Pacífico",
+                        "Comunidade Andina",
+                        "Unasul",
+                        "União Europeia",
+                        "A crise da União Europeia",
+                        "A crise financeira do euro",
+                        "Crise na Zona do Euro",
+                        "Brexit"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Rússia",
+                    "pagina_inicio_livro": 210,
+                    "assuntos_abordados": [
+                        "Rússia",
+                        "Rússia e Ucrânia: a disputa pela Crimeia",
+                        "Revolução Russa",
+                        "O declínio russo: a amarga década de 1990",
+                        "Federação Russa"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Os Conflitos na Rússia do Século XXI",
+                    "pagina_inicio_livro": 220,
+                    "assuntos_abordados": [
+                        "Os Conflitos na Rússia do Século XXI",
+                        "O Corredor caucasiano",
+                        "A resistência chechena",
+                        "Daguestão",
+                        "Separatismo na Geórgia e na Ucrânia",
+                        "Geórgia x Rússia",
+                        "Ucrânia: a história se repete",
+                        "Invasão russa na Ucrânia em 2022"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Renascimento Comercial e Urbano na Europa",
+                    "pagina_inicio_livro": 270,
+                    "assuntos_abordados": [
+                        "Renascimento Comercial e Urbano na Europa",
+                        "Renascimento Comercial",
+                        "Renascimento Urbano",
+                        "A Peste Bubônica",
+                        "A Grande Fome",
+                        "A Guerra dos Cem Anos",
+                        "A Revolta Camponesa de 1381",
+                        "Renascimento cultural"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Monarquias Nacionais Europeias",
+                    "pagina_inicio_livro": 279,
+                    "assuntos_abordados": [
+                        "Monarquias Nacionais Europeias",
+                        "O Reino Francês",
+                        "O Reino Inglês",
+                        "Monarquias Nacionais Ibéricas e a Guerra de Reconquista"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Absolutismo e Mercantilismo",
+                    "pagina_inicio_livro": 285,
+                    "assuntos_abordados": [
+                        "Absolutismo e Mercantilismo",
+                        "Teóricos do absolutismo",
+                        "Absolutismo na Europa",
+                        "Mercantilismo Europeu",
+                        "Formas de mercantilismo",
+                        "Consequências"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Reformas Religiosas e Contrarreforma",
+                    "pagina_inicio_livro": 293,
+                    "assuntos_abordados": [
+                        "Reformas Religiosas e Contrarreforma",
+                        "Luteranismo",
+                        "Anglicanismo",
+                        "Contrarreforma Católica"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "A Teoria das Ideias Inatas e a Crítica Empirista",
+                    "pagina_inicio_livro": 324,
+                    "assuntos_abordados": [
+                        "A teoria das ideias inatas e a crítica empirista",
+                        "Teoria das Ideias Inatas",
+                        "Crítica de Thomas Hobbes",
+                        "Crítica de John Locke",
+                        "Crítica de George Berkeley"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Immanuel Kant",
+                    "pagina_inicio_livro": 330,
+                    "assuntos_abordados": [
+                        "IMMANUEL KANT",
+                        "O criticismo kantiano",
+                        "A Revolução copernicana na filosofia",
+                        "Fenômeno e coisa-em-si",
+                        "A ética deontológica questão do esclarecimento",
+                        "A deontologia kantiana",
+                        "Resposta à questão: O que é o es-clarecimento?"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "A Teoria Política de Maquiavel no Contexto do Renascimento",
+                    "pagina_inicio_livro": 339,
+                    "assuntos_abordados": [
+                        "A Teoria Política de Maquiavel no Contexto do Renascimento",
+                        "O Príncipe , de Maquiavel"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Thomas Hobbes, John Locke e Adam Smith",
+                    "pagina_inicio_livro": 346,
+                    "assuntos_abordados": [
+                        "Thomas Hobbes, John Locke E Adam Smith",
+                        "O conceito de natureza humana",
+                        "Thomas Hobbes e o Leviatã",
+                        "Johh Locke e Adam Smith",
+                        "John Locke e o governo civil",
+                        "Adam Smith e a defesa de uma economia de mercado"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": " Marx & Engels e a Crítica Capitalista",
+                    "pagina_inicio_livro": 358,
+                    "assuntos_abordados": [
+                        "Marx & Engels e a Crítica Capitalista",
+                        "Karl Marx: O Estado como Instrumento da Classe Dominante",
+                        "A Luta de Classes",
+                        "A Força de Trabalho como Mercadoria",
+                        "O Capital (1867)"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": " Émile Durkheim e a Sociologia Positivista",
+                    "pagina_inicio_livro": 367,
+                    "assuntos_abordados": [
+                        "Émile Durkheim e a Sociologia Positivista",
+                        "A Divisão do Trabalho Social",
+                        "Solidariedade mecânica",
+                        "Solidariedade orgânica",
+                        "Karl Max: Trabalho, Capital e Alie- nação",
+                        "Max Weber e a Racionalização do Mundo"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": " Formas de Gestão do Trabalho no Capitalismo",
+                    "pagina_inicio_livro": 376,
+                    "assuntos_abordados": [
+                        "Formas de Gestão do Trabalho no Capitalismo",
+                        "Etapas de evolução do capitalismo",
+                        "Fordismo",
+                        "Taylorismo",
+                        "Toyotismo"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": " Fordismo e Pós-Fordismo",
+                    "pagina_inicio_livro": 382,
+                    "assuntos_abordados": [
+                        "Fordismo e Pós-Fordismo",
+                        "O modelo Fordista",
+                        "Produção Flexível e “Especialização Flexível”"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Principais Conceitos em Biotecnologia",
+                    "pagina_inicio_livro": 390,
+                    "assuntos_abordados": [
+                        "Principais Conceitos em Biotecnologia",
+                        "DNA recombinante: a base da Engenharia Genética",
+                        "Reações em cadeia da polimerase (PCR)",
+                        "DNA fingerprinting",
+                        "Transgênicos"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Diferenças Entre Célula Procariótica e Eucariótica",
+                    "pagina_inicio_livro": 398,
+                    "assuntos_abordados": [
+                        "Diferenças entre célula Procariótica e Eucariótica",
+                        "A célula procariótica",
+                        "A célula eucariótica",
+                        "Evolução das células"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Membrana Plasmática",
+                    "pagina_inicio_livro": 403,
+                    "assuntos_abordados": [
+                        "Membrana Plasmática",
+                        "Estrutura da membrana plasmática",
+                        "Transporte por meio da Membrana",
+                        "Transporte passivo",
+                        "Transporte ativo",
+                        "Transporte por meio de vesículas"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Organelas Celulares e Citoesqueleto",
+                    "pagina_inicio_livro": 413,
+                    "assuntos_abordados": [
+                        "Organelas Celulares e Citoesqueleto",
+                        "Ribossomos",
+                        "Retículo endoplasmático",
+                        "Complexo golgiense",
+                        "Vacúolos celulares",
+                        "Lisossomos",
+                        "Peroxissomos",
+                        "Citoesqueleto e os movimentos celulares",
+                        "Citoesqueleto e os tipos de movimentos celulares"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Quantidade de Movimento",
+                    "pagina_inicio_livro": 496,
+                    "assuntos_abordados": [
+                        "Quantidade de Movimento",
+                        "Airbags",
+                        "Quantidade de movimento de um ponto material",
+                        "Quantidade de movimento de um sistema de partículas",
+                        "Variação da quantidade de movimento de um corpo",
+                        "Impulso de uma Força",
+                        "A Física e o cinto de segurança",
+                        "Impulso de uma força constante",
+                        "Impulso de uma força variável",
+                        "Força média",
+                        "Teorema do impulso"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Movimento Harmônico Simples",
+                    "pagina_inicio_livro": 503,
+                    "assuntos_abordados": [
+                        "Movimento Harmônico Simples",
+                        "Movimentos periódicos",
+                        "Sistema massa-mola",
+                        "Período do sistema massa-mola",
+                        "Energia no MHS",
+                        "Gráfico da energia no MHS"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Funções Horárias do MHS",
+                    "pagina_inicio_livro": 509,
+                    "assuntos_abordados": [
+                        "Funções horárias do MHS",
+                        "Função horária da posição",
+                        "Função horária da velocidade",
+                        "Função horária da aceleração",
+                        "Pêndulo Simples"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Movimento Ondulatório",
+                    "pagina_inicio_livro": 517,
+                    "assuntos_abordados": [
+                        "Movimento ondulatório",
+                        "Classificação das ondas",
+                        "Quanto à forma ou à direção de vibração",
+                        "Elementos de uma onda",
+                        "Fenômenos Ondulatórios",
+                        "Reflexão",
+                        "Refração",
+                        "Difração",
+                        "Polarização",
+                        "Interferência"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Estudo dos Gases",
+                    "pagina_inicio_livro": 586,
+                    "assuntos_abordados": [
+                        "Estudo dos Gases",
+                        "Regiões da atmosfera",
+                        "Estado gasoso",
+                        "Variáveis de estado de um gás",
+                        "Gás real",
+                        "Gás ideal",
+                        "Gás perfeito",
+                        "Transformações isotérmicas",
+                        "Transformações isobáricas",
+                        "Transformações isocóricas",
+                        "Princípio de Avogadro",
+                        "Equação de estado de um gás ideal",
+                        "Equação geral dos gases ideais"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Misturas Gasosas",
+                    "pagina_inicio_livro": 595,
+                    "assuntos_abordados": [
+                        "Misturas Gasosas",
+                        "Lei das pressões parciais de Dalton",
+                        "Pressão parcial e fração molar",
+                        "Densidade dos gases",
+                        "Difusão e efusão gasosas"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Estudo das Soluções Aquosas",
+                    "pagina_inicio_livro": 601,
+                    "assuntos_abordados": [
+                        "Estudo das Soluções Aquosas",
+                        "Conceito de soluções",
+                        "Investigando a natureza das soluções",
+                        "Coeficiente de solubilidade",
+                        "Curvas de solubilidade",
+                        "Curvas de solubilidade de sais em água",
+                        "Curvas de solubilidade de gases em água",
+                        "Lei de Henry"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Expressão de Concentração das Soluções",
+                    "pagina_inicio_livro": 609,
+                    "assuntos_abordados": [
+                        "Expressão de concentração das soluções",
+                        "Expressões de concentrações físicas"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Áreas de Figuras Planas",
+                    "pagina_inicio_livro": 678,
+                    "assuntos_abordados": [
+                        "Áreas de Figuras Planas",
+                        "Ideia intuitiva de área",
+                        "Quadrado (unidade de área)",
+                        "Retângulo",
+                        "Paralelogramo",
+                        "Trapézio",
+                        "Losango",
+                        "Polígono regular",
+                        "Círculo",
+                        "Coroa circular",
+                        "Setor circular",
+                        "Segmento circular"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Noções de Geometria de Posição",
+                    "pagina_inicio_livro": 687,
+                    "assuntos_abordados": [
+                        "Noções de Geometria de Posição",
+                        "Noções primitivas",
+                        "Postulados",
+                        "Posições relativas entre duas retas no espaço",
+                        "Posições relativas entre uma reta e um plano",
+                        "Posições relativas entre dois planos",
+                        "Projeção ortogonal",
+                        "Distâncias",
+                        "Ângulo entre uma reta e um plano"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Poliedros",
+                    "pagina_inicio_livro": 697,
+                    "assuntos_abordados": [
+                        "Poliedros",
+                        "Definição e elementos",
+                        "Poliedros convexos",
+                        "Nomenclatura dos poliedros",
+                        "Relação de Euler",
+                        "Soma dos ângulos das faces",
+                        "Poliedros de Platão",
+                        "Poliedros regulares"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Prismas",
+                    "pagina_inicio_livro": 703,
+                    "assuntos_abordados": [
+                        "Prismas",
+                        "Elementos",
+                        "Nomenclatura",
+                        "Classificação",
+                        "Prisma regular",
+                        "Áreas",
+                        "Volume",
+                        "Paralelepípedos",
+                        "Relações importantes no paralelepípedo reto-retângulo",
+                        "Cubos",
+                        "Relações importantes"
+                    ]
+                }
+            ],
+            "modulos_detalhados": {
+                "09": {
+                    "titulo": "Áreas de Figuras Planas",
+                    "pagina_inicio": 678,
+                    "assuntos_abordados": [
+                        "Áreas de Figuras Planas",
+                        "Ideia intuitiva de área",
+                        "Quadrado (unidade de área)",
+                        "Retângulo",
+                        "Paralelogramo",
+                        "Trapézio",
+                        "Losango",
+                        "Polígono regular",
+                        "Círculo",
+                        "Coroa circular",
+                        "Setor circular",
+                        "Segmento circular"
+                    ]
+                },
+                "10": {
+                    "titulo": "Noções de Geometria de Posição",
+                    "pagina_inicio": 687,
+                    "assuntos_abordados": [
+                        "Noções de Geometria de Posição",
+                        "Noções primitivas",
+                        "Postulados",
+                        "Posições relativas entre duas retas no espaço",
+                        "Posições relativas entre uma reta e um plano",
+                        "Posições relativas entre dois planos",
+                        "Projeção ortogonal",
+                        "Distâncias",
+                        "Ângulo entre uma reta e um plano"
+                    ]
+                },
+                "11": {
+                    "titulo": "Poliedros",
+                    "pagina_inicio": 697,
+                    "assuntos_abordados": [
+                        "Poliedros",
+                        "Definição e elementos",
+                        "Poliedros convexos",
+                        "Nomenclatura dos poliedros",
+                        "Relação de Euler",
+                        "Soma dos ângulos das faces",
+                        "Poliedros de Platão",
+                        "Poliedros regulares"
+                    ]
+                },
+                "12": {
+                    "titulo": "Prismas",
+                    "pagina_inicio": 703,
+                    "assuntos_abordados": [
+                        "Prismas",
+                        "Elementos",
+                        "Nomenclatura",
+                        "Classificação",
+                        "Prisma regular",
+                        "Áreas",
+                        "Volume",
+                        "Paralelepípedos",
+                        "Relações importantes no paralelepípedo reto-retângulo",
+                        "Cubos",
+                        "Relações importantes"
+                    ]
+                }
+            }
+        },
+        "B": {
+            "sumario": [
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Prosa Romântica",
+                    "pagina_inicio_livro": 52,
+                    "assuntos_abordados": [
+                        "Prosa Romântica",
+                        "Romance indianista",
+                        "A Prosa romântica no Brasil",
+                        "Características principais",
+                        "Tipos de romance",
+                        "Romance indianista",
+                        "Romance Regionalista",
+                        "José de Alencar",
+                        "Visconde de Taunay",
+                        "Bernardo Guimarães",
+                        "Franklin Távora",
+                        "Romance Urbano",
+                        "Manuel Antônio de Almeida",
+                        "José de Alencar",
+                        "Romance Histórico"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Realismo",
+                    "pagina_inicio_livro": 72,
+                    "assuntos_abordados": [
+                        "Realismo",
+                        "Escolas literárias",
+                        "Realismo no Brasil",
+                        "Características da literatura realista",
+                        "Machado de Assis",
+                        "A primeira fase de Machado de Assis",
+                        "A segunda fase de Machado de Assis",
+                        "Memórias póstumas de Brás Cubas"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Naturalismo",
+                    "pagina_inicio_livro": 83,
+                    "assuntos_abordados": [
+                        "Naturalismo",
+                        "Características do naturalismo",
+                        "Aluísio de Azevedo",
+                        "Raul Pompeia",
+                        "Características principais",
+                        "O Ateneu"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Parnasianismo",
+                    "pagina_inicio_livro": 90,
+                    "assuntos_abordados": [
+                        "Parnasianismo",
+                        "Características principais",
+                        "Raimundo Correia",
+                        "Alberto de Oliveira",
+                        "Vicente de Carvalho",
+                        "Francisca Júlia"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": " Agropecuária e Modelos de Produção",
+                    "pagina_inicio_livro": 230,
+                    "assuntos_abordados": [
+                        "Agropecuária e modelos de produção",
+                        "A agropecuária mundial",
+                        "A agricultura nos países subdesenvolvidos",
+                        "A agropecuária nos Estados Unidos",
+                        "A agricultura europeia",
+                        "Comércio exterior"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": " Reforma Agrária: Confl  itos no Campo e a Concentração de Terras no Brasil",
+                    "pagina_inicio_livro": 237,
+                    "assuntos_abordados": [
+                        "Reforma Agrária: Conflitos no Campo e a Concentração de Terras no Brasil",
+                        "Políticas Públicas",
+                        "Impactos Sociais",
+                        "Impactos Econômicos",
+                        "Latifúndio, minifúndio, módulo rural",
+                        "Conflitos no Campo e a Constituição de 1988",
+                        "Desafios e Avanços"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": " Agropecuária Brasileira",
+                    "pagina_inicio_livro": 248,
+                    "assuntos_abordados": [
+                        "Agropecuária Brasileira",
+                        "Importância do Agronegócio",
+                        "O Meio Rural no Brasil",
+                        "Estatuto da Terra",
+                        "Estrutura fundiária brasileira",
+                        "A agricultura familiar brasileira",
+                        "A pecuária brasileira",
+                        "A modernização brasileira"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": " Agropecuária Mundial e Problemas Sócioambientais",
+                    "pagina_inicio_livro": 257,
+                    "assuntos_abordados": [
+                        "Agropecuária Mundial e Problemas Sócioambientais",
+                        "Agropecuária e insegurança alimentar",
+                        "Produção de alimentos e recursos naturais",
+                        "Por que a fome persiste no mundo?",
+                        "Desenvolvimento sustentável e agricultura",
+                        "Modernização do campo",
+                        "Complexos agroindustriais",
+                        "As Políticas Ambientais do Brasil",
+                        "Agenda ambiental do Brasil"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Presenças Estrangeiras no Brasil",
+                    "pagina_inicio_livro": 300,
+                    "assuntos_abordados": [
+                        "Presenças Estrangeiras no Brasil",
+                        "A França Antártica",
+                        "França Equinocial",
+                        "Presença Holandesa no Brasil",
+                        "União Ibérica",
+                        "Invasão holandesa",
+                        "O Governo de Maurício de Nassau",
+                        "Insurreição Pernambucana"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Entradas, Bandeiras e Tratados Limites",
+                    "pagina_inicio_livro": 307,
+                    "assuntos_abordados": [
+                        "Entradas, Bandeiras e tratados Limites",
+                        "Entradas e bandeiras",
+                        "Expansão territorial: tratados limites"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Mineração",
+                    "pagina_inicio_livro": 312,
+                    "assuntos_abordados": [
+                        "Mineração",
+                        "Método de extração e controle do ouro",
+                        "Declínio da mineração",
+                        "Guerra dos Emboabas",
+                        "Descoberta de jazidas de diamante"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Crise da Administração Portuguesa no Brasil",
+                    "pagina_inicio_livro": 317,
+                    "assuntos_abordados": [
+                        "Crise da administração portuguesa no Brasil",
+                        "A influência das Ideias Iluministas",
+                        "A gestão do Marquês de Pombal"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Interação Gênica",
+                    "pagina_inicio_livro": 426,
+                    "assuntos_abordados": [
+                        "Interação gênica",
+                        "Herança complementar",
+                        "Interação gênica epistática",
+                        "Herança quantitativa",
+                        "Casos com padrão da herança quantitativa aditiva",
+                        "Herança quantitativa e binômio de Newton"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Genes Ligados e Mapas Cromossômicos",
+                    "pagina_inicio_livro": 435,
+                    "assuntos_abordados": [
+                        "Genes ligados e mapas cromossômicos",
+                        "Cruzamentos efetuados por Morgan",
+                        "Taxa de recombinação ou permutação",
+                        "Heterozigotos Cis e Trans",
+                        "Mapas cromossômicos"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Genéti  ca das Populações",
+                    "pagina_inicio_livro": 442,
+                    "assuntos_abordados": [
+                        "Genética das populações",
+                        "O equilíbrio de Hardy-Weinberg"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Tipo de Ovos, Padrões de Segmentação e as Etapas do Desenvolvimento \nEmbrionário nos Animais",
+                    "pagina_inicio_livro": 447,
+                    "assuntos_abordados": [
+                        "Tipo de ovos, padrões de segmentação e as etapas do desenvolvimento embrionário nos animais",
+                        "Distribuição de vitelo nos ovos",
+                        "Tipos de segmentação",
+                        "Embriologia do anfioxo",
+                        "Segmentação",
+                        "Gastrulação",
+                        "Organogênese"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Energia Potencial",
+                    "pagina_inicio_livro": 526,
+                    "assuntos_abordados": [
+                        "Energia Potencial",
+                        "Energia potencial gravitacional",
+                        "Energia potencial elástica",
+                        "Energia mecânica",
+                        "Princípio da conservação da energia",
+                        "Princípio da conservação da energia mecânica",
+                        "Sistema dissipativo",
+                        "Diagramas de energia"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Conservação da Quantidade de Movimento",
+                    "pagina_inicio_livro": 533,
+                    "assuntos_abordados": [
+                        "Conservação da Quantidade de Movimento",
+                        "Forças internas e externas",
+                        "Sistema isolado de forças externas",
+                        "Princípio da conservação da quantidade de movimento",
+                        "Colisões Mecânicas",
+                        "Análise de uma colisão unidimensional",
+                        "Tipos de colisão"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Coeficiente de Restituição",
+                    "pagina_inicio_livro": 539,
+                    "assuntos_abordados": [
+                        "Coeficiente de Restituição",
+                        "Interpretando os valores do coeficiente de restituição",
+                        "Colisões Oblíquas",
+                        "Análise de uma colisão oblíqua",
+                        "Choque oblíquo e elástico entre partículas de massas iguais, estando uma delas inicialmente em repouso",
+                        "Choque oblíquo contra obstáculo fixo"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Termometria",
+                    "pagina_inicio_livro": 546,
+                    "assuntos_abordados": [
+                        "Termometria",
+                        "Temperatura",
+                        "Escalas termométricas"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Geometria Molecular",
+                    "pagina_inicio_livro": 616,
+                    "assuntos_abordados": [
+                        "Geometria Molecular",
+                        "A teoria da repulsão dos pares de elétrons da camada de valência",
+                        "Domínios estereoativos",
+                        "Polaridade das ligações",
+                        "Polaridade das moléculas",
+                        "O vetor momento dipolo elétrico resultante"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Forças Intermoleculares",
+                    "pagina_inicio_livro": 623,
+                    "assuntos_abordados": [
+                        "Forças intermoleculares",
+                        "Dipolos induzidos",
+                        "Interações dipolo-dipolo",
+                        "Ligações de hidrogênio",
+                        "O comportamento anômalo da água: o alto ponto de ebulição",
+                        "Mas por que a água se comporta assim?"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Introdução à Radioatividade",
+                    "pagina_inicio_livro": 628,
+                    "assuntos_abordados": [
+                        "Introdução à radioatividade",
+                        "Emissões nucleares",
+                        "Leis da radioatividade",
+                        "Período de Meia-vida ( t1/2 ou P)"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Fissão e Fusão Nucleares",
+                    "pagina_inicio_livro": 635,
+                    "assuntos_abordados": [
+                        "Fissão e Fusão Nucleares",
+                        "Fissão nuclear",
+                        "Fusão nuclear",
+                        "Acidente de Chernobyl",
+                        "Acidente de Three Mile Island",
+                        "Acidente de Goiânia (Césio-137)"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Função Exponencial",
+                    "pagina_inicio_livro": 712,
+                    "assuntos_abordados": [
+                        "Função exponencial",
+                        "Função exponencial",
+                        "Gráfico cartesiano",
+                        "Equações exponenciais",
+                        "Inequações exponenciais"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Logarítmos",
+                    "pagina_inicio_livro": 718,
+                    "assuntos_abordados": [
+                        "Logaritmos",
+                        "Definição",
+                        "Sistemas de logaritmos",
+                        "Consequências da definição",
+                        "Cologaritmo",
+                        "Propriedades",
+                        "Mudança de base",
+                        "Equações logarítmicas",
+                        "Função logarítmica",
+                        "Gráfico cartesiano",
+                        "Inequações logarítmicas"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Princípio Fundamental da Contagem",
+                    "pagina_inicio_livro": 727,
+                    "assuntos_abordados": [
+                        "Princípio Fundamental da Contagem",
+                        "Princípio fundamental da contagem (princípio multiplicativo)",
+                        "Fatorial"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Arranjo Simples e Combinação Simples",
+                    "pagina_inicio_livro": 732,
+                    "assuntos_abordados": [
+                        "Arranjos Simples e Combinação Simples",
+                        "Arranjos simples",
+                        "Combinações simples"
+                    ]
+                }
+            ],
+            "modulos_detalhados": {
+                "09": {
+                    "titulo": "Função Exponencial",
+                    "pagina_inicio": 712,
+                    "assuntos_abordados": [
+                        "Função exponencial",
+                        "Função exponencial",
+                        "Gráfico cartesiano",
+                        "Equações exponenciais",
+                        "Inequações exponenciais"
+                    ]
+                },
+                "10": {
+                    "titulo": "Logarítmos",
+                    "pagina_inicio": 718,
+                    "assuntos_abordados": [
+                        "Logaritmos",
+                        "Definição",
+                        "Sistemas de logaritmos",
+                        "Consequências da definição",
+                        "Cologaritmo",
+                        "Propriedades",
+                        "Mudança de base",
+                        "Equações logarítmicas",
+                        "Função logarítmica",
+                        "Gráfico cartesiano",
+                        "Inequações logarítmicas"
+                    ]
+                },
+                "11": {
+                    "titulo": "Princípio Fundamental da Contagem",
+                    "pagina_inicio": 727,
+                    "assuntos_abordados": [
+                        "Princípio Fundamental da Contagem",
+                        "Princípio fundamental da contagem (princípio multiplicativo)",
+                        "Fatorial"
+                    ]
+                },
+                "12": {
+                    "titulo": "Arranjo Simples e Combinação Simples",
+                    "pagina_inicio": 732,
+                    "assuntos_abordados": [
+                        "Arranjos Simples e Combinação Simples",
+                        "Arranjos simples",
+                        "Combinações simples"
+                    ]
+                }
+            }
+        },
+        "C": {
+            "sumario": [
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Variação Linguística",
+                    "pagina_inicio_livro": 104,
+                    "assuntos_abordados": [
+                        "Variação Linguística",
+                        "Variações diatópicas",
+                        "Variações diastráticas",
+                        "Variações diafásicas",
+                        "Variações diacrônicas"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Funções da Linguagem",
+                    "pagina_inicio_livro": 109,
+                    "assuntos_abordados": [
+                        "Funções da linguagem",
+                        "Função emotiva",
+                        "Função apelativa",
+                        "Função fática",
+                        "Função poética",
+                        "Função referencial",
+                        "Função metalinguística"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Prosa e Poesia",
+                    "pagina_inicio_livro": 117,
+                    "assuntos_abordados": [
+                        "Prosa e Poesia",
+                        "Teoria do texto",
+                        "Texto",
+                        "Contexto",
+                        "Implícito e explícito",
+                        "Estilística da língua",
+                        "Linguagem figurada",
+                        "Prosa e poesia",
+                        "Tipos de verso",
+                        "Rimas"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Texto Literário e Não Literário e Versificação",
+                    "pagina_inicio_livro": 127,
+                    "assuntos_abordados": [
+                        "Texto literário e não literário e versificação",
+                        "Texto literário",
+                        "Texto não literário",
+                        "Escansão de Verso",
+                        "Sílaba gramatical e sílaba poética",
+                        "Regras de escansão",
+                        "Tipos de verso"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Anfíbios",
+                    "pagina_inicio_livro": 456,
+                    "assuntos_abordados": [
+                        "Anfíbios",
+                        "Morfologia e fisiologia dos anfíbios",
+                        "Classificação"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Répteis e Aves",
+                    "pagina_inicio_livro": 464,
+                    "assuntos_abordados": [
+                        "Répteis e Aves",
+                        "Répteis",
+                        "Morfologia e fisiologia dos répteis",
+                        "Aves",
+                        "Morfologia e fisiologia"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Mamíferos",
+                    "pagina_inicio_livro": 475,
+                    "assuntos_abordados": [
+                        "Mamíferos",
+                        "Evolução e origem",
+                        "Morfologia e fisiologia",
+                        "Principais subclasses e ordens"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Tecido Epitelial",
+                    "pagina_inicio_livro": 485,
+                    "assuntos_abordados": [
+                        "Tecido Epitelial",
+                        "Diferenciação celular",
+                        "Destinos dos folhetos embrionários",
+                        "Alterações na diferenciação celular",
+                        "Tecido Epitelial de Revestimento",
+                        "Principais funções dos epitélios",
+                        "Principais adaptações dos epitélios",
+                        "Tipos de epitélios",
+                        "Principais epitélios de revestimento",
+                        "Tecido Epitelial Glandular",
+                        "Origem das glândulas",
+                        "Classificação das glândulas",
+                        "Classificação das glândulas quanto à maneira de secretar"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Óptica Geométrica",
+                    "pagina_inicio_livro": 552,
+                    "assuntos_abordados": [
+                        "Óptica Geométrica",
+                        "Raio de luz",
+                        "Feixe de luz",
+                        "Fonte de Luz",
+                        "Dimensões das fontes de luz",
+                        "Meios transparentes, translúcidos e opacos",
+                        "Princípio da propagação retilínea da luz",
+                        "Princípio da independência da propagação dos raios luminosos",
+                        "Princípio da reversibilidade do raio luminoso",
+                        "Eclipse",
+                        "Câmara escura de orifício",
+                        "Ângulo visual"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Fenômenos Ópticos",
+                    "pagina_inicio_livro": 560,
+                    "assuntos_abordados": [
+                        "Fenômenos ópticos",
+                        "Reflexão regular",
+                        "Reflexão difusa",
+                        "Refração da luz",
+                        "Absorção da luz",
+                        "A cor de um corpo por reflexão",
+                        "Sistemas ópticos",
+                        "Espelhos Planos",
+                        "Leis da reflexão",
+                        "Imagem de um ponto em um espelho plano",
+                        "Imagem de um objeto extenso",
+                        "Campo visual de um espelho plano"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Translação e Rotação de Espelhos Planos",
+                    "pagina_inicio_livro": 569,
+                    "assuntos_abordados": [
+                        "Translação e Rotação de Espelhos Planos",
+                        "Translação de um espelho plano",
+                        "Rotação de um espelho plano",
+                        "Imagens em dois espelhos"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Espelhos Esféricos",
+                    "pagina_inicio_livro": 573,
+                    "assuntos_abordados": [
+                        "Espelhos Esféricos",
+                        "Reflexão da luz em espelhos esféricos",
+                        "Elementos geométricos",
+                        "Espelhos esféricos de Gauss",
+                        "Imagem de um ponto qualquer",
+                        "Imagem de um objeto",
+                        "Estudo Analítico dos Espelhos Esféricos",
+                        "Referencial de Gauss",
+                        "Equação de Gauss (equação dos pontos conjugados)",
+                        "Aumento linear transversal"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Sais Inorgânicos",
+                    "pagina_inicio_livro": 642,
+                    "assuntos_abordados": [
+                        "Sais inorgânicos",
+                        "A importância dos sais",
+                        "Equação de dissociação",
+                        "Formulação",
+                        "Solubilidade dos sais em água",
+                        "Reações de dupla-troca entre ácido e sal",
+                        "Reações de dupla-troca entre base e sal"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Óxidos",
+                    "pagina_inicio_livro": 651,
+                    "assuntos_abordados": [
+                        "Óxidos",
+                        "O ar que respiramos",
+                        "Definição de óxido",
+                        "A importância dos óxidos",
+                        "Nomenclatura de óxidos",
+                        "Classificação dos óxidos",
+                        "Óxidos básicos",
+                        "Reagem com água formando bases ou hidróxidos de Arrhenius",
+                        "Reagem com ácidos formando sais",
+                        "Óxidos ácidos",
+                        "Reações de óxidos ácidos com soluções básicas",
+                        "Óxidos neutros ou indiferentes",
+                        "Óxidos anfóteros",
+                        "Óxidos duplos, mistos ou salinos",
+                        "Os peróxidos inorgânicos"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Introdução ao Estudo da Química Orgânica",
+                    "pagina_inicio_livro": 658,
+                    "assuntos_abordados": [
+                        "Introdução ao estudo da química orgânica",
+                        "Características dos compostos orgânicos",
+                        "Postulados de Kekulé",
+                        "Antidetonantes",
+                        "Cadeias carbônicas fechadas ou cíclicas",
+                        "Cadeias carbônicas alicíclicas ou não aromáticas",
+                        "Cadeias carbônicas aromáticas"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Hidrocarbonetos, Petróleo e Nomenclatura",
+                    "pagina_inicio_livro": 665,
+                    "assuntos_abordados": [
+                        "Hidrocarbonetos, Petróleo e Nomenclatura",
+                        "Hidrocarbonetos constituintes do petróleo",
+                        "Nomenclatura de alcanos",
+                        "Nomenclatura dos ciclanos",
+                        "Craqueamento do petróleo e os alcenos",
+                        "Nomenclatura dos alcenos",
+                        "Nomenclatura dos alcinos",
+                        "Reforma catalítica",
+                        "Isomerização",
+                        "Nomenclatura"
+                    ]
+                },
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Porcentagem",
+                    "pagina_inicio_livro": 738,
+                    "assuntos_abordados": [
+                        "Porcentagem",
+                        "Porcentagem de um valor",
+                        "Lucros e prejuízos",
+                        "Variação Percentual",
+                        "Aumentos e descontos"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Juros Simples e Compostos",
+                    "pagina_inicio_livro": 744,
+                    "assuntos_abordados": [
+                        "Juros Simples e Compostos",
+                        "Juros Simples",
+                        "Exemplo",
+                        "Juros Compostos"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Razões Trigonométricas no Triângulo Retângulo",
+                    "pagina_inicio_livro": 749,
+                    "assuntos_abordados": [
+                        "Razões Trigonométricas no Triângulo Retângulo",
+                        "Razões trigonométricas nos triângulos retângulos",
+                        "Ângulos complementares",
+                        "Ângulos notáveis"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Ciclo Trigonométrico",
+                    "pagina_inicio_livro": 757,
+                    "assuntos_abordados": [
+                        "Ciclo Trigonométrico",
+                        "Arco de circunferência",
+                        "Ângulo central",
+                        "Definição de grau",
+                        "Definição de radiano",
+                        "Relação entre graus e radianos",
+                        "Comprimento de um arco",
+                        "Circunferência trigonométrica",
+                        "Arcos trigonométricos",
+                        "Arcos côngruos"
+                    ]
+                }
+            ],
+            "modulos_detalhados": {
+                "09": {
+                    "titulo": "Porcentagem",
+                    "pagina_inicio": 738,
+                    "assuntos_abordados": [
+                        "Porcentagem",
+                        "Porcentagem de um valor",
+                        "Lucros e prejuízos",
+                        "Variação Percentual",
+                        "Aumentos e descontos"
+                    ]
+                },
+                "10": {
+                    "titulo": "Juros Simples e Compostos",
+                    "pagina_inicio": 744,
+                    "assuntos_abordados": [
+                        "Juros Simples e Compostos",
+                        "Juros Simples",
+                        "Exemplo",
+                        "Juros Compostos"
+                    ]
+                },
+                "11": {
+                    "titulo": "Razões Trigonométricas no Triângulo Retângulo",
+                    "pagina_inicio": 749,
+                    "assuntos_abordados": [
+                        "Razões Trigonométricas no Triângulo Retângulo",
+                        "Razões trigonométricas nos triângulos retângulos",
+                        "Ângulos complementares",
+                        "Ângulos notáveis"
+                    ]
+                },
+                "12": {
+                    "titulo": "Ciclo Trigonométrico",
+                    "pagina_inicio": 757,
+                    "assuntos_abordados": [
+                        "Ciclo Trigonométrico",
+                        "Arco de circunferência",
+                        "Ângulo central",
+                        "Definição de grau",
+                        "Definição de radiano",
+                        "Relação entre graus e radianos",
+                        "Comprimento de um arco",
+                        "Circunferência trigonométrica",
+                        "Arcos trigonométricos",
+                        "Arcos côngruos"
+                    ]
+                }
+            }
+        },
+        "D": {
+            "sumario": [
+                {
+                    "numero_modulo": "09",
+                    "titulo_modulo": "Análise de Redação Nota 1000",
+                    "pagina_inicio_livro": 136,
+                    "assuntos_abordados": [
+                        "Análise de Redação Nota 1000",
+                        "Proposta de redação Enem",
+                        "Redação Nota 1000",
+                        "Análise da redação"
+                    ]
+                },
+                {
+                    "numero_modulo": "10",
+                    "titulo_modulo": "Mecanismos de Coesão e Coerência",
+                    "pagina_inicio_livro": 142,
+                    "assuntos_abordados": [
+                        "Mecanismos de Coesão e Coerência",
+                        "Coesão textual",
+                        "Os mecanismos de coesão",
+                        "Coerência textual",
+                        "Mecanismos de coerência"
+                    ]
+                },
+                {
+                    "numero_modulo": "11",
+                    "titulo_modulo": "Relato Pessoal e Depoimento",
+                    "pagina_inicio_livro": 148,
+                    "assuntos_abordados": [
+                        "Relato pessoal e depoimento",
+                        "Relato Pessoal",
+                        "Estrutura do relato pessoal",
+                        "Depoimento",
+                        "Características do depoimento"
+                    ]
+                },
+                {
+                    "numero_modulo": "12",
+                    "titulo_modulo": "Biografi a",
+                    "pagina_inicio_livro": 156,
+                    "assuntos_abordados": [
+                        "Biografia",
+                        "Introdução",
+                        "Desenvolvimento",
+                        "Conclusão",
+                        "Principais Características"
+                    ]
+                }
+            ],
+            "modulos_detalhados": {
+                "09": {
+                    "titulo": "Análise de Redação Nota 1000",
+                    "pagina_inicio": 136,
+                    "assuntos_abordados": [
+                        "Análise de Redação Nota 1000",
+                        "Proposta de redação Enem",
+                        "Redação Nota 1000",
+                        "Análise da redação"
+                    ]
+                },
+                "10": {
+                    "titulo": "Mecanismos de Coesão e Coerência",
+                    "pagina_inicio": 142,
+                    "assuntos_abordados": [
+                        "Mecanismos de Coesão e Coerência",
+                        "Coesão textual",
+                        "Os mecanismos de coesão",
+                        "Coerência textual",
+                        "Mecanismos de coerência"
+                    ]
+                },
+                "11": {
+                    "titulo": "Relato Pessoal e Depoimento",
+                    "pagina_inicio": 148,
+                    "assuntos_abordados": [
+                        "Relato pessoal e depoimento",
+                        "Relato Pessoal",
+                        "Estrutura do relato pessoal",
+                        "Depoimento",
+                        "Características do depoimento"
+                    ]
+                },
+                "12": {
+                    "titulo": "Biografi a",
+                    "pagina_inicio": 156,
+                    "assuntos_abordados": [
+                        "Biografia",
+                        "Introdução",
+                        "Desenvolvimento",
+                        "Conclusão",
+                        "Principais Características"
+                    ]
+                }
+            }
+        }
+    }
+}
