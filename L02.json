@@ -4,7 +4,7 @@
             "sumario": [
                 {
                     "numero_modulo": "05",
-                    "titulo_modulo": "Substanti vo",
+                    "titulo_modulo": "Substantivo",
                     "pagina_inicio_livro": 6,
                     "assuntos_abordados": [
                         "Substantivo",
@@ -16,7 +16,7 @@
                 },
                 {
                     "numero_modulo": "06",
-                    "titulo_modulo": "Adjeti vo",
+                    "titulo_modulo": "Adjetivo",
                     "pagina_inicio_livro": 13,
                     "assuntos_abordados": [
                         "Adjetivo",
@@ -30,7 +30,7 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "Arti go e NumeraL",
+                    "titulo_modulo": "Artigo e Numeral",
                     "pagina_inicio_livro": 20,
                     "assuntos_abordados": [
                         "Artigo e Numeral",
@@ -51,7 +51,7 @@
                         "Pronomes indefinidos",
                         "Pronomes interrogativos",
                         "Pronome relativo “que”",
-                        "Pronomes relativos “o(a) (s), qual (is)”",
+                        "Pronomes relativos “o(a)(s), qual(is)”",
                         "Pronome relativo “quem”",
                         "Pronome relativo “onde”",
                         "Pronome relativo “quando”",
@@ -135,17 +135,17 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "Blocos Econômicos e a Ascensão do Brics",
+                    "titulo_modulo": "Blocos Econômicos e a Ascensão do BRICS",
                     "pagina_inicio_livro": 201,
                     "assuntos_abordados": [
-                        "Blocos econômicos e a ascensão do brics",
+                        "Blocos Econômicos e a Ascensão do BRICS",
                         "Tipologias de integração regional",
                         "Ascensão do BRICS"
                     ]
                 },
                 {
                     "numero_modulo": "08",
-                    "titulo_modulo": "Países Emergentes e América Lati  na",
+                    "titulo_modulo": "Países Emergentes e América Latina",
                     "pagina_inicio_livro": 207,
                     "assuntos_abordados": [
                         "Países Emergentes e América Latina",
@@ -175,7 +175,7 @@
                         "Monarquia – da fundação ao seu encerramento (509 a.C)",
                         "Expansão e crise da República",
                         "Roma Império",
-                        "Alto Império (séculos I d.C. a III d. C.)",
+                        "Alto Império (séculos I d.C. a III d.C.)",
                         "Crise do Império",
                         "Cultura Romana",
                         "Influências diversas"
@@ -206,7 +206,7 @@
                 },
                 {
                     "numero_modulo": "08",
-                    "titulo_modulo": "Formação, Organização Econômica e Políti  ca do Feudalismo",
+                    "titulo_modulo": "Formação, Organização Econômica e Política do Feudalismo",
                     "pagina_inicio_livro": 286,
                     "assuntos_abordados": [
                         "Formação, Organização Econômica e Política do Feudalismo",
@@ -245,7 +245,7 @@
                 },
                 {
                     "numero_modulo": "06",
-                    "titulo_modulo": "A Patrísti ca Agosti niana",
+                    "titulo_modulo": "A Patrística Agostiniana",
                     "pagina_inicio_livro": 338,
                     "assuntos_abordados": [
                         "A Patrística Agostiniana",
@@ -258,19 +258,19 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "A Escolásti ca em Tomás de Aquino e a Retomada da Filosofi a Aristotélica",
+                    "titulo_modulo": "A Escolástica em Tomás de Aquino e a Retomada da Filosofia Aristotélica",
                     "pagina_inicio_livro": 346,
                     "assuntos_abordados": [
-                        "A escolástica em Tomás de Aquino e a retomada da filosofia aristotélica",
+                        "A Escolástica em Tomás de Aquino e a Retomada da Filosofia Aristotélica",
                         "As cinco provas da existência de Deus e a retomada do aristotelismo cristianizado"
                     ]
                 },
                 {
                     "numero_modulo": "08",
-                    "titulo_modulo": "A Questão do Método na Filosofi a de René Descartes",
+                    "titulo_modulo": "A Questão do Método na Filosofia de René Descartes",
                     "pagina_inicio_livro": 352,
                     "assuntos_abordados": [
-                        "A questão do método na filosofia de René Descartes"
+                        "A Questão do Método na Filosofia de René Descartes"
                     ]
                 },
                 {
@@ -299,7 +299,7 @@
                     "titulo_modulo": "Max Weber e a Sociologia da Dominação",
                     "pagina_inicio_livro": 372,
                     "assuntos_abordados": [
-                        "Max Weber E A Sociologia Da Dominação",
+                        "Max Weber e a Sociologia da Dominação",
                         "Burocracia",
                         "Clientelismo, coronelismo, patrimonialismo e nepotismo"
                     ]
@@ -341,7 +341,7 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "Material Genéti co Celular e suas Mutações",
+                    "titulo_modulo": "Material Genético Celular e suas Mutações",
                     "pagina_inicio_livro": 404,
                     "assuntos_abordados": [
                         "Material Genético Celular e suas Mutações",
@@ -393,13 +393,13 @@
                     "pagina_inicio_livro": 503,
                     "assuntos_abordados": [
                         "Grandezas angulares",
-                        "Posição angular ( φ)",
-                        "Velocidade angular média ( ωM)",
-                        "Aceleração angular média ( γM)",
-                        "Movimento circular uniformeDefinição",
+                        "Posição angular (φ)",
+                        "Velocidade angular média (ωM)",
+                        "Aceleração angular média (γM)",
+                        "Movimento circular uniforme: Definição",
                         "Período e frequência",
-                        "Relação entre o período e a frequ ência com as velocidades",
-                        "Função horária do ",
+                        "Relação entre o período e a frequência com as velocidades",
+                        "Função horária do movimento",
                         "Aceleração centrípeta"
                     ]
                 },
@@ -460,7 +460,7 @@
                     "titulo_modulo": "Balanceamento de Equações Iônicas",
                     "pagina_inicio_livro": 597,
                     "assuntos_abordados": [
-                        "Balanceamento de Equações iônicas",
+                        "Balanceamento de Equações Iônicas",
                         "Desproporcionamento de elétrons ou auto-oxirredução",
                         "Reações com peróxido de hidrogênio"
                     ]
@@ -474,13 +474,13 @@
                         "Definição e elementos dos polígonos",
                         "Nomenclatura",
                         "Número de diagonais (d)",
-                        "Soma dos ângulos internos (S i)",
-                        "Soma dos ângulos externos (S e)",
+                        "Soma dos ângulos internos (Si)",
+                        "Soma dos ângulos externos (Se)",
                         "Polígonos Regulares",
                         "Elementos",
-                        "Ângulo central (a C)",
-                        "Ângulo interno (a i)",
-                        "Ângulo externo (a e)",
+                        "Ângulo central (aC)",
+                        "Ângulo interno (ai)",
+                        "Ângulo externo (ae)",
                         "Diagonais que passam pelo centro",
                         "Apótema",
                         "Propriedades",
@@ -530,7 +530,7 @@
                         "Ângulo de segmento",
                         "Ângulo excêntrico interior",
                         "Ângulo excêntrico exterior",
-                        "Triângulo inscrito em uma semi-circunferência",
+                        "Triângulo inscrito em uma semicircunferência",
                         "Quadrilátero inscrito em uma circunferência",
                         "Relação entre duas cordas",
                         "Relação entre dois segmentos secantes",
@@ -549,13 +549,13 @@
                         "Definição e elementos dos polígonos",
                         "Nomenclatura",
                         "Número de diagonais (d)",
-                        "Soma dos ângulos internos (S i)",
-                        "Soma dos ângulos externos (S e)",
+                        "Soma dos ângulos internos (Si)",
+                        "Soma dos ângulos externos (Se)",
                         "Polígonos Regulares",
                         "Elementos",
-                        "Ângulo central (a C)",
-                        "Ângulo interno (a i)",
-                        "Ângulo externo (a e)",
+                        "Ângulo central (aC)",
+                        "Ângulo interno (ai)",
+                        "Ângulo externo (ae)",
                         "Diagonais que passam pelo centro",
                         "Apótema",
                         "Propriedades",
@@ -602,7 +602,7 @@
                         "Ângulo de segmento",
                         "Ângulo excêntrico interior",
                         "Ângulo excêntrico exterior",
-                        "Triângulo inscrito em uma semi-circunferência",
+                        "Triângulo inscrito em uma semicircunferência",
                         "Quadrilátero inscrito em uma circunferência",
                         "Relação entre duas cordas",
                         "Relação entre dois segmentos secantes",
@@ -647,7 +647,7 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "O\tRomanti\tsmo\tno\tBrasil",
+                    "titulo_modulo": "O Romantismo no Brasil",
                     "pagina_inicio_livro": 60,
                     "assuntos_abordados": [
                         "O Romantismo no Brasil",
@@ -658,7 +658,7 @@
                 },
                 {
                     "numero_modulo": "08",
-                    "titulo_modulo": "Poesia\tRomânti\tca",
+                    "titulo_modulo": "Poesia Romântica",
                     "pagina_inicio_livro": 67,
                     "assuntos_abordados": [
                         "Poesia Romântica",
@@ -684,7 +684,8 @@
                     "assuntos_abordados": [
                         "Processos Geomorfológicos e formação da Terra",
                         "Teoria da Deriva Continental",
-                        "A tectônica de placas Rochas",
+                        "A tectônica de placas",
+                        "Rochas",
                         "As rochas que compõem a litosfera",
                         "Estruturas geológicas"
                     ]
@@ -711,7 +712,7 @@
                         "O relevo terrestre",
                         "Agentes internos e externos do relevo",
                         "Principais formas do relevo terrestre",
-                        "Relevo Brasileiros",
+                        "Relevo Brasileiro",
                         "A classificação de Aroldo de Azevedo",
                         "A classificação de Aziz Nacib Ab’Sáber (década de 1960)",
                         "A classificação atual: Jurandyr Ross",
@@ -816,7 +817,7 @@
                     "pagina_inicio_livro": 436,
                     "assuntos_abordados": [
                         "Segunda Lei de Mendel",
-                        "A proporção 9 : 3 : 3 : 1",
+                        "A proporção 9:3:3:1",
                         "Determinando os tipos de gametas",
                         "Determinando genótipos e fenótipos no diibridismo"
                     ]
@@ -852,7 +853,7 @@
                 },
                 {
                     "numero_modulo": "06",
-                    "titulo_modulo": "Força de Atrito e Força Elásti  ca",
+                    "titulo_modulo": "Força de Atrito e Força Elástica",
                     "pagina_inicio_livro": 523,
                     "assuntos_abordados": [
                         "Força de atrito e força elástica",
@@ -1079,7 +1080,7 @@
             "sumario": [
                 {
                     "numero_modulo": "05",
-                    "titulo_modulo": "Coesão\te\tCoerência",
+                    "titulo_modulo": "Coesão e Coerência",
                     "pagina_inicio_livro": 86,
                     "assuntos_abordados": [
                         "Coesão e Coerência",
@@ -1091,10 +1092,10 @@
                 },
                 {
                     "numero_modulo": "06",
-                    "titulo_modulo": "Pressuposto\te\tSubentendidoo",
+                    "titulo_modulo": "Pressuposto e Subentendido",
                     "pagina_inicio_livro": 96,
                     "assuntos_abordados": [
-                        "Pressuposto e subentendido",
+                        "Pressuposto e Subentendido",
                         "Pressupostos",
                         "Subentendidos",
                         "O não dito das charges"
@@ -1102,7 +1103,7 @@
                 },
                 {
                     "numero_modulo": "07",
-                    "titulo_modulo": "Semânti\tca\te\tParalelismo",
+                    "titulo_modulo": "Semântica e Paralelismo",
                     "pagina_inicio_livro": 100,
                     "assuntos_abordados": [
                         "Semântica e Paralelismo",
@@ -1123,10 +1124,10 @@
                 },
                 {
                     "numero_modulo": "08",
-                    "titulo_modulo": "Palavras\tDenotati\tvas\te\tSemânti\tca\tdas\tPreposições",
+                    "titulo_modulo": "Palavras Denotativas e Semântica das Preposições",
                     "pagina_inicio_livro": 111,
                     "assuntos_abordados": [
-                        "Palavras denotativas e semântica das preposições",
+                        "Palavras Denotativas e Semântica das Preposições",
                         "Palavras Denotativas",
                         "Semântica das Preposições",
                         "Locução prepositiva",
@@ -1308,7 +1309,7 @@
                 },
                 {
                     "numero_modulo": "06",
-                    "titulo_modulo": "Múlti plos e Divisores",
+                    "titulo_modulo": "Múltiplos e Divisores",
                     "pagina_inicio_livro": 730,
                     "assuntos_abordados": [
                         "Múltiplos e Divisores",
@@ -1364,7 +1365,7 @@
                     ]
                 },
                 "06": {
-                    "titulo": "Múlti plos e Divisores",
+                    "titulo": "Múltiplos e Divisores",
                     "pagina_inicio": 730,
                     "assuntos_abordados": [
                         "Múltiplos e Divisores",
@@ -1446,7 +1447,7 @@
                     "titulo_modulo": "Projeto de Texto Dissertativo-Argumentativo",
                     "pagina_inicio_livro": 141,
                     "assuntos_abordados": [
-                        "Projeto de Texto Dissertativo-argumentativo",
+                        "Projeto de Texto Dissertativo-Argumentativo",
                         "Competência",
                         "Competência",
                         "Competência",
@@ -1505,7 +1506,7 @@
                     "titulo": "Projeto de Texto Dissertativo-Argumentativo",
                     "pagina_inicio": 141,
                     "assuntos_abordados": [
-                        "Projeto de Texto Dissertativo-argumentativo",
+                        "Projeto de Texto Dissertativo-Argumentativo",
                         "Competência",
                         "Competência",
                         "Competência",

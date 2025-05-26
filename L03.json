@@ -37,20 +37,20 @@
                     "titulo_modulo": "Morfossintaxe e Sujeito",
                     "pagina_inicio_livro": 33,
                     "assuntos_abordados": [
-                        " Morfossintaxe e Sujeito",
-                        " Frase, oração e período",
-                        " Funções sintáticas",
-                        " Sujeito",
-                        " Classificação do sujeito",
-                        " Sujeito determinado",
-                        " Sujeito indeterminado",
-                        " Orações sem sujeito",
-                        " Verbos impessoais"
+                        "Morfossintaxe e Sujeito",
+                        "Frase, oração e período",
+                        "Funções sintáticas",
+                        "Sujeito",
+                        "Classificação do sujeito",
+                        "Sujeito determinado",
+                        "Sujeito indeterminado",
+                        "Orações sem sujeito",
+                        "Verbos impessoais"
                     ]
                 },
                 {
                     "numero_modulo": "12",
-                    "titulo_modulo": "Transiti vidade Verbal e Predicado",
+                    "titulo_modulo": "Transitividade Verbal e Predicado",
                     "pagina_inicio_livro": 44,
                     "assuntos_abordados": [
                         "Transitividade Verbal e Predicado",
@@ -61,18 +61,18 @@
                 },
                 {
                     "numero_modulo": "09",
-                    "titulo_modulo": "Present Conti nuos Tense And Past Conti nuos Tense",
+                    "titulo_modulo": "Present Continuous Tense And Past Continuous Tense",
                     "pagina_inicio_livro": 162,
                     "assuntos_abordados": [
-                        "Present Continuos Tense And Past Continuos Tense",
-                        "Present Continuos Tense",
+                        "Present Continuous Tense And Past Continuous Tense",
+                        "Present Continuous Tense",
                         "Past Continuous Tense",
                         "Phrasal verbs"
                     ]
                 },
                 {
                     "numero_modulo": "10",
-                    "titulo_modulo": "Present Perfect And Present Perfect Conti nuous",
+                    "titulo_modulo": "Present Perfect And Present Perfect Continuous",
                     "pagina_inicio_livro": 167,
                     "assuntos_abordados": [
                         "Present Perfect And Present Perfect Continuous",
@@ -109,7 +109,7 @@
                         "Modal Verbs",
                         "Can",
                         "Could",
-                        "May 2",
+                        "May",
                         "Might",
                         "Must",
                         "Must not",
@@ -150,7 +150,7 @@
                         "Unasul",
                         "União Europeia",
                         "A crise da União Europeia",
-                        "A crise financeira do euro",
+                        "A crise financeira do Euro",
                         "Crise na Zona do Euro",
                         "Brexit"
                     ]
@@ -249,13 +249,13 @@
                     "titulo_modulo": "Immanuel Kant",
                     "pagina_inicio_livro": 330,
                     "assuntos_abordados": [
-                        "IMMANUEL KANT",
+                        "Immanuel Kant",
                         "O criticismo kantiano",
                         "A Revolução copernicana na filosofia",
                         "Fenômeno e coisa-em-si",
-                        "A ética deontológica questão do esclarecimento",
+                        "A ética deontológica: questão do esclarecimento",
                         "A deontologia kantiana",
-                        "Resposta à questão: O que é o es-clarecimento?"
+                        "Resposta à questão: O que é o esclarecimento?"
                     ]
                 },
                 {
@@ -264,7 +264,7 @@
                     "pagina_inicio_livro": 339,
                     "assuntos_abordados": [
                         "A Teoria Política de Maquiavel no Contexto do Renascimento",
-                        "O Príncipe , de Maquiavel"
+                        "O Príncipe, de Maquiavel"
                     ]
                 },
                 {
@@ -272,17 +272,17 @@
                     "titulo_modulo": "Thomas Hobbes, John Locke e Adam Smith",
                     "pagina_inicio_livro": 346,
                     "assuntos_abordados": [
-                        "Thomas Hobbes, John Locke E Adam Smith",
+                        "Thomas Hobbes, John Locke e Adam Smith",
                         "O conceito de natureza humana",
                         "Thomas Hobbes e o Leviatã",
-                        "Johh Locke e Adam Smith",
+                        "John Locke e Adam Smith",
                         "John Locke e o governo civil",
                         "Adam Smith e a defesa de uma economia de mercado"
                     ]
                 },
                 {
                     "numero_modulo": "09",
-                    "titulo_modulo": " Marx & Engels e a Crítica Capitalista",
+                    "titulo_modulo": "Marx & Engels e a Crítica Capitalista",
                     "pagina_inicio_livro": 358,
                     "assuntos_abordados": [
                         "Marx & Engels e a Crítica Capitalista",
@@ -294,20 +294,20 @@
                 },
                 {
                     "numero_modulo": "10",
-                    "titulo_modulo": " Émile Durkheim e a Sociologia Positivista",
+                    "titulo_modulo": "Émile Durkheim e a Sociologia Positivista",
                     "pagina_inicio_livro": 367,
                     "assuntos_abordados": [
                         "Émile Durkheim e a Sociologia Positivista",
                         "A Divisão do Trabalho Social",
                         "Solidariedade mecânica",
                         "Solidariedade orgânica",
-                        "Karl Max: Trabalho, Capital e Alie- nação",
+                        "Karl Marx: Trabalho, Capital e Alienação",
                         "Max Weber e a Racionalização do Mundo"
                     ]
                 },
                 {
                     "numero_modulo": "11",
-                    "titulo_modulo": " Formas de Gestão do Trabalho no Capitalismo",
+                    "titulo_modulo": "Formas de Gestão do Trabalho no Capitalismo",
                     "pagina_inicio_livro": 376,
                     "assuntos_abordados": [
                         "Formas de Gestão do Trabalho no Capitalismo",
@@ -319,7 +319,7 @@
                 },
                 {
                     "numero_modulo": "12",
-                    "titulo_modulo": " Fordismo e Pós-Fordismo",
+                    "titulo_modulo": "Fordismo e Pós-Fordismo",
                     "pagina_inicio_livro": 382,
                     "assuntos_abordados": [
                         "Fordismo e Pós-Fordismo",
@@ -698,7 +698,7 @@
                 },
                 {
                     "numero_modulo": "09",
-                    "titulo_modulo": " Agropecuária e Modelos de Produção",
+                    "titulo_modulo": "Agropecuária e Modelos de Produção",
                     "pagina_inicio_livro": 230,
                     "assuntos_abordados": [
                         "Agropecuária e modelos de produção",
@@ -711,7 +711,7 @@
                 },
                 {
                     "numero_modulo": "10",
-                    "titulo_modulo": " Reforma Agrária: Confl  itos no Campo e a Concentração de Terras no Brasil",
+                    "titulo_modulo": "Reforma Agrária: Conflitos no Campo e a Concentração de Terras no Brasil",
                     "pagina_inicio_livro": 237,
                     "assuntos_abordados": [
                         "Reforma Agrária: Conflitos no Campo e a Concentração de Terras no Brasil",
@@ -725,7 +725,7 @@
                 },
                 {
                     "numero_modulo": "11",
-                    "titulo_modulo": " Agropecuária Brasileira",
+                    "titulo_modulo": "Agropecuária Brasileira",
                     "pagina_inicio_livro": 248,
                     "assuntos_abordados": [
                         "Agropecuária Brasileira",
@@ -740,10 +740,10 @@
                 },
                 {
                     "numero_modulo": "12",
-                    "titulo_modulo": " Agropecuária Mundial e Problemas Sócioambientais",
+                    "titulo_modulo": "Agropecuária Mundial e Problemas Socioambientais",
                     "pagina_inicio_livro": 257,
                     "assuntos_abordados": [
-                        "Agropecuária Mundial e Problemas Sócioambientais",
+                        "Agropecuária Mundial e Problemas Socioambientais",
                         "Agropecuária e insegurança alimentar",
                         "Produção de alimentos e recursos naturais",
                         "Por que a fome persiste no mundo?",
@@ -774,7 +774,7 @@
                     "titulo_modulo": "Entradas, Bandeiras e Tratados Limites",
                     "pagina_inicio_livro": 307,
                     "assuntos_abordados": [
-                        "Entradas, Bandeiras e tratados Limites",
+                        "Entradas, Bandeiras e Tratados Limites",
                         "Entradas e bandeiras",
                         "Expansão territorial: tratados limites"
                     ]
@@ -828,7 +828,7 @@
                 },
                 {
                     "numero_modulo": "11",
-                    "titulo_modulo": "Genéti  ca das Populações",
+                    "titulo_modulo": "Genética das Populações",
                     "pagina_inicio_livro": 442,
                     "assuntos_abordados": [
                         "Genética das populações",
@@ -837,7 +837,7 @@
                 },
                 {
                     "numero_modulo": "12",
-                    "titulo_modulo": "Tipo de Ovos, Padrões de Segmentação e as Etapas do Desenvolvimento \nEmbrionário nos Animais",
+                    "titulo_modulo": "Tipo de Ovos, Padrões de Segmentação e as Etapas do Desenvolvimento Embrionário nos Animais",
                     "pagina_inicio_livro": 447,
                     "assuntos_abordados": [
                         "Tipo de ovos, padrões de segmentação e as etapas do desenvolvimento embrionário nos animais",
@@ -935,7 +935,7 @@
                         "Introdução à radioatividade",
                         "Emissões nucleares",
                         "Leis da radioatividade",
-                        "Período de Meia-vida ( t1/2 ou P)"
+                        "Período de Meia-vida (t1/2 ou P)"
                     ]
                 },
                 {
@@ -965,7 +965,7 @@
                 },
                 {
                     "numero_modulo": "10",
-                    "titulo_modulo": "Logarítmos",
+                    "titulo_modulo": "Logaritmos",
                     "pagina_inicio_livro": 718,
                     "assuntos_abordados": [
                         "Logaritmos",
@@ -1015,7 +1015,7 @@
                     ]
                 },
                 "10": {
-                    "titulo": "Logarítmos",
+                    "titulo": "Logaritmos",
                     "pagina_inicio": 718,
                     "assuntos_abordados": [
                         "Logaritmos",
@@ -1437,7 +1437,7 @@
                 },
                 {
                     "numero_modulo": "12",
-                    "titulo_modulo": "Biografi a",
+                    "titulo_modulo": "Biografia",
                     "pagina_inicio_livro": 156,
                     "assuntos_abordados": [
                         "Biografia",
@@ -1482,7 +1482,7 @@
                     ]
                 },
                 "12": {
-                    "titulo": "Biografi a",
+                    "titulo": "Biografia",
                     "pagina_inicio": 156,
                     "assuntos_abordados": [
                         "Biografia",

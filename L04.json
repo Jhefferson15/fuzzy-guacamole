@@ -51,7 +51,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": "Oração Subordinada Substanti va",
+                    "titulo_modulo": "Oração Subordinada Substantiva",
                     "pagina_inicio_livro": 27,
                     "assuntos_abordados": [
                         "Oração Subordinada Substantiva",
@@ -174,7 +174,7 @@
                         "A Insatisfação Catalã",
                         "A Instabilidade Belga",
                         "Leste Europeu",
-                        "Balcãs",
+                        "Bálcãs",
                         "Fragmentação da Iugoslávia"
                     ]
                 },
@@ -221,7 +221,7 @@
                 },
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": "Jean-Jacques Rousseau: o Bom Selvagem e a Origem da Desigualdade entre os Homens",
+                    "titulo_modulo": "Jean-Jacques Rousseau: O Bom Selvagem e a Origem da Desigualdade entre os Homens",
                     "pagina_inicio_livro": 316,
                     "assuntos_abordados": [
                         "Jean-Jacques Rousseau: o bom selvagem e a origem da desigualdade entre os homens",
@@ -232,7 +232,7 @@
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": "Montesquieu: o Espírito das Leis e a Divisão dos Poderes",
+                    "titulo_modulo": "Montesquieu: O Espírito das Leis e a Divisão dos Poderes",
                     "pagina_inicio_livro": 325,
                     "assuntos_abordados": [
                         "Montesquieu: o espírito das leis e a divisão dos poderes",
@@ -270,14 +270,16 @@
                     "numero_modulo": "13",
                     "titulo_modulo": "Conceito Antropológico de Cultura e Alteridade Humana",
                     "pagina_inicio_livro": 344,
-                    "assuntos_abordados": []
+                    "assuntos_abordados": [
+                        "Conceito Antropológico de Cultura e Alteridade Humana"
+                    ]
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": "As Diversidades Étnico-Cultural no Brasil Contemporâneo",
+                    "titulo_modulo": "As Diversidades Étnico-Culturais no Brasil Contemporâneo",
                     "pagina_inicio_livro": 352,
                     "assuntos_abordados": [
-                        "As Diversidades Étnico-Cultural no Brasil Contemporâneo",
+                        "As Diversidades Étnico-Culturais no Brasil Contemporâneo",
                         "Multiculturalismo",
                         "Pensamento social brasileiro"
                     ]
@@ -297,8 +299,8 @@
                     "pagina_inicio_livro": 369,
                     "assuntos_abordados": [
                         "Cibercultura e a Contemporaneidade",
-                        "Sociabilidade No Ciberespaço",
-                        "Construção De Verdades (Pós-Verdade)"
+                        "Sociabilidade no Ciberespaço",
+                        "Construção de Verdades (Pós-Verdade)"
                     ]
                 },
                 {
@@ -351,7 +353,7 @@
                 },
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": " Interferência de Ondas",
+                    "titulo_modulo": "Interferência de Ondas",
                     "pagina_inicio_livro": 494,
                     "assuntos_abordados": [
                         "Interferência de Ondas",
@@ -363,7 +365,7 @@
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": " Ondas Sonoras",
+                    "titulo_modulo": "Ondas Sonoras",
                     "pagina_inicio_livro": 502,
                     "assuntos_abordados": [
                         "Ondas Sonoras",
@@ -374,7 +376,7 @@
                 },
                 {
                     "numero_modulo": "15",
-                    "titulo_modulo": " Propriedades das Ondas Sonoras",
+                    "titulo_modulo": "Propriedades das Ondas Sonoras",
                     "pagina_inicio_livro": 508,
                     "assuntos_abordados": [
                         "Propriedades das Ondas Sonoras",
@@ -387,7 +389,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": " Tubos Sonoros e Efeito Doppler",
+                    "titulo_modulo": "Tubos Sonoros e Efeito Doppler",
                     "pagina_inicio_livro": 515,
                     "assuntos_abordados": [
                         "Tubos sonoros e Efeito Doppler",
@@ -711,7 +713,7 @@
                     "assuntos_abordados": [
                         "Hidrografia do Brasil",
                         "Principais características dos rios brasileiros",
-                        "As regiões hídricas brasileira",
+                        "As regiões hídricas brasileiras",
                         "As grandes bacias hidrográficas brasileiras",
                         "Usina Hidrelétrica de Balbina",
                         "Bacia Hidrográfica do Atlântico Nordeste Ocidental",
@@ -728,7 +730,7 @@
                 },
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": " Revoltas Nativistas e Separatistas",
+                    "titulo_modulo": "Revoltas Nativistas e Separatistas",
                     "pagina_inicio_livro": 284,
                     "assuntos_abordados": [
                         "Revoltas Nativistas e Separatistas",
@@ -741,7 +743,7 @@
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": " Período Joanino",
+                    "titulo_modulo": "Período Joanino",
                     "pagina_inicio_livro": 292,
                     "assuntos_abordados": [
                         "Período Joanino",
@@ -755,7 +757,7 @@
                 },
                 {
                     "numero_modulo": "15",
-                    "titulo_modulo": " O Processo de Independência e Primeiro Reinado",
+                    "titulo_modulo": "O Processo de Independência e Primeiro Reinado",
                     "pagina_inicio_livro": 299,
                     "assuntos_abordados": [
                         "O Processo de Independência e o Primeiro Reinado",
@@ -767,7 +769,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": " Regências e Rebeliões Regenciais",
+                    "titulo_modulo": "Regências e Rebeliões Regenciais",
                     "pagina_inicio_livro": 307,
                     "assuntos_abordados": [
                         "Regências e Rebeliões Regenciais",
@@ -821,7 +823,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": "Sistema Genital Masculino e Métodos Contracepti  vos",
+                    "titulo_modulo": "Sistema Genital Masculino e Métodos Contraceptivos",
                     "pagina_inicio_livro": 441,
                     "assuntos_abordados": [
                         "Sistema genital masculino e métodos contraceptivos",
@@ -885,10 +887,10 @@
                 },
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": "Introdução a Termoquímica",
+                    "titulo_modulo": "Introdução à Termoquímica",
                     "pagina_inicio_livro": 596,
                     "assuntos_abordados": [
-                        "Introdução a Termoquímica",
+                        "Introdução à Termoquímica",
                         "Calor nas transformações químicas",
                         "Representação de reações",
                         "Calor nas transformações físicas",
@@ -917,12 +919,12 @@
                         "Espontaneidade das Reações",
                         "Entalpia",
                         "Entropia",
-                        "Enegia livre de Gibbs"
+                        "Energia livre de Gibbs"
                     ]
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": "Cinéti  ca Química",
+                    "titulo_modulo": "Cinética Química",
                     "pagina_inicio_livro": 615,
                     "assuntos_abordados": [
                         "Cinética Química",
@@ -951,7 +953,7 @@
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": "Probabilidade – Defi  nição e Probabilidade da União",
+                    "titulo_modulo": "Probabilidade – Definição e Probabilidade da União",
                     "pagina_inicio_livro": 699,
                     "assuntos_abordados": [
                         "Probabilidade – Definição e Probabilidade da União",
@@ -1002,7 +1004,7 @@
                     ]
                 },
                 "14": {
-                    "titulo": "Probabilidade – Defi  nição e Probabilidade da União",
+                    "titulo": "Probabilidade – Definição e Probabilidade da União",
                     "pagina_inicio": 699,
                     "assuntos_abordados": [
                         "Probabilidade – Definição e Probabilidade da União",
@@ -1044,7 +1046,7 @@
             "sumario": [
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": "Poesia: o Sujeito Lírico e a Música",
+                    "titulo_modulo": "Poesia: O Sujeito Lírico e a Música",
                     "pagina_inicio_livro": 72,
                     "assuntos_abordados": [
                         "Poesia: o sujeito lírico e a música",
@@ -1113,7 +1115,7 @@
                 },
                 {
                     "numero_modulo": "13",
-                    "titulo_modulo": "Tecido Conjunti vo Próprio, Adiposo, Sanguíneo e Sistema Imunológico Humano",
+                    "titulo_modulo": "Tecido Conjuntivo Próprio, Adiposo, Sanguíneo e Sistema Imunológico Humano",
                     "pagina_inicio_livro": 450,
                     "assuntos_abordados": [
                         "Tecido Conjuntivo Próprio, Adiposo, Sanguíneo e Sistema Imunológico Humano",
@@ -1129,7 +1131,7 @@
                 },
                 {
                     "numero_modulo": "14",
-                    "titulo_modulo": "Tecido Conjunti vo Ósseo e Carti laginoso",
+                    "titulo_modulo": "Tecido Conjuntivo Ósseo e Cartilaginoso",
                     "pagina_inicio_livro": 461,
                     "assuntos_abordados": [
                         "Tecido Conjuntivo Ósseo e Cartilaginoso",
@@ -1145,7 +1147,7 @@
                 },
                 {
                     "numero_modulo": "15",
-                    "titulo_modulo": "Tecido Muscular e Sistema Esqueléti co Muscular Humano",
+                    "titulo_modulo": "Tecido Muscular e Sistema Esquelético Muscular Humano",
                     "pagina_inicio_livro": 469,
                     "assuntos_abordados": [
                         "Tecido Muscular e Sistema Esquelético Muscular Humano",
@@ -1207,7 +1209,7 @@
                 },
                 {
                     "numero_modulo": "15",
-                    "titulo_modulo": "Estudo Analíti  co das Lentes",
+                    "titulo_modulo": "Estudo Analítico das Lentes",
                     "pagina_inicio_livro": 563,
                     "assuntos_abordados": [
                         "Estudo Analítico das Lentes",
@@ -1226,7 +1228,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": "Instrumentos de Projeção e Ópti  ca da Visão",
+                    "titulo_modulo": "Instrumentos de Projeção e Óptica da Visão",
                     "pagina_inicio_livro": 570,
                     "assuntos_abordados": [
                         "Instrumentos de Projeção e Óptica da Visão",
@@ -1267,7 +1269,7 @@
                 },
                 {
                     "numero_modulo": "15",
-                    "titulo_modulo": "Isomeria Consti tucional",
+                    "titulo_modulo": "Isomeria Constitucional",
                     "pagina_inicio_livro": 648,
                     "assuntos_abordados": [
                         "Isomeria constitucional"
@@ -1275,7 +1277,7 @@
                 },
                 {
                     "numero_modulo": "16",
-                    "titulo_modulo": "Estereoisomeria Geométrica e Ópti ca",
+                    "titulo_modulo": "Estereoisomeria Geométrica e Óptica",
                     "pagina_inicio_livro": 653,
                     "assuntos_abordados": [
                         "Estereoisomeria Geométrica e Óptica",
@@ -1423,7 +1425,7 @@
                     "titulo_modulo": "Diário",
                     "pagina_inicio_livro": 123,
                     "assuntos_abordados": [
-                        "DIÁRIO",
+                        "Diário",
                         "Diário pessoal",
                         "Diário de ficção"
                     ]
@@ -1481,7 +1483,7 @@
                     "titulo": "Diário",
                     "pagina_inicio": 123,
                     "assuntos_abordados": [
-                        "DIÁRIO",
+                        "Diário",
                         "Diário pessoal",
                         "Diário de ficção"
                     ]

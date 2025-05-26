@@ -41,7 +41,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": "As funções de “se” e “que”",
+                    "titulo_modulo": "As Funções de “Se” e “Que”",
                     "pagina_inicio_livro": 25,
                     "assuntos_abordados": [
                         "As funções de “se” e “que”",
@@ -69,7 +69,7 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": " Prepositi  ons",
+                    "titulo_modulo": "Prepositions",
                     "pagina_inicio_livro": 156,
                     "assuntos_abordados": [
                         "Prepositions",
@@ -80,7 +80,7 @@
                 },
                 {
                     "numero_modulo": "22",
-                    "titulo_modulo": " Reported Speech",
+                    "titulo_modulo": "Reported Speech",
                     "pagina_inicio_livro": 162,
                     "assuntos_abordados": [
                         "Reported Speech",
@@ -92,7 +92,7 @@
                 },
                 {
                     "numero_modulo": "23",
-                    "titulo_modulo": " Phrasal Verbs and False Cognates",
+                    "titulo_modulo": "Phrasal Verbs and False Cognates",
                     "pagina_inicio_livro": 167,
                     "assuntos_abordados": [
                         "Phrasal Verbs and False Cognates",
@@ -103,7 +103,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": " Use of Gerund",
+                    "titulo_modulo": "Use of Gerund",
                     "pagina_inicio_livro": 176,
                     "assuntos_abordados": [
                         "Use of Gerund",
@@ -168,7 +168,7 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": "Revoluções Liberais e Unifi cações",
+                    "titulo_modulo": "Revoluções Liberais e Unificações",
                     "pagina_inicio_livro": 284,
                     "assuntos_abordados": [
                         "Revoluções Liberais e Unificações",
@@ -259,7 +259,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": "Pós-Modernidade: um conceito também líquido",
+                    "titulo_modulo": "Pós-Modernidade: Um Conceito Também Líquido",
                     "pagina_inicio_livro": 377,
                     "assuntos_abordados": [
                         "Pós-modernidade: um conceito também líquido"
@@ -438,7 +438,7 @@
                 },
                 {
                     "numero_modulo": "22",
-                    "titulo_modulo": "Célula a Combustí  vel",
+                    "titulo_modulo": "Célula a Combustível",
                     "pagina_inicio_livro": 646,
                     "assuntos_abordados": [
                         "Célula a combustível"
@@ -456,7 +456,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": "Aspectos Quanti  tati  vos da Eletrodeposição",
+                    "titulo_modulo": "Aspectos Quantitativos da Eletrodeposição",
                     "pagina_inicio_livro": 658,
                     "assuntos_abordados": [
                         "Aspectos quantitativos da eletrodeposição",
@@ -468,10 +468,10 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": "Retas: Posições Relati vas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
+                    "titulo_modulo": "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
                     "pagina_inicio_livro": 724,
                     "assuntos_abordados": [
-                        "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos Entre Retas e Inequações",
+                        "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
                         "Posições relativas entre duas retas no plano",
                         "Retas paralelas no plano cartesiano",
                         "Retas perpendiculares no plano cartesiano",
@@ -494,12 +494,12 @@
                 },
                 {
                     "numero_modulo": "23",
-                    "titulo_modulo": "Circunferência: Posições Relati vas e Tangência",
+                    "titulo_modulo": "Circunferência: Posições Relativas e Tangência",
                     "pagina_inicio_livro": 737,
                     "assuntos_abordados": [
                         "Circunferência: Posições Relativas e Tangência",
                         "Posições relativas entre reta e circunferência",
-                        "Intersecção entre reta e circunferência",
+                        "Interseção entre reta e circunferência",
                         "Posições relativas entre duas circunferências",
                         "Interseção entre duas circunferências",
                         "Problemas de Tangência"
@@ -533,10 +533,10 @@
             ],
             "modulos_detalhados": {
                 "21": {
-                    "titulo": "Retas: Posições Relati vas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
+                    "titulo": "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
                     "pagina_inicio": 724,
                     "assuntos_abordados": [
-                        "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos Entre Retas e Inequações",
+                        "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
                         "Posições relativas entre duas retas no plano",
                         "Retas paralelas no plano cartesiano",
                         "Retas perpendiculares no plano cartesiano",
@@ -557,12 +557,12 @@
                     ]
                 },
                 "23": {
-                    "titulo": "Circunferência: Posições Relati vas e Tangência",
+                    "titulo": "Circunferência: Posições Relativas e Tangência",
                     "pagina_inicio": 737,
                     "assuntos_abordados": [
                         "Circunferência: Posições Relativas e Tangência",
                         "Posições relativas entre reta e circunferência",
-                        "Intersecção entre reta e circunferência",
+                        "Interseção entre reta e circunferência",
                         "Posições relativas entre duas circunferências",
                         "Interseção entre duas circunferências",
                         "Problemas de Tangência"
@@ -601,7 +601,7 @@
                     "titulo_modulo": "3ª Fase do Modernismo (Parte I)",
                     "pagina_inicio_livro": 32,
                     "assuntos_abordados": [
-                        "3ª Fase do Modernismo (Parte-I)",
+                        "3ª Fase do Modernismo (Parte I)",
                         "Clarice Lispector",
                         "Características da obra de Clarice Lispector",
                         "Perto do Coração Selvagem",
@@ -617,7 +617,7 @@
                     "titulo_modulo": "3ª Fase do Modernismo (Parte II)",
                     "pagina_inicio_livro": 43,
                     "assuntos_abordados": [
-                        "3ª Fase do Modernismo (Parte-II)",
+                        "3ª Fase do Modernismo (Parte II)",
                         "O neomodernismo de João Cabral",
                         "Poemas representativos",
                         "Manoel de Barros",
@@ -708,7 +708,7 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": " Revoluções e Militarismo na América",
+                    "titulo_modulo": "Revoluções e Militarismo na América",
                     "pagina_inicio_livro": 322,
                     "assuntos_abordados": [
                         "Revoluções e militarismo na América",
@@ -718,7 +718,7 @@
                 },
                 {
                     "numero_modulo": "22",
-                    "titulo_modulo": " República Liberal Democráti  ca",
+                    "titulo_modulo": "República Liberal Democrática",
                     "pagina_inicio_livro": 328,
                     "assuntos_abordados": [
                         "República Liberal Democrática",
@@ -729,7 +729,7 @@
                 },
                 {
                     "numero_modulo": "23",
-                    "titulo_modulo": " Ditadura Militar",
+                    "titulo_modulo": "Ditadura Militar",
                     "pagina_inicio_livro": 334,
                     "assuntos_abordados": [
                         "Ditadura Militar",
@@ -743,7 +743,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": " República Nova (1985-2022)",
+                    "titulo_modulo": "República Nova (1985-2022)",
                     "pagina_inicio_livro": 343,
                     "assuntos_abordados": [
                         "República Nova (1985-2022)",
@@ -811,7 +811,7 @@
                         "Ácido abscísico",
                         "Movimentos vegetais",
                         "Fitocromos",
-                        "Influência da luz no desenvolvi - mento vegetal"
+                        "Influência da luz no desenvolvimento vegetal"
                     ]
                 },
                 {
@@ -1171,7 +1171,7 @@
                     "assuntos_abordados": [
                         "Teorias Evolutivas",
                         "Principais teorias evolutivas",
-                        "As ideias de darwin – Darwinismo",
+                        "As ideias de Darwin – Darwinismo",
                         "Teoria sintética da evolução",
                         "Evidências da evolução"
                     ]
@@ -1193,7 +1193,7 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": " Campo Magnéti co",
+                    "titulo_modulo": "Campo Magnético",
                     "pagina_inicio_livro": 608,
                     "assuntos_abordados": [
                         "Campo magnético",
@@ -1209,7 +1209,7 @@
                 },
                 {
                     "numero_modulo": "22",
-                    "titulo_modulo": " Força Magnéti  ca sobre Cargas Elétricas",
+                    "titulo_modulo": "Força Magnética sobre Cargas Elétricas",
                     "pagina_inicio_livro": 616,
                     "assuntos_abordados": [
                         "Força magnética sobre cargas elétricas",
@@ -1220,7 +1220,7 @@
                 },
                 {
                     "numero_modulo": "23",
-                    "titulo_modulo": " Indução Eletromagnéti  ca",
+                    "titulo_modulo": "Indução Eletromagnética",
                     "pagina_inicio_livro": 623,
                     "assuntos_abordados": [
                         "Indução Eletromagnética",
@@ -1232,7 +1232,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": " Corrente Alternada",
+                    "titulo_modulo": "Corrente Alternada",
                     "pagina_inicio_livro": 630,
                     "assuntos_abordados": [
                         "Corrente Alternada",
@@ -1265,8 +1265,7 @@
                     "pagina_inicio_livro": 706,
                     "assuntos_abordados": [
                         "Oxidação de álcoois",
-                        "A Química do Bafômetro",
-                        "Oxidação de Álcoois"
+                        "A Química do Bafômetro"
                     ]
                 },
                 {
@@ -1294,7 +1293,7 @@
                 },
                 {
                     "numero_modulo": "21",
-                    "titulo_modulo": " Demais Funções Trigonométricas",
+                    "titulo_modulo": "Demais Funções Trigonométricas",
                     "pagina_inicio_livro": 788,
                     "assuntos_abordados": [
                         "Demais Funções Trigonométricas",
@@ -1306,7 +1305,7 @@
                 },
                 {
                     "numero_modulo": "22",
-                    "titulo_modulo": " Gráfi  cos e Tabelas Estatí  sti  cas",
+                    "titulo_modulo": "Gráficos e Tabelas Estatísticas",
                     "pagina_inicio_livro": 794,
                     "assuntos_abordados": [
                         "Gráficos e Tabelas Estatísticas",
@@ -1326,7 +1325,7 @@
                 },
                 {
                     "numero_modulo": "23",
-                    "titulo_modulo": " Medidas de Tendência Central",
+                    "titulo_modulo": "Medidas de Tendência Central",
                     "pagina_inicio_livro": 805,
                     "assuntos_abordados": [
                         "Medidas de Tendência Central",
@@ -1339,7 +1338,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": " Medidas de Dispersão",
+                    "titulo_modulo": "Medidas de Dispersão",
                     "pagina_inicio_livro": 809,
                     "assuntos_abordados": [
                         "Medidas de Dispersão",
@@ -1351,7 +1350,7 @@
             ],
             "modulos_detalhados": {
                 "21": {
-                    "titulo": " Demais Funções Trigonométricas",
+                    "titulo": "Demais Funções Trigonométricas",
                     "pagina_inicio": 788,
                     "assuntos_abordados": [
                         "Demais Funções Trigonométricas",
@@ -1362,7 +1361,7 @@
                     ]
                 },
                 "22": {
-                    "titulo": " Gráfi  cos e Tabelas Estatí  sti  cas",
+                    "titulo": "Gráficos e Tabelas Estatísticas",
                     "pagina_inicio": 794,
                     "assuntos_abordados": [
                         "Gráficos e Tabelas Estatísticas",
@@ -1381,7 +1380,7 @@
                     ]
                 },
                 "23": {
-                    "titulo": " Medidas de Tendência Central",
+                    "titulo": "Medidas de Tendência Central",
                     "pagina_inicio": 805,
                     "assuntos_abordados": [
                         "Medidas de Tendência Central",
@@ -1393,7 +1392,7 @@
                     ]
                 },
                 "24": {
-                    "titulo": " Medidas de Dispersão",
+                    "titulo": "Medidas de Dispersão",
                     "pagina_inicio": 809,
                     "assuntos_abordados": [
                         "Medidas de Dispersão",
@@ -1441,7 +1440,7 @@
                 },
                 {
                     "numero_modulo": "24",
-                    "titulo_modulo": "Blog, E-mail e X (Twitt  er)",
+                    "titulo_modulo": "Blog, E-mail e X (Twitter)",
                     "pagina_inicio_livro": 150,
                     "assuntos_abordados": [
                         "Blog, E-mail e X (Twitter)",
@@ -1482,7 +1481,7 @@
                     ]
                 },
                 "24": {
-                    "titulo": "Blog, E-mail e X (Twitt  er)",
+                    "titulo": "Blog, E-mail e X (Twitter)",
                     "pagina_inicio": 150,
                     "assuntos_abordados": [
                         "Blog, E-mail e X (Twitter)",
