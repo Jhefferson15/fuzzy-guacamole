@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datas Importantes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #E0E0E0; /* Cinza claro para o fundo da página */
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinha ao topo se o conteúdo for menor que a tela */
+            min-height: 100vh;
+        }
+        .page-container {
+            background-color: white;
+            /* Inspirado no padrão de espiral da imagem original */
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10S20 15.523 20 10c0-2.76-.784-5.26-2.343-7.07C16.582 1.56 13.43 0 10 0zM2 10C2 5.589 5.589 2 10 2c2.458 0 4.6.878 6.055 2.427C17.25 5.396 18 7.542 18 10c0 4.411-3.589 8-8 8S2 14.411 2 10zm13.883-3.018a4.002 4.002 0 10-5.656 5.656 4.002 4.002 0 005.656-5.656z' fill='%23E0E0E0' fill-rule='nonzero' fill-opacity='.5'/%3E%3C/svg%3E");
+            background-size: 25px 25px; /* Tamanho do padrão de repetição */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 700px; /* Limita a largura máxima para melhor leitura */
+        }
+        .main-title {
+            background-color: #69A396; /* Verde-azulado suave, similar à imagem */
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.6em; /* Tamanho ajustado */
+            font-weight: bold;
+            border-radius: 8px 8px 0 0; /* Cantos arredondados apenas no topo */
+            margin: -20px -20px 25px -20px; /* Para ocupar largura total do container e dar espaço abaixo */
+            text-transform: uppercase;
+            line-height: 1.3; /* Para o título em duas linhas */
+        }
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px; /* Espaçamento entre os meses */
+        }
+        .month-box {
+            border-radius: 8px; /* Cantos arredondados para toda a caixa do mês */
+            overflow: hidden; /* Garante que o conteúdo interno respeite os cantos arredondados */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff; /* Fundo branco para a parte do conteúdo */
+        }
+        .month-header {
+            background-color: #69A396; /* Mesma cor do título principal */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.95em;
+            text-transform: uppercase;
+        }
+        .month-content {
+            height: 90px; /* Espaço para anotações, ajustado para proporção */
+            padding: 10px;
+            background-color: #fff; /* Garante fundo branco se .month-box tiver outra cor */
+            /* A borda sutil em volta da área branca é melhor tratada pelo box-shadow do .month-box
+               e a separação visual do header pelo contraste de cores. */
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 600px) {
+            .months-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+            }
+            .main-title {
+                font-size: 1.4em;
+            }
+            .month-header {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 400px) {
+            .months-grid {
+                grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+            }
+             .main-title {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="main-title">DATAS<br>IMPORTANTES</div>
+        <div class="months-grid">
+            <div class="month-box">
+                <div class="month-header">JANEIRO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">FEVEREIRO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">MARÇO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">ABRIL</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">MAIO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">JUNHO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">JULHO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">AGOSTO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">SETEMBRO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">OUTUBRO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">NOVEMBRO</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-box">
+                <div class="month-header">DEZEMBRO</div>
+                <div class="month-content"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas-Vindas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8; /* Fundo claro */
+            /* Padrão de X com SVG para maior controle e fidelidade */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Cpath d='M6 6L19 19M6 19L19 6' stroke='%23e0e0e0' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-size: 28px 28px; /* Ajuste o tamanho para a densidade desejada dos 'X's */
+            color: #333;
+            line-height: 1.6;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .welcome-title {
+            font-size: 2.8em; /* Aumentado para maior impacto */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px; /* Espaço após o título */
+            line-height: 0.95; /* Para aproximar as duas linhas do título */
+        }
+        .welcome-title span {
+            display: block;
+        }
+        .welcome-title span:first-child {
+            color: #67AD90; /* Verde mais claro, similar ao da imagem */
+        }
+        .welcome-title span:last-child {
+            color: #4A4A4A; /* Cinza escuro, similar ao da imagem */
+        }
+        .content {
+            /* margin-top: 20px; /* Espaço entre título e conteúdo */
+        }
+        .content p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .greeting {
+            font-weight: bold;
+            color: #333; /* Cor padrão do texto */
+            margin-bottom: 20px;
+            /* margin-top: 10px;  Reduzido, pois welcome-title já tem margin-bottom */
+        }
+        .highlight-bold-text { /* Para "Vestibulares" */
+            font-weight: bold;
+            color: #4A4A4A; /* Mesmo cinza escuro da segunda linha do título */
+        }
+        .call-to-action { /* "Faça bom uso..." */
+            font-style: italic;
+            margin-top: 25px;
+        }
+        .final-approval { /* "Vamos juntos..." */
+            font-style: italic;
+            text-align: center; /* Centralizado como na imagem */
+            margin-top: 25px;
+            margin-bottom: 30px; /* Espaço antes da assinatura */
+        }
+        .signature {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .signature .salutation {
+            color: #333; /* Cor padrão do texto */
+            font-weight: normal; /* Não é negrito na imagem */
+        }
+        .signature .team-name {
+            font-weight: bold;
+            color: #2E8B57; /* Verde original para a assinatura */
+            display: block; /* Garante nova linha */
+            margin-top: 5px; /* Pequeno espaço após "Com carinho," */
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-title">
+        <span>BOAS-VINDAS</span>
+        <span>BOAS-VINDAS</span>
+    </div>
+
+    <div class="content">
+        <p class="greeting">Estudante,</p>
+        <p>Seja bem-vindo(a) ao Planner do Versa Pré-<span class="highlight-bold-text">Vestibulares</span>. Somos uma instituição de ensino moderna e de alto rendimento, focada no planejamento estratégico de estudo. Nosso objetivo é proporcionar uma transformação na educação por meio de soluções educacionais eficazes.</p>
+        <p>São inúmeros os relatos de estudantes que não conseguem organizar de maneira eficiente a sua rotina de estudos. Diante disso, resolvemos produzir este material. Nele você pode registrar e acompanhar vários indicadores da sua rotina: metrificação de simulados e redações; acompanhamento do plano de ensino; planejamento de estudo e de revisões; treinamento de estratégia de provas; mapeamento de déficits de aprendizagem, controle diário de tarefas e muito mais.</p>
+        <p class="call-to-action">Faça bom uso deste material e conte com a nossa orientação para aproveitar ao máximo suas funcionalidades.</p>
+        <p class="final-approval">Vamos juntos até a sua aprovação!</p>
+    </div>
+
+    <div class="signature">
+        <span class="salutation">Com carinho,</span><br>
+        <span class="team-name">Equipe Versa</span>
+    </div>
+</body>
+</html>
