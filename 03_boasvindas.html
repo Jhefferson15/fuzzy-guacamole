@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa Agenda Versa - A4</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0; /* Cor de fundo da página, caso o A4 não preencha tudo */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinha no topo para melhor visualização */
+            min-height: 100vh;
+        }
+
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para visualização no browser */
+            overflow: hidden; /* Para garantir que nada saia da página */
+            position: relative;
+            padding: 20mm 15mm 15mm 20mm; /* Margens aproximadas (topo, direita, baixo, esquerda) */
+            box-sizing: border-box;
+
+            /* Padrão de 'x' no fundo usando SVG como data URI */
+            /* SVG original: 
+            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+              <line x1="2" y1="2" x2="8" y2="8" stroke="#EAEAEA" stroke-width="0.7"/>
+              <line x1="2" y1="8" x2="8" y2="2" stroke="#EAEAEA" stroke-width="0.7"/>
+            </svg>
+            */
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='13' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='2.5' y1='2.5' x2='7.5' y2='7.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3Cline x1='2.5' y1='7.5' x2='7.5' y2='2.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        .content {
+            color: #333; /* Cor principal do texto */
+            line-height: 1.6;
+            font-size: 10pt; /* Tamanho de fonte base para A4 */
+        }
+
+        .header-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 28pt; /* Ajuste conforme necessário */
+            letter-spacing: -1px; /* Para ficar mais compacto */
+            margin-bottom: 15mm;
+            line-height: 1.1;
+            text-align: left;
+            font-family: 'Arial Black', 'Impact', sans-serif; /* Fontes mais "grossas" */
+        }
+
+        .title-1 { color: #A0D9D3; } /* Verde claro */
+        .title-2 { color: #4DB8AE; } /* Verde médio */
+        .title-3 { color: #3E507A; } /* Azul escuro/roxo */
+
+        .salutation {
+            font-size: 11pt;
+            margin-bottom: 8mm;
+            color: #444;
+        }
+
+        .paragraph {
+            margin-bottom: 5mm;
+            text-align: justify;
+        }
+
+        .emphasis {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 10mm;
+            margin-bottom: 10mm;
+            color: #555;
+        }
+
+        .signature-block {
+            margin-top: 15mm;
+            text-align: right;
+            font-size: 10pt;
+        }
+
+        .signature-line {
+            margin-bottom: 2mm;
+        }
+
+        .team-name {
+            font-weight: bold;
+            color: #3E507A; /* Mesma cor do título 3 */
+            display: inline-block; /* Para alinhar com a imagem */
+            vertical-align: middle;
+        }
+
+        .logo {
+            width: 60px; /* Ajuste o tamanho do logo conforme necessário */
+            height: auto;
+            margin-left: 5px;
+            vertical-align: middle; /* Alinha verticalmente com o texto */
+        }
+        
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background-color: #fff; /* Fundo branco para impressão */
+                display: block; /* Reset display for printing */
+            }
+            .a4-page {
+                margin: 0;
+                box-shadow: none; /* Remove sombra na impressão */
+                width: 100%; /* Ocupa a largura da página de impressão */
+                height: 100%; /* Ocupa a altura da página de impressão */
+                padding: 20mm 15mm 15mm 20mm; /* Mantenha as margens internas */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="a4-page">
+        <div class="content">
+            <div class="header-title">
+                <div class="title-1">Boas-vindas</div>
+                <div class="title-2">Boas-vindas</div>
+                <div class="title-3">Boas-vindas</div>
+            </div>
+
+            <p class="salutation">Estudante,</p>
+
+            <p class="paragraph">
+                Seja bem-vindo(a) ao Planner do Versa Pré-Vestibulares. Somos uma instituição de ensino
+                moderna e de alto rendimento, focada no planejamento estratégico de estudo. Nosso objetivo é proporcionar
+                uma transformação na educação por meio de soluções educacionais eficazes.
+            </p>
+
+            <p class="paragraph">
+                São inúmeros os relatos de estudantes que não conseguem organizar de maneira eficiente a sua rotina
+                de estudos. Diante disso, resolvemos produzir este material. Nele você pode registrar e acompanhar vários
+                indicadores da sua rotina: metrificação de simulados e redações; acompanhamento do plano de ensino;
+                planejamento de estudo e de revisões; treinamento de estratégia de provas; mapeamento de déficits de
+                aprendizagem, controle diário de tarefas e muito mais.
+            </p>
+
+            <p class="paragraph">
+                Faça bom uso deste material e conte com a nossa orientação para aproveitar ao máximo suas
+                funcionalidades.
+            </p>
+
+            <p class="emphasis">
+                Vamos juntos até a sua aprovação!
+            </p>
+
+            <div class="signature-block">
+                <p class="signature-line">Com carinho,</p>
+                <p class="team-name">
+                    Equipe Versa
+                    <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png" alt="Logo Versa" class="logo">
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

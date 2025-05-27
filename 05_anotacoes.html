@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Anotações</title>
+    <style>
+        /* Reset básico e configuração da fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0; /* Cor de fundo para visualização */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .page-a4 {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            padding: 15mm 15mm 15mm 25mm; /* Margens (top, right, bottom, left) - mais à esquerda para encadernação */
+
+            /* Padrão de fundo com SVG base64 (mesmo da página anterior) */
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNIDIwIDIwIEEgMTUgMTUgMCAwIDEgMzUgMzUgQSAxNSAxNSAwIDAgMSA1IDM1IEEgMTUgMTUgMCAwIDEgMjAgNSBBIDE1IDE1IDAgMCAxIDM1IDIwIG0gLTMwIDAgQSAxMCAxMCAwIDAgMSAyNSAzMCBBIDEwIDEwIDAgMCAxIDEwIDMwIEEgMTAgMTAgMCAwIDEgMTUgMTAgQSAxMCAxMCAwIDAgMSAyNSAyMCBtIC0yMCAwIEEgNSAgNSAwIDAgMSAyMCAyNSBBIDUgNSAwIDAgMSAxNSAyNSBBIDUgNSAwIDAgMSAxMCAxNSBBIDUgNSAwIDAgMSAyMCAyMCIgc3Ryb2tlPSIjZGRkZGRkIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+");
+            background-size: 30px 30px;
+            background-repeat: repeat;
+        }
+
+        .header-agenda {
+            background-color: #3d8c76; /* Verde principal da agenda */
+            color: white;
+            padding: 10px 15px 12px 15px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 10px; /* Espaço abaixo do cabeçalho */
+            border-radius: 8px 8px 0 0; /* Arredondamento apenas no topo */
+        }
+
+        .header-agenda h1 {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-logo {
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translateY(-50%) rotate(15deg); /* Centraliza verticalmente e rotaciona um pouco */
+            width: 40px; /* Tamanho do logo */
+            height: auto;
+            /*
+            Filtro para tentar deixar o logo original (azul/ciano) com a cor amarelo-esverdeado.
+            Isso é experimental e pode não ser perfeito.
+            Ordem:
+            1. grayscale(1): Transforma em escala de cinza.
+            2. sepia(1): Aplica um tom sépia.
+            3. hue-rotate(Xdeg): Rotaciona o matiz. Para verde/amarelo a partir de sépia, uns 40-60deg.
+            4. saturate(Y): Aumenta a saturação.
+            5. brightness(Z): Ajusta o brilho.
+            */
+            filter: grayscale(100%) sepia(90%) hue-rotate(45deg) saturate(600%) brightness(110%);
+            opacity: 0.9; /* Leve transparência como na imagem */
+        }
+
+
+        .notes-area {
+            border: 1.5px solid #555; /* Borda da área de anotações */
+            border-radius: 0 0 6px 6px; /* Arredondamento apenas embaixo, já que o header tem em cima */
+            height: calc(100% - 70px - 30mm); /* Altura total - header - margens verticais */
+            padding: 10px;
+            background-color: white;
+            overflow-y: auto; /* Caso o conteúdo exceda */
+
+            /* Linhas horizontais */
+            background-image: repeating-linear-gradient(
+                to bottom,
+                #eee, /* Cor da linha */
+                #eee 1px, /* Espessura da linha */
+                transparent 1px, /* Espaço transparente */
+                transparent 24px /* Espaçamento entre linhas (altura da linha + espaço) */
+            );
+            background-size: 100% 24px; /* Altura da repetição = espaçamento */
+            line-height: 24px; /* Para alinhar texto com as linhas, se fosse adicionar */
+        }
+
+
+        .page-footer {
+            position: absolute;
+            bottom: 10mm;
+            left: 15mm; /* Posição diferente na imagem de "Anotações" */
+            width: 30px;
+            height: 20px;
+            background-color: #3d8c76;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                margin: 0;
+                display: block;
+            }
+            .page-a4 {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+                overflow: visible;
+                padding: 15mm 10mm 10mm 20mm;
+            }
+            .page-footer {
+                bottom: 5mm;
+                left: 10mm;
+            }
+            .notes-area {
+                height: calc(100% - 55px - 25mm); /* Ajuste de altura para impressão */
+                /* Para garantir que as linhas sejam impressas corretamente */
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-a4">
+        <header class="header-agenda">
+            <h1>Anotações</h1>
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png" alt="Logo Versa" class="header-logo">
+        </header>
+
+        <main class="notes-area">
+            <!-- Conteúdo das anotações aqui, se houver.
+                 As linhas são de fundo. -->
+        </main>
+
+        <footer class="page-footer">
+            7 <!-- Número da página para Anotações -->
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-B">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner de Estudos - Versa</title>
+    <style>
+        /* Reset básico e configurações da página */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Cor de fundo para visualização da "folha A4" */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinha no topo para caso o conteúdo exceda a tela */
+            min-height: 100vh;
+            font-family: Arial, sans-serif; /* Fonte padrão, pode ser ajustada */
+        }
+
+        /* Simulação da página A4 */
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #2E2E3A; /* Cor de fundo da capa da agenda (estimada) */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Alinha os itens ao topo e distribui espaço */
+            padding: 40px 20px; /* Espaçamento interno */
+            box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+            box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para destacar a página */
+            overflow: hidden; /* Para evitar que conteúdo grande estoure visualmente */
+        }
+
+        /* Estilo para "PLANNER DE ESTUDOS" */
+        .planner-title {
+            font-family: 'Arial Narrow', Arial, sans-serif; /* Uma fonte um pouco mais condensada */
+            font-size: 22px; /* Tamanho da fonte */
+            font-weight: normal; /* Peso da fonte */
+            letter-spacing: 2.5px; /* Espaçamento entre letras */
+            text-transform: uppercase; /* Tudo em maiúsculas */
+            margin-bottom: 80px; /* Espaço abaixo do título */
+            margin-top: 20px; /* Espaço acima do título */
+        }
+
+        /* Estilo para o logo/símbolo */
+        .logo-image {
+            width: 400px; /* Largura do logo, ajuste conforme necessário */
+            max-width: 80%; /* Para não ficar muito grande em telas menores, embora A4 seja fixo */
+            height: auto;
+            margin-bottom: 50px; /* Espaço abaixo do logo */
+        }
+
+        /* Estilo para "Versa" */
+        .brand-name {
+            font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte serifada */
+            font-size: 90px; /* Tamanho grande */
+            font-weight: bold; /* Negrito */
+            margin-bottom: 5px; /* Pouco espaço abaixo de "Versa" */
+        }
+
+        /* Estilo para "Pré-Vestibulares" */
+        .sub-brand {
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px; /* Tamanho menor */
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        /* Media query para impressão, para tentar garantir o tamanho A4 */
+        @media print {
+            body {
+                background-color: white; /* Fundo branco para impressão */
+                display: block; /* Remove flex para impressão */
+            }
+            .a4-page {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0; /* Remover padding para impressão se necessário, ou ajustar */
+                box-shadow: none; /* Sem sombra na impressão */
+                overflow: visible;
+                 /* As margens da impressora podem cortar. Para controle fino, @page é melhor */
+            }
+             @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="a4-page">
+        <div class="planner-title">Planner de Estudos</div>
+        <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png" alt="Símbolo Versa" class="logo-image">
+        <div class="brand-name">Versa</div>
+        <div class="sub-brand">Pré-Vestibulares</div>
+    </div>
+</body>
+</html>

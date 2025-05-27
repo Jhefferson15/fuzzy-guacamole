@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Datas Importantes</title>
+    <style>
+        /* Reset básico e configuração da fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif; /* Fonte genérica similar à da agenda */
+        }
+
+        body {
+            background-color: #f0f0f0; /* Cor de fundo para visualização */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinha no topo para rolagem */
+            min-height: 100vh;
+            padding: 20px 0; /* Espaço para rolagem na visualização */
+        }
+
+        .page-a4 {
+            width: 210mm;
+            height: 297mm; /* Altura A4 */
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden; /* Para garantir que nada saia da página */
+            padding: 20mm 15mm 15mm 25mm; /* Margens internas (top, right, bottom, left) - ajustado para simular a encadernação */
+
+            /* Padrão de fundo com SVG base64 */
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNIDIwIDIwIEEgMTUgMTUgMCAwIDEgMzUgMzUgQSAxNSAxNSAwIDAgMSA1IDM1IEEgMTUgMTUgMCAwIDEgMjAgNSBBIDE1IDE1IDAgMCAxIDM1IDIwIG0gLTMwIDAgQSAxMCAxMCAwIDAgMSAyNSAzMCBBIDEwIDEwIDAgMCAxIDEwIDMwIEEgMTAgMTAgMCAwIDEgMTUgMTAgQSAxMCAxMCAwIDAgMSAyNSAyMCBtIC0yMCAwIEEgNSAgNSAwIDAgMSAyMCAyNSBBIDUgNSAwIDAgMSAxNSAyNSBBIDUgNSAwIDAgMSAxMCAxNSBBIDUgNSAwIDAgMSAyMCAyMCIgc3Ryb2tlPSIjZGRkZGRkIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+");
+            background-size: 30px 30px; /* Tamanho da repetição do padrão */
+            background-repeat: repeat;
+        }
+
+        .header-agenda {
+            background-color: #3d8c76; /* Verde principal da agenda */
+            color: white;
+            padding: 10px 15px 12px 55px; /* Aumentei o padding-left para dar espaço ao logo */
+            text-align: center;
+            position: relative; /* Para o posicionamento da forma no canto */
+            margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+            border-radius: 8px 8px 0 0; /* Arredondamento apenas no topo */
+        }
+
+        .header-agenda h1 {
+            font-size: 28px; /* Tamanho aproximado */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .versa-logo-container {
+            position: absolute;
+            top: 10px;  /* Ajuste conforme necessário */
+            left: 15px; /* Ajuste conforme necessário */
+            width: 35px;  /* Largura desejada para o logo na agenda */
+            height: 25px; /* Altura desejada para o logo na agenda */
+            background-color: #cadd2f; /* Amarelo-esverdeado da forma, como na agenda */
+            -webkit-mask-image: url('https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png');
+            mask-image: url('https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            /* transform: rotate(-10deg);  Leve rotação, se desejar, como na foto */
+        }
+
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 15px; /* Espaçamento entre os blocos */
+        }
+
+        .month-block {
+            border: 1.5px solid #444; /* Borda escura dos blocos */
+            border-radius: 8px; /* Arredondamento geral do bloco */
+            overflow: hidden; /* Para que o header não ultrapasse o border-radius */
+            display: flex;
+            flex-direction: column;
+            background-color: white; /* Fundo da área de conteúdo */
+            min-height: 125px; /* Altura mínima aumentada para cada bloco */
+        }
+
+        .month-header {
+            background-color: #3d8c76; /* Mesmo verde do cabeçalho principal */
+            color: white;
+            padding: 9px; /* Aumentei um pouco o padding */
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px; /* Tamanho da fonte aumentado */
+            text-transform: uppercase;
+        }
+
+        .month-content {
+            flex-grow: 1; /* Faz a área de conteúdo ocupar o espaço restante */
+            padding: 10px;
+            /* Deixei vazio para simular área de escrita */
+            min-height: 85px; /* Altura mínima da área de texto aumentada */
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 10mm; /* Posicionamento do rodapé */
+            left: 15mm; /* Posicionamento do rodapé */
+            width: 30px; /* Largura da barra do número da página */
+            height: 20px; /* Altura da barra */
+            background-color: #3d8c76; /* Mesmo verde */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px; /* Leve arredondamento */
+        }
+
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                margin: 0;
+                display: block; /* Reset display for print */
+            }
+            .page-a4 {
+                width: 210mm;
+                height: 297mm; /* Garante altura A4 na impressão */
+                margin: 0 auto; /* Centraliza a página na impressão se o browser permitir */
+                padding: 0; /* Remove padding extra da página na impressão */
+                box-shadow: none;
+                border: none; /* Remove qualquer borda da simulação de página */
+                overflow: visible; /* Para garantir que todo conteúdo seja impresso */
+
+                padding: 15mm 10mm 10mm 20mm; /* Margens internas (top, right, bottom, left) para impressão */
+            }
+             .page-footer {
+                bottom: 5mm; /* Ajuste para impressão */
+                left: 10mm; /* Ajuste para impressão */
+            }
+            .versa-logo-container { /* Garante que o logo seja impresso */
+                background-color: #cadd2f !important; /* Força a cor de fundo na impressão */
+                print-color-adjust: exact; /* Ajuda a garantir que as cores de fundo sejam impressas */
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        @page {
+            size: A4;
+            margin: 0; /* Remove margens da impressora */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-a4">
+        <header class="header-agenda">
+            <div class="versa-logo-container"></div>
+            <h1>Datas Importantes</h1>
+        </header>
+
+        <main class="month-grid">
+            <div class="month-block">
+                <div class="month-header">Janeiro</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Fevereiro</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Março</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Abril</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Maio</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Junho</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Julho</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Agosto</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Setembro</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Outubro</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Novembro</div>
+                <div class="month-content"></div>
+            </div>
+            <div class="month-block">
+                <div class="month-header">Dezembro</div>
+                <div class="month-content"></div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            6
+        </footer>
+    </div>
+</body>
+</html>
