@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-B">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planner de Estudos - Versa</title>
     <style>
@@ -9,79 +9,140 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Cor de fundo para visualização da "folha A4" */
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alinha no topo para caso o conteúdo exceda a tela */
+            align-items: flex-start;
             min-height: 100vh;
-            font-family: Arial, sans-serif; /* Fonte padrão, pode ser ajustada */
+            font-family: Arial, sans-serif;
         }
 
-        /* Simulação da página A4 */
         .a4-page {
             width: 210mm;
             height: 297mm;
-            background-color: #2E2E3A; /* Cor de fundo da capa da agenda (estimada) */
+            background-color: #2E2E3A;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Alinha os itens ao topo e distribui espaço */
-            padding: 40px 20px; /* Espaçamento interno */
-            box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
-            box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para destacar a página */
-            overflow: hidden; /* Para evitar que conteúdo grande estoure visualmente */
+            justify-content: flex-start;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
 
         /* Estilo para "PLANNER DE ESTUDOS" */
         .planner-title {
-            font-family: 'Arial Narrow', Arial, sans-serif; /* Uma fonte um pouco mais condensada */
-            font-size: 22px; /* Tamanho da fonte */
-            font-weight: normal; /* Peso da fonte */
-            letter-spacing: 2.5px; /* Espaçamento entre letras */
-            text-transform: uppercase; /* Tudo em maiúsculas */
-            margin-bottom: 80px; /* Espaço abaixo do título */
-            margin-top: 20px; /* Espaço acima do título */
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 22px;
+            font-weight: normal;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+            margin-top: 20px;
+            animation: fadeInDriftUp 1s ease-out forwards, subtleDrift 8s ease-in-out infinite 3s;
         }
 
         /* Estilo para o logo/símbolo */
         .logo-image {
-            width: 400px; /* Largura do logo, ajuste conforme necessário */
-            max-width: 80%; /* Para não ficar muito grande em telas menores, embora A4 seja fixo */
+            width: 400px;
+            max-width: 80%;
             height: auto;
-            margin-bottom: 50px; /* Espaço abaixo do logo */
+            margin-bottom: 50px;
+            animation: fadeInScale 1.5s ease-out forwards, thinkingFloat 7s ease-in-out infinite 2.5s;
         }
 
         /* Estilo para "Versa" */
         .brand-name {
-            font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte serifada */
-            font-size: 90px; /* Tamanho grande */
-            font-weight: bold; /* Negrito */
-            margin-bottom: 5px; /* Pouco espaço abaixo de "Versa" */
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 90px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            /* Animação de entrada e depois o brilho pulsante forte */
+            animation: fadeInGrow 1.5s ease-out forwards, strongBrandPulse 3s ease-in-out infinite 3.5s;
         }
 
         /* Estilo para "Pré-Vestibulares" */
         .sub-brand {
             font-family: 'Arial Narrow', Arial, sans-serif;
-            font-size: 20px; /* Tamanho menor */
+            font-size: 20px;
             font-weight: normal;
             letter-spacing: 0.5px;
+            animation: fadeInDriftDown 2s ease-out forwards, subtleDriftReverse 8s ease-in-out infinite 4s;
         }
 
-        /* Media query para impressão, para tentar garantir o tamanho A4 */
+        /* --- ANIMATIONS --- */
+
+        /* Initial Fade-in Animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInDriftUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInGrow {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInDriftDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        /* Continuous Harmonious Animations */
+
+        @keyframes thinkingFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes subtleDrift {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(4px); }
+        }
+        
+        @keyframes subtleDriftReverse {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(-4px); }
+        }
+
+        /* Nova animação para brilho pulsante forte em "Versa" */
+        @keyframes strongBrandPulse {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                             0 0 10px rgba(255, 255, 255, 0.2);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), /* Brilho principal mais intenso */
+                             0 0 25px rgba(255, 255, 255, 0.7), /* Segundo anel de brilho */
+                             0 0 40px rgba(200, 200, 255, 0.5); /* Brilho externo mais suave e levemente azulado */
+                transform: scale(1.02); /* Leve aumento para intensificar o pulso */
+            }
+        }
+
+
+        /* Media query para impressão */
         @media print {
             body {
-                background-color: white; /* Fundo branco para impressão */
-                display: block; /* Remove flex para impressão */
+                background-color: white;
+                display: block;
             }
             .a4-page {
                 width: 210mm;
                 height: 297mm;
                 margin: 0;
-                padding: 0; /* Remover padding para impressão se necessário, ou ajustar */
-                box-shadow: none; /* Sem sombra na impressão */
+                padding: 0;
+                box-shadow: none;
                 overflow: visible;
-                 /* As margens da impressora podem cortar. Para controle fino, @page é melhor */
+            }
+            .planner-title, .logo-image, .brand-name, .sub-brand {
+                animation: none !important; /* Remove todas as animações na impressão */
             }
              @page {
                 size: A4;
@@ -98,5 +159,8 @@
         <div class="brand-name">Versa</div>
         <div class="sub-brand">Pré-Vestibulares</div>
     </div>
+
+    <!-- O SCRIPT FOI REMOVIDO -->
+
 </body>
 </html>
