@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capa Agenda Versa</title>
+    <title>Capa Agenda Versa Animada</title>
     <style>
         @page {
             size: A4;
@@ -39,8 +39,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* SVG inlined e URL-encoded para o padrão de 'x' */
-            /* Gerador de URL encode para SVG: https://yoksel.github.io/url-encoder/ */
             background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Etext %7B font-family: monospace; font-size: 10px; fill: %23AAAAAA; %7D%3C/style%3E%3Ctext x='2' y='8'%3Ex%3C/text%3E%3Ctext x='12' y='8'%3Ex%3C/text%3E%3Ctext x='2' y='18'%3Ex%3C/text%3E%3Ctext x='12' y='18'%3Ex%3C/text%3E%3C/svg%3E");
             background-repeat: repeat;
             z-index: 1;
@@ -61,11 +59,10 @@
         }
 
         .logo-container {
-            width: 280px; /* Ajuste conforme necessário */
-            height: 280px; /* Ajuste conforme necessário */
-            margin-top: 120px; /* Espaço do topo */
-            margin-bottom: 40px;
-            
+            width: 300px; /* Aumentado para acomodar animação de brilho */
+            height: 300px; /* Aumentado */
+            margin-top: 100px; /* Ajustado após aumento do container */
+            margin-bottom: 30px; /* Reduzido um pouco para dar mais espaço aos campos */
         }
 
         .logo-svg {
@@ -80,6 +77,19 @@
             fill: #A8C63C; /* Verde-limão do V */
             text-anchor: middle;
             dominant-baseline: central;
+            /* Animação de pulsação e brilho */
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 5px transparent);
+            }
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 15px #A8C63C);
+            }
         }
 
         .logo-svg .circular-text {
@@ -106,7 +116,7 @@
         }
 
         .field {
-            margin-bottom: 30px;
+            margin-bottom: 25px; /* Reduzido um pouco */
         }
 
         .field-label {
@@ -117,7 +127,7 @@
             font-size: 14px;
             font-weight: bold;
             border-radius: 4px;
-            margin-bottom: 8px;
+            margin-bottom: 5px; /* Reduzido para aproximar do input */
             text-transform: uppercase;
         }
 
@@ -125,7 +135,7 @@
             height: 1px;
             background-color: #DDDDDD; /* Cor da linha */
             border-bottom: 1px dotted #BBBBBB; /* Estilo da linha pontilhada */
-            margin-top: 10px;
+            margin-top: 2px; /* Pequeno espaço se o input não tiver padding inferior */
             margin-bottom: 15px; /* Espaço entre linhas no campo de telefone */
         }
          /* Ajuste para o campo telefone ter duas linhas */
@@ -133,13 +143,22 @@
             margin-bottom: 0;
         }
 
-        /* O símbolo fornecido não foi usado porque a capa da agenda tem um logo diferente (o "V" circular) */
-        /* Se quisesse usar o símbolo do link, seria algo como:
-        .versa-symbol {
-            width: 150px;
-            height: auto;
+        .cursive-input {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            text-align: center;
+            font-family: 'Brush Script MT', 'Comic Sans MS', cursive; /* Fontes cursivas com fallbacks */
+            font-size: 20px; /* Tamanho da fonte cursiva */
+            color: #333;
+            padding: 5px 0; /* Espaçamento interno vertical */
+            margin-bottom: -1px; /* Para sobrepor ligeiramente a linha, se necessário */
+            outline: none; /* Remove o contorno ao focar */
         }
-        */
+        .cursive-input::placeholder { /* Estilo para o placeholder, se você adicionar um */
+            color: #aaa;
+            font-style: italic;
+        }
 
     </style>
 </head>
@@ -148,12 +167,10 @@
         <div class="border-pattern"></div>
         <div class="content-area">
             <div class="logo-container">
-                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Círculo guia (invisível) para o texto "VERSA" superior e inferior -->
+                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <path id="arcVersaUpper" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
                         <path id="arcVersaLower" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
-                         <!-- Círculo guia (invisível) para o texto "PRÉ-VESTIBULARES" -->
                         <path id="arcPreVest" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
                         <path id="arcPreVestInverted" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
                     </defs>
@@ -161,39 +178,56 @@
                     <!-- Letra V central -->
                     <text x="100" y="100" class="v-letter">V</text>
 
-                    <!-- Texto "VERSA" superior -->
-                    <text class="circular-text">
-                        <textPath xlink:href="#arcVersaUpper" startOffset="65%">VERSA</textPath>
-                    </text>
+                    <!-- Grupo para rotação dos textos -->
+                    <g id="rotating-text">
+                        <animateTransform
+                            attributeName="transform"
+                            attributeType="XML"
+                            type="rotate"
+                            from="0 100 100"
+                            to="360 100 100"
+                            dur="30s" 
+                            repeatCount="indefinite" />
 
-                    <!-- Texto "VERSA" inferior (invertido para ler corretamente) -->
-                    <text class="circular-text">
-                        <textPath xlink:href="#arcVersaLower" startOffset="65%" >VERSA</textPath>
-                    </text>
+                        <!-- Texto "VERSA" superior -->
+                        <text class="circular-text">
+                            <textPath xlink:href="#arcVersaUpper" startOffset="77%">VERSA</textPath>
+                        </text>
 
-                    <!-- Texto "PRÉ-VESTIBULARES" à esquerda -->
-                    <text class="circular-text-small">
-                        <textPath xlink:href="#arcPreVest" startOffset="25%">PRÉ-VESTIBULARES</textPath>
-                    </text>
-                    <!-- Texto "PRÉ-VESTIBULARES" à direita (em path invertido para alinhar) -->
-                     <text class="circular-text-small">
-                        <textPath xlink:href="#arcPreVestInverted" startOffset="25%">PRÉ-VESTIBULARES</textPath>
-                    </text>
+                        <!-- Texto "VERSA" inferior (invertido para ler corretamente - esta parte é complexa sem redefinir o path) -->
+                        <!-- A rotação fará este texto girar, mas ele já está orientado para o caminho inferior -->
+                        <text class="circular-text">
+                            <textPath xlink:href="#arcVersaLower" startOffset="77%" >VERSA</textPath>
+                        </text>
+
+                        <!-- Texto "PRÉ-VESTIBULARES" à esquerda -->
+                        <text class="circular-text-small">
+                            <textPath xlink:href="#arcPreVest" startOffset="25%">PRÉ-VESTIBULARES</textPath>
+                        </text>
+                        <!-- Texto "PRÉ-VESTIBULARES" à direita (em path invertido para alinhar) -->
+                        <text class="circular-text-small">
+                            <textPath xlink:href="#arcPreVestInverted" startOffset="25%">PRÉ-VESTIBULARES</textPath>
+                        </text>
+                    </g>
                 </svg>
             </div>
 
             <div class="info-fields">
                 <div class="field">
                     <span class="field-label">SEU NOME</span>
+                    <input type="text" class="cursive-input">
                     <div class="line"></div>
                 </div>
                 <div class="field telefone">
                     <span class="field-label">TELEFONE</span>
+                    <input type="text" class="cursive-input">
                     <div class="line"></div>
+                    <input type="text" class="cursive-input">
                     <div class="line"></div>
                 </div>
                 <div class="field">
                     <span class="field-label">REDES SOCIAIS</span>
+                    <input type="text" class="cursive-input">
                     <div class="line"></div>
                 </div>
             </div>
