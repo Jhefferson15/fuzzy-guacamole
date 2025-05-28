@@ -5,7 +5,14 @@
     "id": "1WZNc-Nb1Xcpo-EkgmqDHaR8MX2YVOSzZ",
     "proposta_group": "PROPOSTA",
     "proposta_number": 7,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 07",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "21/02/2025",
+    "delivery_date_redaction": "28/02/2025",
+    "theme": "Desafios para a preservação do meio ambiente diante da ação antrópica no Brasil",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 14 - UNIEURO.pdf",
@@ -13,7 +20,14 @@
     "id": "1ANqrZLN_1q8OByPLTbxDnYG_Mfsvs0WC",
     "proposta_group": "PROPOSTA",
     "proposta_number": 14,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 14",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "23/05/2025",
+    "delivery_date_redaction": "30/05/2025",
+    "theme": "O uso excessivo das tecnologias está promovendo uma sociedade cada vez mais sedentária e isso interfere na saúde populacional.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 14 - UNICEPLAC.pdf",
@@ -21,7 +35,14 @@
     "id": "1IQizDyMVjpXrFDKAC0OmxreS-RURqfDP",
     "proposta_group": "PROPOSTA",
     "proposta_number": 14,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 14",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "23/05/2025",
+    "delivery_date_redaction": "30/05/2025",
+    "theme": "Os desafios para o incentivo à atividade física na sociedade brasileira.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 14 - ENEM.pdf",
@@ -29,7 +50,14 @@
     "id": "1_w-YBZMrWJ7ObLu1Hx2Wkj7RZhXfkTdG",
     "proposta_group": "PROPOSTA",
     "proposta_number": 14,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 14",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "23/05/2025",
+    "delivery_date_redaction": "30/05/2025",
+    "theme": "Desafios para a inclusão de estudantes com transtornos de aprendizagem nas escolas do Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 14 - UniRV.pdf",
@@ -37,7 +65,14 @@
     "id": "1CjijbpvPb3UPbsqmy-eFlmHfeKIEN1dl",
     "proposta_group": "PROPOSTA",
     "proposta_number": 14,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 14",
+    "exam_type_from_filename": "UniRV",
+    "delivery_date_proposal": "23/05/2025",
+    "delivery_date_redaction": "30/05/2025",
+    "theme": "A sociedade brasileira está cada vez mais sedentária?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA EXTRA - CEUB.pdf",
@@ -45,7 +80,14 @@
     "id": "1GThf6QjrQT13Fw0uQSNXGvGRjqGVbDDU",
     "proposta_group": "PROPOSTA",
     "proposta_number": "EXTRA",
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA EXTRA",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "13/05/2025",
+    "delivery_date_redaction": "15/05/2025",
+    "theme": "UNICEUB: O respeito à ética nas intervenções estéticas: entre o lucro e à saúde.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA13 - ENEM.pdf",
@@ -53,7 +95,14 @@
     "id": "1r1qMn5fBrsh_tUZHUsFqYvWrDs073_od",
     "proposta_group": "PROPOSTA",
     "proposta_number": 13,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA13",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "16/05/2025",
+    "delivery_date_redaction": "23/05/2025",
+    "theme": "Caminhos para o combate às fake news e às deepfakes no Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 13 - PAULISTAS.pdf",
@@ -61,7 +110,14 @@
     "id": "1dlGjpdJ7cT9_96vkP-ujBzdF9I4dLaki",
     "proposta_group": "PROPOSTA",
     "proposta_number": 13,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 13",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "16/05/2025",
+    "delivery_date_redaction": "23/05/2025",
+    "theme": "Solidão ou solitude? As relações sociais na era digital",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "Redação Cronoometrada 2 ENEM - 02.05.pdf",
@@ -69,7 +125,14 @@
     "id": "1lE2g6UoRQ5Jw5KLeHzkGqOrn3_VjDtqn",
     "proposta_group": "CRONOMETRADA",
     "proposta_number": 2,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "Redação Cronoometrada 2",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "Redação Cronoometrada 2 - VERSA MED.pdf",
@@ -77,7 +140,14 @@
     "id": "1ram2qnjgpy6sqas5eepgOuU66nxFGILG",
     "proposta_group": "CRONOMETRADA",
     "proposta_number": 2,
-    "proposta_type": "PARTICULARES_DF"
+    "proposta_type": "PARTICULARES_DF",
+    "proposta_title_from_filename": "Redação Cronoometrada 2",
+    "exam_type_from_filename": "VERSA MED",
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "1 Redação Cronoometrada - 04.04.pdf",
@@ -85,7 +155,14 @@
     "id": "1f0-XluW2ZLWaOPmX0qMMFp7gTWGlEFPm",
     "proposta_group": "CRONOMETRADA",
     "proposta_number": 1,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "1 Redação Cronoometrada",
+    "exam_type_from_filename": null,
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "Redação Cronoometrada - PARTICULARES.pdf",
@@ -93,7 +170,14 @@
     "id": "1uoUdRX6D5M6_jAZ2NLy27BSeZHJzGzrQ",
     "proposta_group": "CRONOMETRADA",
     "proposta_number": 1,
-    "proposta_type": "PARTICULARES_DF"
+    "proposta_type": "PARTICULARES_DF",
+    "proposta_title_from_filename": "Redação Cronoometrada",
+    "exam_type_from_filename": "PARTICULARES",
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "1 Redação Cronoometrada MED - 02.04.pdf",
@@ -101,7 +185,14 @@
     "id": "1vFpKvbRaBdUTCFhOCtT8zy6V86jIomhK",
     "proposta_group": "CRONOMETRADA",
     "proposta_number": 1,
-    "proposta_type": "PARTICULARES_DF"
+    "proposta_type": "PARTICULARES_DF",
+    "proposta_title_from_filename": "1 Redação Cronoometrada MED",
+    "exam_type_from_filename": "MED",
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "PROPOSTA 12 - UNIEURO.pdf",
@@ -109,7 +200,14 @@
     "id": "1MCvbjJ1A--VUuEa5rP1OkN58bWmdYLou",
     "proposta_group": "PROPOSTA",
     "proposta_number": 12,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 12",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "09/05/2025",
+    "delivery_date_redaction": "16/05/2025",
+    "theme": "O furto famélico como a saída mais próxima da realidade dos brasileiros abandonados pelo Estado.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 12 - UniRV.pdf",
@@ -117,7 +215,14 @@
     "id": "1P5LqXxNmvntkV2YTOdkdffQWCgY6l83P",
     "proposta_group": "PROPOSTA",
     "proposta_number": 12,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 12",
+    "exam_type_from_filename": "UniRV",
+    "delivery_date_proposal": "09/05/2025",
+    "delivery_date_redaction": "16/05/2025",
+    "theme": "É lícito roubar para comer?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 12 - ENEM.pdf",
@@ -125,7 +230,14 @@
     "id": "1Dm_H5aglNGvGJVM5OAzBuFMQZUr_dyoX",
     "proposta_group": "PROPOSTA",
     "proposta_number": 12,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 12",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "09/05/2025",
+    "delivery_date_redaction": "16/05/2025",
+    "theme": "A importância de hábitos alimentares saudáveis para a saúde da população brasileira",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 12 - UNICEPLAC.pdf",
@@ -133,7 +245,14 @@
     "id": "1v_squCcilPevir1MKV7wzE-wpzC-tBPC",
     "proposta_group": "PROPOSTA",
     "proposta_number": 12,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 12",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "11/04/2025",
+    "delivery_date_redaction": "17/04/2025",
+    "theme": "Os desafios para conter a evasão escolar entre os jovens brasileiros revelam o desinteresse crescente pela educação e a falta de responsabilidade diante de suas consequências.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 11 - CEUB.pdf",
@@ -141,7 +260,14 @@
     "id": "14vEcVyiH1E12SgUDiGPOHqD5FpphFMi5",
     "proposta_group": "PROPOSTA",
     "proposta_number": 11,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 11",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "02/05/2025",
+    "delivery_date_redaction": "09/05/2025",
+    "theme": "O conceito de família no século XXI: entre o acaso e o planejamento familiar",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 11 - PAULISTAS.pdf",
@@ -149,7 +275,14 @@
     "id": "15rqtYuSYe28lU_Wbhzvt_dB7fFrCmNDf",
     "proposta_group": "PROPOSTA",
     "proposta_number": 11,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 11",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "02/05/2025",
+    "delivery_date_redaction": "09/05/2025",
+    "theme": "O conceito de família no século XXI: entre o acaso e o planejamento familiar",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 11 - ENEM.pdf",
@@ -157,7 +290,14 @@
     "id": "1DvxO05sTRUPn2QYlibmv_5OpHzFchvPZ",
     "proposta_group": "PROPOSTA",
     "proposta_number": 11,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 11",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "02/05/2025",
+    "delivery_date_redaction": "09/05/2025",
+    "theme": "Desafios da poluição ambiental e da gestão de resíduos no Brasil",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 10 - UNIEURO.pdf",
@@ -165,7 +305,14 @@
     "id": "1YzNC8HeU8ph53sixDy1FXQaF-Vv_l7HO",
     "proposta_group": "PROPOSTA",
     "proposta_number": 10,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 10",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "21/02/2025",
+    "delivery_date_redaction": "28/02/2025",
+    "theme": "O avanço tecnológico é compatível com a preservação ambiental?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 10 - ENEM.pdf",
@@ -173,7 +320,14 @@
     "id": "1ZtngyvASvvCg-4D-4LcLxhB1O1VSO0md",
     "proposta_group": "PROPOSTA",
     "proposta_number": 10,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 10",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "25/04/2025",
+    "delivery_date_redaction": "02/05/2025",
+    "theme": "Os efeitos do processo de uberização do trabalho para a sociedade brasileira",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 10 - UniRV.pdf",
@@ -181,7 +335,14 @@
     "id": "1fhgdVd-tofF135MD8AnZFn5wMr-C462y",
     "proposta_group": "PROPOSTA",
     "proposta_number": 10,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 10",
+    "exam_type_from_filename": "UniRV",
+    "delivery_date_proposal": "25/04/2025",
+    "delivery_date_redaction": "02/05/2025",
+    "theme": "Há riscos na formação de profissionais da saúde em cursos a distância?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 10 - UNICEPLAC.pdf",
@@ -189,7 +350,14 @@
     "id": "1RMqk0BUpeGHYbkUo7nj1ACI38MT8Ll-N",
     "proposta_group": "PROPOSTA",
     "proposta_number": 10,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 10",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "25/04/2025",
+    "delivery_date_redaction": "02/05/2025",
+    "theme": "Os desafios para garantir a qualidade na formação de profissionais da saúde por cursos a distância revelam a precarização do ensino e o descaso com a segurança do atendimento à população.",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 09 - PAULISTAS.pdf",
@@ -197,7 +365,14 @@
     "id": "1ixpivM8iPqqPvwyxEYV8_1BWRv-Pvn6i",
     "proposta_group": "PROPOSTA",
     "proposta_number": 9,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 09",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "17/04/2025",
+    "delivery_date_redaction": "25/04/2025",
+    "theme": "Será que o anseio pela transformação estética nos aproxima da realização pessoal?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 08 - UNIEURO.pdf",
@@ -205,7 +380,14 @@
     "id": "1nQjRJ0lNTI9iREvyX6FI1Ba624bDORKv",
     "proposta_group": "PROPOSTA",
     "proposta_number": 8,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 08",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "23/05/2025",
+    "delivery_date_redaction": "30/05/2025",
+    "theme": "O uso excessivo das tecnologias está promovendo uma sociedade cada vez mais sedentária e isso interfere na saúde populacional.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 09 - ENEM.pdf",
@@ -213,7 +395,14 @@
     "id": "14TvlANNJNma3_EXBCLVHeXC655RCabP0",
     "proposta_group": "PROPOSTA",
     "proposta_number": 9,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 09",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "17/04/2025",
+    "delivery_date_redaction": "25/04/2025",
+    "theme": "Os perigos do uso das redes sociais no Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 09 - CEUB.pdf",
@@ -221,7 +410,14 @@
     "id": "1SjJUvFPmlU4d8TZp8N_2yCGS8toAvIl3",
     "proposta_group": "PROPOSTA",
     "proposta_number": 9,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 09",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "17/04/2025",
+    "delivery_date_redaction": "25/04/2025",
+    "theme": "Cirurgia plástica: entre as tendências e o arrependimento das pessoas com relação aos procedimentos estéticos",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 08 - UniRV.pdf",
@@ -229,7 +425,14 @@
     "id": "1-Ii40U_1pWkluNNA_zs0LJ-sCWEc6EHa",
     "proposta_group": "PROPOSTA",
     "proposta_number": 8,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 08",
+    "exam_type_from_filename": "UniRV",
+    "delivery_date_proposal": "11/04/2025",
+    "delivery_date_redaction": "17/04/2025",
+    "theme": "A sociedade brasileira está cada vez mais sedentária?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 08 - UNICEPLAC.pdf",
@@ -237,7 +440,14 @@
     "id": "1YVRiSaoaTW4S8KePla8PcciJ3EjC2JHU",
     "proposta_group": "PROPOSTA",
     "proposta_number": 8,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 08",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "11/04/2025",
+    "delivery_date_redaction": "17/04/2025",
+    "theme": "Os desafios para conter a evasão escolar entre os jovens brasileiros revelam o desinteresse crescente pela educação e a falta de responsabilidade diante de suas consequências.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 08 - ENEM.pdf",
@@ -245,7 +455,14 @@
     "id": "1JSx1IFzYWHEZZkknAt4WJUiA0jfdRw7G",
     "proposta_group": "PROPOSTA",
     "proposta_number": 8,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 08",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "11/04/2025",
+    "delivery_date_redaction": "17/04/2025",
+    "theme": "Os desafios para o respeito à ética no uso da inteligência artificial",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 07 - CEUB.pdf",
@@ -253,7 +470,14 @@
     "id": "1esyBe09sSnTzbq382f5FVzjas7ILc9Bv",
     "proposta_group": "PROPOSTA",
     "proposta_number": 7,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 07",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "04/04/2025",
+    "delivery_date_redaction": "11/04/2025",
+    "theme": "Os dilemas da juventude diante da violência online: entre a responsabilidade dos pais e o contato excessivo com as redes sociais",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 06 - ENEM.pdf",
@@ -261,7 +485,14 @@
     "id": "1rS_av6Zc4DPyfHWxuGTLm3I_P3l0FH0P",
     "proposta_group": "PROPOSTA",
     "proposta_number": 6,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 06",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "28/03/2025",
+    "delivery_date_redaction": "04/04/2025",
+    "theme": "Os desafios para o incentivo à cultura de doação no Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 06 - UNICEPLAC.pdf",
@@ -269,7 +500,14 @@
     "id": "1AZ-B28VQe3jcx7nWghpf1KBSFfrJqEQO",
     "proposta_group": "PROPOSTA",
     "proposta_number": 6,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 06",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "28/03/2025",
+    "delivery_date_redaction": "04/04/2025",
+    "theme": "O acesso à cultura é ferramenta importante para crianças e adolescentes residentes em regiões periféricas do Brasil.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 06 - UNIEURO.pdf",
@@ -277,7 +515,14 @@
     "id": "1X4qAuCt_TtjlRVPfSs6jWVTNj_lCuYGi",
     "proposta_group": "PROPOSTA",
     "proposta_number": 6,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 06",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "28/03/2025",
+    "delivery_date_redaction": "04/04/2025",
+    "theme": "O acesso à cultura é uma ferramenta que possibilita a ascensão social.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 07 - PAULISTAS.pdf",
@@ -285,7 +530,14 @@
     "id": "1sIiWMCMsrLYi-tIKGseG2ABpVoJ5IMoa",
     "proposta_group": "PROPOSTA",
     "proposta_number": 7,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 07",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "04/04/2025",
+    "delivery_date_redaction": "11/04/2025",
+    "theme": "Qual é o impacto da liberdade de escolha na existência humana?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 06 - UNIRV.pdf",
@@ -293,7 +545,14 @@
     "id": "101h48Aej2cGhQGmrjNwWtBZPI5Dz_noS",
     "proposta_group": "PROPOSTA",
     "proposta_number": 6,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 06",
+    "exam_type_from_filename": "UNIRV",
+    "delivery_date_proposal": "28/03/2025",
+    "delivery_date_redaction": "04/04/2025",
+    "theme": "Como a cultura é uma relevante ferramenta de inserção social dos jovens? Em seu texto, discuta a importância e o impacto produzido pelo acesso à cultura especialmente às classes menos favorecidas.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 05 - ENEM.pdf",
@@ -301,7 +560,14 @@
     "id": "1Kf9vmjLEzN4F5VzCaVPHbu3CPE6qFGZx",
     "proposta_group": "PROPOSTA",
     "proposta_number": 5,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 05",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "28/02/2025",
+    "delivery_date_redaction": "07/03/2025",
+    "theme": "Desafios para a manutenção da saúde diante da insegurança alimentar no Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 05 - CEUB.pdf",
@@ -309,7 +575,14 @@
     "id": "1dtK-wfg4OfP4R-HNQt_r8j5FrVky1Dl-",
     "proposta_group": "PROPOSTA",
     "proposta_number": 5,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 05",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "21/03/2025",
+    "delivery_date_redaction": "28/03/2025",
+    "theme": "Gravidez na adolescência: entre os riscos e a falta de orientação",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 05 - PAULISTAS.pdf",
@@ -317,7 +590,14 @@
     "id": "12MEra6IFmIVsXqqV1iICPE4hW8abu4Jo",
     "proposta_group": "PROPOSTA",
     "proposta_number": 5,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 05",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "21/03/2025",
+    "delivery_date_redaction": "28/03/2025",
+    "theme": "Trabalhe enquanto eles dormem: o excesso de valorização das jornadas exaustivas",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 04 - UNIRV.pdf",
@@ -325,7 +605,14 @@
     "id": "1NHNxg-VwjYTt3A77C8pkRYewB1qfe1rd",
     "proposta_group": "PROPOSTA",
     "proposta_number": 4,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 04",
+    "exam_type_from_filename": "UNIRV",
+    "delivery_date_proposal": "14/03/2025",
+    "delivery_date_redaction": "21/03/2025",
+    "theme": "Quais os desafios para combater a evasão escolar e despertar a responsabilidade dos jovens brasileiros?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 04 - ENEM..pdf",
@@ -333,7 +620,14 @@
     "id": "1zdwtPAOFGNXM3HbaQk8gm9dZCy5Y1Sgz",
     "proposta_group": "PROPOSTA",
     "proposta_number": 4,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 04",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "14/03/2025",
+    "delivery_date_redaction": "21/03/2025",
+    "theme": "Desafios para a valorização dos profissionais da educação no Brasil",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 04 - UNIEURO.pdf",
@@ -341,7 +635,14 @@
     "id": "1P7OCM6S5MKnSHdZj0ZzY6IBSyoJWY4v4",
     "proposta_group": "PROPOSTA",
     "proposta_number": 4,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 04",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "14/03/2025",
+    "delivery_date_redaction": "21/03/2025",
+    "theme": "A fragilidade do sistema penitenciário brasileiro compromete a ressocialização dos detentos e ameaça a segurança da sociedade, evidenciando a necessidade de reformas estruturais e políticas públicas eficazes.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 04 - UNICEPLAC.pdf",
@@ -349,7 +650,14 @@
     "id": "1G2W5rVTEAytV0hmVKYZUP124oFK4HkP1",
     "proposta_group": "PROPOSTA",
     "proposta_number": 4,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 04",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "14/03/2025",
+    "delivery_date_redaction": "21/03/2025",
+    "theme": "A fragilidade do sistema penitenciário brasileiro e o preconceito comprometem a ressocialização dos detentos.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 03 - PAULISTAS.pdf",
@@ -357,7 +665,14 @@
     "id": "1dM7fZGBYAWApd8NhmqbOGSwZrNE7a2G6",
     "proposta_group": "PROPOSTA",
     "proposta_number": 3,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 03",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": "07/03/2025",
+    "delivery_date_redaction": "14/03/2025",
+    "theme": "O que é vida? Mais precisamente, o que é a vida de um ser humano? O que e quem a define?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 02 - UNIEURO.pdf",
@@ -365,7 +680,14 @@
     "id": "10AbW6GNT3wJWXvRfuQhv76XztCLu69xi",
     "proposta_group": "PROPOSTA",
     "proposta_number": 2,
-    "proposta_type": "UNIEURO"
+    "proposta_type": "UNIEURO",
+    "proposta_title_from_filename": "PROPOSTA 02",
+    "exam_type_from_filename": "UNIEURO",
+    "delivery_date_proposal": "28/02/2025",
+    "delivery_date_redaction": "07/03/2025",
+    "theme": "Como A \"tiktokização das profissões” influencia na formação profissional dos jovens, considerando a influência das mídias virtuais em uma postura cada vez mais egocentrada desses sujeitos, bem como os efeitos disso no mercado de trabalho.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 02 - UNICEPLAC.pdf",
@@ -373,7 +695,14 @@
     "id": "1FDbi7af88xe9m7HNRatl9dxkWj8pYr2d",
     "proposta_group": "PROPOSTA",
     "proposta_number": 2,
-    "proposta_type": "UNICEPLAC"
+    "proposta_type": "UNICEPLAC",
+    "proposta_title_from_filename": "PROPOSTA 02",
+    "exam_type_from_filename": "UNICEPLAC",
+    "delivery_date_proposal": "28/02/2025",
+    "delivery_date_redaction": "07/03/2025",
+    "theme": "Como garantir uma boa formação profissional dos jovens na era da tiktokização.",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 02 - UniRV.pdf",
@@ -381,7 +710,14 @@
     "id": "1MaGlX7UQ3gKFv8W6MdqSPls-658-mJbZ",
     "proposta_group": "PROPOSTA",
     "proposta_number": 2,
-    "proposta_type": "UNIRV"
+    "proposta_type": "UNIRV",
+    "proposta_title_from_filename": "PROPOSTA 02",
+    "exam_type_from_filename": "UniRV",
+    "delivery_date_proposal": "28/02/2025",
+    "delivery_date_redaction": "07/03/2025",
+    "theme": "A relação entre as redes sociais e a formação profissional dos jovens. Em sua redação, discuta como o uso excessivo de redes sociais influencia no entendimento das novas gerações sobre o mercado de trabalho.",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 1 - PAULISTAS.pdf",
@@ -389,7 +725,14 @@
     "id": "1TYNj6eOIwUH2OME4jNZRNNrKC-1YmICY",
     "proposta_group": "PROPOSTA",
     "proposta_number": 1,
-    "proposta_type": "PAULISTAS"
+    "proposta_type": "PAULISTAS",
+    "proposta_title_from_filename": "PROPOSTA 1",
+    "exam_type_from_filename": "PAULISTAS",
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_AVAILABLE_IN_PROVIDED_OCR"
   },
   {
     "original_filename": "PROPOSTA 03 - CEUB.pdf",
@@ -397,7 +740,14 @@
     "id": "1bG_dub6uvUhj5PznRn2BcUloQEZpNwEC",
     "proposta_group": "PROPOSTA",
     "proposta_number": 3,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 03",
+    "exam_type_from_filename": "CEUB",
+    "delivery_date_proposal": "07/03/2025",
+    "delivery_date_redaction": "14/03/2025",
+    "theme": "Aumento no número de acidentes no trânsito: entre a imprudência e a responsabilidade governamental",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 02 - ENEM.pdf",
@@ -405,7 +755,14 @@
     "id": "1gTDRV4s2I2rUCfs-xmT3wFm9-NbwL23_",
     "proposta_group": "PROPOSTA",
     "proposta_number": 2,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 02",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "28/02/2025",
+    "delivery_date_redaction": "07/03/2025",
+    "theme": "Fome e obesidade: dois fatores sociais decorrentes da insegurança alimentar",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 03 - ENEM.pdf",
@@ -413,7 +770,14 @@
     "id": "1oCnqpkyPl7JnOJ0rSpTdQlSBeelwx18_",
     "proposta_group": "PROPOSTA",
     "proposta_number": 3,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 03",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "07/03/2025",
+    "delivery_date_redaction": "14/03/2025",
+    "theme": "Desafios do uso das tecnologias na educação brasileira",
+    "page_count": 3,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 01 - Revoluções tecnológicas entre o consumismo e a preservação ambiental.pdf",
@@ -421,7 +785,14 @@
     "id": "1ulAhYrejkpFi0tk5Hbjb-rACub8BBr2R",
     "proposta_group": "PROPOSTA",
     "proposta_number": 1,
-    "proposta_type": "UNICEUB"
+    "proposta_type": "UNICEUB",
+    "proposta_title_from_filename": "PROPOSTA 01",
+    "exam_type_from_filename": null,
+    "delivery_date_proposal": "21/02/2025",
+    "delivery_date_redaction": "28/02/2025",
+    "theme": "Revoluções tecnológicas: entre o consumismo e a preservação ambiental",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "PROPOSTA 1 - ENEM.pdf",
@@ -429,7 +800,14 @@
     "id": "1NNAv0UyvllzwChdz_V4Ztj_PalUswl1D",
     "proposta_group": "PROPOSTA",
     "proposta_number": 1,
-    "proposta_type": "ENEM"
+    "proposta_type": "ENEM",
+    "proposta_title_from_filename": "PROPOSTA 1",
+    "exam_type_from_filename": "ENEM",
+    "delivery_date_proposal": "21/02/2025",
+    "delivery_date_redaction": "28/02/2025",
+    "theme": "O avanço tecnológico é compatível com a preservação ambiental?",
+    "page_count": 2,
+    "ocr_status": "SUCCESS"
   },
   {
     "original_filename": "Cronograma de entrega e correção_2025.pdf",
@@ -437,6 +815,13 @@
     "id": "1LcmPwdxtv75Xo0YSywI2EL1aKuNEyXas",
     "proposta_group": "DOCUMENTO",
     "proposta_number": null,
-    "proposta_type": "CRONOGRAMA"
+    "proposta_type": "CRONOGRAMA",
+    "proposta_title_from_filename": "Cronograma de entrega e correção",
+    "exam_type_from_filename": null,
+    "delivery_date_proposal": null,
+    "delivery_date_redaction": null,
+    "theme": null,
+    "page_count": null,
+    "ocr_status": "NOT_APPLICABLE"
   }
 ]
