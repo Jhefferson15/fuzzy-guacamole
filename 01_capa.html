@@ -12,21 +12,21 @@
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; /* Center the square page vertically too */
             min-height: 100vh;
             font-family: Arial, sans-serif;
         }
 
-        .a4-page {
+        .square-page { /* Renamed from a4-page */
             width: 210mm;
-            height: 297mm;
+            height: 210mm; /* Changed to make it square */
             background-color: #2E2E3A;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 40px 20px;
+            justify-content: center; /* Center content vertically within the square */
+            padding: 20px; /* Adjusted padding slightly */
             box-sizing: border-box;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             overflow: hidden;
@@ -35,38 +35,37 @@
         /* Estilo para "PLANNER DE ESTUDOS" */
         .planner-title {
             font-family: 'Arial Narrow', Arial, sans-serif;
-            font-size: 22px;
+            font-size: 20px; /* Slightly reduced for better fit */
             font-weight: normal;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            margin-bottom: 80px;
-            margin-top: 20px;
+            margin-bottom: 40px; /* Reduced margin */
+            margin-top: 10px; /* Adjusted top margin */
             animation: fadeInDriftUp 1s ease-out forwards, subtleDrift 8s ease-in-out infinite 3s;
         }
 
         /* Estilo para o logo/símbolo */
         .logo-image {
-            width: 400px;
-            max-width: 80%;
+            width: 300px; /* Slightly reduced for better fit */
+            max-width: 70%;
             height: auto;
-            margin-bottom: 50px;
+            margin-bottom: 30px; /* Reduced margin */
             animation: fadeInScale 1.5s ease-out forwards, thinkingFloat 7s ease-in-out infinite 2.5s;
         }
 
         /* Estilo para "Versa" */
         .brand-name {
             font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 90px;
+            font-size: 70px; /* Slightly reduced for better fit */
             font-weight: bold;
             margin-bottom: 5px;
-            /* Animação de entrada e depois o brilho pulsante forte */
             animation: fadeInGrow 1.5s ease-out forwards, strongBrandPulse 3s ease-in-out infinite 3.5s;
         }
 
         /* Estilo para "Pré-Vestibulares" */
         .sub-brand {
             font-family: 'Arial Narrow', Arial, sans-serif;
-            font-size: 20px;
+            font-size: 18px; /* Slightly reduced for better fit */
             font-weight: normal;
             letter-spacing: 0.5px;
             animation: fadeInDriftDown 2s ease-out forwards, subtleDriftReverse 8s ease-in-out infinite 4s;
@@ -74,7 +73,6 @@
 
         /* --- ANIMATIONS --- */
 
-        /* Initial Fade-in Animations */
         @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
@@ -92,12 +90,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-
-        /* Continuous Harmonious Animations */
-
         @keyframes thinkingFloat {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
+            50% { transform: translateY(-20px); } /* Reduced float amount slightly */
             100% { transform: translateY(0px); }
         }
 
@@ -111,7 +106,6 @@
             50% { transform: translateX(-4px); }
         }
 
-        /* Nova animação para brilho pulsante forte em "Versa" */
         @keyframes strongBrandPulse {
             0%, 100% {
                 text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
@@ -119,33 +113,37 @@
                 transform: scale(1);
             }
             50% {
-                text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), /* Brilho principal mais intenso */
-                             0 0 25px rgba(255, 255, 255, 0.7), /* Segundo anel de brilho */
-                             0 0 40px rgba(200, 200, 255, 0.5); /* Brilho externo mais suave e levemente azulado */
-                transform: scale(1.02); /* Leve aumento para intensificar o pulso */
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+                             0 0 25px rgba(255, 255, 255, 0.7),
+                             0 0 40px rgba(200, 200, 255, 0.5);
+                transform: scale(1.02);
             }
         }
-
 
         /* Media query para impressão */
         @media print {
             body {
                 background-color: white;
                 display: block;
+                align-items: flex-start; /* Reset for print */
             }
-            .a4-page {
+            .square-page { /* Updated class name */
                 width: 210mm;
-                height: 297mm;
-                margin: 0;
-                padding: 0;
+                height: 210mm; /* Ensure square for print */
+                margin: 0 auto; /* Center on print page if paper is larger */
+                padding: 20px; /* Keep consistent padding */
                 box-shadow: none;
                 overflow: visible;
+                background-color: #2E2E3A !important; /* Ensure background prints if printer settings allow */
+                color: white !important; /* Ensure text color prints */
+                -webkit-print-color-adjust: exact; /* Force background colors and images to print in Chrome/Safari */
+                print-color-adjust: exact; /* Standard property */
             }
             .planner-title, .logo-image, .brand-name, .sub-brand {
                 animation: none !important; /* Remove todas as animações na impressão */
             }
              @page {
-                size: A4;
+                size: auto; /* Let the browser/printer decide, or set to a square size if supported */
                 margin: 0;
             }
         }
@@ -153,14 +151,11 @@
     </style>
 </head>
 <body>
-    <div class="a4-page">
+    <div class="square-page"> <!-- Renamed class -->
         <div class="planner-title">Planner de Estudos</div>
         <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png" alt="Símbolo Versa" class="logo-image">
         <div class="brand-name">Versa</div>
         <div class="sub-brand">Pré-Vestibulares</div>
     </div>
-
-    <!-- O SCRIPT FOI REMOVIDO -->
-
 </body>
 </html>
