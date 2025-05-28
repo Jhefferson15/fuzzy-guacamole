@@ -31,13 +31,6 @@
             padding: 20mm 15mm 15mm 20mm; /* Margens aproximadas (topo, direita, baixo, esquerda) */
             box-sizing: border-box;
 
-            /* Padrão de 'x' no fundo usando SVG como data URI */
-            /* SVG original: 
-            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-              <line x1="2" y1="2" x2="8" y2="8" stroke="#EAEAEA" stroke-width="0.7"/>
-              <line x1="2" y1="8" x2="8" y2="2" stroke="#EAEAEA" stroke-width="0.7"/>
-            </svg>
-            */
             background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='13' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='2.5' y1='2.5' x2='7.5' y2='7.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3Cline x1='2.5' y1='7.5' x2='7.5' y2='2.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3C/svg%3E");
             background-repeat: repeat;
         }
@@ -48,20 +41,60 @@
             font-size: 10pt; /* Tamanho de fonte base para A4 */
         }
 
+        /* --- Animation Styles START --- */
+        :root {
+            --title-h-font-size: 28pt;
+            --title-h-line-height-factor: 1.1;
+            --title-h-effective-line: calc(var(--title-h-font-size) * var(--title-h-line-height-factor));
+        }
+
         .header-title {
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 28pt; /* Ajuste conforme necessário */
-            letter-spacing: -1px; /* Para ficar mais compacto */
+            position: relative; /* Context for absolute positioning of children */
+            height: calc(3 * var(--title-h-effective-line)); /* Enough height for 3 lines */
             margin-bottom: 15mm;
-            line-height: 1.1;
             text-align: left;
             font-family: 'Arial Black', 'Impact', sans-serif; /* Fontes mais "grossas" */
         }
 
-        .title-1 { color: #A0D9D3; } /* Verde claro */
-        .title-2 { color: #4DB8AE; } /* Verde médio */
-        .title-3 { color: #3E507A; } /* Azul escuro/roxo */
+        .header-title > div { /* Common styles for title-1, title-2, title-3 */
+            position: absolute;
+            left: 0;
+            width: 100%; /* Ensure they span the width */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: var(--title-h-font-size);
+            letter-spacing: -1px;
+            line-height: var(--title-h-line-height-factor);
+        }
+
+        .title-1 {
+            color: #A0D9D3; /* Verde claro */
+            top: 0;
+            z-index: 1; /* Behind middle */
+            transition: top 1s ease-in-out; /* Animation for 1 second */
+        }
+        .title-2 {
+            color: #4DB8AE; /* Verde médio */
+            top: var(--title-h-effective-line); /* Positioned one line down */
+            z-index: 2; /* On top */
+            /* No transition for the static middle title */
+        }
+        .title-3 {
+            color: #3E507A; /* Azul escuro/roxo */
+            top: calc(2 * var(--title-h-effective-line)); /* Positioned two lines down */
+            z-index: 3; /* Behind middle */
+            transition: top 1s ease-in-out; /* Animation for 1 second */
+        }
+
+        /* Swapped states when .header-title has .swapped class */
+        .header-title.swapped .title-1 {
+            top: calc(2 * var(--title-h-effective-line)); /* Moves to bottom position */
+        }
+        .header-title.swapped .title-3 {
+            top: 0; /* Moves to top position */
+        }
+        /* --- Animation Styles END --- */
+
 
         .salutation {
             font-size: 11pt;
@@ -119,6 +152,17 @@
                 height: 100%; /* Ocupa a altura da página de impressão */
                 padding: 20mm 15mm 15mm 20mm; /* Mantenha as margens internas */
             }
+            /* Optionally disable animation for print */
+            .header-title > div {
+                transition: none !important;
+            }
+            .header-title.swapped .title-1,
+            .header-title.swapped .title-3 {
+                /* Revert to original positions for print if swapped */
+            }
+            .header-title.swapped .title-1 { top: 0; }
+            .header-title.swapped .title-3 { top: calc(2 * var(--title-h-effective-line)); }
+
         }
 
     </style>
@@ -126,7 +170,7 @@
 <body>
     <div class="a4-page">
         <div class="content">
-            <div class="header-title">
+            <div class="header-title" id="animatedHeaderTitle">
                 <div class="title-1">Boas-vindas</div>
                 <div class="title-2">Boas-vindas</div>
                 <div class="title-3">Boas-vindas</div>
@@ -166,5 +210,29 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedHeader = document.getElementById('animatedHeaderTitle');
+
+            if (animatedHeader) {
+                // Initial 2-second pause before the first animation starts
+                setTimeout(() => {
+                    // Perform the first swap
+                    animatedHeader.classList.add('swapped');
+                    
+                    // After the first swap (which takes 1s), set up the interval
+                    // The interval of 3000ms means:
+                    // - 1s for the animation to complete
+                    // - 2s paused in the new state
+                    // Then it toggles and repeats.
+                    setInterval(() => {
+                        animatedHeader.classList.toggle('swapped');
+                    }, 3000); // Total cycle time: 1s animation + 2s pause = 3s
+                    
+                }, 2000); // Wait 2 seconds before starting the first animation cycle
+            }
+        });
+    </script>
 </body>
 </html>
