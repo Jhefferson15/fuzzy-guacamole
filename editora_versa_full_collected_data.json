@@ -1,0 +1,357 @@
+{
+    "comment": "Dados coletados automaticamente pelo script Tampermonkey. Use-os para preencher as constantes no script de busca principal.",
+    "DISCIPLINE_IDS_PER_BOOK": {
+        "179": {
+            "Português": "2461",
+            "Inglês": "2462",
+            "Geografia": "2463",
+            "História": "2464",
+            "Filosofia": "2465",
+            "Sociologia": "2466",
+            "Biologia": "2467",
+            "Física": "2468",
+            "Química": "2469",
+            "Matemática": "2470"
+        },
+        "180": {
+            "Português": "2460",
+            "Inglês": "2471",
+            "Geografia": "2472",
+            "História": "2473",
+            "Filosofia": "2474",
+            "Sociologia": "2475",
+            "Biologia": "2476",
+            "Física": "2477",
+            "Química": "2478",
+            "Matemática": "2479"
+        },
+        "181": {
+            "Português": "2489",
+            "Inglês": "2488",
+            "Geografia": "2487",
+            "História": "2486",
+            "Filosofia": "2485",
+            "Sociologia": "2484",
+            "Biologia": "2483",
+            "Física": "2482",
+            "Química": "2481",
+            "Matemática": "2480"
+        },
+        "182": {
+            "Português": "2499",
+            "Inglês": "2498",
+            "Geografia": "2497",
+            "História": "2496",
+            "Filosofia": "2495",
+            "Sociologia": "2494",
+            "Biologia": "2493",
+            "Física": "2492",
+            "Química": "2491",
+            "Matemática": "2490"
+        },
+        "183": {
+            "Português": "2509",
+            "Inglês": "2508",
+            "Geografia": "2507",
+            "História": "2506",
+            "Filosofia": "2505",
+            "Sociologia": "2504",
+            "Biologia": "2503",
+            "Física": "2502",
+            "Química": "2501",
+            "Matemática": "2500"
+        },
+        "184": {
+            "Português": "2519",
+            "Inglês": "2518",
+            "Geografia": "2517",
+            "História": "2516",
+            "Filosofia": "2515",
+            "Sociologia": "2514",
+            "Biologia": "2513",
+            "Física": "2512",
+            "Química": "2511",
+            "Matemática": "2510"
+        },
+        "185": {
+            "Artes (Visuais)": "2520"
+        }
+    },
+    "FRENTE_MODULE_LINKS": {
+        "179": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2461/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2461/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/179/2461/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/179/2461/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2462/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2463/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2463/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2464/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2464/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2465/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2466/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2467/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2467/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/179/2467/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2468/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2468/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/179/2468/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2469/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2469/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/179/2469/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/179/2470/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/179/2470/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/179/2470/frente=Frente%20C"
+            }
+        },
+        "180": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2460/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2460/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/180/2460/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/180/2460/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2471/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2472/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2472/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2473/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2473/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2474/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2475/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2476/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2476/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/180/2476/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2477/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2477/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/180/2477/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2478/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2478/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/180/2478/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/180/2479/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/180/2479/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/180/2479/frente=Frente%20C"
+            }
+        },
+        "181": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2489/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2489/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/181/2489/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/181/2489/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2488/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2487/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2487/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2486/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2486/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2485/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2484/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2483/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2483/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/181/2483/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2482/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2482/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/181/2482/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2481/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2481/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/181/2481/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/181/2480/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/181/2480/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/181/2480/frente=Frente%20C"
+            }
+        },
+        "182": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2499/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2499/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/182/2499/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/182/2499/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2498/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2497/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2497/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2496/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2496/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2495/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2494/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2493/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2493/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/182/2493/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2492/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2492/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/182/2492/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2491/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2491/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/182/2491/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/182/2490/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/182/2490/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/182/2490/frente=Frente%20C"
+            }
+        },
+        "183": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2509/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2509/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/183/2509/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/183/2509/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2508/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2507/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2507/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2506/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2506/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2505/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2504/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2503/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2503/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/183/2503/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2502/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2502/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/183/2502/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2501/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2501/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/183/2501/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/183/2500/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/183/2500/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/183/2500/frente=Frente%20C"
+            }
+        },
+        "184": {
+            "Português": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2519/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2519/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/184/2519/frente=Frente%20C",
+                "D": "https://editoraversa.com.br/sistema/materiais/modulos/184/2519/frente=Frente%20D"
+            },
+            "Inglês": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2518/frente=Frente%20A"
+            },
+            "Geografia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2517/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2517/frente=Frente%20B"
+            },
+            "História": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2516/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2516/frente=Frente%20B"
+            },
+            "Filosofia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2515/frente=Frente%20A"
+            },
+            "Sociologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2514/frente=Frente%20A"
+            },
+            "Biologia": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2513/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2513/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/184/2513/frente=Frente%20C"
+            },
+            "Física": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2512/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2512/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/184/2512/frente=Frente%20C"
+            },
+            "Química": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2511/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2511/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/184/2511/frente=Frente%20C"
+            },
+            "Matemática": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/184/2510/frente=Frente%20A",
+                "B": "https://editoraversa.com.br/sistema/materiais/modulos/184/2510/frente=Frente%20B",
+                "C": "https://editoraversa.com.br/sistema/materiais/modulos/184/2510/frente=Frente%20C"
+            }
+        },
+        "185": {
+            "Artes (Visuais)": {
+                "A": "https://editoraversa.com.br/sistema/materiais/modulos/185/2520/frente=Frente%20A"
+            }
+        }
+    }
+}
