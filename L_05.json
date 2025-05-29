@@ -1,1400 +1,646 @@
-{
-    "L05": {
-        "A": {
-            "sumario": [
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Oração Subordinada Adjetiva",
-                    "pagina_inicio_livro": 6,
-                    "assuntos_abordados": [
-                        "Oração Subordinada Adjetiva",
-                        "Formação das orações subordinadas adjetivas",
-                        "Orações subordinadas adjetivas restritivas",
-                        "Orações subordinadas adjetivas explicativas",
-                        "A importância da vírgula",
-                        "Funções Sintáticas do Pronome Relativo",
-                        "Principais pronomes relativos",
-                        "Particularidades dos pronomes relativos",
-                        "Orações subordinadas reduzidas",
-                        "Orações subordinadas substantivas reduzidas",
-                        "Orações subordinadas adjetivas reduzidas"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Oração Subordinada Adverbial",
-                    "pagina_inicio_livro": 14,
-                    "assuntos_abordados": [
-                        "Oração Subordinada Adverbial",
-                        "Classificação das orações subordinadas adverbiais",
-                        "Orações subordinadas adverbiais reduzidas"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Pontuação",
-                    "pagina_inicio_livro": 22,
-                    "assuntos_abordados": [
-                        "Pontuação",
-                        "Sinais de pontuação",
-                        "Uso dos sinais de pontuação",
-                        "Uso da Vírgula"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Concordância",
-                    "pagina_inicio_livro": 29,
-                    "assuntos_abordados": [
-                        "Concordância",
-                        "Tipos de concordância",
-                        "Regra geral",
-                        "Sujeito composto",
-                        "Casos especiais de concordância verbal",
-                        "Sujeito é um nome próprio no plural",
-                        "Sujeito é um substantivo coletivo",
-                        "Sujeito é um numeral percentual",
-                        "Verbo “ser”",
-                        "Verbo “haver”",
-                        "Infinitivo pessoal",
-                        "Concordância nominal",
-                        "Aspectos gerais de concordância",
-                        "Termo adjetivo ligado a dois ou mais substantivos",
-                        "Termo substantivo ligado a dois ou mais termos adjetivos",
-                        "Palavras invariáveis",
-                        "Relação entre sujeito e predicativo"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Cohesive Elements and Subordinating Conjunctions",
-                    "pagina_inicio_livro": 182,
-                    "assuntos_abordados": [
-                        "Cohesive Elements and Subordinating Conjunctions",
-                        "Subordinating conjunctions"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "The Passive Voice",
-                    "pagina_inicio_livro": 188,
-                    "assuntos_abordados": [
-                        "The Passive Voice",
-                        "Estrutura da voz passiva",
-                        "Past participle"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Suffixes and Prefixes",
-                    "pagina_inicio_livro": 193,
-                    "assuntos_abordados": [
-                        "Suffixes and Prefixes",
-                        "Suffixes",
-                        "Prefixes"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "If Clauses",
-                    "pagina_inicio_livro": 199,
-                    "assuntos_abordados": [
-                        "If Clauses",
-                        "Structure",
-                        "Type 0",
-                        "Type 1",
-                        "Type 2",
-                        "Type 3"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "O Papel da Conferência de Berlim no Continente Africano",
-                    "pagina_inicio_livro": 204,
-                    "assuntos_abordados": [
-                        "O Papel da Conferência de Berlim no Continente Africano",
-                        "A Conferência de Berlim",
-                        "África no pós-Segunda Guerra",
-                        "Divisões regionais do continente africano",
-                        "África Subsaariana",
-                        "África Muçulmana"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Os Conflitos na África",
-                    "pagina_inicio_livro": 215,
-                    "assuntos_abordados": [
-                        "Os Conflitos na África",
-                        "Sudão",
-                        "Sudão do Sul",
-                        "Ruanda: Tutsis x Hutus",
-                        "Nigéria",
-                        "Somália"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "O Mundo Cada Vez Mais Urbanizado",
-                    "pagina_inicio_livro": 223,
-                    "assuntos_abordados": [
-                        "O mundo cada vez mais urbanizado",
-                        "A produção e a reprodução do espaço urbano",
-                        "Conceitos de urbano e rural",
-                        "O espaço geográfico urbano",
-                        "Cidades urbanizadas em países desenvolvidos",
-                        "Cidades urbanizadas em países em desenvolvimento",
-                        "As megacidades",
-                        "As redes urbanas e suas hierarquias",
-                        "As cidades no mundo globalizado",
-                        "A urbanização brasileira",
-                        "A continuidade da urbanização desregulada do Brasil",
-                        "A rede urbana brasileira",
-                        "Cidade global e megacidades",
-                        "Os problemas socioespaciais das cidades brasileiras",
-                        "Mobilidade urbana"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Os Problemas Socioambientais Urbanos",
-                    "pagina_inicio_livro": 243,
-                    "assuntos_abordados": [
-                        "Os Problemas Socioambientais Urbanos",
-                        "A poluição atmosférica urbana",
-                        "Lixo urbano",
-                        "Ocupações em encostas",
-                        "As águas urbanas contaminadas"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Revolução Francesa, Era Napoleônica e Congresso de Viena",
-                    "pagina_inicio_livro": 296,
-                    "assuntos_abordados": [
-                        "Revolução Francesa, Era Napoleônica e Congresso de Viena",
-                        "A França Pré-Revolucionária",
-                        "As causas da Revolução Francesa",
-                        "Consequências da Revolução Francesa",
-                        "Era Napoleônica",
-                        "Congresso de Viena"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Revolução Industrial",
-                    "pagina_inicio_livro": 307,
-                    "assuntos_abordados": [
-                        "Revolução Industrial",
-                        "Contexto e usos do maquinário",
-                        "As consequências da Revolução Industrial"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Independência das Treze Colônias, Marcha para o Oeste e Guerra de Secessão",
-                    "pagina_inicio_livro": 313,
-                    "assuntos_abordados": [
-                        "Independência das Treze Colônias, Marcha para o Oeste e Guerra de Secessão",
-                        "Marcha para o Oeste",
-                        "Guerra de Secessão"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Independência da América Latina",
-                    "pagina_inicio_livro": 320,
-                    "assuntos_abordados": [
-                        "Independência da América Latina",
-                        "Processo de Independência",
-                        "Revolução Mexicana",
-                        "Panorama atual",
-                        "Regimes militares e redemocratização na América Latina",
-                        "Operação Condor",
-                        "Ditadura no Chile",
-                        "Ditadura na Argentina",
-                        "Redemocratização na América"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Michel Foucault e a Crítica ao Panoptismo",
-                    "pagina_inicio_livro": 372,
-                    "assuntos_abordados": [
-                        "Michel Foucault e a Crítica ao Panoptismo"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Friedrich Nietzsche e o Crepúsculo dos Ídolos",
-                    "pagina_inicio_livro": 378,
-                    "assuntos_abordados": [
-                        "Friedrich Nietzsche e o Crepúsculo dos Ídolos",
-                        "As mortes de Deus e a transvaloração de todos os valores",
-                        "As obras de Nietzsche e o tema da transvaloração (e suas implicações)"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Jean-Paul Sartre",
-                    "pagina_inicio_livro": 386,
-                    "assuntos_abordados": [
-                        "O existencialismo de Jean-Paul Sartre",
-                        "O Existencialismo é um Humanismo",
-                        "Angústia, escolha e responsabilidade"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "A Escola de Frankfurt",
-                    "pagina_inicio_livro": 392,
-                    "assuntos_abordados": [
-                        "A Escola de Frankfurt",
-                        "Walter Benjamin e a crítica da arte",
-                        "Max Horkheimer e Theodor Adorno: a Teoria Crítica e o conceito de Indústria Cultural"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Zygmunt Bauman e a Modernidade Líquida",
-                    "pagina_inicio_livro": 402,
-                    "assuntos_abordados": [
-                        "Zygmunt Bauman e a Modernidade Líquida",
-                        "Sociedade do Consumo",
-                        "Consumo sustentável"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Manuel Castells e a Sociedade em Rede",
-                    "pagina_inicio_livro": 411,
-                    "assuntos_abordados": [
-                        "Manuel Castells e a Sociedade em Rede",
-                        "Principais redes sociais no Brasil",
-                        "Ferramentas digitais nas escolas",
-                        "Sociedade em rede e economia"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Estado e Sociedade",
-                    "pagina_inicio_livro": 418,
-                    "assuntos_abordados": [
-                        "Estado e Sociedade",
-                        "Surgimento do Estado moderno"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Poder e Política: Uma Abordagem Sociológica Clássica",
-                    "pagina_inicio_livro": 424,
-                    "assuntos_abordados": [
-                        "Poder e Política: Uma Abordagem Sociológica Clássica",
-                        "Poder: Entre o Micro e o Macro",
-                        "Poder e Dominação em Max Weber",
-                        "Os Conceitos Sociológicos de Estado",
-                        "Émile Durkheim: O Estado como Instituição Social"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Reino Monera",
-                    "pagina_inicio_livro": 432,
-                    "assuntos_abordados": [
-                        "Reino Monera",
-                        "Estrutura da célula bacteriana",
-                        "Estruturas facultativas da célula bacteriana",
-                        "Classificação",
-                        "Reprodução",
-                        "Formas de obtenção de variabilidade genética",
-                        "Importância das bactérias",
-                        "Cianobactérias",
-                        "Arqueobactérias",
-                        "Principais Bacterioses Humanas",
-                        "Transmissão por meio de vetores"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Reino Protista",
-                    "pagina_inicio_livro": 442,
-                    "assuntos_abordados": [
-                        "Reino Protista",
-                        "Protozoários",
-                        "Fisiologia dos protozoários",
-                        "Grupos de protozoários",
-                        "Protozooses transmitidas por vetores",
-                        "Protozooses de transmissão feco-oral",
-                        "Protozooses de transmissão por contato sexual (ISTs)",
-                        "Protozooses de transmissão por contato com hospedeiros vertebrados contaminados",
-                        "Algas",
-                        "Euglenófitas",
-                        "Dinófitas",
-                        "Bacilariófitas",
-                        "Crisófitas",
-                        "Feófitas",
-                        "Rodófitas",
-                        "Clorófitas",
-                        "Reprodução das algas pluricelulares",
-                        "Importância das algas"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Reino Fungi",
-                    "pagina_inicio_livro": 460,
-                    "assuntos_abordados": [
-                        "Reino Fungi",
-                        "Crescimento dos fungos",
-                        "Morfologia dos fungos",
-                        "Reprodução",
-                        "Grupos de Fungos",
-                        "Importância dos fungos",
-                        "Associações mutualísticas"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Pirâmides Ecológicas e Produtividade",
-                    "pagina_inicio_livro": 468,
-                    "assuntos_abordados": [
-                        "Pirâmides Ecológicas e Produtividade",
-                        "Níveis de organização dos seres vivos",
-                        "Os componentes de um ecossistema",
-                        "Cadeias e teias alimentares",
-                        "Concentração de poluentes ao longo da cadeia alimentar",
-                        "Fluxo de energia no ecossistema",
-                        "Pirâmides ecológicas"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Corrente Elétrica",
-                    "pagina_inicio_livro": 556,
-                    "assuntos_abordados": [
-                        "Corrente Elétrica",
-                        "Corrente contínua e corrente alternada",
-                        "Intensidade média de corrente elétrica",
-                        "Sentido da corrente elétrica",
-                        "Efeitos da corrente elétrica",
-                        "Resistores",
-                        "Primeira Lei de Ohm",
-                        "Segunda Lei de Ohm",
-                        "Energia e potência dissipadas em um resistor"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Circuitos Elétricos",
-                    "pagina_inicio_livro": 564,
-                    "assuntos_abordados": [
-                        "Circuitos Elétricos",
-                        "Principais elementos de um circuito elétrico",
-                        "Circuito em série",
-                        "Circuito em paralelo",
-                        "Circuitos Mistos",
-                        "Curto-circuito",
-                        "Ponte de Wheatstone"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Medidas Elétricas",
-                    "pagina_inicio_livro": 571,
-                    "assuntos_abordados": [
-                        "Medidas Elétricas",
-                        "Amperímetro",
-                        "Voltímetro",
-                        "Multímetro",
-                        "Geradores Elétricos",
-                        "Equação do gerador"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Lei de Ohm-Pouillet",
-                    "pagina_inicio_livro": 577,
-                    "assuntos_abordados": [
-                        "Lei de Ohm-Pouillet",
-                        "Potência e rendimento de um gerador",
-                        "Associação de Geradores",
-                        "Associação em série",
-                        "Associação em paralelo"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Propriedades Coligativas",
-                    "pagina_inicio_livro": 636,
-                    "assuntos_abordados": [
-                        "Propriedades Coligativas",
-                        "Principais propriedades coligativas",
-                        "Efeito do número de partículas em solução",
-                        "Pressão máxima de vapor",
-                        "Conceito de tonoscopia",
-                        "Abaixamento da pressão máxima de vapor"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Ebulioscopia e Crioscopia",
-                    "pagina_inicio_livro": 644,
-                    "assuntos_abordados": [
-                        "Ebulioscopia e Crioscopia",
-                        "Importância",
-                        "Representação gráfica",
-                        "Leis de Raoult para ebuliometria",
-                        "Leis de Raoult para criometria",
-                        "Osmoscopia",
-                        "Meios hipo, hiper e isotônicos",
-                        "Osmose inversa"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Eletroquímica",
-                    "pagina_inicio_livro": 652,
-                    "assuntos_abordados": [
-                        "Eletroquímica",
-                        "Pilha de Daniell",
-                        "Eletrodo-padrão de hidrogênio",
-                        "Potencial-padrão do zinco",
-                        "Potencial-padrão do cobre",
-                        "Tabela de potencial-padrão de eletrodo",
-                        "Determinação da força eletromotriz (FEM)"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Proteção Catódica",
-                    "pagina_inicio_livro": 660,
-                    "assuntos_abordados": [
-                        "Proteção Catódica",
-                        "Metal de sacrifício",
-                        "Melhor oxidante e melhor redutor",
-                        "Fatores que interferem na FEM (ddp)"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Inscrição de Sólidos",
-                    "pagina_inicio_livro": 728,
-                    "assuntos_abordados": [
-                        "Inscrição de Sólidos",
-                        "Esfera inscrita e circunscrita a um poliedro",
-                        "Esfera inscrita em um cubo",
-                        "Esfera circunscrita a um cubo",
-                        "Esfera inscrita em um tetraedro regular",
-                        "Esfera circunscrita a um tetraedro regular",
-                        "Esfera inscrita em um octaedro regular",
-                        "Esfera circunscrita a um octaedro regular",
-                        "Esfera inscrita em um cone circular reto",
-                        "Esfera circunscrita a um cone circular reto",
-                        "Esfera inscrita em um cilindro equilátero",
-                        "Esfera circunscrita a um cilindro equilátero",
-                        "Octaedro regular inscrito em um cubo",
-                        "Tetraedro regular inscrito em um cubo",
-                        "Pirâmide inscrita em um cubo",
-                        "Prisma inscrito em um cilindro",
-                        "Cilindro inscrito em um prisma",
-                        "Pirâmide inscrita em um cone",
-                        "Cone inscrito em uma pirâmide",
-                        "Prisma inscrito em uma pirâmide"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Sistema Cartesiano e Distância entre Dois Pontos",
-                    "pagina_inicio_livro": 737,
-                    "assuntos_abordados": [
-                        "Sistema Cartesiano e Distância entre Dois Pontos",
-                        "Sistema cartesiano ortogonal",
-                        "Bissetrizes dos quadrantes",
-                        "Distância entre dois pontos"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Ponto Médio, Baricentro e Alinhamento de Três Pontos",
-                    "pagina_inicio_livro": 741,
-                    "assuntos_abordados": [
-                        "Ponto Médio, Baricentro e Alinhamento de Três Pontos",
-                        "Coordenadas do ponto médio de um segmento",
-                        "Coordenadas do baricentro de um triângulo",
-                        "Condição de alinhamento de três pontos",
-                        "Área de um triângulo"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Reta: Equação Geral, Reduzida, Fundamental, Segmentária e Paramétrica",
-                    "pagina_inicio_livro": 746,
-                    "assuntos_abordados": [
-                        "Reta: Equação Geral, Reduzida, Fundamental, Segmentária e Paramétrica",
-                        "Equação geral",
-                        "Inclinação de uma reta",
-                        "Declividade de uma reta",
-                        "Equação reduzida de uma reta",
-                        "Equação fundamental da reta",
-                        "Formas de se obter diretamente a declividade de uma reta",
-                        "Equação segmentária",
-                        "Equação paramétrica"
-                    ]
-                }
-            ],
-            "modulos_detalhados": {
-                "17": {
-                    "titulo": "Inscrição de Sólidos",
-                    "pagina_inicio": 728,
-                    "assuntos_abordados": [
-                        "Inscrição de Sólidos",
-                        "Esfera inscrita e circunscrita a um poliedro",
-                        "Esfera inscrita em um cubo",
-                        "Esfera circunscrita a um cubo",
-                        "Esfera inscrita em um tetraedro regular",
-                        "Esfera circunscrita a um tetraedro regular",
-                        "Esfera inscrita em um octaedro regular",
-                        "Esfera circunscrita a um octaedro regular",
-                        "Esfera inscrita em um cone circular reto",
-                        "Esfera circunscrita a um cone circular reto",
-                        "Esfera inscrita em um cilindro equilátero",
-                        "Esfera circunscrita a um cilindro equilátero",
-                        "Octaedro regular inscrito em um cubo",
-                        "Tetraedro regular inscrito em um cubo",
-                        "Pirâmide inscrita em um cubo",
-                        "Prisma inscrito em um cilindro",
-                        "Cilindro inscrito em um prisma",
-                        "Pirâmide inscrita em um cone",
-                        "Cone inscrito em uma pirâmide",
-                        "Prisma inscrito em uma pirâmide"
-                    ]
-                },
-                "18": {
-                    "titulo": "Sistema Cartesiano e Distância entre Dois Pontos",
-                    "pagina_inicio": 737,
-                    "assuntos_abordados": [
-                        "Sistema Cartesiano e Distância entre Dois Pontos",
-                        "Sistema cartesiano ortogonal",
-                        "Bissetrizes dos quadrantes",
-                        "Distância entre dois pontos"
-                    ]
-                },
-                "19": {
-                    "titulo": "Ponto Médio, Baricentro e Alinhamento de Três Pontos",
-                    "pagina_inicio": 741,
-                    "assuntos_abordados": [
-                        "Ponto Médio, Baricentro e Alinhamento de Três Pontos",
-                        "Coordenadas do ponto médio de um segmento",
-                        "Coordenadas do baricentro de um triângulo",
-                        "Condição de alinhamento de três pontos",
-                        "Área de um triângulo"
-                    ]
-                },
-                "20": {
-                    "titulo": "Reta: Equação Geral, Reduzida, Fundamental, Segmentária e Paramétrica",
-                    "pagina_inicio": 746,
-                    "assuntos_abordados": [
-                        "Reta: Equação Geral, Reduzida, Fundamental, Segmentária e Paramétrica",
-                        "Equação geral",
-                        "Inclinação de uma reta",
-                        "Declividade de uma reta",
-                        "Equação reduzida de uma reta",
-                        "Equação fundamental da reta",
-                        "Formas de se obter diretamente a declividade de uma reta",
-                        "Equação segmentária",
-                        "Equação paramétrica"
-                    ]
-                }
-            }
-        },
-        "B": {
-            "sumario": [
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "1ª Fase do Modernismo (Parte I)",
-                    "pagina_inicio_livro": 44,
-                    "assuntos_abordados": [
-                        "1ª Fase do Modernismo (Parte I)",
-                        "Características da primeira fase modernista",
-                        "Oswald de Andrade",
-                        "Mário de Andrade"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "1ª Fase do Modernismo (Parte II)",
-                    "pagina_inicio_livro": 56,
-                    "assuntos_abordados": [
-                        "1ª Fase do Modernismo (Parte II)",
-                        "Manuel Bandeira",
-                        "Alcântara Machado"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "2ª Fase do Modernismo (Parte I)",
-                    "pagina_inicio_livro": 66,
-                    "assuntos_abordados": [
-                        "2ª Fase do Modernismo (Parte I)",
-                        "Graciliano Ramos",
-                        "Rachel de Queiroz",
-                        "José Lins do Rego",
-                        "Jorge Amado",
-                        "Érico Veríssimo"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "2ª Fase do Modernismo (Parte II)",
-                    "pagina_inicio_livro": 81,
-                    "assuntos_abordados": [
-                        "2ª Fase do Modernismo (Parte II)",
-                        "Carlos Drummond de Andrade",
-                        "Vinicius de Moraes",
-                        "Cecília Meireles",
-                        "Murilo Mendes",
-                        "Jorge de Lima"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Fatores e Elementos do Clima",
-                    "pagina_inicio_livro": 252,
-                    "assuntos_abordados": [
-                        "Fatores e Elementos do Clima",
-                        "Composição da atmosfera",
-                        "Camadas da atmosfera",
-                        "Tempo e clima",
-                        "Elementos do clima",
-                        "Massas de ar no território brasileiro",
-                        "Unidades climáticas brasileiras",
-                        "Massas de ar que atuam no Brasil"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Interações Atmosféricas e Climas do Brasil",
-                    "pagina_inicio_livro": 263,
-                    "assuntos_abordados": [
-                        "Interações Atmosféricas e Climas do Brasil",
-                        "Influência das correntes marítimas no clima",
-                        "Os rios voadores",
-                        "Climas brasileiros",
-                        "Clima tropical",
-                        "Clima tropical de altitude",
-                        "Clima litorâneo úmido",
-                        "Clima equatorial",
-                        "Clima semiárido",
-                        "Clima subtropical",
-                        "Efeitos do El Niño no Brasil",
-                        "El Niño",
-                        "La Niña"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "As Paisagens Naturais",
-                    "pagina_inicio_livro": 272,
-                    "assuntos_abordados": [
-                        "As Paisagens Naturais",
-                        "Ecossistema",
-                        "Biomas e a biogeografia",
-                        "Biomas do mundo"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Vegetação Brasileira e Domínios Morfoclimáticos",
-                    "pagina_inicio_livro": 282,
-                    "assuntos_abordados": [
-                        "Vegetação Brasileira e Domínios Morfoclimáticos",
-                        "A diversidade vegetativa brasileira",
-                        "Floresta Equatorial Amazônica",
-                        "Floresta Tropical – Mata Atlântica",
-                        "Floresta Subtropical – Araucárias",
-                        "Cerrado",
-                        "Caatinga",
-                        "Campos",
-                        "Mata dos Cocais",
-                        "Pantanal",
-                        "Vegetação litorânea",
-                        "Domínios morfoclimáticos intertropicais",
-                        "Domínios de Araucária",
-                        "Domínio das pradarias"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Segundo Reinado",
-                    "pagina_inicio_livro": 330,
-                    "assuntos_abordados": [
-                        "Segundo Reinado",
-                        "Economia e sociedade",
-                        "Produção do cacau",
-                        "Produção da borracha",
-                        "A Guerra do Paraguai (1864-1870)",
-                        "A abolição da escravidão",
-                        "Os antecedentes da queda da Monarquia",
-                        "A Proclamação da República"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "República Velha",
-                    "pagina_inicio_livro": 339,
-                    "assuntos_abordados": [
-                        "República Velha",
-                        "Governo de Deodoro da Fonseca",
-                        "Governo de Floriano Peixoto (1891-1894)",
-                        "Prudente de Morais e Campos Sales",
-                        "Prudente de Morais (1894-1898)",
-                        "Campos Sales (1898-1902)",
-                        "Coronelismo e voto de cabresto",
-                        "A década de 1920",
-                        "Economia e sociedade na Primeira República",
-                        "A Crise de 1929 e o Golpe de 1930",
-                        "A cultura na Primeira República"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Era Vargas",
-                    "pagina_inicio_livro": 356,
-                    "assuntos_abordados": [
-                        "Era Vargas",
-                        "Governo Provisório (1930-1934)",
-                        "Governo Constitucional",
-                        "Estado Novo",
-                        "O Estado Novo (1937-1945)",
-                        "Cultura no Estado Novo",
-                        "O DIP e os meios de comunicação"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Regimes Populistas na América",
-                    "pagina_inicio_livro": 365,
-                    "assuntos_abordados": [
-                        "Regimes Populistas na América",
-                        "Caudilhismo",
-                        "Peronismo",
-                        "Lázaro Cárdenas, no México",
-                        "Hugo Chávez, na Venezuela",
-                        "Evo Morales, na Bolívia"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Origem Evolutiva das Plantas e Plantas Avasculares",
-                    "pagina_inicio_livro": 482,
-                    "assuntos_abordados": [
-                        "Origem Evolutiva das Plantas e Plantas Avasculares",
-                        "Origem dos eucariontes autotróficos",
-                        "Evolução das plantas",
-                        "Plantas avasculares"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Pteridófitas e Gimnospermas",
-                    "pagina_inicio_livro": 490,
-                    "assuntos_abordados": [
-                        "Pteridófitas e Gimnospermas",
-                        "Pteridófitas",
-                        "Ciclo de vida",
-                        "Reprodução assexuada",
-                        "Classificação",
-                        "Importância",
-                        "Gimnospermas",
-                        "Características gerais das Gimnospermas",
-                        "Ciclo de vida das gimnospermas",
-                        "Classificação",
-                        "Importância ecológica das Gimnospermas"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Angiospermas",
-                    "pagina_inicio_livro": 502,
-                    "assuntos_abordados": [
-                        "Angiospermas",
-                        "Flor",
-                        "Polinização",
-                        "Fecundação",
-                        "Classificação",
-                        "Inflorescências",
-                        "Frutos",
-                        "Semente"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Tecidos Vegetais",
-                    "pagina_inicio_livro": 513,
-                    "assuntos_abordados": [
-                        "Tecidos Vegetais",
-                        "Classificação dos meristemas",
-                        "Tecidos Permanentes",
-                        "Tecidos de preenchimento",
-                        "Tecidos de secreção",
-                        "Tecidos vegetais de sustentação",
-                        "Tecidos de condução"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Estudo dos Gases",
-                    "pagina_inicio_livro": 584,
-                    "assuntos_abordados": [
-                        "Estudo dos Gases",
-                        "Plasmas",
-                        "Gás perfeito",
-                        "Teoria cinética dos gases",
-                        "Equação fundamental da teoria cinética",
-                        "Cálculo da velocidade média quadrática",
-                        "Energia cinética de translação"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Primeira Lei da Termodinâmica",
-                    "pagina_inicio_livro": 591,
-                    "assuntos_abordados": [
-                        "Primeira Lei da Termodinâmica",
-                        "Trabalho numa transformação gasosa",
-                        "Energia interna (U)",
-                        "Variação da energia interna (ΔU)",
-                        "Estudo dos sinais"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Transformações Gasosas e Máquinas Térmicas",
-                    "pagina_inicio_livro": 598,
-                    "assuntos_abordados": [
-                        "Transformações Gasosas e Máquinas Térmicas",
-                        "Transformação isocórica",
-                        "Transformação isotérmica",
-                        "Transformação isobárica",
-                        "Transformação adiabática",
-                        "Transformação cíclica",
-                        "Máquinas térmicas",
-                        "Máquinas frigoríficas (refrigeradores)"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Ciclo de Carnot",
-                    "pagina_inicio_livro": 605,
-                    "assuntos_abordados": [
-                        "Ciclo de Carnot",
-                        "O refrigerador de Carnot",
-                        "Segunda Lei da Termodinâmica",
-                        "Entropia"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Expressão de Velocidade",
-                    "pagina_inicio_livro": 666,
-                    "assuntos_abordados": [
-                        "Expressão de Velocidade",
-                        "Lei da ação das massas",
-                        "Representações gráficas e mecanismos de reação",
-                        "Energia de ativação",
-                        "Curvas de distribuição de energia cinética",
-                        "Medida da energia de ativação"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Noções de Equilíbrio",
-                    "pagina_inicio_livro": 673,
-                    "assuntos_abordados": [
-                        "Noções de Equilíbrio",
-                        "Conceito de reações reversíveis",
-                        "Reversibilidade e equilíbrio reacional",
-                        "Representação gráfica"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Constante de Equilíbrio (Kc)",
-                    "pagina_inicio_livro": 678,
-                    "assuntos_abordados": [
-                        "Constante de Equilíbrio (Kc)",
-                        "Classificação dos equilíbrios",
-                        "Constante de equilíbrio em termos de concentração",
-                        "Constante de equilíbrio em termos de pressão",
-                        "Relação entre Kc e Kp",
-                        "Quociente de equilíbrio",
-                        "Grau de equilíbrio (α)",
-                        "Importância do quociente de equilíbrio"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Deslocamento de Equilíbrio",
-                    "pagina_inicio_livro": 687,
-                    "assuntos_abordados": [
-                        "Deslocamento de Equilíbrio",
-                        "Fator concentração",
-                        "Fator temperatura",
-                        "Fator pressão",
-                        "Deslocamento de equilíbrio ácido-básico",
-                        "Efeito de íon comum nos equilíbrios"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Determinantes",
-                    "pagina_inicio_livro": 756,
-                    "assuntos_abordados": [
-                        "Determinantes",
-                        "Determinante de uma matriz de ordem 1",
-                        "Determinante de uma matriz de ordem 2",
-                        "Determinante de uma matriz de ordem 3",
-                        "Cofator ou complemento algébrico",
-                        "Teorema de Laplace",
-                        "Regra de Chió",
-                        "Propriedades dos determinantes"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Sistemas Lineares",
-                    "pagina_inicio_livro": 764,
-                    "assuntos_abordados": [
-                        "Sistemas Lineares",
-                        "Equação linear",
-                        "Solução de uma equação linear",
-                        "Sistemas lineares",
-                        "Solução de um sistema linear",
-                        "Classificação de um sistema linear",
-                        "Sistemas escalonados",
-                        "Sistemas equivalentes",
-                        "Escalonamento",
-                        "Forma matricial",
-                        "Regra de Cramer",
-                        "Discussão",
-                        "Sistema homogêneo"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Binômio de Newton",
-                    "pagina_inicio_livro": 774,
-                    "assuntos_abordados": [
-                        "Binômio de Newton",
-                        "Número binomial e triângulo de Pascal",
-                        "Definição",
-                        "Binomiais complementares",
-                        "Igualdade de dois números binomiais",
-                        "Relação de Stifel",
-                        "Triângulo de Pascal",
-                        "Propriedades do triângulo de Pascal",
-                        "Somatório",
-                        "Desenvolvimento do binômio de Newton",
-                        "Termo geral do binômio de Newton"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Progressão Aritmética",
-                    "pagina_inicio_livro": 782,
-                    "assuntos_abordados": [
-                        "Progressão Aritmética",
-                        "Definição",
-                        "Classificação",
-                        "Termo geral",
-                        "Propriedades",
-                        "Interpolação aritmética",
-                        "Soma dos n primeiros termos"
-                    ]
-                }
-            ],
-            "modulos_detalhados": {
-                "17": {
-                    "titulo": "Determinantes",
-                    "pagina_inicio": 756,
-                    "assuntos_abordados": [
-                        "Determinantes",
-                        "Determinante de uma matriz de ordem 1",
-                        "Determinante de uma matriz de ordem 2",
-                        "Determinante de uma matriz de ordem 3",
-                        "Cofator ou complemento algébrico",
-                        "Teorema de Laplace",
-                        "Regra de Chió",
-                        "Propriedades dos determinantes"
-                    ]
-                },
-                "18": {
-                    "titulo": "Sistemas Lineares",
-                    "pagina_inicio": 764,
-                    "assuntos_abordados": [
-                        "Sistemas Lineares",
-                        "Equação linear",
-                        "Solução de uma equação linear",
-                        "Sistemas lineares",
-                        "Solução de um sistema linear",
-                        "Classificação de um sistema linear",
-                        "Sistemas escalonados",
-                        "Sistemas equivalentes",
-                        "Escalonamento",
-                        "Forma matricial",
-                        "Regra de Cramer",
-                        "Discussão",
-                        "Sistema homogêneo"
-                    ]
-                },
-                "19": {
-                    "titulo": "Binômio de Newton",
-                    "pagina_inicio": 774,
-                    "assuntos_abordados": [
-                        "Binômio de Newton",
-                        "Número binomial e triângulo de Pascal",
-                        "Definição",
-                        "Binomiais complementares",
-                        "Igualdade de dois números binomiais",
-                        "Relação de Stifel",
-                        "Triângulo de Pascal",
-                        "Propriedades do triângulo de Pascal",
-                        "Somatório",
-                        "Desenvolvimento do binômio de Newton",
-                        "Termo geral do binômio de Newton"
-                    ]
-                },
-                "20": {
-                    "titulo": "Progressão Aritmética",
-                    "pagina_inicio": 782,
-                    "assuntos_abordados": [
-                        "Progressão Aritmética",
-                        "Definição",
-                        "Classificação",
-                        "Termo geral",
-                        "Propriedades",
-                        "Interpolação aritmética",
-                        "Soma dos n primeiros termos"
-                    ]
-                }
-            }
-        },
-        "C": {
-            "sumario": [
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Figuras de Pensamento e Sintaxe",
-                    "pagina_inicio_livro": 102,
-                    "assuntos_abordados": [
-                        "Figuras de Pensamento e Sintaxe",
-                        "Figuras de pensamento",
-                        "Antítese",
-                        "Paradoxo",
-                        "Eufemismo",
-                        "Hipérbole",
-                        "Gradação",
-                        "Ironia",
-                        "Prosopopeia",
-                        "Figuras de Sintaxe",
-                        "Elipse",
-                        "Zeugma",
-                        "Assíndeto",
-                        "Polissíndeto",
-                        "Anáfora",
-                        "Pleonasmo",
-                        "Anástrofe e Hipérbato",
-                        "Anacoluto",
-                        "Silepse"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Tipos Textuais",
-                    "pagina_inicio_livro": 113,
-                    "assuntos_abordados": [
-                        "Tipos Textuais",
-                        "Gêneros Textuais",
-                        "Tipo Textual x Gênero Textual",
-                        "Gêneros literários"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Argumentação",
-                    "pagina_inicio_livro": 122,
-                    "assuntos_abordados": [
-                        "Argumentação",
-                        "Argumentação por citação",
-                        "Argumentação por comprovação",
-                        "Argumentação por causa e consequência",
-                        "Contra-argumentação"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Injunção, Descrição e Narração",
-                    "pagina_inicio_livro": 127,
-                    "assuntos_abordados": [
-                        "Injunção, Descrição e Narração",
-                        "Injunção",
-                        "Recursos linguísticos",
-                        "Exemplos",
-                        "Descrição",
-                        "Estrutura Descritiva",
-                        "Tipos de Descrição",
-                        "Narração",
-                        "Principais elementos da narrativa",
-                        "A estrutura da narrativa",
-                        "Tipos de discurso"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Sistema Digestório",
-                    "pagina_inicio_livro": 524,
-                    "assuntos_abordados": [
-                        "Sistema Digestório",
-                        "Fisiologia da digestão humana"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Sistema Respiratório",
-                    "pagina_inicio_livro": 532,
-                    "assuntos_abordados": [
-                        "Sistema Respiratório",
-                        "Órgãos respiratórios",
-                        "Movimentos respiratórios",
-                        "Trocas gasosas",
-                        "Controle da respiração"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Sistema Circulatório",
-                    "pagina_inicio_livro": 540,
-                    "assuntos_abordados": [
-                        "Sistema Circulatório",
-                        "Coração",
-                        "Ciclo cardíaco",
-                        "Controle dos batimentos cardíacos",
-                        "Pequena e grande circulação sanguínea",
-                        "Vasos sanguíneos",
-                        "Pressão sanguínea",
-                        "Circulação linfática"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Sistema Excretor",
-                    "pagina_inicio_livro": 548,
-                    "assuntos_abordados": [
-                        "Sistema Excretor",
-                        "Excretas nitrogenadas",
-                        "Sistema urinário humano",
-                        "Regulação do líquido corporal"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Eletrostática",
-                    "pagina_inicio_livro": 612,
-                    "assuntos_abordados": [
-                        "Eletrostática",
-                        "Cargas elétricas",
-                        "Princípios da eletrostática",
-                        "Eletrização",
-                        "Lei de Coulomb − Força Elétrica",
-                        "Gráfico Força (F) x Distância (d)",
-                        "Campo elétrico"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Campo Elétrico de Cargas Puntiformes",
-                    "pagina_inicio_livro": 618,
-                    "assuntos_abordados": [
-                        "Campo Elétrico de Cargas Puntiformes",
-                        "Campo de uma carga puntiforme fixa",
-                        "Campo de várias cargas puntiformes fixas",
-                        "Linhas de Força",
-                        "Linhas de força de uma carga puntiforme fixa",
-                        "Linhas de força de duas cargas puntiformes fixas",
-                        "Campo elétrico uniforme"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Potencial Elétrico",
-                    "pagina_inicio_livro": 623,
-                    "assuntos_abordados": [
-                        "Potencial Elétrico",
-                        "Energia potencial elétrica",
-                        "Potencial elétrico",
-                        "Potencial elétrico gerado por várias cargas puntiformes",
-                        "Gráfico potencial versus distância",
-                        "Trabalho da Força Elétrica",
-                        "Diferença de potencial (ddp)"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Propriedades do Potencial Elétrico",
-                    "pagina_inicio_livro": 629,
-                    "assuntos_abordados": [
-                        "Propriedades do Potencial Elétrico",
-                        "Superfícies equipotenciais",
-                        "Diferença de potencial no campo elétrico uniforme",
-                        "Condutores em Equilíbrio Eletrostático",
-                        "Propriedades dos condutores em equilíbrio eletrostático",
-                        "Campo e potencial de um condutor esférico",
-                        "Poder das pontas"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Propriedades Físicas dos Compostos Orgânicos",
-                    "pagina_inicio_livro": 694,
-                    "assuntos_abordados": [
-                        "Propriedades Físicas dos Compostos Orgânicos",
-                        "Interações intermoleculares",
-                        "Fatores que alteram o ponto de ebulição",
-                        "Fatores que alteram o ponto de fusão",
-                        "Solubilidade dos compostos orgânicos"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Reações de Substituição",
-                    "pagina_inicio_livro": 701,
-                    "assuntos_abordados": [
-                        "Reações de Substituição",
-                        "Classificação das reações",
-                        "Classificação dos mecanismos",
-                        "Reações de substituição em alcanos",
-                        "Reações de Substituição em Aromáticos",
-                        "Halogenação de benzeno",
-                        "Nitração de benzeno",
-                        "Sulfonação de benzeno",
-                        "Reações de Friedel-Crafts",
-                        "Grupos dirigentes no benzeno"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Reações de Adição e de Eliminação",
-                    "pagina_inicio_livro": 711,
-                    "assuntos_abordados": [
-                        "Reações de Adição e de Eliminação",
-                        "Adição em alcenos",
-                        "Adição em alcinos",
-                        "Desidratação de álcoois",
-                        "Eliminação de HX"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Polímeros de Adição",
-                    "pagina_inicio_livro": 719,
-                    "assuntos_abordados": [
-                        "Polímeros de Adição",
-                        "Polímeros de adição comum",
-                        "Polímeros de adição-1,4",
-                        "Polimetilbutadieno",
-                        "Polineopreno"
-                    ]
-                },
-                {
-                    "numero_modulo": "17",
-                    "titulo_modulo": "Equações Trigonométricas",
-                    "pagina_inicio_livro": 790,
-                    "assuntos_abordados": [
-                        "Equações Trigonométricas",
-                        "Equações trigonométricas fundamentais",
-                        "Equações do tipo sen α = sen β",
-                        "Equações do tipo cos α = cos β",
-                        "Equações do tipo tg α = tg β"
-                    ]
-                },
-                {
-                    "numero_modulo": "18",
-                    "titulo_modulo": "Inequações Trigonométricas",
-                    "pagina_inicio_livro": 795,
-                    "assuntos_abordados": [
-                        "Inequações Trigonométricas",
-                        "Inequações trigonométricas fundamentais",
-                        "Inequações do tipo sen α > m",
-                        "Inequações do tipo sen α < m",
-                        "Inequações do tipo cos α > m",
-                        "Inequações do tipo cos α < m",
-                        "Inequações do tipo tg α > m",
-                        "Inequações do tipo tg α < m"
-                    ]
-                },
-                {
-                    "numero_modulo": "19",
-                    "titulo_modulo": "Função Seno",
-                    "pagina_inicio_livro": 799,
-                    "assuntos_abordados": [
-                        "Função Seno",
-                        "Função periódica",
-                        "Função seno"
-                    ]
-                },
-                {
-                    "numero_modulo": "20",
-                    "titulo_modulo": "Função Cosseno",
-                    "pagina_inicio_livro": 803,
-                    "assuntos_abordados": [
-                        "Função Cosseno",
-                        "Função cosseno"
-                    ]
-                }
-            ],
-            "modulos_detalhados": {
-                "17": {
-                    "titulo": "Equações Trigonométricas",
-                    "pagina_inicio": 790,
-                    "assuntos_abordados": [
-                        "Equações Trigonométricas",
-                        "Equações trigonométricas fundamentais",
-                        "Equações do tipo sen α = sen β",
-                        "Equações do tipo cos α = cos β",
-                        "Equações do tipo tg α = tg β"
-                    ]
-                },
-                "18": {
-                    "titulo": "Inequações Trigonométricas",
-                    "pagina_inicio": 795,
-                    "assuntos_abordados": [
-                        "Inequações Trigonométricas",
-                        "Inequações trigonométricas fundamentais",
-                        "Inequações do tipo sen α > m",
-                        "Inequações do tipo sen α < m",
-                        "Inequações do tipo cos α > m",
-                        "Inequações do tipo cos α < m",
-                        "Inequações do tipo tg α > m",
-                        "Inequações do tipo tg α < m"
-                    ]
-                },
-                "19": {
-                    "titulo": "Função Seno",
-                    "pagina_inicio": 799,
-                    "assuntos_abordados": [
-                        "Função Seno",
-                        "Função periódica",
-                        "Função seno"
-                    ]
-                },
-                "20": {
-                    "titulo": "Função Cosseno",
-                    "pagina_inicio": 803,
-                    "assuntos_abordados": [
-                        "Função Cosseno",
-                        "Função cosseno"
-                    ]
-                }
-            }
-        }
-    }
-}
+[
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Oração Subordinada Adjetiva",
+        "pagina": "6"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Oração Subordinada Adverbial",
+        "pagina": "14"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Pontuação",
+        "pagina": "22"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Concordância",
+        "pagina": "29"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "1ª Fase do Modernismo (Parte 1)",
+        "pagina": "44"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "1ª Fase do Modernismo (Parte II)",
+        "pagina": "56"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "2ª Fase do Modernismo (Parte I)",
+        "pagina": "66"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "2ª Fase do Modernismo (Parte II)",
+        "pagina": "81"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "FRENTE C // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Figuras de Pensamento e Sintaxe",
+        "pagina": "102"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Tipos Textuais",
+        "pagina": "113"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Argumentação",
+        "pagina": "122"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Injunção, Descrição e Narração",
+        "pagina": "127"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "FRENTE D // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Crônica",
+        "pagina": "140"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Notícia, Reportagem e Editorial",
+        "pagina": "150"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Gêneros Científicos",
+        "pagina": "161"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Artigo de Opinião",
+        "pagina": "173"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "INGLÊS",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Cohesive Elements And Subordinating Conjunctions",
+        "pagina": "182"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "The Passive Voice",
+        "pagina": "188"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Suffixes and Prefixes",
+        "pagina": "193"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "If Clauses",
+        "pagina": "199"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "O Papel da Conferência de Berlim no Continente Africano",
+        "pagina": "204"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Os Conflitos na África",
+        "pagina": "215"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "O Mundo cada vez mais Urbanizado",
+        "pagina": "223"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Os Problemas Socioambientais Urbanos",
+        "pagina": "243"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Fatores e Elementos do Clima",
+        "pagina": "252"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Interações Atmosféricas e Climas do Brasil",
+        "pagina": "263"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "As Paisagens Naturais",
+        "pagina": "272"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Vegetação Brasileira e Domínios Morfoclimáticos",
+        "pagina": "282"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Revolução Francesa, Era Napoleônica e Congresso de Viena",
+        "pagina": "296"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Revolução Industrial",
+        "pagina": "307"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Independência das Treze Colônias, Marcha para o Oeste e Guerra de Secessão",
+        "pagina": "313"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Independência da América Latina",
+        "pagina": "320"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Segundo Reinado",
+        "pagina": "330"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "República Velha",
+        "pagina": "339"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Era Vargas",
+        "pagina": "356"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Regimes Populistas na América",
+        "pagina": "365"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FILOSOFIA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Michel Foucault e a Crítica ao Panoptismo",
+        "pagina": "372"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Friedrich Nietzsche e o Crepúsculo dos Ídolos",
+        "pagina": "378"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Jean-Paul Sartre",
+        "pagina": "386"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "A Escola de Frankfurt",
+        "pagina": "392"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "SOCIOLOGIA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Zygmunt Bauman e a Modernidade Líquida",
+        "pagina": "402"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Manuel Castells e a Sociedade Em Rede",
+        "pagina": "411"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Estado e Sociedade",
+        "pagina": "418"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Poder e Política: Uma Abordagem Sociológica Clássica",
+        "pagina": "424"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Reino Monera",
+        "pagina": "432"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Reino Protista",
+        "pagina": "442"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Reino Fungi",
+        "pagina": "460"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Pirâmides Ecológicas e Produtividade",
+        "pagina": "468"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Origem Evolutiva das Plantas e Plantas Avasculares",
+        "pagina": "482"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Pteridófitas e Gimnospermas",
+        "pagina": "490"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Angiospermas",
+        "pagina": "502"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Tecidos Vegetais",
+        "pagina": "513"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "FRENTE C // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Sistema Digestório",
+        "pagina": "524"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Sistema Respiratório",
+        "pagina": "532"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Sistema Circulatório",
+        "pagina": "540"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Sistema Excretor",
+        "pagina": "548"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Corrente Elétrica",
+        "pagina": "556"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Circuitos Elétricos",
+        "pagina": "564"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Medidas Elétricas",
+        "pagina": "571"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Lei de Ohm-Pouillet",
+        "pagina": "577"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Estudo dos Gases",
+        "pagina": "584"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Primeira Lei da Termodinâmica",
+        "pagina": "591"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Transformações Gasosas e Máquinas Térmicas",
+        "pagina": "598"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Ciclo de Carnot",
+        "pagina": "605"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "FRENTE C // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Eletrostática",
+        "pagina": "612"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Campo Elétrico de Cargas Puntiformes",
+        "pagina": "618"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Potencial Elétrico",
+        "pagina": "623"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Propriedades do Potencial Elétrico",
+        "pagina": "629"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Propriedades Coligativas",
+        "pagina": "636"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Ebulioscopia e Crioscopia",
+        "pagina": "644"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Eletroquímica",
+        "pagina": "652"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Proteção Catódica",
+        "pagina": "660"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Expressão de Velocidade",
+        "pagina": "666"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Noções de Equilíbrio",
+        "pagina": "673"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Constante de Equilíbrio (Kc)",
+        "pagina": "678"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Deslocamento de Equilíbrio",
+        "pagina": "687"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "FRENTE C // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Propriedades Físicas dos Compostos Orgânicos",
+        "pagina": "694"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Reação de Substituição em Alcanos",
+        "pagina": "701"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Reações de Adição e de Eliminação",
+        "pagina": "711"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Polímeros de Adição",
+        "pagina": "719"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "FRENTE A // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Inscrição de Sólidos",
+        "pagina": "728"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Sistema Cartesiano e Distância entre Dois Pontos",
+        "pagina": "737"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Ponto Médio, Baricentro e Alinhamento de Três Pontos",
+        "pagina": "741"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Reta: Equação Geral, Reduzida, Fundamental, Segmentária e Paramétrica",
+        "pagina": "746"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "FRENTE B // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Determinantes",
+        "pagina": "756"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Sistemas Lineares",
+        "pagina": "764"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Binômio de Newton",
+        "pagina": "774"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Progressão Aritmética",
+        "pagina": "782"
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "FRENTE C // L05"
+    },
+    "modulos": [
+      {
+        "modulo": "Módulo 17",
+        "titulo": "Equações Trigonométricas",
+        "pagina": "790"
+      },
+      {
+        "modulo": "Módulo 18",
+        "titulo": "Inequações Trigonométricas",
+        "pagina": "795"
+      },
+      {
+        "modulo": "Módulo 19",
+        "titulo": "Função Seno",
+        "pagina": "799"
+      },
+      {
+        "modulo": "Módulo 20",
+        "titulo": "Função Cosseno",
+        "pagina": "803"
+      }
+    ]
+  }
+]
