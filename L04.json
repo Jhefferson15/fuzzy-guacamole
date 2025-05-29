@@ -1,0 +1,1473 @@
+[
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Complementos Verbais e Vozes Verbais",
+        "pagina": "6",
+        "assuntos_abordados": [
+          "Complementos Verbais e Vozes Verbais",
+          "Objeto direto preposicionado",
+          "Objeto pleonástico",
+          "Pronomes oblíquos como complementos verbais",
+          "Pronomes oblíquos como objetos",
+          "Emprego dos pronomes oblíquos átonos",
+          "Vozes verbais",
+          "Voz ativa",
+          "Voz passiva",
+          "Voz reflexiva",
+          "Transformação da voz ativa em voz passiva",
+          "Voz passiva analítica e voz passiva sintética",
+          "Funções do pronome \"se\""
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Termos Ligados a Nomes",
+        "pagina": "15",
+        "assuntos_abordados": [
+          "Termos ligados a nomes",
+          "Adjunto adnominal",
+          "Predicativo",
+          "Complemento nominal",
+          "Aposto",
+          "Vocativo"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Período Composto por Coordenação",
+        "pagina": "20",
+        "assuntos_abordados": [
+          "Período Composto por Coordenação",
+          "Relações intraoracionais e interoracionais",
+          "Orações coordenadas",
+          "Orações subordinadas",
+          "Orações coordenadas assindéticas",
+          "Orações coordenadas sindéticas",
+          "Classificação das orações coordenadas sindéticas"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Oração Subordinada Substantiva",
+        "pagina": "27",
+        "assuntos_abordados": [
+          "Oração Subordinada Substantiva",
+          "Classificação das orações subordinadas substantivas"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Simbolismo",
+        "pagina": "34",
+        "assuntos_abordados": [
+          "Simbolismo",
+          "Cruz e Sousa",
+          "Alphonsus de Guimaraens"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Pré-Modernismo",
+        "pagina": "44",
+        "assuntos_abordados": [
+          "Pré-Modernismo",
+          "Euclides da Cunha (1866-1909)",
+          "Estilo de linguagem",
+          "Monteiro Lobato (1882-1948)",
+          "Graça Aranha (1868-1931)",
+          "Lima Barreto (1881-1922)",
+          "Augusto dos Anjos (1884-1914)"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Vanguardas Europeias",
+        "pagina": "59",
+        "assuntos_abordados": [
+          "Vanguardas Europeias",
+          "Futurismo",
+          "Cubismo",
+          "Expressionismo",
+          "Dadaísmo",
+          "Surrealismo",
+          "Influência das vanguardas na literatura brasileira"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Semana de Arte Moderna",
+        "pagina": "64",
+        "assuntos_abordados": [
+          "Semana de Arte Moderna",
+          "Características principais da Semana de Arte Moderna",
+          "As três fases do modernismo",
+          "Último dia da Semana de 22",
+          "Consequências da Semana de 22",
+          "Anita Malfatti"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "C",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Poesia: o Sujeito Lírico e a Música",
+        "pagina": "72",
+        "assuntos_abordados": [
+          "Poesia: o sujeito lírico e a música",
+          "O sujeito lírico no romantismo",
+          "Sujeito lírico no modernismo",
+          "Sujeito lírico na contemporaneidade",
+          "Música",
+          "Bossa Nova",
+          "Tropicália",
+          "Jovem Guarda",
+          "Música de protesto",
+          "Recursos estilísticos e rítmicos em canções"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Interlocução e Tipos de Discursos",
+        "pagina": "82",
+        "assuntos_abordados": [
+          "Interlocução e tipos de discursos",
+          "Interlocução",
+          "Discurso",
+          "Discurso direto",
+          "Discurso indireto",
+          "Discurso indireto livre",
+          "Transposição do discurso direto para o indireto"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Vícios de Linguagem",
+        "pagina": "89",
+        "assuntos_abordados": [
+          "Vícios de linguagem",
+          "Barbarismo",
+          "Solecismo",
+          "Cacófato",
+          "Eco",
+          "Colisão",
+          "Hiato",
+          "Ambiguidade",
+          "Preciosismo e arcaísmo",
+          "Gerundismo",
+          "Pleonasmo"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Figuras de Som e de Palavras",
+        "pagina": "94",
+        "assuntos_abordados": [
+          "Figuras de Som e de Palavras",
+          "Figuras de Som",
+          "Aliteração",
+          "Assonância",
+          "Paranomásia",
+          "Onomatopeia",
+          "Figuras de Palavra",
+          "Comparação",
+          "Catacrese",
+          "Metáfora",
+          "Metonímia",
+          "Sinestesia",
+          "Antonomásia"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "D",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Tipos de Cartas",
+        "pagina": "106",
+        "assuntos_abordados": [
+          "Tipos de Cartas",
+          "Carta comercial",
+          "Carta de apresentação",
+          "Carta de demissão",
+          "Carta de recomendação"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Carta",
+        "pagina": "112",
+        "assuntos_abordados": [
+          "Carta",
+          "Carta pessoal",
+          "Características",
+          "Estrutura da carta pessoal",
+          "Carta do Leitor",
+          "Características",
+          "Estrutura",
+          "Carta argumentativa",
+          "Estrutura",
+          "Interlocução",
+          "Carta Aberta",
+          "Estrutura da carta aberta"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Diário",
+        "pagina": "123",
+        "assuntos_abordados": [
+          "DIÁRIO",
+          "Diário pessoal",
+          "Diário de ficção"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Conto",
+        "pagina": "129",
+        "assuntos_abordados": [
+          "Conto",
+          "Narradores do conto",
+          "Características principais",
+          "Estrutura do conto",
+          "Conto popular e conto literário",
+          "Enredo, tempo, espaço e foco",
+          "Conto e Música",
+          "Conto Fantástico",
+          "O conto fantástico no Brasil",
+          "Características dos contos fantásticos",
+          "Conto contemporâneo"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "INGLÊS",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Relative Pronouns",
+        "pagina": "142",
+        "assuntos_abordados": [
+          "Relative Pronouns",
+          "Who",
+          "Which",
+          "Whose"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Quantitative Adjectives and Indefinite Pronouns",
+        "pagina": "146",
+        "assuntos_abordados": [
+          "Quantitative Adjectives and Indefinite Pronouns",
+          "Some",
+          "Any",
+          "No",
+          "Every",
+          "Diferença entre none e no one"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Degrees of Comparison",
+        "pagina": "150",
+        "assuntos_abordados": [
+          "Degrees of Comparison",
+          "Adjectives",
+          "Comparative and superlative degrees",
+          "Grau comparativo de igualdade / desigualdade"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Tag Questions and Adverbs",
+        "pagina": "157",
+        "assuntos_abordados": [
+          "Tag Questions and Adverbs",
+          "Tag Questions",
+          "Verbo to be na primeira pessoa do singular",
+          "Pedido no imperativo",
+          "Imperativo negativo",
+          "Orações com let's",
+          "Pronome indefinido composto de thing",
+          "Pronome indefinido composto de body ou one",
+          "Pronome indefinido formado por no",
+          "Adverbs",
+          "Too e so em frases afirmativas",
+          "Neither e either em frases negativas",
+          "Uso de locuções conjuntivas"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "A Geopolítica do Petróleo",
+        "pagina": "166",
+        "assuntos_abordados": [
+          "A geopolítica do petróleo",
+          "A história do petróleo",
+          "A exploração do petróleo",
+          "O processo de formação do petróleo",
+          "O refino do petróleo",
+          "As principais reservas de petróleo do mundo",
+          "As Sete Irmãs",
+          "A Organização dos Países Exportadores de Petróleo - OPEP",
+          "A crônica das crises do petróleo"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Doutrina Bush",
+        "pagina": "173",
+        "assuntos_abordados": [
+          "Doutrina Bush",
+          "A invasão do Afeganistão",
+          "Afeganistão",
+          "A invasão do Iraque"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Mundo Árabe em Ebulição",
+        "pagina": "179",
+        "assuntos_abordados": [
+          "Mundo Árabe em Ebulição",
+          "Oriente Médio",
+          "Etnias e religiões",
+          "Guerra do Canal de Suez",
+          "Guerra dos Seis Dias",
+          "Guerra do Yom Kippur",
+          "Intifada",
+          "A formação do Estado Islâmico",
+          "Força, patrocínio e abrangência",
+          "Ações e reações",
+          "Interesses que unem, complexidades que separam",
+          "Primavera Árabe",
+          "Tunísia",
+          "Egito",
+          "Líbia",
+          "Síria"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Os Conflitos na Europa",
+        "pagina": "196",
+        "assuntos_abordados": [
+          "Os Conflitos na Europa",
+          "Irlanda do Norte",
+          "A Questão Basca",
+          "A Insatisfação Catalã",
+          "A Instabilidade Belga",
+          "Leste Europeu",
+          "Balcãs",
+          "Fragmentação da Iugoslávia"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Problemas Socioambientais no Mundo",
+        "pagina": "210",
+        "assuntos_abordados": [
+          "Problemas Socioambientais no Mundo",
+          "Impacto na extração de recursos",
+          "Produção e poluição",
+          "Consumo e energia",
+          "Descarte de resíduos",
+          "Soluções possíveis",
+          "Consumismo e camada de ozônio",
+          "Metais pesados e lixo eletrônico",
+          "Conferência de Estocolmo",
+          "Desdobramentos da conferência de Estocolmo",
+          "Efeito estufa",
+          "CFCs e camada de ozônio",
+          "Chuva ácida"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Áreas Hidrológicas e suas Drenagens",
+        "pagina": "217",
+        "assuntos_abordados": [
+          "Áreas Hidrológicas e suas Drenagens",
+          "Bacias hidrográficas",
+          "Definição e hierarquia de uma bacia hidrográfica",
+          "Rede hidrográfica",
+          "Confluência de rios",
+          "Bacias hidrográficas de Santa Catarina",
+          "A rede fluvial na modelagem do relevo",
+          "As morfometrias dos canais fluviais",
+          "Mares e Oceanos",
+          "Oceano Pacífico",
+          "Oceano Atlântico",
+          "Oceano Glacial Ártico",
+          "Oceano Glacial Antártico",
+          "Oceano Índico",
+          "Sopa de plástico do Pacífico",
+          "Estrutura morfológica dos oceanos",
+          "Mar Mediterrâneo, Mar Vermelho e Mar do Norte"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Consumo, Conflitos e a Geopolítica da Água",
+        "pagina": "228",
+        "assuntos_abordados": [
+          "Consumo, Conflitos e a Geopolítica da Água",
+          "De elemento natural a mercadoria",
+          "A primeira água",
+          "Ciclo hidrológico",
+          "Umidade do ar",
+          "A distribuição das águas no planeta Terra",
+          "A Geografia Política e Econômica da Água",
+          "A geografia política da água",
+          "A geografia econômica da água",
+          "Hidrogeografia",
+          "A água do subsolo e da superfície terrestre"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Hidrografia do Brasil",
+        "pagina": "242",
+        "assuntos_abordados": [
+          "Hidrografia do Brasil",
+          "Principais características dos rios brasileiros",
+          "As regiões hídricas brasileira",
+          "As grandes bacias hidrográficas brasileiras",
+          "Usina Hidrelétrica de Balbina",
+          "Bacia Hidrográfica do Atlântico Nordeste Ocidental",
+          "Bacia Hidrográfica do Parnaíba",
+          "Bacia Hidrográfica do Atlântico Nordeste Oriental",
+          "Bacia Hidrográfica do Atlântico Leste",
+          "Bacia Hidrográfica do Atlântico Sudeste",
+          "Bacia Hidrográfica do Atlântico Sul",
+          "Geografia marinha brasileira",
+          "As características gerais do litoral brasileiro",
+          "Formas litorâneas de relevo do Brasil",
+          "O território marítimo brasileiro"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Expansão Marítima e Comercial Europeia",
+        "pagina": "260",
+        "assuntos_abordados": [
+          "Expansão Marítima e Comercial Europeia",
+          "Expansão marítima portuguesa",
+          "Expansão marítima espanhola e inglesa"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Colonização Inglesa, Francesa e Holandesa na América",
+        "pagina": "265",
+        "assuntos_abordados": [
+          "Colonização Inglesa, Francesa e Holandesa na América",
+          "Colonização inglesa",
+          "Colonização francesa",
+          "Colonização holandesa"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Revoluções Inglesas do Século XVII",
+        "pagina": "271",
+        "assuntos_abordados": [
+          "Revoluções Inglesas do Século XVII",
+          "O processo revolucionário",
+          "John Locke"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Iluminismo",
+        "pagina": "276",
+        "assuntos_abordados": [
+          "Iluminismo",
+          "Principais pensadores do liberalismo político",
+          "O liberalismo econômico"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Revoltas Nativistas e Separatistas",
+        "pagina": "284",
+        "assuntos_abordados": [
+          "Revoltas Nativistas e Separatistas",
+          "Revolta de Beckman (1684)",
+          "A Guerra dos Mascates (1710-1712)",
+          "A inspiração iluminista",
+          "Inconfidência Mineira",
+          "Conjuração Baiana"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Período Joanino",
+        "pagina": "292",
+        "assuntos_abordados": [
+          "Período Joanino",
+          "Antecedentes e contexto histórico",
+          "A frota que trouxe D. João VI ao Brasil",
+          "Abertura dos portos e urbanização do Rio de Janeiro",
+          "Principais medidas de D. João VI no Brasil",
+          "A Revolução do Porto",
+          "O Brasil e as cortes"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "O Processo de Independência e Primeiro Reinado",
+        "pagina": "299",
+        "assuntos_abordados": [
+          "O Processo de Independência e Primeiro Reinado",
+          "Contexto histórico do processo de independência",
+          "Primeiro reinado",
+          "A Constituição de 1824",
+          "A abdicação de D. Pedro I"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Regências e Rebeliões Regenciais",
+        "pagina": "307",
+        "assuntos_abordados": [
+          "Regências e Rebeliões Regenciais",
+          "Regências",
+          "Rebeliões Regenciais"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FILOSOFIA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Jean-Jacques Rousseau: o Bom Selvagem e a Origem da Desigualdade entre os Homens",
+        "pagina": "316",
+        "assuntos_abordados": [
+          "Jean-Jacques Rousseau: o bom selvagem e a origem da desigualdade entre os homens",
+          "Os tipos de desigualdade em Rousseau",
+          "Rousseau e O Contrato Social",
+          "O legado de Rousseau"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Montesquieu: o Espírito das Leis e a Divisão dos Poderes",
+        "pagina": "325",
+        "assuntos_abordados": [
+          "Montesquieu: o espírito das leis e a divisão dos poderes",
+          "O Espírito das Leis (L'Esprit des lois - 1748)",
+          "Caracterização geral da democracia e sua (possível) degeneração e consequência"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Ο Idealismo Hegeliano",
+        "pagina": "331",
+        "assuntos_abordados": [
+          "O Idealismo Hegeliano",
+          "A consciência",
+          "A razão",
+          "Perspectiva dialética do processo histórico",
+          "O Estado"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Karl Marx e o Materialismo Histórico",
+        "pagina": "336",
+        "assuntos_abordados": [
+          "Karl Marx e o materialismo histórico",
+          "A metodologia materialista de Marx",
+          "A influência hegeliana",
+          "O materialismo histórico-dialético",
+          "Infraestrutura x superestrutura",
+          "Mais-valia e alienação",
+          "O Estado"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "SOCIOLOGIA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Conceito Antropológico de Cultura e Alteridade Humana",
+        "pagina": "344",
+        "assuntos_abordados": [
+          "Conceito Antropológico de Cultura e Alteridade Humana",
+          "Teorias antropológicas da cultura"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "As Diversidades Étnico-Cultural no Brasil Contemporâneo",
+        "pagina": "352",
+        "assuntos_abordados": [
+          "As Diversidades Étnico-Cultural no Brasil Contemporâneo",
+          "Multiculturalismo",
+          "Pensamento social brasileiro"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Indústria Cultural",
+        "pagina": "360",
+        "assuntos_abordados": [
+          "Indústria cultural",
+          "Indústria cultural no Brasil"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Cibercultura e a Contemporaneidade",
+        "pagina": "369",
+        "assuntos_abordados": [
+          "Cibercultura e a Contemporaneidade",
+          "Sociabilidade No Ciberespaço",
+          "Construção De Verdades (Pós-Verdade)"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Mitocôndrias e Respiração Celular",
+        "pagina": "378",
+        "assuntos_abordados": [
+          "Mitocôndrias e Respiração Celular",
+          "Mitocôndrias",
+          "Estrutura da molécula de ATP",
+          "Respiração celular aeróbica",
+          "O catabolismo de outras moléculas"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Processos Fermentativos e Respiração Anaeróbica",
+        "pagina": "385",
+        "assuntos_abordados": [
+          "Processos Fermentativos e Respiração Anaeróbica",
+          "Fermentação",
+          "Respiração anaeróbica"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Metabolismo Autotrófico: Fotossíntese e Quimiossíntese",
+        "pagina": "392",
+        "assuntos_abordados": [
+          "Metabolismo Autotrófico: Fotossíntese e Quimiossíntese",
+          "Plastos",
+          "Fotossíntese",
+          "Etapas da fotossíntese",
+          "Fotossíntese é limitada pelas condições ambientais",
+          "Quimiossíntese"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Vírus",
+        "pagina": "402",
+        "assuntos_abordados": [
+          "Vírus",
+          "Estrutura viral",
+          "Replicação viral",
+          "Ciclos intracelulares dos bacteriófagos",
+          "Tipos de vírus quanto ao material genético",
+          "Viroses Sexualmente Transmissíveis"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Embriologia Humana",
+        "pagina": "416",
+        "assuntos_abordados": [
+          "Embriologia Humana",
+          "Fecundação",
+          "Segmentação do zigoto",
+          "Bormação do blastocisto",
+          "Nidação",
+          "Gastrulação",
+          "Neurulação e crescimento fetal",
+          "Fertilização in vitro",
+          "Clonagem",
+          "Tipos de células-tronco"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Gravidez Humana: da Fecundação ao Parto",
+        "pagina": "426",
+        "assuntos_abordados": [
+          "Gravidez Humana: da Fecundação ao Parto",
+          "Fecundação",
+          "Anexos embrionários",
+          "Placenta",
+          "Cordão umbilical",
+          "Gravidez",
+          "Parto",
+          "Lactação"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Sistema Genital Feminino",
+        "pagina": "434",
+        "assuntos_abordados": [
+          "Sistema Genital Feminino",
+          "Genitália externa",
+          "Vagina e útero",
+          "Tubas uterinas e ovário",
+          "Ciclo menstrual"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Sistema Genital Masculino e Métodos Contraceptivos",
+        "pagina": "441",
+        "assuntos_abordados": [
+          "Sistema Genital Masculino e Métodos Contraceptivos",
+          "Órgãos externos",
+          "Órgãos internos",
+          "Métodos contraceptivos",
+          "Infecções sexualmente transmissíveis"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "C",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Tecido Conjuntivo Próprio, Adiposo, Sanguíneo e Sistema Imunológico Humano",
+        "pagina": "450",
+        "assuntos_abordados": [
+          "Tecido Conjuntivo Próprio, Adiposo, Sanguíneo e Sistema Imunológico Humano",
+          "Tecido conjuntivo",
+          "Células típicas do tecido conjuntivo",
+          "Tecido conjuntivo propriamente dito",
+          "Tecido conjuntivo adiposo",
+          "Tecido Conjuntivo Sanguíneo",
+          "Componentes do sangue humano",
+          "Sistema imunológico humano",
+          "Imunização ativa e passiva"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Tecido Conjuntivo Ósseo e Cartilaginoso",
+        "pagina": "461",
+        "assuntos_abordados": [
+          "Tecido Conjuntivo Ósseo e Cartilaginoso",
+          "Constituição do tecido conjuntivo ósseo",
+          "Tipos de tecido ósseo",
+          "Nutrição do tecido ósseo compacto",
+          "Articulações",
+          "Formação do tecido ósseo",
+          "Tecido Conjuntivo Cartilaginoso",
+          "Características do tecido conjuntivo cartilaginoso",
+          "Tipos de cartilagens"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Tecido Muscular e Sistema Esquelético Muscular Humano",
+        "pagina": "469",
+        "assuntos_abordados": [
+          "Tecido Muscular e Sistema Esquelético Muscular Humano",
+          "Tecido Muscular",
+          "Tecido muscular estriado esquelético",
+          "Músculo estriado cardíaco: miocárdio",
+          "Músculo liso",
+          "Sistema esquelético",
+          "Esqueleto humano",
+          "Sistema muscular humano"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Tecido Nervoso e Sistema Nervoso Humano",
+        "pagina": "479",
+        "assuntos_abordados": [
+          "Tecido Nervoso e Sistema Nervoso Humano",
+          "Neurônios",
+          "O impulso nervoso",
+          "Sinapse",
+          "Sistema Nervoso Humano",
+          "Divisão anatômica",
+          "Sistema nervoso central",
+          "Sistema nervoso periférico",
+          "Divisão fisiológica"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Interferência de Ondas",
+        "pagina": "494",
+        "assuntos_abordados": [
+          "Interferência de Ondas",
+          "Ondas estacionárias",
+          "Interferência bidimensional",
+          "Interferência tridimensional",
+          "Interferência em películas delgadas"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Ondas Sonoras",
+        "pagina": "502",
+        "assuntos_abordados": [
+          "Ondas Sonoras",
+          "Velocidade do som",
+          "Qualidades fisiológicas do som",
+          "Intensidade e nível sonoro"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Propriedades das Ondas Sonoras",
+        "pagina": "508",
+        "assuntos_abordados": [
+          "Propriedades das Ondas Sonoras",
+          "Reflexão",
+          "Refração",
+          "Difração",
+          "Interferência",
+          "Cordas vibrantes"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Tubos Sonoros e Efeito Doppler",
+        "pagina": "515",
+        "assuntos_abordados": [
+          "Tubos Sonoros e Efeito Doppler",
+          "Tubos abertos",
+          "Tubos fechados",
+          "Efeito Doppler",
+          "Equação geral do efeito Doppler",
+          "Efeito Doppler para a luz",
+          "Aplicações do efeito Doppler"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Dilatação dos Sólidos",
+        "pagina": "524",
+        "assuntos_abordados": [
+          "Dilatação dos Sólidos",
+          "Dilatação dos sólidos",
+          "Dilatação dos líquidos",
+          "Dilatação real do líquido",
+          "Dilatação volumétrica do recipiente",
+          "Dilatação aparente do líquido",
+          "Dilatação anômala da água"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Calorimetria",
+        "pagina": "531",
+        "assuntos_abordados": [
+          "Calorimetria",
+          "Calor sensível e calor latente",
+          "Calor específico sensível (c)",
+          "Capacidade térmica (C)",
+          "Calor específico latente (L)",
+          "Potência térmica",
+          "Trocas de calor",
+          "Princípio das trocas de calor",
+          "Curva de aquecimento de um corpo"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Diagrama de Fase",
+        "pagina": "537",
+        "assuntos_abordados": [
+          "Diagrama de Fase",
+          "Substâncias que se dilatam na fusão",
+          "Substâncias que se contraem na fusão",
+          "Sobrefusão"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Propagação do Calor",
+        "pagina": "541",
+        "assuntos_abordados": [
+          "Propagação do Calor",
+          "Condução térmica",
+          "Convecção térmica",
+          "Radiação térmica"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "C",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Refração da Luz",
+        "pagina": "548",
+        "assuntos_abordados": [
+          "Refração da Luz",
+          "Luz monocromática e policromática",
+          "Dispersão da luz",
+          "Índice de refração absoluto",
+          "Índice de refração relativo",
+          "Dioptro",
+          "Leis da refração",
+          "Ângulo limite",
+          "Reflexão total",
+          "Dioptro plano",
+          "Lâmina de faces paralelas",
+          "Prisma óptico"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Lentes Esféricas",
+        "pagina": "556",
+        "assuntos_abordados": [
+          "Lentes Esféricas",
+          "Nomenclatura",
+          "Estudo geométrico das lentes",
+          "Raios luminosos particulares",
+          "Formação de imagens"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Estudo Analítico das Lentes",
+        "pagina": "563",
+        "assuntos_abordados": [
+          "Estudo Analítico das Lentes",
+          "Referencial de Gauss",
+          "Equação de Gauss",
+          "Aumento linear transversal",
+          "Vergência de uma lente",
+          "Lentes justapostas",
+          "Equação dos fabricantes de lentes",
+          "Instrumentos de observação",
+          "Lupa",
+          "Microscópio composto",
+          "Lunetas",
+          "Telescópios"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Instrumentos de Projeção e Óptica da Visão",
+        "pagina": "570",
+        "assuntos_abordados": [
+          "Instrumentos de Projeção e Óptica da Visão",
+          "Máquina fotográfica",
+          "Projetores",
+          "Óptica da visão",
+          "O olho humano",
+          "Defeitos da visão"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Concentração Química das Soluções",
+        "pagina": "578",
+        "assuntos_abordados": [
+          "Concentração Química das Soluções",
+          "Concentração em quantidade de matéria",
+          "Fração em quantidade de matéria",
+          "Quantidade de matéria do soluto por quilograma do solvente (molalidade)",
+          "Relação entre as concentrações"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Diluição das Soluções",
+        "pagina": "582",
+        "assuntos_abordados": [
+          "Diluição das Soluções",
+          "Calculando uma nova concentração"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Mistura de Soluções que não Reagem",
+        "pagina": "586",
+        "assuntos_abordados": [
+          "Mistura de Soluções que não Reagem",
+          "Misturas de soluções de mesmo soluto",
+          "Misturas de soluções de solutos diferentes"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Mistura de Soluções que Reagem entre si",
+        "pagina": "591",
+        "assuntos_abordados": [
+          "Mistura de Soluções que Reagem entre si",
+          "Titulação"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Introdução a Termoquímica",
+        "pagina": "596",
+        "assuntos_abordados": [
+          "Introdução a Termoquímica",
+          "Calor nas transformações químicas",
+          "Representação de reações",
+          "Calor nas transformações físicas",
+          "Representação de equações termoquímicas",
+          "Equações termoquímicas exotérmicas",
+          "Equações termoquímicas endotérmicas",
+          "Tipos de entalpia de reação"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Cálculo de Variação de Entalpia",
+        "pagina": "604",
+        "assuntos_abordados": [
+          "Cálculo de Variação de Entalpia",
+          "Cálculo de AH a partir das entalpias de formação",
+          "Lei de Hess",
+          "Cálculo de AH a partir das entalpias de ligação"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Espontaneidade das Reações",
+        "pagina": "611",
+        "assuntos_abordados": [
+          "Espontaneidade das Reações",
+          "Entalpia",
+          "Entropia",
+          "Energia livre de Gibbs"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Cinética Química",
+        "pagina": "615",
+        "assuntos_abordados": [
+          "Cinética Química",
+          "Rapidez das reações químicas",
+          "Quantidade de substância em função do tempo",
+          "Velocidade média",
+          "Fatores Cinéticos",
+          "Estado físico",
+          "Concentração",
+          "Superfície de contato",
+          "Temperatura",
+          "Pressão",
+          "Catalisador"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "C",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Álcool, Enol, Fenol, Éter, Aldeído e Cetona",
+        "pagina": "624",
+        "assuntos_abordados": [
+          "Álcool, Enol, Fenol, Éter, Aldeído e Cetona",
+          "Função álcool",
+          "Função enol",
+          "Função fenol",
+          "Função éter",
+          "Função aldeído",
+          "Função cetona"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Ácido e Sal de Ácido Carboxílico, Éster, Amina e Amida",
+        "pagina": "632",
+        "assuntos_abordados": [
+          "Ácido e Sal de Ácido Carboxílico, Éster, Amina e Amida",
+          "Ácidos carboxílicos graxos",
+          "Ésteres",
+          "Reações de esterificação",
+          "Sais orgânicos",
+          "Aminas",
+          "Amidas"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Isomeria Constitucional",
+        "pagina": "648",
+        "assuntos_abordados": [
+          "Isomeria Constitucional"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Estereoisomeria Geométrica e Óptica",
+        "pagina": "653",
+        "assuntos_abordados": [
+          "Estereoisomeria Geométrica e Óptica",
+          "Luz polarizada",
+          "Estereoisomeria óptica em cadeias fechadas"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "A",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Pirâmides",
+        "pagina": "664",
+        "assuntos_abordados": [
+          "Pirâmides",
+          "Definição e elementos",
+          "Nomenclatura",
+          "Pirâmide regular",
+          "Áreas",
+          "Volume",
+          "Tetraedro regular",
+          "Área total de um tetraedro regular",
+          "Altura de um tetraedro regular",
+          "Volume de um tetraedro regular",
+          "Octaedro regular",
+          "Área total de um octaedro regular",
+          "Volume de um octaedro regular",
+          "Secção transversal de uma pirâmide",
+          "Pirâmides semelhantes",
+          "Tronco de pirâmide",
+          "Áreas do tronco de pirâmide",
+          "Volume do tronco de pirâmide"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Cilindros",
+        "pagina": "673",
+        "assuntos_abordados": [
+          "Cilindros",
+          "Definição e elementos",
+          "Classificação",
+          "Seção transversal",
+          "Seção meridiana de um cilindro reto",
+          "Cilindro equilátero",
+          "Áreas do cilindro reto",
+          "Volume"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Cones",
+        "pagina": "678",
+        "assuntos_abordados": [
+          "Cones",
+          "Definição e elementos",
+          "Classificação",
+          "Relação notável do cone reto",
+          "Secção meridiana do cone reto",
+          "Cone equilátero",
+          "Áreas do cone reto",
+          "Volume",
+          "Secção transversal do cone",
+          "Cones semelhantes",
+          "Troncos de cone",
+          "Áreas do tronco de cone",
+          "Volume do tronco de cone"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Esferas",
+        "pagina": "686",
+        "assuntos_abordados": [
+          "Esferas",
+          "Definição",
+          "Secções",
+          "Elementos",
+          "Área",
+          "Volume",
+          "Fuso esférico",
+          "Cunha esférica"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "B",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Permutações",
+        "pagina": "694",
+        "assuntos_abordados": [
+          "Permutações",
+          "Permutações simples",
+          "Permutações circulares",
+          "Permutação com repetição"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Probabilidade - Definição e Probabilidade da União",
+        "pagina": "699",
+        "assuntos_abordados": [
+          "Probabilidade - Definição e Probabilidade da União",
+          "Experimentos aleatórios",
+          "Espaço amostral",
+          "Evento",
+          "Definição de probabilidade",
+          "Eventos complementares",
+          "Probabilidade de união (adição de probabilidades)"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Probabilidade Condicional e Produto de Probabilidades",
+        "pagina": "705",
+        "assuntos_abordados": [
+          "Probabilidade Condicional e Produto de Probabilidades",
+          "Probabilidade condicional",
+          "Produto de probabilidades",
+          "Lei binomial das probabilidades"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Matrizes",
+        "pagina": "711",
+        "assuntos_abordados": [
+          "Matrizes",
+          "Definição",
+          "Representação genérica",
+          "Tipos de matrizes",
+          "Igualdade",
+          "Operações com matrizes",
+          "Produto de matrizes",
+          "Propriedades do produto de matrizes"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "C",
+      "livro": "L04"
+    },
+    "modulos": [
+      {
+        "modulo": "13",
+        "titulo": "Seno e Cosseno no Ciclo Trigonométrico",
+        "pagina": "722",
+        "assuntos_abordados": [
+          "Seno e Cosseno no Ciclo Trigonométrico",
+          "Seno e Cosseno de um arco trigonométrico",
+          "Seno e Cosseno de arcos côngruos (ou congruentes)",
+          "Valores notáveis do seno e cosseno"
+        ]
+      },
+      {
+        "modulo": "14",
+        "titulo": "Tangente na Circunferência Trigonométrica",
+        "pagina": "727",
+        "assuntos_abordados": [
+          "Tangente na Circunferência Trigonométrica",
+          "Tangente de um arco trigonométrico",
+          "Arcos simétricos em relação ao centro da circunferência trigonométrica",
+          "Valores notáveis da tangente",
+          "Cotangente de um arco trigonométrico",
+          "Secante e cossecante de um arco trigonométrico"
+        ]
+      },
+      {
+        "modulo": "15",
+        "titulo": "Relações Trigonométricas",
+        "pagina": "736",
+        "assuntos_abordados": [
+          "Relações Trigonométricas",
+          "Arcos suplementares",
+          "Arcos explementares",
+          "Arcos replementares",
+          "Arcos complementares",
+          "Relações fundamentais",
+          "Relações trigonométricas derivadas",
+          "Identidades trigonométricas"
+        ]
+      },
+      {
+        "modulo": "16",
+        "titulo": "Transformações Trigonométricas",
+        "pagina": "743",
+        "assuntos_abordados": [
+          "Transformações Trigonométricas",
+          "Fórmula da soma e subtração de arcos",
+          "Fórmulas do arco duplo",
+          "Fórmulas do arco metade",
+          "Fórmulas da fatoração"
+        ]
+      }
+    ]
+  }
+]

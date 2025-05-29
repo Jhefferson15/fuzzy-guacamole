@@ -1,0 +1,1457 @@
+[
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Regência",
+        "pagina": "6",
+        "assuntos_abordados": [
+          "Regência",
+          "Regência nominal",
+          "Regência verbal"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Crase",
+        "pagina": "12",
+        "assuntos_abordados": [
+          "Crase",
+          "Regras gerais para o uso da crase",
+          "Crase facultativa",
+          "Casos especiais",
+          "Pronome demonstrativo"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Colocação Pronominal",
+        "pagina": "19",
+        "assuntos_abordados": [
+          "Colocação pronominal",
+          "Pronomes oblíquos",
+          "Próclise, mesóclise e ênclise",
+          "Próclise obrigatória",
+          "Próclise facultativa",
+          "Mesóclise",
+          "Ênclise",
+          "Colocação pronominal em locuções verbais"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "As funções de \"se\" e \"que\"",
+        "pagina": "25",
+        "assuntos_abordados": [
+          "As funções de \"se\" e \"que\"",
+          "Substantivo",
+          "Pronome pessoal reflexivo",
+          "Pronome pessoal recíproco",
+          "Pronome apassivador",
+          "Índice de indeterminação do sujeito",
+          "Partícula expletiva ou de realce",
+          "Parte integrante do verbo",
+          "Conjunção subordinativa",
+          "As funções da palavra que",
+          "Substantivo",
+          "Pronome adjetivo",
+          "Pronome relativo",
+          "Pronome interrogativo",
+          "Preposição",
+          "Advérbio de modo",
+          "Advérbio de intensidade",
+          "Partícula expletiva",
+          "Interjeição",
+          "Conjunção coordenativa",
+          "Conjunção subordinativa"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "3ª Fase do Modernismo (Parte 1)",
+        "pagina": "32",
+        "assuntos_abordados": [
+          "3ª Fase do Modernismo (Parte-l)",
+          "Clarice Lispector",
+          "Características da obra de Clarice Lispector",
+          "Perto do Coração Selvagem",
+          "Laços de família",
+          "A Hora da Estrela",
+          "A paixão segundo GH",
+          "Guimarães Rosa",
+          "A musicalidade nos textos"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "3ª Fase do Modernismo (Parte II)",
+        "pagina": "43",
+        "assuntos_abordados": [
+          "3ª Fase do Modernismo (Parte-II)",
+          "O neomodernismo de João Cabral",
+          "Poemas representativos",
+          "Manoel de Barros",
+          "Cora Coralina",
+          "Mario Quintana"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Poesia Social e Concreta",
+        "pagina": "59",
+        "assuntos_abordados": [
+          "Poesia social e concreta",
+          "Ferreira Gullar",
+          "Poesia concreta",
+          "Poesia-práxis, poema-processo, poesia social, poesia marginal",
+          "A Tropicália ou Tropicalismo ou movimento tropicalista"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Literatura Contemporânea",
+        "pagina": "72",
+        "assuntos_abordados": [
+          "Literatura Contemporânea",
+          "Prosa Contemporânea brasileira",
+          "Características das diversas tendência e seus representantes",
+          "João Ubaldo Ribeiro",
+          "Rubem Alves",
+          "Fernando Sabino",
+          "Luis Fernando Verissimo",
+          "Lygia Fagundes Telles",
+          "Dalton Trevisan",
+          "Prosa Contemporânea Lusófona",
+          "José Saramago",
+          "Mia Couto",
+          "Pepetela"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "C",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Humor e Ironia",
+        "pagina": "86",
+        "assuntos_abordados": [
+          "Humor e ironia",
+          "Humor",
+          "Ironia"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Quadrinho e Tirinha",
+        "pagina": "91",
+        "assuntos_abordados": [
+          "Quadrinho e Tirinha",
+          "Quadrinho",
+          "Caricatura",
+          "Cartum",
+          "Charge",
+          "Elementos principais da charge",
+          "Tirinha",
+          "As linguagens das tirinhas",
+          "A interpretação das tirinhas",
+          "Tirinhas da web"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Gêneros Jornalísticos e Publicitários",
+        "pagina": "100",
+        "assuntos_abordados": [
+          "Gêneros jornalísticos e publicitários",
+          "Gênero textual jornalístico",
+          "Variedade de tipos de textos",
+          "As múltiplas linguagens jornalísticas",
+          "Linguagem escrita",
+          "Linguagem visual",
+          "Linguagem gráfica",
+          "Linguagem publicitária",
+          "Linguagem digital",
+          "Linguagem de títulos e manchetes",
+          "Texto publicitário",
+          "Meios e circulação",
+          "Estratégias persuasivas"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Gêneros Narrativos ou Populares",
+        "pagina": "114",
+        "assuntos_abordados": [
+          "Gêneros Narrativos ou Populares",
+          "Fábula",
+          "Características e estrutura",
+          "Fábula Moderna",
+          "Literatura de Cordel",
+          "Principais características",
+          "Formato",
+          "Características quanto ao gênero",
+          "Métrica e rima",
+          "Alguns autores mais renomados",
+          "Provérbios e Ditos Populares",
+          "Alguns tipos de provérbios",
+          "Diferença entre provérbios e expressões idiomáticas"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "PORTUGUÊS",
+      "frente_livro": "D",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Comentário, Resumo e Resenha",
+        "pagina": "132",
+        "assuntos_abordados": [
+          "Comentário, Resumo e Resenha",
+          "Comentário",
+          "Estrutura do comentário",
+          "Resumo",
+          "Resenha crítica",
+          "Resumo X Resenha"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Manifesto e Abaixo-assinado",
+        "pagina": "140",
+        "assuntos_abordados": [
+          "Manifesto e abaixo-assinado",
+          "Manifesto",
+          "Abaixo-assinado"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Relatório",
+        "pagina": "145",
+        "assuntos_abordados": [
+          "Relatório",
+          "Tipos de relatório",
+          "Estrutura"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Blog, E-mail e X (Twitter)",
+        "pagina": "150",
+        "assuntos_abordados": [
+          "Blog, E-mail e X (Twitter)",
+          "O blog",
+          "O e-mail ou correio eletrônico"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "INGLÊS",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Prepositions",
+        "pagina": "156",
+        "assuntos_abordados": [
+          "Prepositions",
+          "Other prepositions",
+          "Examples of main prepositions",
+          "Verbs, adjectives and substantives that require prepositions"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Reported Speech",
+        "pagina": "162",
+        "assuntos_abordados": [
+          "Reported Speech",
+          "Mudança nos tempos verbais",
+          "Mudança nos determinantes e advérbios",
+          "Questions and exclamations in indirect speech",
+          "Request, advice, order"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Phrasal Verbs and False Cognates",
+        "pagina": "167",
+        "assuntos_abordados": [
+          "Phrasal Verbs and False Cognates",
+          "Exemplos de phrasal verbs e suas aplicações",
+          "False Cognates",
+          "Essential expressions"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Use of Gerund",
+        "pagina": "176",
+        "assuntos_abordados": [
+          "Use of Gerund",
+          "Causative verbs",
+          "The active causative structure",
+          "The passive causative structure",
+          "Gerund"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Dinâmica Demográfica",
+        "pagina": "184",
+        "assuntos_abordados": [
+          "Dinâmica Demográfica",
+          "Contraste demográficos pelo mundo",
+          "População absoluta e população relativa",
+          "Pirâmide etária",
+          "Pirâmide etária da Europa na Segunda Guerra Mundial",
+          "As relações dos regimes demográficos com suas transições demográficas",
+          "Estrutura etária mundial",
+          "População economicamente ativa e inativa",
+          "Bônus demográfico"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Distribuição da População Brasileira",
+        "pagina": "203",
+        "assuntos_abordados": [
+          "Distribuição da População Brasileira",
+          "Crescimento da população brasileira",
+          "Processos migratórios",
+          "A migração pelo mundo"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Estrutura da População Brasileira",
+        "pagina": "218",
+        "assuntos_abordados": [
+          "Estrutura da População Brasileira",
+          "A atual estrutura da população do Brasil",
+          "As dinâmicas populacionais do Brasil",
+          "O trabalho infantil no Brasil",
+          "Nível de escolaridade e analfabetismo brasileiros",
+          "Índice de Desenvolvimento Humano e índice de Gini"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Brasil: Divisão Regional e sua Estrutura Política Administrativa",
+        "pagina": "234",
+        "assuntos_abordados": [
+          "Brasil: Divisão Regional e sua Estrutura Política Administrativa",
+          "Conceito de Estado",
+          "Região e regionalização",
+          "Divisão regional do Brasil",
+          "Organização do Estado",
+          "Poderes da União"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "GEOGRAFIA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Continente Asiático e Oceania",
+        "pagina": "246",
+        "assuntos_abordados": [
+          "Continente Asiático e Oceania",
+          "Continente Asiático",
+          "Oceania"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Perfil do Continente Africano",
+        "pagina": "257",
+        "assuntos_abordados": [
+          "Perfil do Continente Africano",
+          "África Setentrional (África Branca)",
+          "África Subsaariana",
+          "Distribuição física da África",
+          "População",
+          "Economia",
+          "África: Problemas e Conflitos"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Perfil do Continente Europeu",
+        "pagina": "266",
+        "assuntos_abordados": [
+          "Perfil do Continente Europeu",
+          "População",
+          "Economia",
+          "União Europeia",
+          "O Euro",
+          "Crise na Zona do Euro"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Perfil do Continente Americano",
+        "pagina": "273",
+        "assuntos_abordados": [
+          "Perfil do Continente Americano",
+          "América do Norte",
+          "América Central",
+          "América do Sul",
+          "América Latina"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Revoluções Liberais e Unificações",
+        "pagina": "284",
+        "assuntos_abordados": [
+          "Revoluções Liberais e Unificações",
+          "Revoluções liberais europeias",
+          "Manifestações revolucionárias",
+          "A queda de Luís Felipe e a Segunda República Francesa",
+          "Os movimentos revolucionários no resto da Europa",
+          "Balanço das revoluções",
+          "Unificação italiana",
+          "Unificação Alemã"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Revolução Russa",
+        "pagina": "292",
+        "assuntos_abordados": [
+          "Revolução Russa",
+          "Atuação da Rússia na Primeira Guerra Mundial",
+          "Fases da revolução"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Século XX",
+        "pagina": "297",
+        "assuntos_abordados": [
+          "SÉCULO XX",
+          "Primeira Guerra Mundial",
+          "Motivos e alianças",
+          "Guerra declarada",
+          "Tratado de paz",
+          "O Fascismo italiano",
+          "O Nazismo",
+          "A primeira crise do Pós-Guerra (1920-1923)",
+          "Os \"loucos\" anos 20",
+          "A Crise de 1929",
+          "A Crise de 1929 e a intervenção estatal",
+          "Segunda Guerra Mundial",
+          "O início do conflito",
+          "A virada da Guerra",
+          "A estratégia dos aliados",
+          "O fim da Guerra"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "O Mundo no Pós-Segunda Guerra Mundial",
+        "pagina": "313",
+        "assuntos_abordados": [
+          "O Mundo no Pós-Segunda Guerra Mundial",
+          "A Guerra Fria",
+          "A Guerra do Vietnã",
+          "Descolonização Afroasiática",
+          "Movimentos africanos",
+          "Movimentos asiáticos",
+          "A dissolução do socialismo europeu"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "HISTÓRIA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Revoluções e Militarismo na América",
+        "pagina": "322",
+        "assuntos_abordados": [
+          "Revoluções e militarismo na América",
+          "Revolução Cubana",
+          "Reação norte-americana na América Latina"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "República Liberal Democrática",
+        "pagina": "328",
+        "assuntos_abordados": [
+          "República Liberal Democrática",
+          "Governo de Juscelino Kubitschek (1956-1961)",
+          "Governo de Jânio Quadros (1961)",
+          "O Governo de João Goulart"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Ditadura Militar",
+        "pagina": "334",
+        "assuntos_abordados": [
+          "Ditadura Militar",
+          "O governo de Castelo Branco",
+          "Governo Costa e Silva",
+          "O Governo Médici",
+          "Ernesto Geisel (1974-1979)",
+          "João Baptista Figueiredo (1979-1985)",
+          "O movimento Diretas Já"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "República Nova (1985-2022)",
+        "pagina": "343",
+        "assuntos_abordados": [
+          "República Nova (1985-2022)",
+          "Governo José Sarney (1985-1990)",
+          "Constituição de 1988",
+          "Governo Fernando Collor (1990-1992)",
+          "Governo de Itamar Franco (1992-1995)",
+          "Governo de Fernando Henrique Cardoso (1995-2002)",
+          "Governo de Luiz Inácio Lula da Silva (2003-2010)",
+          "Governo de Dilma Rousseff (2011-2016)",
+          "O Governo de Michel Temer",
+          "O Governo de Jair Bolsonaro"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FILOSOFIA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Hannah Arendt",
+        "pagina": "356",
+        "assuntos_abordados": [
+          "Hannah Arendt",
+          "A Condição Humana e sua proposição antropológica",
+          "As Origens do Totalitarismo e o ocaso da política",
+          "O caso Eichmann e a banalidade do mal"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Jürgen Habermas",
+        "pagina": "364",
+        "assuntos_abordados": [
+          "Jürgen Habermas",
+          "A transição do agir estratégico para o agir comunicativo: a ética habermasiana"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Friedrich Hayek",
+        "pagina": "371",
+        "assuntos_abordados": [
+          "Friedrich Hayek",
+          "O caminho da servidão"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Pós-Modernidade: um conceito também líquido",
+        "pagina": "377",
+        "assuntos_abordados": [
+          "Pós-modernidade: um conceito também líquido"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "SOCIOLOGIA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Democracia e Participação Política",
+        "pagina": "386",
+        "assuntos_abordados": [
+          "Democracia e Participação Política",
+          "Ditadura no Brasil",
+          "Partidos políticos",
+          "Esquerda - Centro - Direita",
+          "Participação política"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "A Construção Social dos Direitos de Cidadania e dos Direitos Humanos",
+        "pagina": "396",
+        "assuntos_abordados": [
+          "A Construção Social dos Direitos de Cidadania e dos Direitos Humanos",
+          "Cidadania e direitos humanos",
+          "Direito e deveres do cidadão brasileiro",
+          "Construção de Direitos até a DUDH",
+          "O que são os direitos humanos?",
+          "Direitos humanos na prática"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Movimentos Sociais e Cidadania",
+        "pagina": "405",
+        "assuntos_abordados": [
+          "Movimentos Sociais e Cidadania",
+          "Movimento Operário e Sindicalismo",
+          "Os Novos Movimentos Sociais",
+          "Gênero, Sexo e suas Variadas Expressões",
+          "Desigualdade e Discriminação"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Sociologia da Violência",
+        "pagina": "417",
+        "assuntos_abordados": [
+          "Sociologia da Violência",
+          "Violência contra a mulher",
+          "Violência homofóbica e transfóbica",
+          "Violência contra a pessoa idosa",
+          "Racismo",
+          "Violência institucional"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Interações Ecológicas e Dinâmica das Populações",
+        "pagina": "426",
+        "assuntos_abordados": [
+          "Interações Ecológicas e Dinâmica das Populações",
+          "Relações harmônicas intraespecíficas",
+          "Relações harmônicas interespecíficas",
+          "Relações desarmônicas interespecíficas",
+          "Equilíbrio populacional"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Ciclos Biogeoquímicos",
+        "pagina": "435",
+        "assuntos_abordados": [
+          "Ciclos Biogeoquímicos",
+          "Ciclo da água",
+          "Ciclo do carbono",
+          "Ciclo do nitrogênio",
+          "Ciclo do fósforo"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Sucessão Ecológica e Biomas Brasileiros",
+        "pagina": "445",
+        "assuntos_abordados": [
+          "Sucessão Ecológica e Biomas Brasileiros",
+          "Espécies pioneiras",
+          "Estágios de uma sucessão ecológica",
+          "Tipos de sucessões ecológicas",
+          "Biomas brasileiros",
+          "Floresta Amazônica",
+          "Mata Atlântica",
+          "Cerrado",
+          "Floresta de Araucárias",
+          "Pampa",
+          "Caatinga",
+          "Pantanal mato-grossense",
+          "Mangues",
+          "Biomas Aquáticos",
+          "Talassociclo",
+          "Limnociclo"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Impactos Ambientais",
+        "pagina": "460",
+        "assuntos_abordados": [
+          "IMPACTOS AMBIENTAIS",
+          "Mineração",
+          "Derramamento de petróleo",
+          "Contaminação radioativa",
+          "Depósitos impactantes de lixo urbano",
+          "Desenvolvimento Sustentável"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Morfologia e Fisiologia da Raiz",
+        "pagina": "470",
+        "assuntos_abordados": [
+          "Morfologia e Fisiologia da Raiz",
+          "Histologia da raiz",
+          "Morfologia das raízes",
+          "Fisiologia da raiz"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Morfologia da Folha",
+        "pagina": "476",
+        "assuntos_abordados": [
+          "Morfologia da Folha",
+          "Histologia da folha",
+          "Adaptações especiais das folhas",
+          "Função fotossintética da folha",
+          "Ponto de compensação fótico",
+          "Transpiração"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Morfologia e Fisiologia do Caule",
+        "pagina": "486",
+        "assuntos_abordados": [
+          "Morfologia e Fisiologia do Caule",
+          "Histologia do caule",
+          "Morfologia dos caules",
+          "Modificações caulinares",
+          "Fisiologia do caule",
+          "Propagação vegetativa",
+          "Estaquia",
+          "Mergulhia",
+          "Enxertia"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Hormônios Vegetais e Floração",
+        "pagina": "498",
+        "assuntos_abordados": [
+          "Hormônios Vegetais e Floração",
+          "Auxina",
+          "Citocinina",
+          "Giberelina",
+          "Etileno",
+          "Ácido abscísico",
+          "Movimentos vegetais",
+          "Fitocromos",
+          "Influência da luz no desenvolvimento vegetal"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "BIOLOGIA",
+      "frente_livro": "C",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Sistema Endócrino",
+        "pagina": "508",
+        "assuntos_abordados": [
+          "Sistema Endócrino",
+          "Regulação da secreção hormonal",
+          "Mecanismo da ação hormonal",
+          "Principais glândulas humanas",
+          "Diabetes mellitus"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Sistema Sensorial Humano",
+        "pagina": "518",
+        "assuntos_abordados": [
+          "Sistema Sensorial Humano",
+          "Tipos de receptores",
+          "Gustação",
+          "Olfação",
+          "Audição",
+          "Equilíbrio",
+          "Visão",
+          "Alterações no aparelho visual",
+          "O sentido do tato",
+          "Sistema Tegumentar",
+          "Pele"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Teorias Evolutivas",
+        "pagina": "530",
+        "assuntos_abordados": [
+          "Teorias Evolutivas",
+          "Principais teorias evolutivas",
+          "As ideias de darwin - Darwinismo",
+          "Teoria sintética da evolução",
+          "Evidências da evolução"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Padrões de Seleção Natural e Especiação",
+        "pagina": "543",
+        "assuntos_abordados": [
+          "Padrões de Seleção Natural e Especiação",
+          "Fatores evolutivos",
+          "Especiação",
+          "Especiação alopátrica",
+          "Especiação simpátrica",
+          "Especiação parapátrica",
+          "Anagênese e Cladogênese",
+          "Isolamento reprodutivo"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Potência Lançada pelo Gerador",
+        "pagina": "556",
+        "assuntos_abordados": [
+          "Potência Lançada pelo Gerador",
+          "Análise da potência lançada",
+          "Receptores Elétricos",
+          "Equação do receptor",
+          "Curva característica do receptor",
+          "Potência e rendimento do receptor"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Circuito Gerador-Receptor-Resistor",
+        "pagina": "562",
+        "assuntos_abordados": [
+          "Circuito Gerador-Receptor-Resistor",
+          "Lei de Ohm-Pouillet",
+          "Geradores reversíveis",
+          "Leis de Kirchhoff",
+          "Lei dos nós",
+          "Lei das malhas"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Capacitores",
+        "pagina": "568",
+        "assuntos_abordados": [
+          "Capacitores",
+          "Capacitor plano",
+          "Associação de Capacitores",
+          "Associação em série",
+          "Associação em paralelo"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Circuito Gerador - Capacitor - Resistor",
+        "pagina": "575",
+        "assuntos_abordados": [
+          "Circuito Gerador - Capacitor - Resistor",
+          "Carregando um capacitor",
+          "Descarregando um capacitor"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Teoria da Relatividade Especial",
+        "pagina": "582",
+        "assuntos_abordados": [
+          "Teoria da Relatividade Especial",
+          "Física moderna",
+          "Teoria da relatividade",
+          "Massa e Energia Relativística",
+          "Massa relativística",
+          "Energia cinética relativística"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Teoria dos Quanta",
+        "pagina": "589",
+        "assuntos_abordados": [
+          "Teoria dos Quanta",
+          "Efeito fotoelétrico",
+          "Dualidade onda-partícula",
+          "O modelo do átomo de hidrogênio de Bohr"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Física Nuclear",
+        "pagina": "595",
+        "assuntos_abordados": [
+          "Física Nuclear",
+          "O núcleo atômico",
+          "Forças fundamentais",
+          "Partículas fundamentais",
+          "Radioatividade",
+          "Tipos de radiação",
+          "Decaimento radioativo"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Reações Nucleares",
+        "pagina": "602",
+        "assuntos_abordados": [
+          "Reações Nucleares",
+          "Energia da reação",
+          "Fissão nuclear",
+          "Fusão nuclear"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "FÍSICA",
+      "frente_livro": "C",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Campo Magnético",
+        "pagina": "608",
+        "assuntos_abordados": [
+          "Campo magnético",
+          "Vetor campo magnético",
+          "Linhas de campo",
+          "Campo magnético uniforme",
+          "Campo magnético terrestre",
+          "Campo Magnético da Corrente Elétrica",
+          "Experiência de Oersted",
+          "Lei de Biot-Savart",
+          "Fontes de campo magnético"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Força Magnética sobre Cargas Elétricas",
+        "pagina": "616",
+        "assuntos_abordados": [
+          "Força magnética sobre cargas elétricas",
+          "Movimento de partículas eletrizadas em um campo magnético uniforme",
+          "Força magnética sobre condutores",
+          "Força magnética entre condutores paralelos"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Indução Eletromagnética",
+        "pagina": "623",
+        "assuntos_abordados": [
+          "Indução Eletromagnética",
+          "Fluxo magnético",
+          "Lei de Faraday",
+          "A Lei de Lenz",
+          "Lei de Lenz"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Corrente Alternada",
+        "pagina": "630",
+        "assuntos_abordados": [
+          "Corrente Alternada",
+          "Transformadores",
+          "Ondas Eletromagnéticas",
+          "Velocidade das ondas eletromagnéticas",
+          "As principais propriedades das ondas eletromagnéticas",
+          "Espectro eletromagnético"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Pilhas e Baterias Comerciais",
+        "pagina": "638",
+        "assuntos_abordados": [
+          "Pilhas e baterias comerciais",
+          "Diferenças entre pilhas e baterias",
+          "Baterias primárias",
+          "Baterias secundárias",
+          "Baterias de automóveis",
+          "Bateria de celular"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Célula a Combustível",
+        "pagina": "646",
+        "assuntos_abordados": [
+          "Célula a combustível"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Reações de Eletrólise",
+        "pagina": "651",
+        "assuntos_abordados": [
+          "Reações de eletrólise",
+          "Mas o que é a eletrólise ígnea?",
+          "Como ocorre a eletrólise aquosa?"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Aspectos Quantitativos da Eletrodeposição",
+        "pagina": "658",
+        "assuntos_abordados": [
+          "Aspectos quantitativos da eletrodeposição",
+          "Leis de Faraday da eletrodeposição",
+          "Espontaneidade das reações de oxirredução",
+          "Energia livre de Gibbs",
+          "Efeito da concentração sobre o potencial da pilha"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Equilíbrio Iônico, pH e pOH",
+        "pagina": "666",
+        "assuntos_abordados": [
+          "Equilíbrio lônico, pH e pOH",
+          "Equilíbrio iônico ácido-base",
+          "Teoria ácido-base de Brönsted-Lowry",
+          "Lei da diluição de Ostwald",
+          "pH e pOH",
+          "Acidez e basicidade das soluções aquosas",
+          "Indicadores ácido-base"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Hidrólise de Sais e Solução-Tampão",
+        "pagina": "675",
+        "assuntos_abordados": [
+          "Hidrólise de Sais e Solução-Tampão",
+          "Hidrólise de sais",
+          "Sais de ácido forte e base fraca",
+          "Sais de ácidos fracos e bases fortes",
+          "Sais de ácidos e bases fracos",
+          "Sais de ácidos e bases fortes",
+          "Solução-tampão",
+          "pH de solução-tampão"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Produto de Solubilidade",
+        "pagina": "681",
+        "assuntos_abordados": [
+          "Produto de Solubilidade",
+          "Expressão do Kps",
+          "Precipitação de sais"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Aquecimento Global",
+        "pagina": "685",
+        "assuntos_abordados": [
+          "Aquecimento global",
+          "Constituintes e mecanismo do efeito estufa",
+          "Os futuros impactos decorrentes do aquecimento global",
+          "Chuva ácida",
+          "Fontes de óxidos de enxofre",
+          "Fontes de óxidos de nitrogênio",
+          "Camada de ozônio",
+          "Troposfera",
+          "Estratosfera",
+          "Buraco na camada de ozônio"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "QUÍMICA",
+      "frente_livro": "C",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Copolímeros e Polímeros de Condensação",
+        "pagina": "696",
+        "assuntos_abordados": [
+          "Copolímeros e Polímeros de Condensação",
+          "Copolímeros",
+          "Classificação",
+          "Nomenclatura",
+          "Polímeros de condensação",
+          "Poliésteres",
+          "Poliamidas",
+          "Resinas",
+          "Polímeros à base de silício"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Oxidação de Álcoois",
+        "pagina": "706",
+        "assuntos_abordados": [
+          "Oxidação de álcoois",
+          "A Química do Bafômetro",
+          "Oxidação de Álcoois"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Oxidação de Hidrocarbonetos",
+        "pagina": "711",
+        "assuntos_abordados": [
+          "Oxidação de hidrocarbonetos",
+          "Oxidação branda de alcenos",
+          "Oxidação enérgica de alcenos e alcinos",
+          "Ozonólise de alcenos"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Reações de Redução",
+        "pagina": "717",
+        "assuntos_abordados": [
+          "Reações de redução",
+          "Redução por hidrogenação catalítica",
+          "Redução por boro-hidretos e alumínio-hidretos",
+          "Redução por hidrogênio livre",
+          "Redução por reagentes de Grignard"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "A",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos entre Retas e Inequações",
+        "pagina": "724",
+        "assuntos_abordados": [
+          "Retas: Posições Relativas, Distância de Pontos a Reta, Ângulos Entre Retas e Inequações",
+          "Posições relativas entre duas retas no plano",
+          "Retas paralelas no plano cartesiano",
+          "Retas perpendiculares no plano cartesiano",
+          "Ângulo agudo entre retas",
+          "Distância de um ponto a uma reta",
+          "Semiplanos - inequações do 1º grau"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Equação Reduzida e Equação Geral da Circunferência",
+        "pagina": "731",
+        "assuntos_abordados": [
+          "Equação Reduzida e Equação Geral da Circunferência",
+          "Definição de circunferência",
+          "Equação reduzida da circunferência",
+          "Equação geral da circunferência",
+          "Equação geral do 2º grau com duas variáveis"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Circunferência: Posições Relativas e Tangência",
+        "pagina": "737",
+        "assuntos_abordados": [
+          "Circunferência: Posições Relativas e Tangência",
+          "Posições relativas entre reta e circunferência",
+          "Intersecção entre reta e circunferência",
+          "Posições relativas entre duas circunferências",
+          "Interseção entre duas circunferências",
+          "Problemas de Tangência"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Cônicas",
+        "pagina": "744",
+        "assuntos_abordados": [
+          "Cônicas",
+          "Definição",
+          "Elementos",
+          "Relação fundamental",
+          "Excentricidade",
+          "Equações reduzidas",
+          "Elipse com centro diferente da origem",
+          "Hipérbole",
+          "Elementos",
+          "Relação fundamental",
+          "Excentricidade",
+          "Equações reduzidas",
+          "Hipérbole com centro diferente da origem",
+          "Assíntotas da hipérbole",
+          "Definição",
+          "Elementos",
+          "Equações reduzidas",
+          "Parábola com vértice diferente da origem"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "B",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Progressão Geométrica",
+        "pagina": "756",
+        "assuntos_abordados": [
+          "Progressão Geométrica",
+          "Definição",
+          "Classificação",
+          "Termo geral",
+          "Propriedades",
+          "Interpolação geométrica",
+          "Soma dos n primeiros termos",
+          "Soma dos termos de uma PG infinita"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Números Complexos",
+        "pagina": "763",
+        "assuntos_abordados": [
+          "Números Complexos",
+          "Unidade imaginária",
+          "Potências da unidade imaginária",
+          "Forma algébrica",
+          "Conjunto dos números complexos",
+          "Igualdade",
+          "Conjugado",
+          "Operações na forma algébrica",
+          "Plano complexo",
+          "Módulo de um número complexo",
+          "Argumento de um número complexo",
+          "Forma trigonométrica ou polar",
+          "Operações na forma trigonométrica",
+          "Fórmulas de Moivre"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Polinômios",
+        "pagina": "773",
+        "assuntos_abordados": [
+          "Polinômios",
+          "Grau",
+          "Valor numérico",
+          "Raiz",
+          "Polinômios idênticos",
+          "Polinômio identicamente nulo",
+          "Adição e subtração",
+          "Multiplicação",
+          "Divisão de polinômios",
+          "Briot-Ruffini",
+          "Teorema do resto",
+          "Teorema de d'Alembert",
+          "Divisão de um polinômio pelo produto (x − a)(x − b)"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Equações Algébricas",
+        "pagina": "779",
+        "assuntos_abordados": [
+          "Equações Algébricas",
+          "Raiz",
+          "Conjunto solução",
+          "Teorema fundamental da álgebra",
+          "Teorema da decomposição",
+          "Multiplicidade de uma raiz",
+          "Gráficos das funções polinomiais",
+          "Relações entre os coeficientes e as raízes de uma equação algébrica",
+          "Raízes imaginárias",
+          "Raízes racionais"
+        ]
+      }
+    ]
+  },
+  {
+    "sumario_info": {
+      "disciplina": "MATEMÁTICA",
+      "frente_livro": "C",
+      "livro": "L06"
+    },
+    "modulos": [
+      {
+        "modulo": "21",
+        "titulo": "Demais Funções Trigonométricas",
+        "pagina": "788",
+        "assuntos_abordados": [
+          "Demais Funções Trigonométricas",
+          "Função tangente",
+          "Função cotangente",
+          "Função secante",
+          "Função cossecante"
+        ]
+      },
+      {
+        "modulo": "22",
+        "titulo": "Gráficos e Tabelas Estatísticas",
+        "pagina": "794",
+        "assuntos_abordados": [
+          "Gráficos e Tabelas Estatísticas",
+          "O que é Estatística?",
+          "Variáveis estatísticas",
+          "População e amostra",
+          "Amplitude de uma amostra",
+          "Dados brutos e rol",
+          "Tabelas de distribuição de frequências",
+          "Gráficos de linhas",
+          "Gráficos de barras",
+          "Gráficos de setores",
+          "Gráficos pictóricos",
+          "Histogramas",
+          "Polígonos de frequência"
+        ]
+      },
+      {
+        "modulo": "23",
+        "titulo": "Medidas de Tendência Central",
+        "pagina": "805",
+        "assuntos_abordados": [
+          "Medidas de Tendência Central",
+          "Média de um conjunto de valores",
+          "Média aritmética simples",
+          "Média aritmética ponderada",
+          "Mediana",
+          "Moda"
+        ]
+      },
+      {
+        "modulo": "24",
+        "titulo": "Medidas de Dispersão",
+        "pagina": "809",
+        "assuntos_abordados": [
+          "Medidas de Dispersão",
+          "Variância",
+          "Desvio padrão",
+          "Desvio médio"
+        ]
+      }
+    ]
+  }
+]
