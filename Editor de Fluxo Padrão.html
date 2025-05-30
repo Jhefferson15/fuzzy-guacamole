@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Editor de Fluxo Visual Interativo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .question-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .question-card h2 {
+            margin-top: 0;
+            color: #2da9a4; /* Updated Green */
+        }
+        .question-card p {
+            margin-bottom: 5px;
+        }
+        .question-card .source-ref {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* .controls original comentado para ocultar os botões superiores */
+        /*
+        .controls {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .controls button {
+            padding: 10px 15px;
+            background-color: #2da9a4; // Updated Green
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .controls button:hover:not(:disabled) {
+            background-color: #258f8a; // Slightly darker variant of #2da9a4 or just #2da9a4
+        }
+        .controls button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .controls label { // Kept for potential future use of checkbox
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #555;
+        }
+        */
+
+
+        #flow-editor-container {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between; /* Creates central space */
+            padding: 20px 0;
+            border-radius: 8px;
+            margin-bottom: 20px; /* Space before new bottom buttons */
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Spacing between nodes in the same column */
+        }
+
+        #left-column {
+            width: 35%; /* Adjusted width for the left column */
+        }
+
+        #right-column {
+            width: 50%; /* Increased width for the right column */
+        }
+
+        .node {
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            user-select: none;
+            z-index: 2;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            word-wrap: break-word; 
+        }
+        #left-column .node {
+            max-width: 280px; /* Max width for left nodes, causing word wrap */
+            /* min-height will be set via JS */
+        }
+
+        .node.drawing-from {
+            box-shadow: 0 0 0 3px #2da9a4, 0 4px 8px rgba(0,0,0,0.2); /* Updated Green */
+        }
+        .node-text {
+            margin-bottom: 5px;
+        }
+        .distractor-explanation {
+            font-size: 0.85em;
+            color: #c0392b; /* Red for distractor text */
+            margin-top: 10px;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #fdf6f6; 
+            padding: 10px;
+            border-radius: 0 0 4px 4px;
+        }
+
+
+        .port {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 2px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+
+        .output-port { right: -6px; }
+        .input-port { left: -6px; }
+
+        .connection-marker {
+            position: absolute;
+            width: 24px; 
+            height: 24px;
+            color: white;
+            background-color: #2da9a4; /* Updated Green */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px; 
+            font-weight: bold;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .output-marker { right: -12px; } 
+        .input-marker { left: -12px; }
+        .connection-marker span { line-height: 1; }
+
+
+        #connections-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .connection-line {
+            stroke-width: 3.5px; 
+            fill: none;
+            stroke: #2da9a4; /* Updated Green for solid line */
+        }
+        .connection-line-animated {
+            animation: dashdraw 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes dashdraw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .connection-haste {
+            position: absolute;
+            height: 3.5px; 
+            background: #2da9a4; /* Updated Green, solid color */
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 1.75px;
+        }
+
+        /* --- STYLES FOR BOTTOM NAVIGATION BUTTONS --- */
+        .bottom-controls-container {
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .navigation-buttons { /* Only navigation buttons remain visible */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .bottom-controls-container button { /* Styling for navigation buttons */
+            padding: 12px 25px; 
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px; 
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .bottom-controls-container button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        .bottom-controls-container button:active:not(:disabled) {
+            transform: translateY(0px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .bottom-controls-container button:disabled {
+            background-color: #bdc3c7 !important; 
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        #prev-flashcard-btn, #next-flashcard-btn {
+            background-color: #3498db; /* Blue for navigation */
+            min-width: 120px; 
+        }
+        #prev-flashcard-btn:hover:not(:disabled), #next-flashcard-btn:hover:not(:disabled) {
+            background-color: #2980b9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="question-card">
+        <h2 id="card-title">Carregando...</h2>
+        <p id="card-description">Conecte os conceitos da esquerda com suas correspondências à direita.</p>
+        <p id="card-source-ref" class="source-ref"></p>
+    </div>
+    
+    <div id="flow-editor-container">
+        <div id="left-column" class="column"></div>
+        <div id="right-column" class="column"></div>
+        <svg id="connections-svg">
+            <!-- Removed lineGradient defs as line is now solid color -->
+        </svg>
+    </div>
+
+    <div class="bottom-controls-container">
+        <!-- Action buttons (Reset, Check Answers) are removed from UI -->
+        <!-- Checkbox (Allow Multiple Connections) is removed from UI -->
+        <div class="navigation-buttons">
+            <button id="prev-flashcard-btn" title="Flashcard Anterior" disabled>&lt; Anterior</button>
+            <button id="next-flashcard-btn" title="Próximo Flashcard" disabled>&gt; Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        const leftColumn = document.getElementById('left-column');
+        const rightColumn = document.getElementById('right-column');
+        const svgCanvas = document.getElementById('connections-svg');
+        const editorContainer = document.getElementById('flow-editor-container');
+        
+        // Buttons removed from UI but functions kept:
+        // const resetBtn = document.getElementById('reset-connections-btn');
+        // const checkAnswersBtn = document.getElementById('check-answers-btn');
+        // const allowMultipleCb = document.getElementById('allow-multiple-connections-cb');
+
+        const prevFlashcardBtn = document.getElementById('prev-flashcard-btn');
+        const nextFlashcardBtn = document.getElementById('next-flashcard-btn');
+
+        const cardTitleEl = document.getElementById('card-title');
+        const cardDescriptionEl = document.getElementById('card-description');
+        const cardSourceRefEl = document.getElementById('card-source-ref');
+
+        let nodes = {}; 
+        let connections = [];
+        let isDrawing = false;
+        let startNodeId = null;
+        let startPortElement = null;
+        let tempLine = null;
+
+        let nodeIdCounter = 0;
+        let globalConnectionIdCounter = 0;
+        const HASTE_HEIGHT = 3.5; 
+        let allowMultipleConnections = false; // Default to false (single connections)
+        let answersHaveBeenChecked = false; // Tracks if verification logic has run
+
+        let bookData = null;
+        let currentModuleIndex = 0;
+        let currentFlashcardIndex = 0;
+        let currentFlashcardData = {
+            gabarito: [],
+            leftNodesFullOriginal: [], // Stores original left nodes with original index
+            rightNodesFullOriginal: [] // Stores original right nodes with original index
+        };
+
+        const GITHUB_CONFIG_URL = 'https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/main/Portugu%C3%AAs%20-%20Livro%201%20-%20Frente%20A.json';
+
+        async function fetchConfig(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.warn(`Erro ao buscar config de ${url}: ${response.status} ${response.statusText}`);
+                    cardTitleEl.textContent = "Erro de Rede";
+                    cardDescriptionEl.textContent = `Não foi possível carregar os dados. Status: ${response.status}`;
+                    return null;
+                }
+                const configData = await response.json();
+                console.log("Configuração carregada:", configData);
+                return configData;
+            } catch (error) {
+                console.error("Falha ao buscar ou parsear JSON de configuração:", error);
+                cardTitleEl.textContent = "Erro ao Processar Dados";
+                cardDescriptionEl.textContent = "Falha ao processar o arquivo de configuração.";
+                return null;
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        
+        function setLeftColumnNodesHeight() {
+            const leftNodesElements = Array.from(leftColumn.querySelectorAll('.node'));
+            if (leftNodesElements.length === 0) return;
+
+            let maxHeight = 0;
+            leftNodesElements.forEach(nodeEl => {
+                nodeEl.style.minHeight = 'auto'; // Reset for natural height calculation
+                if (nodeEl.offsetHeight > maxHeight) {
+                    maxHeight = nodeEl.offsetHeight;
+                }
+            });
+            
+            maxHeight = Math.max(maxHeight, 60); // Ensure a minimum height
+            
+            leftNodesElements.forEach(nodeEl => {
+                nodeEl.style.minHeight = `${maxHeight}px`;
+            });
+        }
+
+
+        function loadFlashcard(moduleIdx, flashcardIdx) {
+            if (!bookData || !bookData.modules || !bookData.modules[moduleIdx] || !bookData.modules[moduleIdx].flashcards[flashcardIdx]) {
+                console.error("Flashcard não encontrado:", moduleIdx, flashcardIdx);
+                cardTitleEl.textContent = "Erro ao carregar flashcard";
+                cardDescriptionEl.textContent = "Verifique os dados ou a seleção.";
+                return;
+            }
+
+            currentModuleIndex = moduleIdx;
+            currentFlashcardIndex = flashcardIdx;
+            const module = bookData.modules[moduleIdx];
+            const flashcard = module.flashcards[flashcardIdx];
+
+            cardTitleEl.textContent = `${module.moduleTitle} (Card ${flashcardIdx + 1})`;
+            cardDescriptionEl.textContent = `Conecte os itens da esquerda com os da direita. Flashcard ID: ${flashcard.id}`;
+            cardSourceRefEl.textContent = `Fonte: ${module.sourceReference || 'Não especificada'}`;
+
+            resetAllConnections(); // This also resets answersHaveBeenChecked and visual feedback
+            
+            leftColumn.innerHTML = '';
+            rightColumn.innerHTML = '';
+            nodes = {};
+            nodeIdCounter = 0; // Reset for new card
+
+            currentFlashcardData.gabarito = flashcard.gabarito;
+
+            // Store original left nodes with their original indices then shuffle
+            currentFlashcardData.leftNodesFullOriginal = flashcard.leftColumnNodes.map((text, index) => ({ 
+                text, 
+                originalIndex: index 
+            }));
+            const shuffledLeftNodes = shuffleArray([...currentFlashcardData.leftNodesFullOriginal]);
+
+            // Store original right nodes (with full data) and their original indices then shuffle
+            currentFlashcardData.rightNodesFullOriginal = flashcard.rightColumnNodes.map((nodeData, index) => ({
+                ...nodeData,
+                originalIndex: index 
+            }));
+            const shuffledRightNodes = shuffleArray([...currentFlashcardData.rightNodesFullOriginal]);
+            
+            // Create nodes using shuffled lists and their stored originalIndex
+            shuffledLeftNodes.forEach(nodeData => {
+                addNode(nodeData.text, 'left', nodeData.originalIndex);
+            });
+            setLeftColumnNodesHeight(); // Adjust height after adding all left nodes
+
+            shuffledRightNodes.forEach(nodeDataWithOriginalIndex => {
+                addNode(nodeDataWithOriginalIndex.text, 'right', nodeDataWithOriginalIndex.originalIndex, nodeDataWithOriginalIndex.isDistractor, nodeDataWithOriginalIndex.distractorExplanation);
+            });
+            
+            updateNavigationButtons();
+            // No checkAnswersBtn to update its state
+            answersHaveBeenChecked = false; // Ensure it's reset for the new card
+            resetVisualFeedback(); // Ensure visual feedback is clean for new card
+            setTimeout(redrawAllConnections, 50); 
+        }
+
+
+        async function initializeApp() {
+            bookData = await fetchConfig(GITHUB_CONFIG_URL);
+            if (bookData && bookData.modules && bookData.modules.length > 0) {
+                // allowMultipleConnections is false by default
+                loadFlashcard(0, 0); 
+            } else {
+                prevFlashcardBtn.disabled = true;
+                nextFlashcardBtn.disabled = true;
+                // No resetBtn or checkAnswersBtn or allowMultipleCb to disable
+            }
+        }
+
+        function updateNavigationButtons() {
+            if (!bookData || !bookData.modules || bookData.modules.length === 0) {
+                prevFlashcardBtn.disabled = true;
+                nextFlashcardBtn.disabled = true;
+                return;
+            }
+            const currentModule = bookData.modules[currentModuleIndex];
+            prevFlashcardBtn.disabled = (currentModuleIndex === 0 && currentFlashcardIndex === 0);
+            nextFlashcardBtn.disabled = (currentModuleIndex === bookData.modules.length - 1 &&
+                                       currentFlashcardIndex === currentModule.flashcards.length - 1);
+        }
+        
+        prevFlashcardBtn.addEventListener('click', () => {
+            if (currentFlashcardIndex > 0) {
+                loadFlashcard(currentModuleIndex, currentFlashcardIndex - 1);
+            } else if (currentModuleIndex > 0) {
+                const prevModuleIndex = currentModuleIndex - 1;
+                const prevModule = bookData.modules[prevModuleIndex];
+                loadFlashcard(prevModuleIndex, prevModule.flashcards.length - 1);
+            }
+        });
+
+        nextFlashcardBtn.addEventListener('click', () => {
+            const currentModule = bookData.modules[currentModuleIndex];
+            if (currentFlashcardIndex < currentModule.flashcards.length - 1) {
+                loadFlashcard(currentModuleIndex, currentFlashcardIndex + 1);
+            } else if (currentModuleIndex < bookData.modules.length - 1) {
+                loadFlashcard(currentModuleIndex + 1, 0);
+            }
+        });
+
+        // Event listeners for resetBtn and checkAnswersBtn are removed as buttons are removed from UI
+        // Event listener for allowMultipleCb is removed
+
+        function createNodeElement(id, text, originalIndex, columnType, isDistractor, distractorExplanationText) {
+            const nodeEl = document.createElement('div');
+            nodeEl.classList.add('node');
+            nodeEl.dataset.nodeId = id;
+            nodeEl.dataset.originalIndex = originalIndex; 
+            nodeEl.dataset.columnType = columnType; // Store column type for easier access
+
+            const textSpan = document.createElement('span');
+            textSpan.classList.add('node-text');
+            textSpan.textContent = text;
+            nodeEl.appendChild(textSpan);
+
+            if (columnType === 'right') {
+                nodeEl.dataset.isDistractor = !!isDistractor; // Store as boolean
+                nodeEl.dataset.distractorExplanation = distractorExplanationText || "";
+
+                const explanationDiv = document.createElement('div');
+                explanationDiv.classList.add('distractor-explanation');
+                explanationDiv.style.display = 'none'; // Initially hidden
+                nodeEl.appendChild(explanationDiv);
+            }
+
+            const outputPort = document.createElement('div');
+            outputPort.classList.add('port', 'output-port');
+            nodeEl.appendChild(outputPort);
+
+            const inputPort = document.createElement('div');
+            inputPort.classList.add('port', 'input-port');
+            nodeEl.appendChild(inputPort);
+
+            nodeEl.addEventListener('click', handleNodeClick);
+            return nodeEl;
+        }
+        
+        function addNode(text, columnType, originalIndex, isDistractor = false, distractorExplanationText = "") {
+            const id = `node-${nodeIdCounter++}`;
+            const nodeEl = createNodeElement(id, text, originalIndex, columnType, isDistractor, distractorExplanationText);
+            if (columnType === 'left') {
+                leftColumn.appendChild(nodeEl);
+            } else {
+                rightColumn.appendChild(nodeEl);
+            }
+            nodes[id] = { 
+                id: id, 
+                element: nodeEl, 
+                text: text, 
+                originalIndex: originalIndex, 
+                columnType: columnType,
+                isDistractor: !!isDistractor, // Ensure boolean
+                distractorExplanation: distractorExplanationText
+            };
+            return id;
+        }
+
+        function getPortPosition(portElement) {
+            const editorRect = editorContainer.getBoundingClientRect();
+            const nodeElement = portElement.closest('.node');
+            const nodeRect = nodeElement.getBoundingClientRect();
+            let yPositionInNode = nodeElement.offsetHeight / 2;
+
+            return {
+                x: (portElement.classList.contains('output-port') ? nodeRect.right : nodeRect.left) - editorRect.left,
+                y: nodeRect.top - editorRect.top + yPositionInNode
+            };
+        }
+
+
+        function createBezierPath(p1, p2) {
+            const dx_abs = Math.abs(p2.x - p1.x);
+            let offset = dx_abs * 0.4; 
+            if (p1.y === p2.y) return `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`; 
+            if (dx_abs < 50) offset = dx_abs * 0.6;
+            if (dx_abs < 10 && dx_abs !== 0) offset = 5;
+            if (dx_abs === 0) offset = 0; 
+            
+            let cp1x = p1.x + (p2.x > p1.x ? offset : -offset);
+            let cp2x = p2.x - (p2.x > p1.x ? offset : -offset);
+            return `M ${p1.x} ${p1.y} C ${cp1x} ${p1.y}, ${cp2x} ${p2.y}, ${p2.x} ${p2.y}`;
+        }
+
+        function drawLine(p1, p2, existingPath = null, isFinalizing = false) {
+            const pathData = createBezierPath(p1, p2);
+            let line = existingPath;
+            if (!line) {
+                line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                line.classList.add('connection-line');
+                // line.setAttribute('stroke', 'url(#lineGradient)'); // Removed, using solid color from CSS
+                svgCanvas.appendChild(line);
+            }
+            line.setAttribute('d', pathData);
+            if (isFinalizing && line && !line.dataset.animationCompleted) {
+                line.dataset.animationCompleted = "true";
+                const length = (p1.y === p2.y && Math.abs(p1.x - p2.x) > 0) ? Math.abs(p1.x - p2.x) : (line.getTotalLength ? line.getTotalLength() : 0);
+                if (length > 1) {
+                    line.style.strokeDasharray = length;
+                    line.style.strokeDashoffset = length;
+                    line.getBoundingClientRect(); 
+                    line.classList.add('connection-line-animated');
+                    line.addEventListener('animationend', function handleAnimationEnd() {
+                        line.style.strokeDasharray = 'none'; line.style.strokeDashoffset = '0';
+                        line.classList.remove('connection-line-animated');
+                        line.removeEventListener('animationend', handleAnimationEnd);
+                    }, { once: true });
+                } else {
+                     line.style.strokeDasharray = 'none'; line.style.strokeDashoffset = '0';
+                }
+            }
+            return line;
+        }
+
+        function createMarkerElement(visualMarkerType) {
+            const marker = document.createElement('div');
+            marker.classList.add('connection-marker', visualMarkerType === 'output' ? 'output-marker' : 'input-marker');
+            const span = document.createElement('span');
+            marker.appendChild(span);
+            return marker;
+        }
+        
+        function appendAndPositionMarker(nodeElement, newMarker, markerType) {
+            nodeElement.appendChild(newMarker);
+        }
+
+        function repositionMarkersOnNode(nodeElement, markerType) {
+            const markerSelector = markerType === 'output' ? '.output-marker' : '.input-marker';
+            const existingMarkers = Array.from(nodeElement.querySelectorAll(markerSelector));
+            if (existingMarkers.length === 0) return;
+
+            existingMarkers.sort((a, b) => parseInt(a.dataset.connectionNumber) - parseInt(b.dataset.connectionNumber));
+            
+            const nodeCenterY = nodeElement.offsetHeight / 2;
+            const markerHeight = existingMarkers[0].offsetHeight;
+            const spacing = 4; 
+            const totalMarkersHeight = existingMarkers.length * markerHeight + Math.max(0, existingMarkers.length - 1) * spacing;
+            
+            let startYGroup = nodeCenterY - totalMarkersHeight / 2;
+            const paddingTop = 5; 
+            const paddingBottom = 5;
+            
+            startYGroup = Math.max(paddingTop, startYGroup);
+            if (startYGroup + totalMarkersHeight > nodeElement.offsetHeight - paddingBottom) {
+                startYGroup = Math.max(paddingTop, nodeElement.offsetHeight - paddingBottom - totalMarkersHeight);
+            }
+
+            existingMarkers.forEach((marker, index) => {
+                const targetCenterYOfThisMarker = startYGroup + index * (markerHeight + spacing) + (markerHeight / 2);
+                const yOffsetFromNodeCenter = targetCenterYOfThisMarker - nodeCenterY;
+                marker.style.transform = `translateY(calc(-50% + ${yOffsetFromNodeCenter}px))`;
+            });
+        }
+
+        function removeConnection(connectionToRemove, skipUpdatingNumbers = false) {
+            if (!connectionToRemove) return;
+            if (connectionToRemove.line) connectionToRemove.line.remove();
+            if (connectionToRemove.haste) connectionToRemove.haste.remove();
+            if (connectionToRemove.markers) connectionToRemove.markers.forEach(marker => marker.remove());
+            
+            // Reset border colors if nodes exist
+            if (nodes[connectionToRemove.from] && nodes[connectionToRemove.from].element) {
+                nodes[connectionToRemove.from].element.style.borderColor = '';
+            }
+            if (nodes[connectionToRemove.to] && nodes[connectionToRemove.to].element) {
+                nodes[connectionToRemove.to].element.style.borderColor = '';
+                 const explDiv = nodes[connectionToRemove.to].element.querySelector('.distractor-explanation');
+                 if (explDiv) explDiv.style.display = 'none'; // Hide explanation if connection removed
+            }
+
+            const index = connections.indexOf(connectionToRemove);
+            if (index > -1) connections.splice(index, 1);
+
+            if (!skipUpdatingNumbers) {
+                 updateDisplayedConnectionNumbersAndMarkers();
+                 checkAndHandleVerificationState(); // Check if verification state needs to change
+            }
+        }
+
+        function updateDisplayedConnectionNumbersAndMarkers() {
+            connections.sort((a, b) => a.id - b.id);
+            const affectedNodes = new Set();
+
+            connections.forEach((conn, index) => {
+                const displayedNumber = index + 1;
+                conn.markers[0].querySelector('span').textContent = displayedNumber;
+                conn.markers[1].querySelector('span').textContent = displayedNumber;
+                conn.markers[0].dataset.connectionNumber = displayedNumber;
+                conn.markers[1].dataset.connectionNumber = displayedNumber;
+                affectedNodes.add(conn.from);
+                affectedNodes.add(conn.to);
+            });
+
+            affectedNodes.forEach(nodeId => {
+                const nodeData = nodes[nodeId];
+                if (nodeData && nodeData.element) {
+                    repositionMarkersOnNode(nodeData.element, nodeData.columnType === 'left' ? 'output' : 'input');
+                }
+            });
+            
+            if (connections.length === 0) { 
+                Object.values(nodes).forEach(nodeData => {
+                    if (nodeData.element) {
+                        Array.from(nodeData.element.querySelectorAll('.connection-marker')).forEach(m => m.remove());
+                    }
+                });
+            }
+        }
+
+        function resetVisualFeedback() {
+            Object.values(nodes).forEach(nodeData => {
+                if (nodeData.element) {
+                    nodeData.element.style.borderColor = ''; 
+                    if (nodeData.columnType === 'right') {
+                        const explDiv = nodeData.element.querySelector('.distractor-explanation');
+                        if (explDiv) {
+                            explDiv.style.display = 'none';
+                            explDiv.textContent = ''; // Clear content too
+                        }
+                    }
+                }
+            });
+        }
+        
+        // This function is kept for potential future use (e.g. a manual reset button)
+        function resetAllConnections() {
+            [...connections].forEach(conn => removeConnection(conn, true)); 
+            connections = [];
+            globalConnectionIdCounter = 0;
+            answersHaveBeenChecked = false;
+            resetVisualFeedback();
+            updateDisplayedConnectionNumbersAndMarkers();
+            // No checkAnswersBtn to update
+            setTimeout(redrawAllConnections, 0); 
+        }
+        
+        function checkAndHandleVerificationState() {
+            const leftNodeElements = Array.from(leftColumn.querySelectorAll('.node'));
+            if (leftNodeElements.length === 0) return;
+
+            const allLeftConnected = leftNodeElements.every(leftNodeEl => {
+                return connections.some(conn => conn.from === leftNodeEl.dataset.nodeId);
+            });
+
+            if (allLeftConnected && !answersHaveBeenChecked) {
+                performVerificationAndFeedback();
+                answersHaveBeenChecked = true;
+            } else if (!allLeftConnected && answersHaveBeenChecked) {
+                resetVisualFeedback();
+                answersHaveBeenChecked = false;
+                // After resetting visual feedback, redraw connections as node sizes might change
+                // (e.g., if distractor explanations were hidden)
+                setTimeout(redrawAllConnections, 50); 
+            }
+        }
+
+
+        function handleNodeClick(event) {
+            event.stopPropagation();
+            // Allow changing connections even if answersHaveBeenChecked, but behavior will reset/re-evaluate
+            // if (answersHaveBeenChecked) {
+            //     console.log("Respostas já verificadas. Reset para fazer novas conexões.");
+            //     return;
+            // }
+
+            const clickedNodeElement = event.currentTarget;
+            const nodeId = clickedNodeElement.dataset.nodeId;
+            const nodeData = nodes[nodeId];
+            if (!nodeData) return;
+
+            if (!isDrawing) {
+                // If starting a new connection and answers were previously checked, reset feedback
+                if (answersHaveBeenChecked) {
+                    resetVisualFeedback();
+                    answersHaveBeenChecked = false; 
+                }
+
+                isDrawing = true;
+                startNodeId = nodeId;
+                startPortElement = clickedNodeElement.querySelector(nodeData.columnType === 'left' ? '.output-port' : '.input-port');
+                if (!startPortElement) { resetDrawingState(); return; }
+                nodes[startNodeId].element.classList.add('drawing-from');
+                const startPos = getPortPosition(startPortElement);
+                tempLine = drawLine(startPos, startPos);
+                document.addEventListener('mousemove', handlePointerMove);
+                document.addEventListener('touchmove', handlePointerMove, { passive: false });
+                document.addEventListener('mouseup', handlePointerUp, { once: true });
+                document.addEventListener('touchend', handlePointerUp, { once: true });
+                document.addEventListener('touchcancel', handlePointerUp, { once: true });
+            } else {
+                const startNodeData = nodes[startNodeId];
+                if (startNodeData.element) startNodeData.element.classList.remove('drawing-from');
+
+                if (startNodeId && startNodeData && nodeData.columnType !== startNodeData.columnType && startNodeId !== nodeId) {
+                    let finalFromNodeId = startNodeData.columnType === 'left' ? startNodeId : nodeId;
+                    let finalToNodeId = startNodeData.columnType === 'left' ? nodeId : startNodeId;
+                    let finalFromPortEl = nodes[finalFromNodeId].element.querySelector('.output-port');
+                    let finalToPortEl = nodes[finalToNodeId].element.querySelector('.input-port');
+
+                    if (!finalFromPortEl || !finalToPortEl) {
+                        if (tempLine) tempLine.remove(); tempLine = null;
+                        resetDrawingState(); return;
+                    }
+
+                    if (!allowMultipleConnections) { // This is now default false
+                        const connectionsToRemove = new Set();
+                        connections.forEach(conn => {
+                            if (conn.from === finalFromNodeId) connectionsToRemove.add(conn); 
+                            if (conn.to === finalToNodeId) connectionsToRemove.add(conn); 
+                        });
+                        // If answers were checked, removing connections should reset the state.
+                        if (answersHaveBeenChecked && connectionsToRemove.size > 0) {
+                            resetVisualFeedback();
+                            answersHaveBeenChecked = false;
+                        }
+                        connectionsToRemove.forEach(conn => removeConnection(conn, true)); // true to avoid immediate re-check
+                    }
+                    
+                    const existingExactConnection = connections.find(c => c.from === finalFromNodeId && c.to === finalToNodeId);
+                    if (existingExactConnection) {
+                        if (tempLine) tempLine.remove(); tempLine = null;
+                        resetDrawingState();
+                        return;
+                    }
+
+                    const p1 = getPortPosition(finalFromPortEl);
+                    const p2 = getPortPosition(finalToPortEl);
+                    const finalSvgLine = drawLine(p1, p2, tempLine, true);
+                    tempLine = null;
+
+                    let htmlHasteElement = null;
+                    if (Math.abs(p1.y - p2.y) < 1.5) { 
+                        htmlHasteElement = document.createElement('div');
+                        htmlHasteElement.classList.add('connection-haste');
+                        htmlHasteElement.style.height = `${HASTE_HEIGHT}px`;
+                        htmlHasteElement.style.top = `${p1.y - HASTE_HEIGHT / 2}px`;
+                        const startX = Math.min(p1.x, p2.x);
+                        const endX = Math.max(p1.x, p2.x);
+                        const width = endX - startX;
+                        if (width > 1) {
+                            htmlHasteElement.style.left = `${startX}px`;
+                            htmlHasteElement.style.width = `${width}px`;
+                            editorContainer.insertBefore(htmlHasteElement, svgCanvas);
+                        } else {
+                            htmlHasteElement = null; 
+                        }
+                    }
+
+                    globalConnectionIdCounter++;
+                    const outputMarker = createMarkerElement('output');
+                    const inputMarker = createMarkerElement('input');
+                    appendAndPositionMarker(nodes[finalFromNodeId].element, outputMarker, 'output');
+                    appendAndPositionMarker(nodes[finalToNodeId].element, inputMarker, 'input');
+                    
+                    connections.push({
+                        id: globalConnectionIdCounter, from: finalFromNodeId, to: finalToNodeId,
+                        line: finalSvgLine, haste: htmlHasteElement, markers: [outputMarker, inputMarker]
+                    });
+                    
+                    updateDisplayedConnectionNumbersAndMarkers();
+                    checkAndHandleVerificationState(); // Check if all left nodes are now connected
+                    resetDrawingState();
+                } else { 
+                    if (tempLine) tempLine.remove(); tempLine = null;
+                    resetDrawingState();
+                }
+            }
+        }
+
+        function handlePointerMove(event) {
+            if (!isDrawing || !tempLine || !startPortElement) return;
+            let clientX, clientY;
+            if (event.type.startsWith('touch')) {
+                if (event.touches && event.touches.length > 0) {
+                    clientX = event.touches[0].clientX; clientY = event.touches[0].clientY;
+                    event.preventDefault(); 
+                } else return;
+            } else {
+                clientX = event.clientX; clientY = event.clientY;
+            }
+            
+            const startNodeData = nodes[startNodeId];
+            const startPos = getPortPosition(startPortElement);
+            const editorRect = editorContainer.getBoundingClientRect();
+            const pointerPos = {
+                x: clientX - editorRect.left,
+                y: clientY - editorRect.top
+            };
+            
+            let p1_temp = startNodeData.columnType === 'left' ? startPos : pointerPos;
+            let p2_temp = startNodeData.columnType === 'left' ? pointerPos : startPos;
+
+            drawLine(p1_temp, p2_temp, tempLine, false);
+        }
+
+        function handlePointerUp(event) {
+            document.removeEventListener('mousemove', handlePointerMove);
+            document.removeEventListener('touchmove', handlePointerMove);
+        }
+
+        editorContainer.addEventListener('click', (event) => {
+            if (isDrawing && event.target === editorContainer || event.target === svgCanvas) {
+                if (tempLine) tempLine.remove(); tempLine = null;
+                if (startNodeId && nodes[startNodeId] && nodes[startNodeId].element) {
+                     nodes[startNodeId].element.classList.remove('drawing-from');
+                }
+                resetDrawingState();
+            }
+        });
+        
+        function resetDrawingState() {
+            if (isDrawing && startNodeId && nodes[startNodeId] && nodes[startNodeId].element) {
+                 nodes[startNodeId].element.classList.remove('drawing-from');
+            }
+            isDrawing = false; startNodeId = null; startPortElement = null;
+            document.removeEventListener('mousemove', handlePointerMove);
+            document.removeEventListener('touchmove', handlePointerMove);
+            document.removeEventListener('mouseup', handlePointerUp);
+            document.removeEventListener('touchend', handlePointerUp);
+            document.removeEventListener('touchcancel', handlePointerUp);
+        }
+
+        function redrawAllConnections() {
+            connections.forEach(conn => {
+                const fromNodeData = nodes[conn.from], toNodeData = nodes[conn.to];
+                if (!fromNodeData || !toNodeData) { 
+                    removeConnection(conn, true); 
+                    return;
+                }
+
+                const p1_port_el = fromNodeData.element.querySelector('.output-port');
+                const p2_port_el = toNodeData.element.querySelector('.input-port');
+                if (!p1_port_el || !p2_port_el) return;
+
+                const p1 = getPortPosition(p1_port_el);
+                const p2 = getPortPosition(p2_port_el);
+
+                if (conn.line) conn.line.setAttribute('d', createBezierPath(p1, p2));
+
+                if (conn.haste) { 
+                    if (Math.abs(p1.y - p2.y) < 1.5) {
+                        conn.haste.style.top = `${p1.y - HASTE_HEIGHT / 2}px`;
+                        const startX = Math.min(p1.x, p2.x);
+                        const endX = Math.max(p1.x, p2.x);
+                        const width = endX - startX;
+                        if (width > 1) {
+                            conn.haste.style.left = `${startX}px`;
+                            conn.haste.style.width = `${width}px`;
+                            conn.haste.style.display = '';
+                        } else {
+                            conn.haste.style.display = 'none';
+                        }
+                    } else { 
+                        conn.haste.remove();
+                        conn.haste = null;
+                    }
+                }
+            });
+            updateDisplayedConnectionNumbersAndMarkers(); 
+            setLeftColumnNodesHeight(); 
+        }
+
+        function performVerificationAndFeedback() {
+            const connectionCorrectness = new Map();
+
+            connections.forEach(conn => {
+                const leftNodeOriginalIndex = parseInt(nodes[conn.from].element.dataset.originalIndex);
+                const rightNodeOriginalIndex = parseInt(nodes[conn.to].element.dataset.originalIndex);
+
+                const isCorrect = currentFlashcardData.gabarito.some(pair => 
+                    pair.leftIndex === leftNodeOriginalIndex && pair.rightIndex === rightNodeOriginalIndex
+                );
+                connectionCorrectness.set(conn.id, isCorrect);
+            });
+
+            // Style node borders based on connection correctness
+            Object.values(nodes).forEach(nodeData => {
+                const nodeEl = nodeData.element;
+                const relevantConnections = connections.filter(c => c.from === nodeData.id || c.to === nodeData.id);
+                
+                if (relevantConnections.length > 0) {
+                    const anyNodeConnectionIncorrect = relevantConnections.some(c => connectionCorrectness.get(c.id) === false);
+                    const allNodeConnectionsCorrect = relevantConnections.every(c => connectionCorrectness.get(c.id) === true);
+
+                    if (anyNodeConnectionIncorrect) {
+                        nodeEl.style.borderColor = '#e74c3c'; // Red for incorrect
+                    } else if (allNodeConnectionsCorrect) {
+                        nodeEl.style.borderColor = '#2da9a4'; // Green for correct (using the specified green)
+                    } else {
+                        nodeEl.style.borderColor = ''; // Default if mixed or other states (though typically one of above)
+                    }
+                } else {
+                    nodeEl.style.borderColor = ''; // No connections, default border
+                }
+            });
+
+            // Display all distractor explanations for right column nodes marked as distractors
+            Object.values(nodes).forEach(nodeData => {
+                if (nodeData.columnType === 'right') {
+                    const nodeEl = nodeData.element;
+                    const explanationDiv = nodeEl.querySelector('.distractor-explanation');
+                    
+                    // Find the original full data for this right node
+                    const originalRightNodeInfo = currentFlashcardData.rightNodesFullOriginal.find(
+                        n => n.originalIndex === nodeData.originalIndex
+                    );
+
+                    if (explanationDiv && originalRightNodeInfo && originalRightNodeInfo.isDistractor) {
+                        explanationDiv.textContent = originalRightNodeInfo.distractorExplanation || "Esta é uma opção distratora.";
+                        explanationDiv.style.display = 'block';
+                    } else if (explanationDiv) {
+                        // Hide explanation if not a distractor (or no explanation text)
+                        // This might already be handled by resetVisualFeedback, but good to be explicit
+                        explanationDiv.style.display = 'none';
+                    }
+                }
+            });
+            // Redraw connections as distractor explanations might change node heights
+            setTimeout(redrawAllConnections, 50);
+        }
+
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                setLeftColumnNodesHeight(); 
+                redrawAllConnections();     
+            }, 150);
+        });
+
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
