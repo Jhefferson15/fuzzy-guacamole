@@ -1,114 +1,140 @@
 {
-  "bookReference": "Química - Frente A // L06",
+  "bookReference": "Biologia - Livro 5 - Frente C",
   "modules": [
     {
-      "moduleTitle": "MÓDULO 21: PILHAS E BATERIAS COMERCIAIS",
-      "sourceReference": "Frente A // L06 (p. 638-642)",
+      "moduleTitle": "MÓDULO 17: SISTEMA DIGESTÓRIO",
+      "sourceReference": "Frente C // L05 (p. 524-528)",
       "flashcards": [
         {
-          "id": "M21C01",
+          "id": "M17C01",
           "leftColumnNodes": [
-            "Pilha de Leclanché (Pilha Seca)",
-            "Bateria Secundária",
-            "Pilha Alcalina",
-            "Bateria de Chumbo-Ácido (Automotiva)",
-            "Bateria de Íons Lítio"
+            "Células Parietais (Estômago)",
+            "Pepsina",
+            "Secretina",
+            "Bile (Função Principal)",
+            "Quilomícrons",
+            "Desaminação (no Fígado)",
+            "Ptialina (Amilase Salivar)"
           ],
           "rightColumnNodes": [
             {
-              "text": "Bateria primária com ânodo de zinco, cátodo de dióxido de manganês (MnO₂) e eletrólito pastoso de cloreto de amônio (NH₄Cl) e cloreto de zinco (ZnCl₂).",
+              "text": "Produzem ácido clorídrico (HCl) e fator intrínseco no estômago, acidificando o meio e auxiliando na digestão e absorção de B12.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Dispositivo eletroquímico recarregável, permitindo múltiplos ciclos de carga e descarga através da reversão das reações redox por uma fonte externa de energia.",
+              "text": "Enzima proteolítica secretada na forma inativa (pepsinogênio) pelas células principais do estômago, ativada pelo HCl para digerir proteínas.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Célula que produz eletricidade a partir da oxidação de um combustível (ex: hidrogênio) fornecido continuamente de uma fonte externa.",
+              "text": "Hormônio produzido pela mucosa do duodeno em resposta à acidez do quimo, estimulando o pâncreas a secretar bicarbonato.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Enzima que digere lipídios no intestino delgado, secretada pelo pâncreas.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a definição de uma Célula a Combustível, abordada no Módulo 22."
+              "distractorExplanation": "Esta é a descrição da Lipase Pancreática. A bile emulsifica gorduras, mas não as digere enzimaticamente."
             },
             {
-              "text": "Tipo de bateria secundária que utiliza hidróxido de potássio (KOH) como eletrólito, zinco como ânodo e dióxido de manganês como cátodo, oferecendo maior durabilidade que a pilha seca comum.",
+              "text": "Emulsificação de gorduras no duodeno, facilitando a ação das lipases. É produzida no fígado e armazenada na vesícula biliar.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Bateria secundária comum em automóveis, com ânodo de chumbo (Pb), cátodo de dióxido de chumbo (PbO₂) e eletrólito de ácido sulfúrico (H₂SO₄).",
+              "text": "Grandes lipoproteínas formadas no epitélio intestinal para transportar triglicerídeos exógenos, colesterol e vitaminas lipossolúveis via sistema linfático.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Bateria secundária de alta densidade energética, comum em eletrônicos portáteis, com ânodo de grafita litiada (LiC₆) e cátodo de óxido de metal de transição litiado (ex: LiCoO₂).",
+              "text": "Processo de remoção do grupo amina de aminoácidos no fígado, resultando na formação de amônia, que é convertida em ureia.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Sistema eletroquímico não recarregável que converte energia química em elétrica através de uma única descarga, como a pilha de Daniell.",
+              "text": "Hormônio produzido no estômago que estimula a secreção de suco gástrico.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve uma bateria primária em geral. Embora a pilha de Leclanché seja primária, este item é muito genérico e menos específico que as outras opções."
+              "distractorExplanation": "Esta é a descrição da Gastrina."
+            },
+            {
+              "text": "Enzima presente na saliva que inicia a digestão química do amido, convertendo-o em maltose.",
+              "isDistractor": false,
+              "distractorExplanation": ""
             }
           ],
           "gabarito": [
             {"leftIndex": 0, "rightIndex": 0},
             {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 3},
+            {"leftIndex": 2, "rightIndex": 2},
             {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 5}
+            {"leftIndex": 4, "rightIndex": 5},
+            {"leftIndex": 5, "rightIndex": 6},
+            {"leftIndex": 6, "rightIndex": 8}
           ]
         }
       ]
     },
     {
-      "moduleTitle": "MÓDULO 22: CÉLULA A COMBUSTÍVEL",
-      "sourceReference": "Frente A // L06 (p. 646-647)",
+      "moduleTitle": "MÓDULO 18: SISTEMA RESPIRATÓRIO",
+      "sourceReference": "Frente C // L05 (p. 532-536)",
       "flashcards": [
         {
-          "id": "M22C01",
+          "id": "M18C01",
           "leftColumnNodes": [
-            "Célula a Combustível (Princípio Geral)",
-            "Combustível Verde (para Célula a Combustível)",
-            "Reação Anódica (Célula H₂-O₂ em meio ácido)",
-            "Reação Catódica (Célula H₂-O₂ em meio ácido)",
-            "Potencial Padrão (Célula H₂-O₂)"
+            "Hematose",
+            "Epiglote",
+            "Anidrase Carbônica",
+            "Desvio da curva de dissociação da oxiemoglobina para a DIREITA",
+            "Bulbo Raquidiano (Medula Oblonga)",
+            "Diafragma (durante a inspiração)",
+            "Pleuras"
           ],
           "rightColumnNodes": [
             {
-              "text": "Dispositivo que converte continuamente a energia química de um combustível (ex: H₂) e um oxidante (ex: O₂) em eletricidade, com subprodutos geralmente não poluentes.",
+              "text": "Processo de trocas gasosas (O₂ e CO₂) que ocorre entre os alvéolos pulmonares e o sangue, e entre o sangue e as células dos tecidos.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Combustível obtido a partir de biomassa, considerado renovável e com potencial para reduzir o impacto ambiental na geração de energia.",
+              "text": "Estrutura cartilaginosa localizada na entrada da laringe que se fecha durante a deglutição, impedindo a entrada de alimentos nas vias aéreas.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de eletrólise da água utilizando energia elétrica de fontes renováveis para produzir hidrogênio.",
+              "text": "Principal músculo da respiração, localizado abaixo dos pulmões.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve a produção de 'hidrogênio azul' ou 'verde' (dependendo da fonte de eletricidade), não um tipo de combustível em si ou o princípio da célula."
+              "distractorExplanation": "Esta é uma descrição geral do Diafragma, mas não específica de sua ação na inspiração nem de sua função como conceito chave na lista."
             },
             {
-              "text": "Oxidação do hidrogênio: H₂(g) → 2H⁺(aq) + 2e⁻.",
+              "text": "Enzima presente nas hemácias que catalisa a reação reversível entre CO₂ e H₂O para formar ácido carbônico, crucial no transporte de CO₂.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Redução do oxigênio: O₂(g) + 4H⁺(aq) + 4e⁻ → 2H₂O(l).",
+              "text": "Indica uma diminuição da afinidade da hemoglobina pelo oxigênio, facilitando sua liberação para os tecidos (Efeito Bohr). Ocorre com aumento de CO₂, íons H+ (queda de pH) ou temperatura.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "ΔE° = +1,23 V, indicando uma reação global espontânea (H₂ + ½O₂ → H₂O) sob condições padrão.",
+              "text": "Parte do tronco encefálico que contém o centro respiratório, controlando o ritmo e a profundidade da respiração de forma involuntária.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Dispositivo que armazena energia elétrica quimicamente e a libera sob demanda, sendo recarregável, como uma bateria de íon-lítio.",
+              "text": "Músculo que se contrai e rebaixa, aumentando o volume da caixa torácica e diminuindo a pressão interna, permitindo a entrada de ar.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Volume de ar que permanece nos pulmões mesmo após uma expiração máxima.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve uma bateria secundária, não uma célula a combustível que requer fornecimento contínuo de reagentes."
+              "distractorExplanation": "Este é o conceito de Ar Residual."
+            },
+            {
+              "text": "Membranas serosas (visceral e parietal) que revestem os pulmões e a parede interna da cavidade torácica, facilitando os movimentos respiratórios.",
+              "isDistractor": false,
+              "distractorExplanation": ""
             }
           ],
           "gabarito": [
@@ -116,59 +142,73 @@
             {"leftIndex": 1, "rightIndex": 1},
             {"leftIndex": 2, "rightIndex": 3},
             {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 5}
+            {"leftIndex": 4, "rightIndex": 5},
+            {"leftIndex": 5, "rightIndex": 6},
+            {"leftIndex": 6, "rightIndex": 8}
           ]
         }
       ]
     },
     {
-      "moduleTitle": "MÓDULO 23: REAÇÕES DE ELETRÓLISE",
-      "sourceReference": "Frente A // L06 (p. 651-654)",
+      "moduleTitle": "MÓDULO 19: SISTEMA CIRCULATÓRIO",
+      "sourceReference": "Frente C // L05 (p. 540-544)",
       "flashcards": [
         {
-          "id": "M23C01",
+          "id": "M19C01",
           "leftColumnNodes": [
-            "Eletrólise Ígnea",
-            "Eletrólise Aquosa",
-            "Fila de Reatividade de Redução (Cátions)",
-            "Fila de Reatividade de Oxidação (Ânions)",
-            "Produto Catódico (Eletrólise Aquosa NaCl)"
+            "Nó Sinoatrial (SA)",
+            "Sístole Ventricular",
+            "Artéria Pulmonar",
+            "Veias Cava (Superior e Inferior)",
+            "Válvulas Venosas",
+            "Pequena Circulação (Pulmonar)",
+            "Sistema Linfático (função primária)"
           ],
           "rightColumnNodes": [
             {
-              "text": "Processo não espontâneo de decomposição de um eletrólito fundido (sem água) pela passagem de corrente elétrica.",
+              "text": "Conhecido como o marcapasso natural do coração, inicia o impulso elétrico que desencadeia a contração atrial.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo não espontâneo de decomposição de um eletrólito em solução aquosa, onde íons do soluto e da água competem pela descarga.",
+              "text": "Fase de contração dos ventrículos, durante a qual o sangue é bombeado para as artérias aorta e pulmonar, com fechamento das válvulas atrioventriculares (1ª bulha).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo espontâneo de geração de corrente elétrica a partir de reações redox, como na Pilha de Daniell.",
+              "text": "Relaxamento das câmaras cardíacas, permitindo seu enchimento com sangue.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve uma célula galvânica (pilha), o oposto da eletrólise em termos de espontaneidade e fluxo de energia."
+              "distractorExplanation": "Esta é a descrição da Diástole Cardíaca."
             },
             {
-              "text": "Ordem de facilidade de descarga: Alcalinos/Alcalinoterrosos/Al³⁺ < H⁺(água) < Demais metais. (Menor reatividade = mais fácil descarregar).",
+              "text": "Vaso sanguíneo que transporta sangue venoso (rico em CO₂) do ventrículo direito para os pulmões.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Ordem de facilidade de descarga: F⁻/Ânions Oxigenados < OH⁻(água) < Ânions Não Oxigenados (exceto F⁻). (Menor reatividade = mais fácil descarregar).",
+              "text": "Grandes veias que coletam sangue venoso de todo o corpo e o conduzem ao átrio direito do coração.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Redução do H⁺ da água (2H₂O + 2e⁻ → H₂ + 2OH⁻), pois Na⁺ tem menor prioridade de descarga.",
+              "text": "Estruturas presentes no interior das veias, especialmente dos membros inferiores, que impedem o refluxo do sangue, auxiliando seu retorno ao coração.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Oxidação do Cl⁻ (2Cl⁻ → Cl₂ + 2e⁻), pois Cl⁻ (não oxigenado) tem maior prioridade de descarga que OH⁻ da água.",
+              "text": "Circuito que leva o sangue do ventrículo direito aos pulmões (onde ocorre a hematose) e o retorna arterializado ao átrio esquerdo.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Drenagem do excesso de fluido intersticial (formando a linfa), retorno de proteínas ao sangue e transporte de lipídios absorvidos no intestino.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Vasos sanguíneos microscópicos onde ocorrem as trocas de substâncias entre o sangue e os tecidos.",
               "isDistractor": true,
-              "distractorExplanation": "Este é o produto ANÓDICO da eletrólise aquosa do NaCl."
+              "distractorExplanation": "Esta é a descrição dos Capilares Sanguíneos."
             }
           ],
           "gabarito": [
@@ -176,59 +216,73 @@
             {"leftIndex": 1, "rightIndex": 1},
             {"leftIndex": 2, "rightIndex": 3},
             {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 5}
+            {"leftIndex": 4, "rightIndex": 5},
+            {"leftIndex": 5, "rightIndex": 6},
+            {"leftIndex": 6, "rightIndex": 7}
           ]
         }
       ]
     },
     {
-      "moduleTitle": "MÓDULO 24: ASPECTOS QUANTITATIVOS DA ELETRODEPOSIÇÃO",
-      "sourceReference": "Frente A // L06 (p. 658-661)",
+      "moduleTitle": "MÓDULO 20: SISTEMA EXCRETOR",
+      "sourceReference": "Frente C // L05 (p. 548-550)",
       "flashcards": [
         {
-          "id": "M24C01",
+          "id": "M20C01",
           "leftColumnNodes": [
-            "Primeira Lei de Faraday",
-            "Constante de Faraday (F)",
-            "Segunda Lei de Faraday (Cubas em Série)",
-            "Energia Livre de Gibbs (ΔG) e Potencial (E)",
-            "Equação de Nernst"
+            "Ureia (Local de Produção)",
+            "Néfron",
+            "Filtração Glomerular",
+            "Reabsorção no Túbulo Contorcido Proximal",
+            "Hormônio Antidiurético (ADH / Vasopressina)",
+            "Aldosterona",
+            "Peptídeo Natriurético Atrial (PNA)"
           ],
           "rightColumnNodes": [
             {
-              "text": "A massa (m) de substância eletrolisada é diretamente proporcional à quantidade de carga elétrica (Q) que atravessa a solução (m = kQ, onde Q = i·Δt).",
+              "text": "Principal excreta nitrogenada em mamíferos, sintetizada no fígado a partir da amônia (proveniente da desaminação de aminoácidos) através do ciclo da ornitina.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Carga elétrica correspondente a 1 mol de elétrons, aproximadamente 96.500 Coulombs (C/mol e⁻).",
+              "text": "Unidade funcional microscópica do rim, responsável pela filtração do sangue e formação da urina.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "A resistência de um condutor é diretamente proporcional ao seu comprimento e inversamente proporcional à sua área de seção transversal.",
+              "text": "Hormônio que estimula a reabsorção de sódio na porção final do néfron.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a Lei de Ohm, um conceito da física elétrica, não diretamente uma lei da eletrólise de Faraday."
+              "distractorExplanation": "Embora a Aldosterona faça isso, a descrição é muito genérica e o ADH tem função primária na água."
             },
             {
-              "text": "Quando a mesma quantidade de carga elétrica atravessa diferentes eletrólitos, as massas das substâncias eletrolisadas são proporcionais aos seus respectivos equivalentes-grama.",
+              "text": "Processo inicial da formação da urina, onde água e pequenos solutos do plasma sanguíneo são extravasados do glomérulo para a cápsula de Bowman sob pressão.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Relação termodinâmica: ΔG = -nFE (onde n é o nº de mols de elétrons). Reações espontâneas (pilha) têm ΔG < 0 e E > 0; eletrólise (não espontânea) tem ΔG > 0 e E < 0 (requer E_aplicado).",
+              "text": "Principal local de devolução de substâncias úteis (glicose, aminoácidos, vitaminas, grande parte dos íons e água) do filtrado glomerular de volta para o sangue.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Relaciona o potencial de uma célula (E) sob condições não padrão com o potencial padrão (E°), a temperatura e as concentrações/pressões dos reagentes e produtos (E = E° - (RT/nF)lnQ).",
+              "text": "Hormônio liberado pela neuroipófise que aumenta a permeabilidade à água dos túbulos distais e ductos coletores, promovendo sua reabsorção e concentrando a urina.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Lei que afirma que a pressão total de uma mistura gasosa é a soma das pressões parciais de cada gás componente.",
+              "text": "Hormônio produzido pelo córtex da adrenal que promove a reabsorção de Na+ (e consequentemente água) e a excreção de K+ nos túbulos distais e coletores, aumentando a pressão arterial.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Processo de transporte ativo de substâncias específicas (ex: H+, K+, fármacos) do sangue para o interior do filtrado tubular.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a Lei de Dalton das Pressões Parciais, um conceito de gases."
+              "distractorExplanation": "Esta é a descrição da Secreção Tubular."
+            },
+            {
+              "text": "Hormônio produzido pelo coração (átrios) em resposta ao aumento da pressão arterial, que promove a excreção de Na+ e água, diminuindo o volume sanguíneo e a pressão.",
+              "isDistractor": false,
+              "distractorExplanation": ""
             }
           ],
           "gabarito": [
@@ -236,7 +290,9 @@
             {"leftIndex": 1, "rightIndex": 1},
             {"leftIndex": 2, "rightIndex": 3},
             {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 5}
+            {"leftIndex": 4, "rightIndex": 5},
+            {"leftIndex": 5, "rightIndex": 6},
+            {"leftIndex": 6, "rightIndex": 8}
           ]
         }
       ]
