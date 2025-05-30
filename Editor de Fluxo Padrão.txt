@@ -1,0 +1,233 @@
+Eu quero ideias para flashcards no estilo "Coneções" que sejam mais desafiadores, saindo do óbvio. A chave para a dificuldade é:
+
+Termos mais específicos ou técnicos.
+
+Conceitos abstratos ou que exigem maior inferência.
+
+Distratores (opções na coluna 2 que não se conectam) que sejam plausíveis ou relacionados ao tema, mas incorretos para um item específico da coluna 1.
+
+Relações menos diretas (ex: um conceito e sua aplicação, ou um problema e sua solução metodológica).
+
+Aqui vão algumas ideias de temas e como poderiam ser estruturados, com um aumento gradual na complexidade ou especificidade:
+
+Card 1: Figuras de Linguagem (Nível Intermediário)
+
+Coluna 1:
+
+Metáfora
+
+Metonímia
+
+Hipérbole
+
+Eufemismo
+
+Ironia
+
+Antítese
+
+Coluna 2:
+
+Afirmar o contrário do que se pensa.
+
+Suavizar uma expressão desagradável.
+
+Comparação implícita, sem conectivo.
+
+Exagero intencional para dar ênfase.
+
+Aproximação de termos opostos.
+
+Substituição de um termo por outro com o qual mantém relação (parte pelo todo, autor pela obra).
+
+Repetição de sons consonantais. (Distrator - Aliteração)
+
+Omissão de um termo facilmente subentendido. (Distrator - Elipse)
+
+Dica de Dificuldade: Algumas figuras são frequentemente confundidas. Os distratores são outras figuras de linguagem.
+
+Card 2: Conceitos de Cálculo Diferencial (Nível Universitário Básico)
+
+Coluna 1:
+
+Limite de uma função
+
+Derivada de uma função em um ponto
+
+Integral Definida
+
+Teorema Fundamental do Cálculo (Parte 1)
+
+Ponto Crítico
+
+Concavidade para Cima
+
+Coluna 2:
+
+Taxa de variação instantânea / Inclinação da reta tangente.
+
+Valor para o qual a função se aproxima quando a variável independente se aproxima de um valor.
+
+Área líquida sob a curva da função.
+
+f'(c) = 0 ou f'(c) não existe.
+
+Se f(x) = ∫a..x g(t) dt, então f'(x) = g(x).
+
+f''(x) > 0 no intervalo.
+
+Série de Taylor. (Distrator)
+
+Regra de L'Hôpital. (Distrator)
+
+Dica de Dificuldade: Requer conhecimento específico dos conceitos e seus significados/implicações matemáticas.
+
+Card 3: Estruturas de Dados (Ciência da Computação)
+
+Coluna 1:
+
+Pilha (Stack)
+
+Fila (Queue)
+
+Árvore Binária de Busca (BST)
+
+Tabela Hash (Hash Table)
+
+Grafo
+
+Lista Encadeada
+
+Coluna 2:
+
+LIFO (Last In, First Out) - Chamadas de função.
+
+FIFO (First In, First Out) - Gerenciamento de impressão.
+
+Busca, inserção e remoção eficientes (média O(log n)) mantendo ordem.
+
+Mapeamento chave-valor com acesso rápido (média O(1)).
+
+Representação de redes e relações.
+
+Sequência de nós com dados e ponteiros para o próximo.
+
+Array ordenado. (Distrator - pode ser usado para BST, mas não é a estrutura em si)
+
+Complexidade O(n^2) para ordenação. (Distrator - característica de algoritmo, não estrutura)
+
+Dica de Dificuldade: Foca nas propriedades e usos típicos de cada estrutura, e os distratores podem ser características de outras estruturas ou de algoritmos.
+
+Card 4: Períodos Literários Brasileiros e Autores/Obras Chave
+
+Coluna 1:
+
+Romantismo (1ª Geração - Indianista)
+
+Realismo/Naturalismo
+
+Pré-Modernismo
+
+Modernismo (1ª Fase - Heroica)
+
+Arcadismo
+
+Barroco
+
+Coluna 2:
+
+Gonçalves Dias ("Canção do Exílio")
+
+Machado de Assis ("Dom Casmurro") / Aluísio Azevedo ("O Cortiço")
+
+Euclides da Cunha ("Os Sertões") / Lima Barreto ("Triste Fim de Policarpo Quaresma")
+
+Mário de Andrade ("Macunaíma") / Oswald de Andrade ("Manifesto Antropófago")
+
+Tomás Antônio Gonzaga ("Marília de Dirceu")
+
+Gregório de Matos (Poesia Satírica)
+
+Cecília Meireles ("Romanceiro da Inconfidência") (Distrator - 2ª Fase Modernismo)
+
+Clarice Lispector ("A Hora da Estrela") (Distrator - 3ª Fase Modernismo/Pós)
+
+Dica de Dificuldade: Requer conhecimento de autores e obras representativas de cada período. Os distratores são de períodos próximos ou autores importantes de outras fases.
+
+Card 5: Conceitos Filosóficos e Seus Proponentes
+
+Coluna 1:
+
+Idealismo Transcendental
+
+Maiêutica
+
+Imperativo Categórico
+
+Super-Homem (Übermensch)
+
+Contrato Social
+
+Dúvida Metódica
+
+Coluna 2:
+
+Immanuel Kant
+
+Sócrates
+
+Immanuel Kant (de novo, para testar se o aluno sabe que ele tem mais de um conceito chave)
+
+Friedrich Nietzsche
+
+Jean-Jacques Rousseau (ou Hobbes/Locke, dependendo do foco)
+
+René Descartes
+
+Platão (Distrator - associado ao Mundo das Ideias, mas diferente do Idealismo Transcendental de Kant)
+
+Aristóteles (Distrator - associado à Lógica, Ética a Nicômaco)
+
+Dica de Dificuldade: Associa conceitos filosóficos complexos a seus principais pensadores. Alguns pensadores podem ter múltiplos conceitos importantes.
+
+Card 6: Mecanismos de Defesa do Ego (Psicanálise)
+
+Coluna 1:
+
+Repressão
+
+Negação
+
+Projeção
+
+Racionalização
+
+Sublimação
+
+Formação Reativa
+
+Coluna 2:
+
+Bloquear da consciência pensamentos ou desejos inaceitáveis.
+
+Recusar-se a aceitar uma realidade dolorosa.
+
+Atribuir a outros os próprios sentimentos ou impulsos inaceitáveis.
+
+Criar explicações lógicas para comportamentos motivados por impulsos inconscientes.
+
+Canalizar impulsos inaceitáveis para atividades socialmente aceitáveis.
+
+Adotar comportamentos opostos aos desejos inconscientes.
+
+Regressão (Distrator - retorno a um estágio anterior de desenvolvimento)
+
+Deslocamento (Distrator - redirecionar um impulso para um alvo substituto)
+
+Dica de Dificuldade: Os mecanismos de defesa são sutis e podem ser confundidos. Os distratores são outros mecanismos válidos.
+
+Como montar no "Editor de Fluxo Padrão":
+
+
+
+Espero que estas ideias ajudem a criar flashcards mais desafiadores e interessantes!
