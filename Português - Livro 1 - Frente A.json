@@ -1,114 +1,54 @@
 {
-  "bookReference": "Português - Livro 1 - Frente A",
+  "bookReference": "Química - Frente A // L06",
   "modules": [
     {
-      "moduleTitle": "MÓDULO 01: HISTORIOGRAFIA DA LÍNGUA PORTUGUESA",
-      "sourceReference": "Frente A // L01 (p. 6-7)",
+      "moduleTitle": "MÓDULO 21: PILHAS E BATERIAS COMERCIAIS",
+      "sourceReference": "Frente A // L06 (p. 638-642)",
       "flashcards": [
         {
-          "id": "M01C01",
+          "id": "M21C01",
           "leftColumnNodes": [
-            "Latim Vulgar",
-            "Substrato Linguístico",
-            "Superstrato Linguístico",
-            "Adstrato Linguístico",
-            "\"Relusitanização\" (Brasil)"
+            "Pilha de Leclanché (Pilha Seca)",
+            "Bateria Secundária",
+            "Pilha Alcalina",
+            "Bateria de Chumbo-Ácido (Automotiva)",
+            "Bateria de Íons Lítio"
           ],
           "rightColumnNodes": [
             {
-              "text": "Variante popular e falada do latim, difundida pelos soldados, colonos e comerciantes romanos, sendo a base principal das línguas românicas.",
+              "text": "Bateria primária com ânodo de zinco, cátodo de dióxido de manganês (MnO₂) e eletrólito pastoso de cloreto de amônio (NH₄Cl) e cloreto de zinco (ZnCl₂).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Língua de um povo dominado que, mesmo desaparecendo, influencia a fonética, léxico ou gramática da língua do povo dominador que se impõe sobre ela (ex: línguas celtas e ibéricas na Península Ibérica).",
+              "text": "Dispositivo eletroquímico recarregável, permitindo múltiplos ciclos de carga e descarga através da reversão das reações redox por uma fonte externa de energia.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Língua de um povo invasor que, embora não consiga se impor sobre a língua local, deixa nela influências lexicais e fonéticas antes de ser assimilado (ex: línguas germânicas sobre o latim vulgar na Ibéria).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Língua literária e erudita do Império Romano, utilizada em documentos oficiais e obras clássicas de autores como Cícero e Virgílio.",
+              "text": "Célula que produz eletricidade a partir da oxidação de um combustível (ex: hidrogênio) fornecido continuamente de uma fonte externa.",
               "isDistractor": true,
-              "distractorExplanation": "Este é o Latim Clássico, diferente do Latim Vulgar que deu origem ao português."
+              "distractorExplanation": "Esta é a definição de uma Célula a Combustível, abordada no Módulo 22."
             },
             {
-              "text": "Língua que convive com outra em um mesmo território ou em fronteiras, exercendo influência mútua sem que uma suplante a outra (ex: o árabe em relação ao latim vulgar na Península Ibérica durante séculos).",
+              "text": "Tipo de bateria secundária que utiliza hidróxido de potássio (KOH) como eletrólito, zinco como ânodo e dióxido de manganês como cátodo, oferecendo maior durabilidade que a pilha seca comum.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de intensificação da influência do português europeu no Brasil, ocorrido principalmente a partir da chegada da Corte Portuguesa em 1808, buscando maior aproximação com a norma da metrópole.",
+              "text": "Bateria secundária comum em automóveis, com ânodo de chumbo (Pb), cátodo de dióxido de chumbo (PbO₂) e eletrólito de ácido sulfúrico (H₂SO₄).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de criação de uma língua totalmente nova a partir da mistura igualitária de duas outras, resultando em gramática simplificada.",
+              "text": "Bateria secundária de alta densidade energética, comum em eletrônicos portáteis, com ânodo de grafita litiada (LiC₆) e cátodo de óxido de metal de transição litiado (ex: LiCoO₂).",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Sistema eletroquímico não recarregável que converte energia química em elétrica através de uma única descarga, como a pilha de Daniell.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve a formação de uma Língua Crioula, que é um fenômeno de contato linguístico, mas distinto dos conceitos de substrato, superstrato ou adstrato específicos."
-            }
-          ],
-          "gabarito": [
-            {"leftIndex": 0, "rightIndex": 0},
-            {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 2},
-            {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 5}
-          ]
-        }
-      ]
-    },
-    {
-      "moduleTitle": "MÓDULO 02: FONÉTICA, FONOLOGIA E ACENTUAÇÃO",
-      "sourceReference": "Frente A // L01 (p. 13-16)",
-      "flashcards": [
-        {
-          "id": "M02C01",
-          "leftColumnNodes": [
-            "Fonema",
-            "Dígrafo Consonantal",
-            "Hiato Tônico (regra específica)",
-            "Acento Diferencial",
-            "Proparoxítona"
-          ],
-          "rightColumnNodes": [
-            {
-              "text": "Menor unidade sonora de uma língua capaz de estabelecer distinção de significado entre palavras (ex: /p/ e /b/ em \"pata\" e \"bata\").",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Sequência de duas letras que representam um único som consonantal (ex: \"ch\" em chave, \"lh\" em alho, \"ss\" em osso).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Letra ou conjunto de letras que representam um fonema na escrita.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a definição de Grafema, a representação escrita, não o som em si."
-            },
-            {
-              "text": "Ocorrência de \"i\" ou \"u\" como segunda vogal tônica de um hiato, geralmente acentuada graficamente, a menos que seguida de \"nh\" na sílaba seguinte (ex: sa-í-da, mas ra-i-nha) ou precedida de ditongo em paroxítonas (ex: Sauipe).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Acento gráfico utilizado para distinguir palavras homógrafas, mas com classes gramaticais ou tempos verbais diferentes (ex: pôr (verbo) vs. por (preposição); pôde (pret. perf. ind.) vs. pode (pres. ind.)).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Palavra cuja sílaba tônica é a antepenúltima, sendo todas, sem exceção, acentuadas graficamente (ex: lâmpada, médico).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Encontro de uma vogal e uma semivogal (ou vice-versa) na mesma sílaba.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a definição de Ditongo, um tipo de encontro vocálico, não uma regra de acentuação específica como o hiato tônico."
+              "distractorExplanation": "Isso descreve uma bateria primária em geral. Embora a pilha de Leclanché seja primária, este item é muito genérico e menos específico que as outras opções."
             }
           ],
           "gabarito": [
@@ -122,53 +62,53 @@
       ]
     },
     {
-      "moduleTitle": "MÓDULO 03: MORFOLOGIA",
-      "sourceReference": "Frente A // L01 (p. 21-22)",
+      "moduleTitle": "MÓDULO 22: CÉLULA A COMBUSTÍVEL",
+      "sourceReference": "Frente A // L06 (p. 646-647)",
       "flashcards": [
         {
-          "id": "M03C01",
+          "id": "M22C01",
           "leftColumnNodes": [
-            "Morfema Lexical (Radical)",
-            "Desinência Modo-Temporal",
-            "Vogal Temática Nominal",
-            "Tema Verbal",
-            "Consoante de Ligação"
+            "Célula a Combustível (Princípio Geral)",
+            "Combustível Verde (para Célula a Combustível)",
+            "Reação Anódica (Célula H₂-O₂ em meio ácido)",
+            "Reação Catódica (Célula H₂-O₂ em meio ácido)",
+            "Potencial Padrão (Célula H₂-O₂)"
           ],
           "rightColumnNodes": [
             {
-              "text": "Unidade mínima significativa que contém o sentido básico, fundamental da palavra, comum a um grupo de palavras cognatas (ex: *terr-* em terra, terreno, aterrar).",
+              "text": "Dispositivo que converte continuamente a energia química de um combustível (ex: H₂) e um oxidante (ex: O₂) em eletricidade, com subprodutos geralmente não poluentes.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Morfema verbal que se anexa ao tema para indicar o modo e o tempo em que o processo verbal ocorre (ex: *-va-* em cantávamos indica pretérito imperfeito do indicativo).",
+              "text": "Combustível obtido a partir de biomassa, considerado renovável e com potencial para reduzir o impacto ambiental na geração de energia.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Morfema que se antepõe ao radical para modificar seu sentido ou criar nova palavra.",
+              "text": "Processo de eletrólise da água utilizando energia elétrica de fontes renováveis para produzir hidrogênio.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a definição de Prefixo, um tipo de afixo derivacional."
+              "distractorExplanation": "Isso descreve a produção de 'hidrogênio azul' ou 'verde' (dependendo da fonte de eletricidade), não um tipo de combustível em si ou o princípio da célula."
             },
             {
-              "text": "Vogal que se junta ao radical de um nome para constituir o tema (ex: cas**a**, post**e**, livr**o**). Em nomes, ajuda a formar a palavra primitiva e não indica oposição de gênero como as desinências.",
+              "text": "Oxidação do hidrogênio: H₂(g) → 2H⁺(aq) + 2e⁻.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Segmento formado pelo radical do verbo mais a sua vogal temática, ao qual se juntam as desinências verbais (ex: *canta-* em cantávamos).",
+              "text": "Redução do oxigênio: O₂(g) + 4H⁺(aq) + 4e⁻ → 2H₂O(l).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Morfema que indica o gênero (masculino/feminino) e o número (singular/plural) dos nomes.",
+              "text": "ΔE° = +1,23 V, indicando uma reação global espontânea (H₂ + ½O₂ → H₂O) sob condições padrão.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Dispositivo que armazena energia elétrica quimicamente e a libera sob demanda, sendo recarregável, como uma bateria de íon-lítio.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a definição de Desinência Nominal (de gênero e número), distinta da vogal temática nominal."
-            },
-            {
-              "text": "Elemento fonético sem significado próprio, inserido entre dois morfemas para facilitar a pronúncia ou por eufonia, não sendo, portanto, um morfema (ex: o *-l-* em chaleira, o *-z-* em cafezal).",
-              "isDistractor": false,
-              "distractorExplanation": ""
+              "distractorExplanation": "Isso descreve uma bateria secundária, não uma célula a combustível que requer fornecimento contínuo de reagentes."
             }
           ],
           "gabarito": [
@@ -176,59 +116,119 @@
             {"leftIndex": 1, "rightIndex": 1},
             {"leftIndex": 2, "rightIndex": 3},
             {"leftIndex": 3, "rightIndex": 4},
-            {"leftIndex": 4, "rightIndex": 6}
+            {"leftIndex": 4, "rightIndex": 5}
           ]
         }
       ]
     },
     {
-      "moduleTitle": "MÓDULO 04: PROCESSO DE FORMAÇÃO DE PALAVRAS",
-      "sourceReference": "Frente A // L01 (p. 25-28)",
+      "moduleTitle": "MÓDULO 23: REAÇÕES DE ELETRÓLISE",
+      "sourceReference": "Frente A // L06 (p. 651-654)",
       "flashcards": [
         {
-          "id": "M04C01",
+          "id": "M23C01",
           "leftColumnNodes": [
-            "Derivação Parassintética",
-            "Composição por Aglutinação",
-            "Hibridismo",
-            "Derivação Imprópria (Conversão)",
-            "Neologismo Semântico"
+            "Eletrólise Ígnea",
+            "Eletrólise Aquosa",
+            "Fila de Reatividade de Redução (Cátions)",
+            "Fila de Reatividade de Oxidação (Ânions)",
+            "Produto Catódico (Eletrólise Aquosa NaCl)"
           ],
           "rightColumnNodes": [
             {
-              "text": "Processo em que um prefixo e um sufixo são adicionados simultaneamente a uma palavra primitiva, de tal forma que a palavra resultante não existe apenas com o prefixo ou apenas com o sufixo (ex: en-trist-ecer, a-noit-ecer).",
+              "text": "Processo não espontâneo de decomposição de um eletrólito fundido (sem água) pela passagem de corrente elétrica.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de formação de uma nova palavra pela união de dois ou mais radicais, ocorrendo alteração fonética em pelo menos um dos elementos formadores, com perda de fonemas (ex: planalto de plano + alto; aguardente de água + ardente).",
+              "text": "Processo não espontâneo de decomposição de um eletrólito em solução aquosa, onde íons do soluto e da água competem pela descarga.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de formação pela união de radicais sem alteração fonética, mantendo a integridade dos elementos.",
+              "text": "Processo espontâneo de geração de corrente elétrica a partir de reações redox, como na Pilha de Daniell.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve a Composição por Justaposição (ex: guarda-chuva), diferente da aglutinação."
+              "distractorExplanation": "Isso descreve uma célula galvânica (pilha), o oposto da eletrólise em termos de espontaneidade e fluxo de energia."
             },
             {
-              "text": "Formação de uma palavra pela combinação de elementos (radicais, prefixos, sufixos) oriundos de línguas diferentes (ex: automóvel (grego + latim); sociologia (latim + grego); sambódromo (africano + grego)).",
+              "text": "Ordem de facilidade de descarga: Alcalinos/Alcalinoterrosos/Al³⁺ < H⁺(água) < Demais metais. (Menor reatividade = mais fácil descarregar).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de formação de palavras que consiste na mudança da classe gramatical de uma palavra já existente, sem que sua forma sofra qualquer alteração (ex: O jantar (substantivo) estava delicioso, derivado de jantar (verbo)).",
+              "text": "Ordem de facilidade de descarga: F⁻/Ânions Oxigenados < OH⁻(água) < Ânions Não Oxigenados (exceto F⁻). (Menor reatividade = mais fácil descarregar).",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Atribuição de um novo significado a uma palavra que já existe na língua, mantendo sua forma original (ex: \"navegar\" na internet; \"zebra\" como resultado inesperado; \"mala\" como pessoa inconveniente).",
+              "text": "Redução do H⁺ da água (2H₂O + 2e⁻ → H₂ + 2OH⁻), pois Na⁺ tem menor prioridade de descarga.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Processo de redução de uma palavra ou expressão, geralmente pela omissão de fonemas ou sílabas finais.",
+              "text": "Oxidação do Cl⁻ (2Cl⁻ → Cl₂ + 2e⁻), pois Cl⁻ (não oxigenado) tem maior prioridade de descarga que OH⁻ da água.",
               "isDistractor": true,
-              "distractorExplanation": "Isso descreve a Abreviação Vocabular (ex: \"foto\" de fotografia, \"pneu\" de pneumático), que é um processo de simplificação, não de atribuição de novo sentido a uma palavra completa."
+              "distractorExplanation": "Este é o produto ANÓDICO da eletrólise aquosa do NaCl."
+            }
+          ],
+          "gabarito": [
+            {"leftIndex": 0, "rightIndex": 0},
+            {"leftIndex": 1, "rightIndex": 1},
+            {"leftIndex": 2, "rightIndex": 3},
+            {"leftIndex": 3, "rightIndex": 4},
+            {"leftIndex": 4, "rightIndex": 5}
+          ]
+        }
+      ]
+    },
+    {
+      "moduleTitle": "MÓDULO 24: ASPECTOS QUANTITATIVOS DA ELETRODEPOSIÇÃO",
+      "sourceReference": "Frente A // L06 (p. 658-661)",
+      "flashcards": [
+        {
+          "id": "M24C01",
+          "leftColumnNodes": [
+            "Primeira Lei de Faraday",
+            "Constante de Faraday (F)",
+            "Segunda Lei de Faraday (Cubas em Série)",
+            "Energia Livre de Gibbs (ΔG) e Potencial (E)",
+            "Equação de Nernst"
+          ],
+          "rightColumnNodes": [
+            {
+              "text": "A massa (m) de substância eletrolisada é diretamente proporcional à quantidade de carga elétrica (Q) que atravessa a solução (m = kQ, onde Q = i·Δt).",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Carga elétrica correspondente a 1 mol de elétrons, aproximadamente 96.500 Coulombs (C/mol e⁻).",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "A resistência de um condutor é diretamente proporcional ao seu comprimento e inversamente proporcional à sua área de seção transversal.",
+              "isDistractor": true,
+              "distractorExplanation": "Esta é a Lei de Ohm, um conceito da física elétrica, não diretamente uma lei da eletrólise de Faraday."
+            },
+            {
+              "text": "Quando a mesma quantidade de carga elétrica atravessa diferentes eletrólitos, as massas das substâncias eletrolisadas são proporcionais aos seus respectivos equivalentes-grama.",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Relação termodinâmica: ΔG = -nFE (onde n é o nº de mols de elétrons). Reações espontâneas (pilha) têm ΔG < 0 e E > 0; eletrólise (não espontânea) tem ΔG > 0 e E < 0 (requer E_aplicado).",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Relaciona o potencial de uma célula (E) sob condições não padrão com o potencial padrão (E°), a temperatura e as concentrações/pressões dos reagentes e produtos (E = E° - (RT/nF)lnQ).",
+              "isDistractor": false,
+              "distractorExplanation": ""
+            },
+            {
+              "text": "Lei que afirma que a pressão total de uma mistura gasosa é a soma das pressões parciais de cada gás componente.",
+              "isDistractor": true,
+              "distractorExplanation": "Esta é a Lei de Dalton das Pressões Parciais, um conceito de gases."
             }
           ],
           "gabarito": [
