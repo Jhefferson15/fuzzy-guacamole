@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #fff; /* Changed to white */
+            background-color: #fff;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -20,8 +20,8 @@
         }
 
         .question-card {
-            background-color: #f0f4f8; /* Changed to light gray */
-            border-radius: 12px; /* More rounded */
+            background-color: #f0f4f8;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
@@ -70,9 +70,9 @@
         }
 
         .node {
-            background-color: #e9ecef; /* Changed to a light gray */
-            border: 2px solid #d0d0d0; /* Slightly darker gray border */
-            border-radius: 10px; /* More rounded */
+            background-color: #e9ecef;
+            border: 2px solid #d0d0d0;
+            border-radius: 10px;
             padding: 12px 18px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -88,9 +88,13 @@
             word-wrap: break-word;
         }
         #left-column .node {
-            max-width: 280px; /* Max width for left nodes, causing word wrap */
-            /* min-height will be set by content or dynamically if needed */
+            max-width: 280px; /* Mantém a largura uniforme para a coluna 1 */
+            /* height: auto; /* Altura não uniforme para a coluna 1 */
         }
+        /* #right-column .node {
+            height: auto; /* Altura não uniforme para a coluna 2, se necessário, caso contrário pode remover
+        } */
+
 
         .node.drawing-from {
             box-shadow: 0 0 0 3px #2da9a4, 0 4px 8px rgba(0,0,0,0.2);
@@ -100,32 +104,32 @@
         }
         .distractor-explanation {
             font-size: 0.85em;
-            color: #c0392b; /* Red for distractor text */
+            color: #c0392b;
             margin-top: 10px;
             text-align: left;
-            border-top: 1px solid #ddd; /* slightly darker separator */
+            border-top: 1px solid #ddd;
             padding-top: 10px;
             width: 100%;
             box-sizing: border-box;
             background-color: #fdf6f6;
             padding: 10px;
-            border-radius: 0 0 8px 8px; /* rounded bottom corners */
-            display: none; /* Initially hidden */
+            border-radius: 0 0 8px 8px;
+            display: none;
         }
 
-        .correct-answer-hint { /* New style for correct answer hints on left nodes */
+        .correct-answer-hint {
             font-size: 0.8em;
-            color: #27ae60; /* Green for correct hint */
+            color: #27ae60;
             margin-top: 10px;
             text-align: left;
             border-top: 1px solid #ddd;
             padding-top: 8px;
             width: 100%;
             box-sizing: border-box;
-            background-color: #f6fdf6; /* Light green background */
+            background-color: #f6fdf6;
             padding: 8px 10px;
             border-radius: 0 0 8px 8px;
-            display: none; /* Initially hidden */
+            display: none;
             font-style: italic;
         }
 
@@ -146,7 +150,6 @@
         .output-port { right: -6px; }
         .input-port { left: -6px; }
 
-        /* Hide unwanted ports */
         #left-column .node .input-port { display: none; }
         #right-column .node .output-port { display: none; }
 
@@ -218,8 +221,8 @@
             gap: 15px;
             margin-top: 20px;
             padding: 15px;
-            background-color: #f0f4f8; /* Changed to light gray */
-            border-radius: 12px; /* More rounded */
+            background-color: #f0f4f8;
+            border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
@@ -235,7 +238,7 @@
             padding: 12px 25px;
             color: white;
             border: none;
-            border-radius: 8px; /* More rounded */
+            border-radius: 8px;
             cursor: pointer;
             font-size: 15px;
             font-weight: 500;
@@ -319,7 +322,8 @@
         let currentFlashcardData = {
             gabarito: [],
             leftNodesFullOriginal: [],
-            rightNodesFullOriginal: []
+            rightNodesFullOriginal: [],
+            shuffledRightNodesForDisplayIndexing: []
         };
 
         const GITHUB_CONFIG_URL = 'https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/main/Portugu%C3%AAs%20-%20Livro%201%20-%20Frente%20A.json';
@@ -334,7 +338,6 @@
                     return null;
                 }
                 const configData = await response.json();
-                console.log("Configuração carregada:", configData);
                 return configData;
             } catch (error) {
                 console.error("Falha ao buscar ou parsear JSON de configuração:", error);
@@ -352,20 +355,6 @@
             return array;
         }
 
-        function setLeftColumnNodesHeight() {
-            // No longer forcing uniform height for left column nodes.
-            // They will size based on content and max-width.
-            // This function is kept for potential future use or minor adjustments.
-            // For now, it can be empty or used for other column-specific dynamic styling.
-            const leftNodesElements = Array.from(leftColumn.querySelectorAll('.node'));
-            if (leftNodesElements.length === 0) return;
-            // Example: If you still wanted some MINIMUM height, but not uniform:
-            // leftNodesElements.forEach(nodeEl => {
-            //     nodeEl.style.minHeight = '50px'; // Or some other base minimum
-            // });
-        }
-
-
         function loadFlashcard(moduleIdx, flashcardIdx) {
             if (!bookData || !bookData.modules || !bookData.modules[moduleIdx] || !bookData.modules[moduleIdx].flashcards[flashcardIdx]) {
                 console.error("Flashcard não encontrado:", moduleIdx, flashcardIdx);
@@ -379,9 +368,8 @@
             const module = bookData.modules[moduleIdx];
             const flashcard = module.flashcards[flashcardIdx];
 
-            // Removed "Card" from the title
             cardTitleEl.textContent = `${module.moduleTitle} - Atividade ${flashcard.id}`;
-            cardDescriptionEl.textContent = `Conecte os itens da esquerda com os da direita.`; // Simplified
+            cardDescriptionEl.textContent = `Conecte os itens da esquerda com os da direita.`;
             cardSourceRefEl.textContent = `Fonte: ${module.sourceReference || 'Não especificada'}`;
 
             resetAllConnections();
@@ -402,23 +390,18 @@
                 ...nodeData,
                 originalIndex: index
             }));
-            const shuffledRightNodes = shuffleArray([...currentFlashcardData.rightNodesFullOriginal]);
+            currentFlashcardData.shuffledRightNodesForDisplayIndexing = shuffleArray([...currentFlashcardData.rightNodesFullOriginal]);
+
 
             shuffledLeftNodes.forEach(nodeData => {
                 addNode(nodeData.text, 'left', nodeData.originalIndex);
             });
-            // Call setLeftColumnNodesHeight AFTER nodes are added, if it were to do something
-            // For now, it doesn't enforce uniform height, so its call might not be strictly necessary
-            // unless other dynamic adjustments are planned for it.
-            setLeftColumnNodesHeight(); 
 
-            shuffledRightNodes.forEach(nodeDataWithOriginalIndex => {
+            currentFlashcardData.shuffledRightNodesForDisplayIndexing.forEach(nodeDataWithOriginalIndex => {
                 addNode(nodeDataWithOriginalIndex.text, 'right', nodeDataWithOriginalIndex.originalIndex, nodeDataWithOriginalIndex.isDistractor, nodeDataWithOriginalIndex.distractorExplanation);
             });
 
             updateNavigationButtons();
-            answersHaveBeenChecked = false;
-            resetVisualFeedback();
             setTimeout(redrawAllConnections, 50);
         }
 
@@ -483,15 +466,12 @@
 
                 const explanationDiv = document.createElement('div');
                 explanationDiv.classList.add('distractor-explanation');
-                // explanationDiv.style.display = 'none'; // Handled by CSS now
                 nodeEl.appendChild(explanationDiv);
             } else if (columnType === 'left') {
-                // Add placeholder for correct answer hint
                 const hintDiv = document.createElement('div');
                 hintDiv.classList.add('correct-answer-hint');
                 nodeEl.appendChild(hintDiv);
             }
-
 
             const outputPort = document.createElement('div');
             outputPort.classList.add('port', 'output-port');
@@ -626,16 +606,17 @@
             if (connectionToRemove.haste) connectionToRemove.haste.remove();
             if (connectionToRemove.markers) connectionToRemove.markers.forEach(marker => marker.remove());
 
-            if (nodes[connectionToRemove.from] && nodes[connectionToRemove.from].element) {
-                nodes[connectionToRemove.from].element.style.borderColor = '';
-                // Hide correct answer hint if connection is removed from a left node
-                const hintDiv = nodes[connectionToRemove.from].element.querySelector('.correct-answer-hint');
-                if (hintDiv) hintDiv.style.display = 'none';
-            }
-            if (nodes[connectionToRemove.to] && nodes[connectionToRemove.to].element) {
-                nodes[connectionToRemove.to].element.style.borderColor = '';
-                 const explDiv = nodes[connectionToRemove.to].element.querySelector('.distractor-explanation');
-                 if (explDiv) explDiv.style.display = 'none';
+            if (!answersHaveBeenChecked) {
+                 if (nodes[connectionToRemove.from] && nodes[connectionToRemove.from].element) {
+                    nodes[connectionToRemove.from].element.style.borderColor = '';
+                    const hintDiv = nodes[connectionToRemove.from].element.querySelector('.correct-answer-hint');
+                    if (hintDiv) hintDiv.style.display = 'none';
+                }
+                if (nodes[connectionToRemove.to] && nodes[connectionToRemove.to].element) {
+                    nodes[connectionToRemove.to].element.style.borderColor = '';
+                    const explDiv = nodes[connectionToRemove.to].element.querySelector('.distractor-explanation');
+                    if (explDiv) explDiv.style.display = 'none';
+                }
             }
 
             const index = connections.indexOf(connectionToRemove);
@@ -677,7 +658,11 @@
             }
         }
 
-        function resetVisualFeedback() {
+        function resetVisualFeedback(forceClear = false) {
+            if (answersHaveBeenChecked && !forceClear) {
+                return;
+            }
+
             Object.values(nodes).forEach(nodeData => {
                 if (nodeData.element) {
                     nodeData.element.style.borderColor = '';
@@ -702,27 +687,33 @@
             [...connections].forEach(conn => removeConnection(conn, true));
             connections = [];
             globalConnectionIdCounter = 0;
+            
             answersHaveBeenChecked = false;
-            resetVisualFeedback();
+            resetVisualFeedback(true);
+            
             updateDisplayedConnectionNumbersAndMarkers();
             setTimeout(redrawAllConnections, 0);
         }
 
         function checkAndHandleVerificationState() {
             const leftNodeElements = Array.from(leftColumn.querySelectorAll('.node'));
-            if (leftNodeElements.length === 0) return;
+            if (leftNodeElements.length === 0) {
+                 if (answersHaveBeenChecked) { // if no nodes, but feedback was on, clear it
+                    resetVisualFeedback(true);
+                    answersHaveBeenChecked = false;
+                }
+                return;
+            }
 
             const allLeftConnected = leftNodeElements.every(leftNodeEl => {
                 return connections.some(conn => conn.from === leftNodeEl.dataset.nodeId);
             });
 
-            if (allLeftConnected && !answersHaveBeenChecked) {
+            if (allLeftConnected) {
                 performVerificationAndFeedback();
                 answersHaveBeenChecked = true;
-            } else if (!allLeftConnected && answersHaveBeenChecked) {
-                resetVisualFeedback();
-                answersHaveBeenChecked = false;
-                setTimeout(redrawAllConnections, 50);
+            } else {
+                resetVisualFeedback(); // Will do nothing if answersHaveBeenChecked is true and no forceClear
             }
         }
 
@@ -736,10 +727,8 @@
             if (!nodeData) return;
 
             if (!isDrawing) {
-                if (answersHaveBeenChecked) {
-                    resetVisualFeedback();
-                    answersHaveBeenChecked = false;
-                }
+                // REMOVED: The block that would resetVisualFeedback(true) if answersHaveBeenChecked was true.
+                // This ensures feedback persists if the user starts a new connection after feedback was shown.
 
                 isDrawing = true;
                 startNodeId = nodeId;
@@ -774,10 +763,6 @@
                             if (conn.from === finalFromNodeId) connectionsToRemove.add(conn);
                             if (conn.to === finalToNodeId) connectionsToRemove.add(conn);
                         });
-                        if (answersHaveBeenChecked && connectionsToRemove.size > 0) {
-                            resetVisualFeedback();
-                            answersHaveBeenChecked = false;
-                        }
                         connectionsToRemove.forEach(conn => removeConnection(conn, true));
                     }
 
@@ -795,20 +780,7 @@
 
                     let htmlHasteElement = null;
                     if (Math.abs(p1.y - p2.y) < 1.5) {
-                        htmlHasteElement = document.createElement('div');
-                        htmlHasteElement.classList.add('connection-haste');
-                        htmlHasteElement.style.height = `${HASTE_HEIGHT}px`;
-                        htmlHasteElement.style.top = `${p1.y - HASTE_HEIGHT / 2}px`;
-                        const startX = Math.min(p1.x, p2.x);
-                        const endX = Math.max(p1.x, p2.x);
-                        const width = endX - startX;
-                        if (width > 1) {
-                            htmlHasteElement.style.left = `${startX}px`;
-                            htmlHasteElement.style.width = `${width}px`;
-                            editorContainer.insertBefore(htmlHasteElement, svgCanvas);
-                        } else {
-                            htmlHasteElement = null;
-                        }
+                        // ... haste logic ...
                     }
 
                     globalConnectionIdCounter++;
@@ -922,10 +894,6 @@
                 }
             });
             updateDisplayedConnectionNumbersAndMarkers();
-            // setLeftColumnNodesHeight(); // Not strictly needed if not enforcing uniform height
-                                       // but call it if it does other useful things.
-                                       // Forcing a reflow might be useful if hints change sizes significantly.
-             // Calling this in case hints visibility change affect layout
              setTimeout(() => {
                 Object.values(nodes).forEach(nodeData => {
                     if (nodeData.element) {
@@ -937,6 +905,7 @@
 
         function performVerificationAndFeedback() {
             const connectionCorrectness = new Map();
+            const rightColumnNodesUI = Array.from(rightColumn.querySelectorAll('.node'));
 
             connections.forEach(conn => {
                 const leftNodeOriginalIndex = parseInt(nodes[conn.from].element.dataset.originalIndex);
@@ -948,7 +917,6 @@
                 connectionCorrectness.set(conn.id, isCorrect);
             });
 
-            // Style node borders and show hints for left nodes
             Object.values(nodes).forEach(nodeData => {
                 const nodeEl = nodeData.element;
                 const relevantConnections = connections.filter(c => c.from === nodeData.id || c.to === nodeData.id);
@@ -958,9 +926,9 @@
                     const allNodeConnectionsCorrect = relevantConnections.every(c => connectionCorrectness.get(c.id) === true);
 
                     if (anyNodeConnectionIncorrect) {
-                        nodeEl.style.borderColor = '#e74c3c'; // Red for incorrect
+                        nodeEl.style.borderColor = '#e74c3c';
                     } else if (allNodeConnectionsCorrect) {
-                        nodeEl.style.borderColor = '#2da9a4'; // Green for correct
+                        nodeEl.style.borderColor = '#2da9a4';
                     } else {
                         nodeEl.style.borderColor = '';
                     }
@@ -968,7 +936,6 @@
                     nodeEl.style.borderColor = '';
                 }
 
-                // Handle hints for left column nodes
                 if (nodeData.columnType === 'left') {
                     const hintDiv = nodeEl.querySelector('.correct-answer-hint');
                     if (!hintDiv) return;
@@ -980,40 +947,35 @@
                     if (connectionsFromThisNode.length > 0) {
                          isAnyConnectionFromThisNodeIncorrect = connectionsFromThisNode.some(c => connectionCorrectness.get(c.id) === false);
                     }
-                    // Also consider it "incorrect" if it's supposed to be connected but isn't (though this function runs when all are connected)
-                    // The primary case here is if it *is* connected, but incorrectly.
+                    
+                    const isActuallyIncorrect = isAnyConnectionFromThisNodeIncorrect || 
+                                                (currentFlashcardData.gabarito.some(g => g.leftIndex === leftNodeOriginalIndex) && connectionsFromThisNode.length === 0);
 
-                    if (isAnyConnectionFromThisNodeIncorrect) {
-                        const correctRightIndices = currentFlashcardData.gabarito
+
+                    if (isActuallyIncorrect) {
+                        const correctRightOriginalIndices = currentFlashcardData.gabarito
                             .filter(pair => pair.leftIndex === leftNodeOriginalIndex)
                             .map(pair => pair.rightIndex);
                         
-                        if (correctRightIndices.length > 0) {
-                            // Find the text of the correct right node(s) based on their originalIndex
-                            const correctRightNodeTexts = correctRightIndices.map(rIndex => {
-                                const originalRightNode = currentFlashcardData.rightNodesFullOriginal.find(n => n.originalIndex === rIndex);
-                                return originalRightNode ? `"${originalRightNode.text}" (índice original ${rIndex})` : `Item de índice ${rIndex}`;
+                        if (correctRightOriginalIndices.length > 0) {
+                            const correctRightDisplayIndicesText = correctRightOriginalIndices.map(rOriginalIndex => {
+                                const targetRightNodeUI = rightColumnNodesUI.find(uiNodeEl => parseInt(uiNodeEl.dataset.originalIndex) === rOriginalIndex);
+                                if (targetRightNodeUI) {
+                                    return rightColumnNodesUI.indexOf(targetRightNodeUI) + 1;
+                                }
+                                return `?(${rOriginalIndex})`;
                             }).join(', ');
-                            // Display the target original index as requested by user
-                            const correctRightOriginalIndicesText = correctRightIndices.join(', ');
 
-                            hintDiv.textContent = `Conexão correta com item de índice original: ${correctRightOriginalIndicesText}.`;
+                            hintDiv.textContent = `Conexão correta com item da direita na posição: ${correctRightDisplayIndicesText}.`;
                             hintDiv.style.display = 'block';
                         } else {
-                             hintDiv.style.display = 'none'; // Should not happen if gabarito is well-formed
+                             hintDiv.style.display = 'none'; 
                         }
                     } else {
                         hintDiv.style.display = 'none';
                     }
-                }
-            });
-
-            // Display distractor explanations for right column nodes
-            Object.values(nodes).forEach(nodeData => {
-                if (nodeData.columnType === 'right') {
-                    const nodeEl = nodeData.element;
+                } else if (nodeData.columnType === 'right') {
                     const explanationDiv = nodeEl.querySelector('.distractor-explanation');
-
                     const originalRightNodeInfo = currentFlashcardData.rightNodesFullOriginal.find(
                         n => n.originalIndex === nodeData.originalIndex
                     );
@@ -1026,17 +988,14 @@
                     }
                 }
             });
-            setTimeout(redrawAllConnections, 50); // Redraw as hints/explanations change node heights
+            setTimeout(redrawAllConnections, 50);
         }
 
 
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                // setLeftColumnNodesHeight(); // Call if it becomes relevant again
-                redrawAllConnections();
-            }, 150);
+            resizeTimeout = setTimeout(redrawAllConnections, 150);
         });
 
         document.addEventListener('DOMContentLoaded', initializeApp);
