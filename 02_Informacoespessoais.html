@@ -3,48 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Pessoais - Versa</title>
+    <title>Capa Agenda Versa Animada - Informações Pessoais</title>
     <style>
-        @page {
-            /* size: A4; For square, this might be better handled by printer settings or 'auto' */
-            size: 210mm 210mm;
-            margin: 0;
-        }
+        /* Removido @page { size: A4; margin: 0; } */
 
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Outer background like capa */
+            background-color: #e0e0e0; /* Cor de fundo para visualização fora da página */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif; /* Fonte padrão */
         }
 
-        .square-page { /* Changed from a4-page and adopted capa styles */
+        /* Alterado de .a4-page para .square-page e dimensões ajustadas */
+        .square-page {
             width: 210mm;
-            height: 210mm;
-            background-color: #2E2E3A; /* Dark background from capa */
-            color: white; /* Default text color for content */
+            height: 210mm; /* Alterado para ser quadrado */
+            background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Para garantir que o padrão de borda não vaze */
             display: flex;
-            flex-direction: column; /* Stack logo and fields vertically */
-            align-items: center; /* Center items horizontally */
-            justify-content: space-around; /* Distribute space between logo and fields */
-            padding: 20px;
-            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Removed .border-pattern and .content-area as they don't fit the new design */
+        .border-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Etext %7B font-family: monospace; font-size: 10px; fill: %23AAAAAA; %7D%3C/style%3E%3Ctext x='2' y='8'%3Ex%3C/text%3E%3Ctext x='12' y='8'%3Ex%3C/text%3E%3Ctext x='2' y='18'%3Ex%3C/text%3E%3Ctext x='12' y='18'%3Ex%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+            z-index: 1;
+        }
+
+        .content-area {
+            position: relative;
+            z-index: 2;
+            background-color: white; /* Sobrepõe o padrão no centro */
+            width: calc(100% - 40mm); /* Largura do conteúdo, deixando 20mm de borda de cada lado */
+            height: calc(100% - 40mm); /* Altura do conteúdo, deixando 20mm de borda de cada lado */
+            padding: 20px; /* Um padding interno para o conteúdo não colar nas bordas do content-area */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; /* Para espaçar o logo e os campos */
+        }
 
         .logo-container {
-            width: 200px; /* Adjusted for square page balance */
-            height: 200px; /* Adjusted */
-            /* margin-top: 100px; Removed, using flexbox for spacing */
-            margin-bottom: 15px; /* Reduced space to fields */
+            width: 300px;
+            height: 300px;
+            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
         .logo-svg {
@@ -54,9 +70,9 @@
 
         .logo-svg .v-letter {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 160px; /* Slightly reduced if needed for space */
+            font-size: 200px;
             font-weight: bold;
-            fill: #A8C63C; /* Verde-limão do V - good contrast */
+            fill: #A8C63C;
             text-anchor: middle;
             dominant-baseline: central;
             animation: pulseGlow 2s infinite ease-in-out;
@@ -75,36 +91,37 @@
 
         .logo-svg .circular-text {
             font-family: 'Arial Narrow', Arial, sans-serif;
-            font-size: 15px; /* Adjusted for new logo size */
-            fill: #e0e0e0; /* Light color for dark background */
+            font-size: 18px;
+            fill: #333333;
             letter-spacing: 1.5px;
             text-anchor: middle;
         }
         .logo-svg .circular-text-small {
             font-family: 'Arial Narrow', Arial, sans-serif;
-            font-size: 12px; /* Adjusted for new logo size */
-            fill: #e0e0e0; /* Light color for dark background */
+            font-size: 15px;
+            fill: #333333;
             letter-spacing: 0.8px;
             text-anchor: middle;
         }
 
+
         .info-fields {
-            width: 90%; /* Adjusted width for square page */
-            max-width: 350px; /* Max width for readability */
-            /* margin-bottom: 50px; Removed, using flexbox for spacing */
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 30px;
             text-align: center;
         }
 
         .field {
-            margin-bottom: 20px; /* Adjusted spacing */
+            margin-bottom: 20px;
         }
 
         .field-label {
             display: inline-block;
-            background-color: #4FBBA9; /* Verde-azulado - good contrast */
+            background-color: #4FBBA9;
             color: white;
             padding: 5px 15px;
-            font-size: 13px; /* Slightly smaller */
+            font-size: 14px;
             font-weight: bold;
             border-radius: 4px;
             margin-bottom: 5px;
@@ -113,12 +130,12 @@
 
         .line {
             height: 1px;
-            background-color: transparent; /* Line itself is transparent */
-            border-bottom: 1px dotted #888888; /* Dotted line color for dark bg */
+            background-color: #DDDDDD;
+            border-bottom: 1px dotted #BBBBBB;
             margin-top: 2px;
-            margin-bottom: 10px; /* Adjusted space */
+            margin-bottom: 15px;
         }
-        .field.telefone .line:last-child {
+        .field.telefone .line:last-child { /* Agora se aplica à única linha de telefone */
             margin-bottom: 0;
         }
 
@@ -128,21 +145,20 @@
             background-color: transparent;
             text-align: center;
             font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
-            font-size: 18px; /* Adjusted size */
-            color: #FFFFFF; /* White text for dark background */
+            font-size: 20px;
+            color: #333;
             padding: 5px 0;
             margin-bottom: -1px;
             outline: none;
         }
         .cursive-input::placeholder {
-            color: #bbbbbb; /* Lighter placeholder for dark bg */
+            color: #aaa;
             font-style: italic;
         }
 
-        /* Media query for printing */
         @media print {
             body {
-                background-color: white; /* Standard for print, actual page bg is handled below */
+                background-color: white;
                 display: block;
                 align-items: flex-start;
             }
@@ -150,32 +166,30 @@
                 width: 210mm;
                 height: 210mm;
                 margin: 0 auto;
-                padding: 20px;
+                padding: 0;
                 box-shadow: none;
                 overflow: visible;
-                background-color: #2E2E3A !important;
-                color: white !important;
+                background-color: white !important;
+                color: #333 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .logo-svg .v-letter,
-            .logo-svg .circular-text,
-            .logo-svg .circular-text-small {
-                animation: none !important;
-                fill: #A8C63C !important; /* Ensure V is colored */
+             .border-pattern {
+                 background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Etext %7B font-family: monospace; font-size: 10px; fill: %23AAAAAA !important; %7D%3C/style%3E%3Ctext x='2' y='8'%3Ex%3C/text%3E%3Ctext x='12' y='8'%3Ex%3C/text%3E%3Ctext x='2' y='18'%3Ex%3C/text%3E%3Ctext x='12' y='18'%3Ex%3C/text%3E%3C/svg%3E") !important;
             }
-            .logo-svg .circular-text, .logo-svg .circular-text-small {
-                 fill: #e0e0e0 !important; /* Ensure text is light */
+            .logo-svg .v-letter, .logo-svg #rotating-text {
+                animation: none !important;
             }
             .field-label {
                 background-color: #4FBBA9 !important;
                 color: white !important;
             }
-            .cursive-input {
-                color: #FFFFFF !important;
+             .cursive-input {
+                color: #333 !important;
             }
-             .line {
-                border-bottom: 1px dotted #888888 !important;
+            @page {
+                size: auto;
+                margin: 0;
             }
         }
 
@@ -183,62 +197,61 @@
 </head>
 <body>
     <div class="square-page">
-        <!-- Border-pattern div removed -->
-        <!-- Content-area div removed, content directly in square-page -->
-        <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                    <path id="arcVersaUpper" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
-                    <path id="arcVersaLower" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
-                    <path id="arcPreVest" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
-                    <path id="arcPreVestInverted" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
-                </defs>
+        <div class="border-pattern"></div>
+        <div class="content-area">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <path id="arcVersaUpper" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
+                        <path id="arcVersaLower" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
+                        <path id="arcPreVest" d="M 10,100 A 90,90 0 1,1 190,100" fill="none" />
+                        <path id="arcPreVestInverted" d="M 190,100 A 90,90 0 1,1 10,100" fill="none" />
+                    </defs>
 
-                <text x="100" y="100" class="v-letter">V</text>
+                    <text x="100" y="100" class="v-letter">V</text>
 
-                <g id="rotating-text">
-                    <animateTransform
-                        attributeName="transform"
-                        attributeType="XML"
-                        type="rotate"
-                        from="0 100 100"
-                        to="360 100 100"
-                        dur="30s"
-                        repeatCount="indefinite" />
+                    <g id="rotating-text">
+                        <animateTransform
+                            attributeName="transform"
+                            attributeType="XML"
+                            type="rotate"
+                            from="0 100 100"
+                            to="360 100 100"
+                            dur="30s"
+                            repeatCount="indefinite" />
 
-                    <text class="circular-text">
-                        <textPath xlink:href="#arcVersaUpper" startOffset="77%">VERSA</textPath>
-                    </text>
-                    <text class="circular-text">
-                        <textPath xlink:href="#arcVersaLower" startOffset="77%">VERSA</textPath>
-                    </text>
-                    <text class="circular-text-small">
-                        <textPath xlink:href="#arcPreVest" startOffset="25%">PRÉ-VESTIBULARES</textPath>
-                    </text>
-                    <text class="circular-text-small">
-                        <textPath xlink:href="#arcPreVestInverted" startOffset="25%">PRÉ-VESTIBULARES</textPath>
-                    </text>
-                </g>
-            </svg>
-        </div>
-
-        <div class="info-fields">
-            <div class="field">
-                <span class="field-label">SEU NOME</span>
-                <input type="text" class="cursive-input" value="Jhefferson Henrique Elias do Nascimento">
-                <div class="line"></div>
+                        <text class="circular-text">
+                            <textPath xlink:href="#arcVersaUpper" startOffset="77%">VERSA</textPath>
+                        </text>
+                        <text class="circular-text">
+                            <textPath xlink:href="#arcVersaLower" startOffset="77%" >VERSA</textPath>
+                        </text>
+                        <text class="circular-text-small">
+                            <textPath xlink:href="#arcPreVest" startOffset="25%">PRÉ-VESTIBULARES</textPath>
+                        </text>
+                        <text class="circular-text-small">
+                            <textPath xlink:href="#arcPreVestInverted" startOffset="25%">PRÉ-VESTIBULARES</textPath>
+                        </text>
+                    </g>
+                </svg>
             </div>
-            <div class="field telefone">
-                <span class="field-label">TELEFONE</span>
-                <input type="text" class="cursive-input" value="(62) 9 9821-0669">
-                <div class="line"></div>
-                <input type="text" class="cursive-input" placeholder="Outro telefone (opcional)">
-                <div class="line"></div>
-            </div>
-            <div class="field">
-                <span class="field-label">E-MAIL / REDES SOCIAIS</span> <!-- Changed label slightly -->
-                <input type="text" class="cursive-input" value="jheffersohrenrique15@gmail.com">
-                <div class="line"></div>
+
+            <div class="info-fields">
+                <div class="field">
+                    <span class="field-label">SEU NOME</span>
+                    <input type="text" class="cursive-input" value="Jhefferson Henrique Elias do Nascimento">
+                    <div class="line"></div>
+                </div>
+                <div class="field telefone">
+                    <span class="field-label">TELEFONE</span>
+                    <input type="text" class="cursive-input" value="(62) 9 9821-0669">
+                    <div class="line"></div>
+                </div>
+                <div class="field">
+                    <span class="field-label">REDES SOCIAIS</span>
+                    <input type="text" class="cursive-input" value="jheffersohrenrique15@gmail.com">
+                    <div class="line"></div>
+                </div>
             </div>
         </div>
     </div>
