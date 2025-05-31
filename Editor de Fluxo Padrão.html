@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f4f8;
+            background-color: #fff; /* Changed to white */
             color: #333;
             display: flex;
             flex-direction: column;
@@ -20,8 +20,8 @@
         }
 
         .question-card {
-            background-color: #fff;
-            border-radius: 8px;
+            background-color: #f0f4f8; /* Changed to light gray */
+            border-radius: 12px; /* More rounded */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
@@ -32,7 +32,7 @@
 
         .question-card h2 {
             margin-top: 0;
-            color: #2da9a4; /* Updated Green */
+            color: #2da9a4;
         }
         .question-card p {
             margin-bottom: 5px;
@@ -44,81 +44,35 @@
             font-style: italic;
         }
 
-        /* .controls original comentado para ocultar os botões superiores */
-        /*
-        .controls {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            padding: 15px;
-            margin-bottom: 20px;
-            width: 90%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .controls button {
-            padding: 10px 15px;
-            background-color: #2da9a4; // Updated Green
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-        .controls button:hover:not(:disabled) {
-            background-color: #258f8a; // Slightly darker variant of #2da9a4 or just #2da9a4
-        }
-        .controls button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .controls label { // Kept for potential future use of checkbox
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 0.9em;
-            color: #555;
-        }
-        */
-
-
         #flow-editor-container {
             position: relative;
             width: 90%;
             max-width: 1000px;
             display: flex;
-            justify-content: space-between; /* Creates central space */
+            justify-content: space-between;
             padding: 20px 0;
             border-radius: 8px;
-            margin-bottom: 20px; /* Space before new bottom buttons */
+            margin-bottom: 20px;
         }
 
         .column {
             display: flex;
             flex-direction: column;
-            gap: 25px; /* Spacing between nodes in the same column */
+            gap: 25px;
         }
 
         #left-column {
-            width: 35%; /* Adjusted width for the left column */
+            width: 35%;
         }
 
         #right-column {
-            width: 50%; /* Increased width for the right column */
+            width: 50%;
         }
 
         .node {
-            background-color: #ffffff;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
+            background-color: #e9ecef; /* Changed to a light gray */
+            border: 2px solid #d0d0d0; /* Slightly darker gray border */
+            border-radius: 10px; /* More rounded */
             padding: 12px 18px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -131,15 +85,15 @@
             user-select: none;
             z-index: 2;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            word-wrap: break-word; 
+            word-wrap: break-word;
         }
         #left-column .node {
             max-width: 280px; /* Max width for left nodes, causing word wrap */
-            /* min-height will be set via JS */
+            /* min-height will be set by content or dynamically if needed */
         }
 
         .node.drawing-from {
-            box-shadow: 0 0 0 3px #2da9a4, 0 4px 8px rgba(0,0,0,0.2); /* Updated Green */
+            box-shadow: 0 0 0 3px #2da9a4, 0 4px 8px rgba(0,0,0,0.2);
         }
         .node-text {
             margin-bottom: 5px;
@@ -149,13 +103,30 @@
             color: #c0392b; /* Red for distractor text */
             margin-top: 10px;
             text-align: left;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #ddd; /* slightly darker separator */
             padding-top: 10px;
             width: 100%;
             box-sizing: border-box;
-            background-color: #fdf6f6; 
+            background-color: #fdf6f6;
             padding: 10px;
-            border-radius: 0 0 4px 4px;
+            border-radius: 0 0 8px 8px; /* rounded bottom corners */
+            display: none; /* Initially hidden */
+        }
+
+        .correct-answer-hint { /* New style for correct answer hints on left nodes */
+            font-size: 0.8em;
+            color: #27ae60; /* Green for correct hint */
+            margin-top: 10px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #f6fdf6; /* Light green background */
+            padding: 8px 10px;
+            border-radius: 0 0 8px 8px;
+            display: none; /* Initially hidden */
+            font-style: italic;
         }
 
 
@@ -175,17 +146,22 @@
         .output-port { right: -6px; }
         .input-port { left: -6px; }
 
+        /* Hide unwanted ports */
+        #left-column .node .input-port { display: none; }
+        #right-column .node .output-port { display: none; }
+
+
         .connection-marker {
             position: absolute;
-            width: 24px; 
+            width: 24px;
             height: 24px;
             color: white;
-            background-color: #2da9a4; /* Updated Green */
+            background-color: #2da9a4;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px; 
+            font-size: 13px;
             font-weight: bold;
             top: 50%;
             transform: translateY(-50%);
@@ -194,7 +170,7 @@
             border: 1px solid rgba(0,0,0,0.1);
         }
 
-        .output-marker { right: -12px; } 
+        .output-marker { right: -12px; }
         .input-marker { left: -12px; }
         .connection-marker span { line-height: 1; }
 
@@ -210,9 +186,9 @@
         }
 
         .connection-line {
-            stroke-width: 3.5px; 
+            stroke-width: 3.5px;
             fill: none;
-            stroke: #2da9a4; /* Updated Green for solid line */
+            stroke: #2da9a4;
         }
         .connection-line-animated {
             animation: dashdraw 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -226,29 +202,28 @@
 
         .connection-haste {
             position: absolute;
-            height: 3.5px; 
-            background: #2da9a4; /* Updated Green, solid color */
+            height: 3.5px;
+            background: #2da9a4;
             z-index: 0;
             pointer-events: none;
             border-radius: 1.75px;
         }
 
-        /* --- STYLES FOR BOTTOM NAVIGATION BUTTONS --- */
         .bottom-controls-container {
             width: 90%;
             max-width: 1000px;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
             gap: 15px;
             margin-top: 20px;
             padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
+            background-color: #f0f4f8; /* Changed to light gray */
+            border-radius: 12px; /* More rounded */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .navigation-buttons { /* Only navigation buttons remain visible */
+        .navigation-buttons {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -256,13 +231,13 @@
             gap: 15px;
         }
 
-        .bottom-controls-container button { /* Styling for navigation buttons */
-            padding: 12px 25px; 
+        .bottom-controls-container button {
+            padding: 12px 25px;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px; /* More rounded */
             cursor: pointer;
-            font-size: 15px; 
+            font-size: 15px;
             font-weight: 500;
             transition: background-color 0.2s, transform 0.1s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -276,14 +251,14 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         .bottom-controls-container button:disabled {
-            background-color: #bdc3c7 !important; 
+            background-color: #bdc3c7 !important;
             cursor: not-allowed;
             box-shadow: none;
         }
-        
+
         #prev-flashcard-btn, #next-flashcard-btn {
-            background-color: #3498db; /* Blue for navigation */
-            min-width: 120px; 
+            background-color: #3498db;
+            min-width: 120px;
         }
         #prev-flashcard-btn:hover:not(:disabled), #next-flashcard-btn:hover:not(:disabled) {
             background-color: #2980b9;
@@ -298,18 +273,14 @@
         <p id="card-description">Conecte os conceitos da esquerda com suas correspondências à direita.</p>
         <p id="card-source-ref" class="source-ref"></p>
     </div>
-    
+
     <div id="flow-editor-container">
         <div id="left-column" class="column"></div>
         <div id="right-column" class="column"></div>
-        <svg id="connections-svg">
-            <!-- Removed lineGradient defs as line is now solid color -->
-        </svg>
+        <svg id="connections-svg"></svg>
     </div>
 
     <div class="bottom-controls-container">
-        <!-- Action buttons (Reset, Check Answers) are removed from UI -->
-        <!-- Checkbox (Allow Multiple Connections) is removed from UI -->
         <div class="navigation-buttons">
             <button id="prev-flashcard-btn" title="Flashcard Anterior" disabled>&lt; Anterior</button>
             <button id="next-flashcard-btn" title="Próximo Flashcard" disabled>&gt; Próximo</button>
@@ -321,11 +292,6 @@
         const rightColumn = document.getElementById('right-column');
         const svgCanvas = document.getElementById('connections-svg');
         const editorContainer = document.getElementById('flow-editor-container');
-        
-        // Buttons removed from UI but functions kept:
-        // const resetBtn = document.getElementById('reset-connections-btn');
-        // const checkAnswersBtn = document.getElementById('check-answers-btn');
-        // const allowMultipleCb = document.getElementById('allow-multiple-connections-cb');
 
         const prevFlashcardBtn = document.getElementById('prev-flashcard-btn');
         const nextFlashcardBtn = document.getElementById('next-flashcard-btn');
@@ -334,7 +300,7 @@
         const cardDescriptionEl = document.getElementById('card-description');
         const cardSourceRefEl = document.getElementById('card-source-ref');
 
-        let nodes = {}; 
+        let nodes = {};
         let connections = [];
         let isDrawing = false;
         let startNodeId = null;
@@ -343,17 +309,17 @@
 
         let nodeIdCounter = 0;
         let globalConnectionIdCounter = 0;
-        const HASTE_HEIGHT = 3.5; 
-        let allowMultipleConnections = false; // Default to false (single connections)
-        let answersHaveBeenChecked = false; // Tracks if verification logic has run
+        const HASTE_HEIGHT = 3.5;
+        let allowMultipleConnections = false;
+        let answersHaveBeenChecked = false;
 
         let bookData = null;
         let currentModuleIndex = 0;
         let currentFlashcardIndex = 0;
         let currentFlashcardData = {
             gabarito: [],
-            leftNodesFullOriginal: [], // Stores original left nodes with original index
-            rightNodesFullOriginal: [] // Stores original right nodes with original index
+            leftNodesFullOriginal: [],
+            rightNodesFullOriginal: []
         };
 
         const GITHUB_CONFIG_URL = 'https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/main/Portugu%C3%AAs%20-%20Livro%201%20-%20Frente%20A.json';
@@ -385,24 +351,18 @@
             }
             return array;
         }
-        
+
         function setLeftColumnNodesHeight() {
+            // No longer forcing uniform height for left column nodes.
+            // They will size based on content and max-width.
+            // This function is kept for potential future use or minor adjustments.
+            // For now, it can be empty or used for other column-specific dynamic styling.
             const leftNodesElements = Array.from(leftColumn.querySelectorAll('.node'));
             if (leftNodesElements.length === 0) return;
-
-            let maxHeight = 0;
-            leftNodesElements.forEach(nodeEl => {
-                nodeEl.style.minHeight = 'auto'; // Reset for natural height calculation
-                if (nodeEl.offsetHeight > maxHeight) {
-                    maxHeight = nodeEl.offsetHeight;
-                }
-            });
-            
-            maxHeight = Math.max(maxHeight, 60); // Ensure a minimum height
-            
-            leftNodesElements.forEach(nodeEl => {
-                nodeEl.style.minHeight = `${maxHeight}px`;
-            });
+            // Example: If you still wanted some MINIMUM height, but not uniform:
+            // leftNodesElements.forEach(nodeEl => {
+            //     nodeEl.style.minHeight = '50px'; // Or some other base minimum
+            // });
         }
 
 
@@ -419,60 +379,57 @@
             const module = bookData.modules[moduleIdx];
             const flashcard = module.flashcards[flashcardIdx];
 
-            cardTitleEl.textContent = `${module.moduleTitle} (Card ${flashcardIdx + 1})`;
-            cardDescriptionEl.textContent = `Conecte os itens da esquerda com os da direita. Flashcard ID: ${flashcard.id}`;
+            // Removed "Card" from the title
+            cardTitleEl.textContent = `${module.moduleTitle} - Atividade ${flashcard.id}`;
+            cardDescriptionEl.textContent = `Conecte os itens da esquerda com os da direita.`; // Simplified
             cardSourceRefEl.textContent = `Fonte: ${module.sourceReference || 'Não especificada'}`;
 
-            resetAllConnections(); // This also resets answersHaveBeenChecked and visual feedback
-            
+            resetAllConnections();
+
             leftColumn.innerHTML = '';
             rightColumn.innerHTML = '';
             nodes = {};
-            nodeIdCounter = 0; // Reset for new card
+            nodeIdCounter = 0;
 
             currentFlashcardData.gabarito = flashcard.gabarito;
-
-            // Store original left nodes with their original indices then shuffle
-            currentFlashcardData.leftNodesFullOriginal = flashcard.leftColumnNodes.map((text, index) => ({ 
-                text, 
-                originalIndex: index 
+            currentFlashcardData.leftNodesFullOriginal = flashcard.leftColumnNodes.map((text, index) => ({
+                text,
+                originalIndex: index
             }));
             const shuffledLeftNodes = shuffleArray([...currentFlashcardData.leftNodesFullOriginal]);
 
-            // Store original right nodes (with full data) and their original indices then shuffle
             currentFlashcardData.rightNodesFullOriginal = flashcard.rightColumnNodes.map((nodeData, index) => ({
                 ...nodeData,
-                originalIndex: index 
+                originalIndex: index
             }));
             const shuffledRightNodes = shuffleArray([...currentFlashcardData.rightNodesFullOriginal]);
-            
-            // Create nodes using shuffled lists and their stored originalIndex
+
             shuffledLeftNodes.forEach(nodeData => {
                 addNode(nodeData.text, 'left', nodeData.originalIndex);
             });
-            setLeftColumnNodesHeight(); // Adjust height after adding all left nodes
+            // Call setLeftColumnNodesHeight AFTER nodes are added, if it were to do something
+            // For now, it doesn't enforce uniform height, so its call might not be strictly necessary
+            // unless other dynamic adjustments are planned for it.
+            setLeftColumnNodesHeight(); 
 
             shuffledRightNodes.forEach(nodeDataWithOriginalIndex => {
                 addNode(nodeDataWithOriginalIndex.text, 'right', nodeDataWithOriginalIndex.originalIndex, nodeDataWithOriginalIndex.isDistractor, nodeDataWithOriginalIndex.distractorExplanation);
             });
-            
+
             updateNavigationButtons();
-            // No checkAnswersBtn to update its state
-            answersHaveBeenChecked = false; // Ensure it's reset for the new card
-            resetVisualFeedback(); // Ensure visual feedback is clean for new card
-            setTimeout(redrawAllConnections, 50); 
+            answersHaveBeenChecked = false;
+            resetVisualFeedback();
+            setTimeout(redrawAllConnections, 50);
         }
 
 
         async function initializeApp() {
             bookData = await fetchConfig(GITHUB_CONFIG_URL);
             if (bookData && bookData.modules && bookData.modules.length > 0) {
-                // allowMultipleConnections is false by default
-                loadFlashcard(0, 0); 
+                loadFlashcard(0, 0);
             } else {
                 prevFlashcardBtn.disabled = true;
                 nextFlashcardBtn.disabled = true;
-                // No resetBtn or checkAnswersBtn or allowMultipleCb to disable
             }
         }
 
@@ -487,7 +444,7 @@
             nextFlashcardBtn.disabled = (currentModuleIndex === bookData.modules.length - 1 &&
                                        currentFlashcardIndex === currentModule.flashcards.length - 1);
         }
-        
+
         prevFlashcardBtn.addEventListener('click', () => {
             if (currentFlashcardIndex > 0) {
                 loadFlashcard(currentModuleIndex, currentFlashcardIndex - 1);
@@ -507,15 +464,13 @@
             }
         });
 
-        // Event listeners for resetBtn and checkAnswersBtn are removed as buttons are removed from UI
-        // Event listener for allowMultipleCb is removed
 
         function createNodeElement(id, text, originalIndex, columnType, isDistractor, distractorExplanationText) {
             const nodeEl = document.createElement('div');
             nodeEl.classList.add('node');
             nodeEl.dataset.nodeId = id;
-            nodeEl.dataset.originalIndex = originalIndex; 
-            nodeEl.dataset.columnType = columnType; // Store column type for easier access
+            nodeEl.dataset.originalIndex = originalIndex;
+            nodeEl.dataset.columnType = columnType;
 
             const textSpan = document.createElement('span');
             textSpan.classList.add('node-text');
@@ -523,14 +478,20 @@
             nodeEl.appendChild(textSpan);
 
             if (columnType === 'right') {
-                nodeEl.dataset.isDistractor = !!isDistractor; // Store as boolean
+                nodeEl.dataset.isDistractor = !!isDistractor;
                 nodeEl.dataset.distractorExplanation = distractorExplanationText || "";
 
                 const explanationDiv = document.createElement('div');
                 explanationDiv.classList.add('distractor-explanation');
-                explanationDiv.style.display = 'none'; // Initially hidden
+                // explanationDiv.style.display = 'none'; // Handled by CSS now
                 nodeEl.appendChild(explanationDiv);
+            } else if (columnType === 'left') {
+                // Add placeholder for correct answer hint
+                const hintDiv = document.createElement('div');
+                hintDiv.classList.add('correct-answer-hint');
+                nodeEl.appendChild(hintDiv);
             }
+
 
             const outputPort = document.createElement('div');
             outputPort.classList.add('port', 'output-port');
@@ -543,7 +504,7 @@
             nodeEl.addEventListener('click', handleNodeClick);
             return nodeEl;
         }
-        
+
         function addNode(text, columnType, originalIndex, isDistractor = false, distractorExplanationText = "") {
             const id = `node-${nodeIdCounter++}`;
             const nodeEl = createNodeElement(id, text, originalIndex, columnType, isDistractor, distractorExplanationText);
@@ -552,13 +513,13 @@
             } else {
                 rightColumn.appendChild(nodeEl);
             }
-            nodes[id] = { 
-                id: id, 
-                element: nodeEl, 
-                text: text, 
-                originalIndex: originalIndex, 
+            nodes[id] = {
+                id: id,
+                element: nodeEl,
+                text: text,
+                originalIndex: originalIndex,
                 columnType: columnType,
-                isDistractor: !!isDistractor, // Ensure boolean
+                isDistractor: !!isDistractor,
                 distractorExplanation: distractorExplanationText
             };
             return id;
@@ -579,12 +540,12 @@
 
         function createBezierPath(p1, p2) {
             const dx_abs = Math.abs(p2.x - p1.x);
-            let offset = dx_abs * 0.4; 
-            if (p1.y === p2.y) return `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`; 
+            let offset = dx_abs * 0.4;
+            if (p1.y === p2.y) return `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`;
             if (dx_abs < 50) offset = dx_abs * 0.6;
             if (dx_abs < 10 && dx_abs !== 0) offset = 5;
-            if (dx_abs === 0) offset = 0; 
-            
+            if (dx_abs === 0) offset = 0;
+
             let cp1x = p1.x + (p2.x > p1.x ? offset : -offset);
             let cp2x = p2.x - (p2.x > p1.x ? offset : -offset);
             return `M ${p1.x} ${p1.y} C ${cp1x} ${p1.y}, ${cp2x} ${p2.y}, ${p2.x} ${p2.y}`;
@@ -596,7 +557,6 @@
             if (!line) {
                 line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                 line.classList.add('connection-line');
-                // line.setAttribute('stroke', 'url(#lineGradient)'); // Removed, using solid color from CSS
                 svgCanvas.appendChild(line);
             }
             line.setAttribute('d', pathData);
@@ -606,7 +566,7 @@
                 if (length > 1) {
                     line.style.strokeDasharray = length;
                     line.style.strokeDashoffset = length;
-                    line.getBoundingClientRect(); 
+                    line.getBoundingClientRect();
                     line.classList.add('connection-line-animated');
                     line.addEventListener('animationend', function handleAnimationEnd() {
                         line.style.strokeDasharray = 'none'; line.style.strokeDashoffset = '0';
@@ -627,7 +587,7 @@
             marker.appendChild(span);
             return marker;
         }
-        
+
         function appendAndPositionMarker(nodeElement, newMarker, markerType) {
             nodeElement.appendChild(newMarker);
         }
@@ -638,16 +598,16 @@
             if (existingMarkers.length === 0) return;
 
             existingMarkers.sort((a, b) => parseInt(a.dataset.connectionNumber) - parseInt(b.dataset.connectionNumber));
-            
+
             const nodeCenterY = nodeElement.offsetHeight / 2;
             const markerHeight = existingMarkers[0].offsetHeight;
-            const spacing = 4; 
+            const spacing = 4;
             const totalMarkersHeight = existingMarkers.length * markerHeight + Math.max(0, existingMarkers.length - 1) * spacing;
-            
+
             let startYGroup = nodeCenterY - totalMarkersHeight / 2;
-            const paddingTop = 5; 
+            const paddingTop = 5;
             const paddingBottom = 5;
-            
+
             startYGroup = Math.max(paddingTop, startYGroup);
             if (startYGroup + totalMarkersHeight > nodeElement.offsetHeight - paddingBottom) {
                 startYGroup = Math.max(paddingTop, nodeElement.offsetHeight - paddingBottom - totalMarkersHeight);
@@ -665,15 +625,17 @@
             if (connectionToRemove.line) connectionToRemove.line.remove();
             if (connectionToRemove.haste) connectionToRemove.haste.remove();
             if (connectionToRemove.markers) connectionToRemove.markers.forEach(marker => marker.remove());
-            
-            // Reset border colors if nodes exist
+
             if (nodes[connectionToRemove.from] && nodes[connectionToRemove.from].element) {
                 nodes[connectionToRemove.from].element.style.borderColor = '';
+                // Hide correct answer hint if connection is removed from a left node
+                const hintDiv = nodes[connectionToRemove.from].element.querySelector('.correct-answer-hint');
+                if (hintDiv) hintDiv.style.display = 'none';
             }
             if (nodes[connectionToRemove.to] && nodes[connectionToRemove.to].element) {
                 nodes[connectionToRemove.to].element.style.borderColor = '';
                  const explDiv = nodes[connectionToRemove.to].element.querySelector('.distractor-explanation');
-                 if (explDiv) explDiv.style.display = 'none'; // Hide explanation if connection removed
+                 if (explDiv) explDiv.style.display = 'none';
             }
 
             const index = connections.indexOf(connectionToRemove);
@@ -681,7 +643,7 @@
 
             if (!skipUpdatingNumbers) {
                  updateDisplayedConnectionNumbersAndMarkers();
-                 checkAndHandleVerificationState(); // Check if verification state needs to change
+                 checkAndHandleVerificationState();
             }
         }
 
@@ -705,8 +667,8 @@
                     repositionMarkersOnNode(nodeData.element, nodeData.columnType === 'left' ? 'output' : 'input');
                 }
             });
-            
-            if (connections.length === 0) { 
+
+            if (connections.length === 0) {
                 Object.values(nodes).forEach(nodeData => {
                     if (nodeData.element) {
                         Array.from(nodeData.element.querySelectorAll('.connection-marker')).forEach(m => m.remove());
@@ -718,30 +680,34 @@
         function resetVisualFeedback() {
             Object.values(nodes).forEach(nodeData => {
                 if (nodeData.element) {
-                    nodeData.element.style.borderColor = ''; 
+                    nodeData.element.style.borderColor = '';
                     if (nodeData.columnType === 'right') {
                         const explDiv = nodeData.element.querySelector('.distractor-explanation');
                         if (explDiv) {
                             explDiv.style.display = 'none';
-                            explDiv.textContent = ''; // Clear content too
+                            explDiv.textContent = '';
+                        }
+                    } else if (nodeData.columnType === 'left') {
+                        const hintDiv = nodeData.element.querySelector('.correct-answer-hint');
+                        if (hintDiv) {
+                            hintDiv.style.display = 'none';
+                            hintDiv.textContent = '';
                         }
                     }
                 }
             });
         }
-        
-        // This function is kept for potential future use (e.g. a manual reset button)
+
         function resetAllConnections() {
-            [...connections].forEach(conn => removeConnection(conn, true)); 
+            [...connections].forEach(conn => removeConnection(conn, true));
             connections = [];
             globalConnectionIdCounter = 0;
             answersHaveBeenChecked = false;
             resetVisualFeedback();
             updateDisplayedConnectionNumbersAndMarkers();
-            // No checkAnswersBtn to update
-            setTimeout(redrawAllConnections, 0); 
+            setTimeout(redrawAllConnections, 0);
         }
-        
+
         function checkAndHandleVerificationState() {
             const leftNodeElements = Array.from(leftColumn.querySelectorAll('.node'));
             if (leftNodeElements.length === 0) return;
@@ -756,20 +722,13 @@
             } else if (!allLeftConnected && answersHaveBeenChecked) {
                 resetVisualFeedback();
                 answersHaveBeenChecked = false;
-                // After resetting visual feedback, redraw connections as node sizes might change
-                // (e.g., if distractor explanations were hidden)
-                setTimeout(redrawAllConnections, 50); 
+                setTimeout(redrawAllConnections, 50);
             }
         }
 
 
         function handleNodeClick(event) {
             event.stopPropagation();
-            // Allow changing connections even if answersHaveBeenChecked, but behavior will reset/re-evaluate
-            // if (answersHaveBeenChecked) {
-            //     console.log("Respostas já verificadas. Reset para fazer novas conexões.");
-            //     return;
-            // }
 
             const clickedNodeElement = event.currentTarget;
             const nodeId = clickedNodeElement.dataset.nodeId;
@@ -777,10 +736,9 @@
             if (!nodeData) return;
 
             if (!isDrawing) {
-                // If starting a new connection and answers were previously checked, reset feedback
                 if (answersHaveBeenChecked) {
                     resetVisualFeedback();
-                    answersHaveBeenChecked = false; 
+                    answersHaveBeenChecked = false;
                 }
 
                 isDrawing = true;
@@ -810,20 +768,19 @@
                         resetDrawingState(); return;
                     }
 
-                    if (!allowMultipleConnections) { // This is now default false
+                    if (!allowMultipleConnections) {
                         const connectionsToRemove = new Set();
                         connections.forEach(conn => {
-                            if (conn.from === finalFromNodeId) connectionsToRemove.add(conn); 
-                            if (conn.to === finalToNodeId) connectionsToRemove.add(conn); 
+                            if (conn.from === finalFromNodeId) connectionsToRemove.add(conn);
+                            if (conn.to === finalToNodeId) connectionsToRemove.add(conn);
                         });
-                        // If answers were checked, removing connections should reset the state.
                         if (answersHaveBeenChecked && connectionsToRemove.size > 0) {
                             resetVisualFeedback();
                             answersHaveBeenChecked = false;
                         }
-                        connectionsToRemove.forEach(conn => removeConnection(conn, true)); // true to avoid immediate re-check
+                        connectionsToRemove.forEach(conn => removeConnection(conn, true));
                     }
-                    
+
                     const existingExactConnection = connections.find(c => c.from === finalFromNodeId && c.to === finalToNodeId);
                     if (existingExactConnection) {
                         if (tempLine) tempLine.remove(); tempLine = null;
@@ -837,7 +794,7 @@
                     tempLine = null;
 
                     let htmlHasteElement = null;
-                    if (Math.abs(p1.y - p2.y) < 1.5) { 
+                    if (Math.abs(p1.y - p2.y) < 1.5) {
                         htmlHasteElement = document.createElement('div');
                         htmlHasteElement.classList.add('connection-haste');
                         htmlHasteElement.style.height = `${HASTE_HEIGHT}px`;
@@ -850,7 +807,7 @@
                             htmlHasteElement.style.width = `${width}px`;
                             editorContainer.insertBefore(htmlHasteElement, svgCanvas);
                         } else {
-                            htmlHasteElement = null; 
+                            htmlHasteElement = null;
                         }
                     }
 
@@ -859,16 +816,16 @@
                     const inputMarker = createMarkerElement('input');
                     appendAndPositionMarker(nodes[finalFromNodeId].element, outputMarker, 'output');
                     appendAndPositionMarker(nodes[finalToNodeId].element, inputMarker, 'input');
-                    
+
                     connections.push({
                         id: globalConnectionIdCounter, from: finalFromNodeId, to: finalToNodeId,
                         line: finalSvgLine, haste: htmlHasteElement, markers: [outputMarker, inputMarker]
                     });
-                    
+
                     updateDisplayedConnectionNumbersAndMarkers();
-                    checkAndHandleVerificationState(); // Check if all left nodes are now connected
+                    checkAndHandleVerificationState();
                     resetDrawingState();
-                } else { 
+                } else {
                     if (tempLine) tempLine.remove(); tempLine = null;
                     resetDrawingState();
                 }
@@ -881,12 +838,12 @@
             if (event.type.startsWith('touch')) {
                 if (event.touches && event.touches.length > 0) {
                     clientX = event.touches[0].clientX; clientY = event.touches[0].clientY;
-                    event.preventDefault(); 
+                    event.preventDefault();
                 } else return;
             } else {
                 clientX = event.clientX; clientY = event.clientY;
             }
-            
+
             const startNodeData = nodes[startNodeId];
             const startPos = getPortPosition(startPortElement);
             const editorRect = editorContainer.getBoundingClientRect();
@@ -894,7 +851,7 @@
                 x: clientX - editorRect.left,
                 y: clientY - editorRect.top
             };
-            
+
             let p1_temp = startNodeData.columnType === 'left' ? startPos : pointerPos;
             let p2_temp = startNodeData.columnType === 'left' ? pointerPos : startPos;
 
@@ -907,7 +864,7 @@
         }
 
         editorContainer.addEventListener('click', (event) => {
-            if (isDrawing && event.target === editorContainer || event.target === svgCanvas) {
+            if (isDrawing && (event.target === editorContainer || event.target === svgCanvas)) {
                 if (tempLine) tempLine.remove(); tempLine = null;
                 if (startNodeId && nodes[startNodeId] && nodes[startNodeId].element) {
                      nodes[startNodeId].element.classList.remove('drawing-from');
@@ -915,7 +872,7 @@
                 resetDrawingState();
             }
         });
-        
+
         function resetDrawingState() {
             if (isDrawing && startNodeId && nodes[startNodeId] && nodes[startNodeId].element) {
                  nodes[startNodeId].element.classList.remove('drawing-from');
@@ -931,8 +888,8 @@
         function redrawAllConnections() {
             connections.forEach(conn => {
                 const fromNodeData = nodes[conn.from], toNodeData = nodes[conn.to];
-                if (!fromNodeData || !toNodeData) { 
-                    removeConnection(conn, true); 
+                if (!fromNodeData || !toNodeData) {
+                    removeConnection(conn, true);
                     return;
                 }
 
@@ -945,7 +902,7 @@
 
                 if (conn.line) conn.line.setAttribute('d', createBezierPath(p1, p2));
 
-                if (conn.haste) { 
+                if (conn.haste) {
                     if (Math.abs(p1.y - p2.y) < 1.5) {
                         conn.haste.style.top = `${p1.y - HASTE_HEIGHT / 2}px`;
                         const startX = Math.min(p1.x, p2.x);
@@ -958,14 +915,24 @@
                         } else {
                             conn.haste.style.display = 'none';
                         }
-                    } else { 
+                    } else {
                         conn.haste.remove();
                         conn.haste = null;
                     }
                 }
             });
-            updateDisplayedConnectionNumbersAndMarkers(); 
-            setLeftColumnNodesHeight(); 
+            updateDisplayedConnectionNumbersAndMarkers();
+            // setLeftColumnNodesHeight(); // Not strictly needed if not enforcing uniform height
+                                       // but call it if it does other useful things.
+                                       // Forcing a reflow might be useful if hints change sizes significantly.
+             // Calling this in case hints visibility change affect layout
+             setTimeout(() => {
+                Object.values(nodes).forEach(nodeData => {
+                    if (nodeData.element) {
+                        repositionMarkersOnNode(nodeData.element, nodeData.columnType === 'left' ? 'output' : 'input');
+                    }
+                });
+            }, 0);
         }
 
         function performVerificationAndFeedback() {
@@ -975,17 +942,17 @@
                 const leftNodeOriginalIndex = parseInt(nodes[conn.from].element.dataset.originalIndex);
                 const rightNodeOriginalIndex = parseInt(nodes[conn.to].element.dataset.originalIndex);
 
-                const isCorrect = currentFlashcardData.gabarito.some(pair => 
+                const isCorrect = currentFlashcardData.gabarito.some(pair =>
                     pair.leftIndex === leftNodeOriginalIndex && pair.rightIndex === rightNodeOriginalIndex
                 );
                 connectionCorrectness.set(conn.id, isCorrect);
             });
 
-            // Style node borders based on connection correctness
+            // Style node borders and show hints for left nodes
             Object.values(nodes).forEach(nodeData => {
                 const nodeEl = nodeData.element;
                 const relevantConnections = connections.filter(c => c.from === nodeData.id || c.to === nodeData.id);
-                
+
                 if (relevantConnections.length > 0) {
                     const anyNodeConnectionIncorrect = relevantConnections.some(c => connectionCorrectness.get(c.id) === false);
                     const allNodeConnectionsCorrect = relevantConnections.every(c => connectionCorrectness.get(c.id) === true);
@@ -993,22 +960,60 @@
                     if (anyNodeConnectionIncorrect) {
                         nodeEl.style.borderColor = '#e74c3c'; // Red for incorrect
                     } else if (allNodeConnectionsCorrect) {
-                        nodeEl.style.borderColor = '#2da9a4'; // Green for correct (using the specified green)
+                        nodeEl.style.borderColor = '#2da9a4'; // Green for correct
                     } else {
-                        nodeEl.style.borderColor = ''; // Default if mixed or other states (though typically one of above)
+                        nodeEl.style.borderColor = '';
                     }
                 } else {
-                    nodeEl.style.borderColor = ''; // No connections, default border
+                    nodeEl.style.borderColor = '';
+                }
+
+                // Handle hints for left column nodes
+                if (nodeData.columnType === 'left') {
+                    const hintDiv = nodeEl.querySelector('.correct-answer-hint');
+                    if (!hintDiv) return;
+
+                    const leftNodeOriginalIndex = parseInt(nodeEl.dataset.originalIndex);
+                    const connectionsFromThisNode = connections.filter(c => c.from === nodeData.id);
+                    
+                    let isAnyConnectionFromThisNodeIncorrect = false;
+                    if (connectionsFromThisNode.length > 0) {
+                         isAnyConnectionFromThisNodeIncorrect = connectionsFromThisNode.some(c => connectionCorrectness.get(c.id) === false);
+                    }
+                    // Also consider it "incorrect" if it's supposed to be connected but isn't (though this function runs when all are connected)
+                    // The primary case here is if it *is* connected, but incorrectly.
+
+                    if (isAnyConnectionFromThisNodeIncorrect) {
+                        const correctRightIndices = currentFlashcardData.gabarito
+                            .filter(pair => pair.leftIndex === leftNodeOriginalIndex)
+                            .map(pair => pair.rightIndex);
+                        
+                        if (correctRightIndices.length > 0) {
+                            // Find the text of the correct right node(s) based on their originalIndex
+                            const correctRightNodeTexts = correctRightIndices.map(rIndex => {
+                                const originalRightNode = currentFlashcardData.rightNodesFullOriginal.find(n => n.originalIndex === rIndex);
+                                return originalRightNode ? `"${originalRightNode.text}" (índice original ${rIndex})` : `Item de índice ${rIndex}`;
+                            }).join(', ');
+                            // Display the target original index as requested by user
+                            const correctRightOriginalIndicesText = correctRightIndices.join(', ');
+
+                            hintDiv.textContent = `Conexão correta com item de índice original: ${correctRightOriginalIndicesText}.`;
+                            hintDiv.style.display = 'block';
+                        } else {
+                             hintDiv.style.display = 'none'; // Should not happen if gabarito is well-formed
+                        }
+                    } else {
+                        hintDiv.style.display = 'none';
+                    }
                 }
             });
 
-            // Display all distractor explanations for right column nodes marked as distractors
+            // Display distractor explanations for right column nodes
             Object.values(nodes).forEach(nodeData => {
                 if (nodeData.columnType === 'right') {
                     const nodeEl = nodeData.element;
                     const explanationDiv = nodeEl.querySelector('.distractor-explanation');
-                    
-                    // Find the original full data for this right node
+
                     const originalRightNodeInfo = currentFlashcardData.rightNodesFullOriginal.find(
                         n => n.originalIndex === nodeData.originalIndex
                     );
@@ -1017,14 +1022,11 @@
                         explanationDiv.textContent = originalRightNodeInfo.distractorExplanation || "Esta é uma opção distratora.";
                         explanationDiv.style.display = 'block';
                     } else if (explanationDiv) {
-                        // Hide explanation if not a distractor (or no explanation text)
-                        // This might already be handled by resetVisualFeedback, but good to be explicit
                         explanationDiv.style.display = 'none';
                     }
                 }
             });
-            // Redraw connections as distractor explanations might change node heights
-            setTimeout(redrawAllConnections, 50);
+            setTimeout(redrawAllConnections, 50); // Redraw as hints/explanations change node heights
         }
 
 
@@ -1032,8 +1034,8 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                setLeftColumnNodesHeight(); 
-                redrawAllConnections();     
+                // setLeftColumnNodesHeight(); // Call if it becomes relevant again
+                redrawAllConnections();
             }, 150);
         });
 
