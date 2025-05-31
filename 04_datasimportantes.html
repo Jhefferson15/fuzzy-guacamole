@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda - Datas Importantes</title>
+    <title>Agenda - Datas Importantes - Quadrado</title>
     <style>
         /* Reset básico e configuração da fonte */
         * {
@@ -17,56 +17,58 @@
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; /* Center square page vertically */
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 10px 0; /* Padding for body if page is smaller than viewport */
         }
 
-        .page-a4 {
+        .square-page { /* Renamed from page-a4 */
             width: 210mm;
-            height: 297mm;
+            height: 210mm; /* Square dimensions */
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
-            padding: 15mm 10mm 10mm 20mm; /* Ajustado para TOP, RIGHT, BOTTOM, LEFT */
+            padding: 10mm; /* Adjusted padding for square (e.g., 10mm top/right/bottom/left) */
 
             background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNIDIwIDIwIEEgMTUgMTUgMCAwIDEgMzUgMzUgQSAxNSAxNSAwIDAgMSA1IDM1IEEgMTUgMTUgMCAwIDEgMjAgNSBBIDE1IDE1IDAgMCAxIDM1IDIwIG0gLTMwIDAgQSAxMCAxMCAwIDAgMSAyNSAzMCBBIDEwIDEwIDAgMCAxIDEwIDMwIEEgMTAgMTAgMCAwIDEgMTUgMTAgQSAxMCAxMCAwIDAgMSAyNSAyMCBtIC0yMCAwIEEgNSAgNSAwIDAgMSAyMCAyNSBBIDUgNSAwIDAgMSAxNSAyNSBBIDUgNSAwIDAgMSAxMCAxNSBBIDUgNSAwIDAgMSAyMCAyMCIgc3Ryb2tlPSIjZGRkZGRkIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+");
-            background-size: 30px 30px;
+            background-size: 25px 25px; /* Slightly smaller pattern */
             background-repeat: repeat;
-            display: flex; /* Para organizar header, main, footer verticalmente */
+            display: flex;
             flex-direction: column;
         }
 
         .header-agenda {
             background-color: #3d8c76;
             color: white;
-            padding: 8px 15px 10px 55px; /* Reduzido padding vertical */
+            padding: 5px 10px 6px 40px; /* Reduced padding, adjusted left for smaller logo */
             text-align: center;
             position: relative;
-            margin-bottom: 10px; /* Reduzido margin-bottom */
-            border-radius: 8px 8px 0 0;
-            display: flex; /* Para alinhar título e ícone */
+            margin-bottom: 8px; /* Reduced margin */
+            border-radius: 6px 6px 0 0;
+            display: flex;
             align-items: center;
-            justify-content: center; /* Centraliza o H1 quando o ícone não empurra */
+            justify-content: center;
+            flex-shrink: 0; /* Prevent header from shrinking too much */
         }
 
         .header-agenda h1 {
-            font-size: 24px; /* Reduzido */
+            font-size: 16px; /* Reduced font size */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            flex-grow: 1; /* Permite que o título ocupe espaço */
-            text-align: center; /* Garante centralização do texto em si */
-            margin-right: 35px; /* Espaço para o ícone da direita, simétrico ao logo */
+            letter-spacing: 0.5px;
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 25px; /* Space for smaller icon */
         }
 
         .versa-logo-container {
             position: absolute;
-            top: 8px;
-            left: 15px;
-            width: 35px;
-            height: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px; /* Adjusted left position */
+            width: 25px;  /* Reduced logo size */
+            height: 18px; /* Reduced logo size */
             background-color: #cadd2f;
             -webkit-mask-image: url('https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png');
             mask-image: url('https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/COR-PNG0-1536x589.png');
@@ -78,305 +80,200 @@
         .add-event-icon {
             position: absolute;
             top: 50%;
-            right: 15px;
+            right: 10px; /* Adjusted right position */
             transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
+            width: 20px;  /* Reduced icon size */
+            height: 20px; /* Reduced icon size */
             cursor: pointer;
-            fill: white; /* Cor do ícone (oposto do fundo verde) */
+            fill: white;
         }
          .add-event-icon svg {
             width: 100%;
             height: 100%;
         }
 
-
         .month-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px; /* Reduzido gap */
-            flex-grow: 1; /* Ocupa o espaço restante */
-            overflow-y: auto; /* Permite rolagem se o conteúdo exceder */
-            padding-bottom: 5px; /* Espaço antes do rodapé */
+            grid-template-columns: repeat(3, 1fr); /* Keep 3 columns for 12 months (3x4 grid) */
+            gap: 5px; /* Reduced gap */
+            flex-grow: 1;
+            overflow-y: auto; /* Allow grid itself to scroll if month blocks combined exceed height */
+            padding-bottom: 3px;
         }
 
         .month-block {
-            border: 1.5px solid #444;
-            border-radius: 6px; /* Reduzido */
+            border: 1px solid #555; /* Slightly thinner border */
+            border-radius: 4px; /* Reduced radius */
             overflow: hidden;
             display: flex;
             flex-direction: column;
             background-color: white;
-            min-height: 180px; /* Altura mínima para acomodar calendário e eventos */
-            font-size: 10px; /* Reduzido para caber mais info */
+            /* min-height: 0; */ /* Allow block to shrink, height determined by grid row */
+             height: calc((190mm - 15px - 15px - (3 * 5px)) / 4); /* Approx: (PageContentH - HeaderH - FooterH - (NumRowGaps * GapSize)) / NumRows */
+            font-size: 7pt; /* Significantly reduced base font size for month block content */
         }
 
         .month-header {
             background-color: #3d8c76;
             color: white;
-            padding: 6px; /* Reduzido */
+            padding: 3px; /* Reduced padding */
             text-align: center;
             font-weight: bold;
-            font-size: 12px; /* Reduzido */
+            font-size: 12px; /* Reduced font size */
             text-transform: uppercase;
+            flex-shrink: 0;
         }
 
         .calendar-container {
-            padding: 5px;
-            flex-grow: 1;
+            padding: 1px; /* Reduced padding */
+            flex-grow: 1; /* Allow calendar to take up space */
+            overflow: hidden; /* Hide overflow from calendar table if any */
         }
 
         .calendar-table {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed; /* Garante colunas de mesma largura */
+            table-layout: fixed;
         }
 
         .calendar-table th, .calendar-table td {
             text-align: center;
-            padding: 1px; /* Reduzido */
-            border: 1px solid #eee;
-            height: 18px; /* Altura fixa para células */
-            font-size: 9px; /* Reduzido */
+            padding: 0.5px; /* Minimal padding */
+            border: 0.5px solid #f0f0f0; /* Thinner border */
+            height: 16px; /* Drastically reduced cell height */
+            font-size: 10px; /* Reduced font size */
             vertical-align: middle;
         }
 
         .calendar-table th {
             font-weight: bold;
             background-color: #f9f9f9;
-            font-size: 8px;
+            font-size: 10px; /* Even smaller for day names */
         }
 
-        .calendar-table td {
-            cursor: default; /* Mudar para pointer se for clicável */
-        }
-        .calendar-table td.day-cell {
-             cursor: pointer;
-        }
+        .calendar-table td.day-cell { cursor: pointer; }
 
-        .calendar-table td.not-current-month {
-            color: #ccc;
-            background-color: #fdfdfd;
-        }
-        .calendar-table td.current-day {
-            background-color: #cadd2f;
-            color: #333;
-            font-weight: bold;
-        }
-        .calendar-table td.selected-day {
-            background-color: #3d8c76 !important;
-            color: white !important;
-            outline: 1px solid #cadd2f;
-        }
-        .calendar-table td.has-event {
-            font-weight: bold;
-            position: relative;
-        }
+        .calendar-table td.not-current-month { color: #ccc; background-color: #fdfdfd; }
+        .calendar-table td.current-day { background-color: #cadd2f; color: #333; font-weight: bold; }
+        .calendar-table td.selected-day { background-color: #3d8c76 !important; color: white !important; outline: 0.5px solid #cadd2f; }
+        .calendar-table td.has-event { font-weight: bold; position: relative; }
         .calendar-table td.has-event::after {
-            content: '';
-            position: absolute;
-            bottom: 1px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 4px;
-            background-color: #d9534f; /* Vermelho para indicar evento */
-            border-radius: 50%;
+            content: ''; position: absolute; bottom: 0.5px; left: 50%;
+            transform: translateX(-50%); width: 3px; height: 3px; /* Smaller dot */
+            background-color: #d9534f; border-radius: 50%;
         }
-
 
         .events-list-container {
-            padding: 0 5px 5px 5px;
-            max-height: 50px; /* Altura máxima para a lista de eventos */
-            overflow-y: auto;
-            font-size: 9px; /* Reduzido */
-            border-top: 1px solid #eee;
-            margin-top: 3px;
+            padding: 0 2px 2px 2px; /* Reduced padding */
+            max-height: 25px; /* Very limited height for event list */
+            overflow-y: auto; /* Scroll for event list */
+            font-size: 10px; /* Reduced font size */
+            border-top: 0.5px solid #eee;
+            margin-top: 1px; /* Reduced margin */
+            flex-shrink: 0; /* Prevent shrinking too much if calendar is tall */
         }
         .events-list-container h4 {
-            font-size: 10px;
-            margin-bottom: 3px;
+            font-size: 10px; /* Reduced font size */
+            margin-bottom: 1px;
             color: #333;
         }
-        .events-list-container ul {
-            list-style: none;
-            padding-left: 0;
-        }
+        .events-list-container ul { list-style: none; padding-left: 0; }
         .events-list-container li {
-            padding: 2px 0;
-            border-bottom: 1px dashed #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 1px 0; /* Reduced padding */
+            border-bottom: 0.5px dashed #f0f0f0;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .events-list-container li:last-child {
-            border-bottom: none;
-        }
-        .event-text {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 80%;
-        }
+        .events-list-container li:last-child { border-bottom: none; }
+        .event-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 75%; } /* Max width adjustment */
         .delete-event-btn {
-            background: none;
-            border: none;
-            color: #d9534f;
-            cursor: pointer;
-            font-size: 10px;
-            padding: 0 2px;
+            background: none; border: none; color: #d9534f; cursor: pointer;
+            font-size: 8px; /* Reduced font size */
+            padding: 0 1px;
         }
 
+        
 
-        .page-footer {
-            /* position: absolute; bottom: 10mm; left: 20mm; */ /* Ajustado para corresponder ao padding da página */
-            width: 30px;
-            height: 20px;
-            background-color: #3d8c76;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 3px;
-            margin-top: auto; /* Empurra para baixo se houver espaço */
-            align-self: flex-start; /* Alinha à esquerda dentro do flex container da página */
-            margin-left: 0; /* Corresponde à margem esquerda da página */
-            margin-bottom: 0; /* Corresponde à margem inferior da página */
-
-        }
-
-        /* Modal Styles */
+        /* Modal Styles (largely unchanged as they are screen-relative) */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);
+            justify-content: center; align-items: center;
         }
         .modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            position: relative;
+            background-color: #fff; margin: auto; padding: 20px; border: 1px solid #888;
+            width: 80%; max-width: 350px; /* Slightly smaller max-width for modal */
+            border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); position: relative;
         }
         .modal-close-btn {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+            color: #aaa; position: absolute; top: 10px; right: 15px;
+            font-size: 24px; /* Slightly smaller */
+            font-weight: bold; cursor: pointer;
         }
-        .modal-close-btn:hover,
-        .modal-close-btn:focus {
-            color: black;
-            text-decoration: none;
-        }
-        .modal h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #3d8c76;
-        }
-        .modal label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
+        .modal-close-btn:hover, .modal-close-btn:focus { color: black; text-decoration: none; }
+        .modal h2 { margin-top: 0; margin-bottom: 15px; font-size: 16px; color: #3d8c76; } /* Smaller */
+        .modal label { display: block; margin-bottom: 5px; font-size: 12px; } /* Smaller */
         .modal input[type="text"], .modal textarea {
-            width: calc(100% - 20px);
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
+            width: calc(100% - 16px); padding: 6px; margin-bottom: 10px; /* Smaller padding/margin */
+            border: 1px solid #ccc; border-radius: 4px; font-size: 12px; /* Smaller */
         }
-        .modal textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
+        .modal textarea { min-height: 60px; resize: vertical; } /* Smaller */
         .modal button {
-            background-color: #3d8c76;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
+            background-color: #3d8c76; color: white; padding: 8px 12px; /* Smaller */
+            border: none; border-radius: 4px; cursor: pointer; font-size: 12px; /* Smaller */
         }
-        .modal button:hover {
-            background-color: #2c6b58;
-        }
-
+        .modal button:hover { background-color: #2c6b58; }
 
         /* Estilos para impressão */
         @media print {
             body {
-                background-color: #ffffff;
-                padding: 0; margin: 0;
-                display: block;
+                background-color: #ffffff; padding: 0; margin: 0; display: block;
             }
-            .page-a4 {
-                width: 210mm; height: 297mm;
-                margin: 0 auto;
-                padding: 0;
-                box-shadow: none; border: none;
-                overflow: hidden; /* Importante para evitar quebra de página estranha */
-                padding: 15mm 10mm 10mm 20mm; /* Margens internas (top, right, bottom, left) para impressão */
+            .square-page {
+                width: 210mm; height: 210mm;
+                margin: 0 auto; padding: 0; /* Reset padding, handled by internal padding for print */
+                box-shadow: none; border: none; overflow: hidden;
+                padding: 10mm; /* Consistent internal padding for print */
+                 background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNIDIwIDIwIEEgMTUgMTUgMCAwIDEgMzUgMzUgQSAxNSAxNSAwIDAgMSA1IDM1IEEgMTUgMTUgMCAwIDEgMjAgNSBBIDE1IDE1IDAgMCAxIDM1IDIwIG0gLTMwIDAgQSAxMCAxMCAwIDAgMSAyNSAzMCBBIDEwIDEwIDAgMCAxIDEwIDMwIEEgMTAgMTAgMCAwIDEgMTUgMTAgQSAxMCAxMCAwIDAgMSAyNSAyMCBtIC0yMCAwIEEgNSAgNSAwIDAgMSAyMCAyNSBBIDUgNSAwIDAgMSAxNSAyNSBBIDUgNSAwIDAgMSAxMCAxNSBBIDUgNSAwIDAgMSAyMCAyMCIgc3Ryb2tlPSIjZGRkZGRkIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+");
+                print-color-adjust: exact; -webkit-print-color-adjust: exact;
             }
-            .header-agenda { margin-bottom: 10px;}
-            .month-grid { gap: 6px; }
-            .month-block { min-height: auto; font-size: 9px; } /* Ajustar altura para impressão */
-            .month-header { padding: 4px; font-size: 10px; }
-            .calendar-container { padding: 3px; }
-            .calendar-table th, .calendar-table td { padding: 0.5px; height: 15px; font-size: 7px; }
-            .calendar-table th { font-size: 6.5px;}
-            .calendar-table td.has-event::after { width: 3px; height: 3px; bottom: 0.5px;}
-            .events-list-container { max-height: 35px; font-size: 7px; margin-top: 2px;}
-            .events-list-container h4 { font-size: 8px; margin-bottom: 1px; }
-            .events-list-container li { padding: 1px 0; }
-            .delete-event-btn { display: none; } /* Não mostrar botão de deletar na impressão */
+            .header-agenda { margin-bottom: 5px; padding: 4px 8px 5px 35px; }
+            .header-agenda h1 { font-size: 14px; margin-right: 20px;}
+            .versa-logo-container { width: 22px; height: 16px; left: 8px;}
+            .add-event-icon { width: 18px; height: 18px; right: 8px;}
 
+            .month-grid { gap: 3px; overflow-y: hidden; /* Try to fit all for print */ }
+            .month-block { 
+                height: calc((190mm - 12mm - 10mm - (3 * 3px)) / 4); /* Recalculate for print */
+                font-size: 6pt; border: 0.5px solid #777;
+            }
+            .month-header { padding: 2px; font-size: 7px; }
+            .calendar-container { padding: 1px; }
+            .calendar-table th, .calendar-table td { padding: 0; height: 8px; font-size: 5.5px; border-width: 0.25px; }
+            .calendar-table th { font-size: 5px; }
+            .calendar-table td.has-event::after { width: 2px; height: 2px; bottom: 0.25px;}
+            .events-list-container { max-height: 18px; font-size: 5px; margin-top: 1px; padding: 0 1px 1px 1px;}
+            .events-list-container h4 { font-size: 6px; margin-bottom: 0.5px; }
+            .events-list-container li { padding: 0.5px 0; }
+            .delete-event-btn { display: none; }
 
             .page-footer {
-                position: fixed; /* Garante que fique na página impressa */
-                bottom: 5mm;
-                left: 10mm; /* Deve corresponder à margem esquerda da página na impressão */
-                 /* background-color: #3d8c76 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact; */
+                /* position: fixed; bottom: 5mm; left: 5mm; */ /* Use relative for flex layout if possible */
+                background-color: #3d8c76 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+                 font-size: 8px; width: 22px; height: 13px;
             }
-            .versa-logo-container, .add-event-icon {
-                background-color: #cadd2f !important;
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-            .add-event-icon { fill: white !important; } /* Garante cor do ícone na impressão */
-            .modal { display: none !important; } /* Não imprimir modal */
+            .versa-logo-container { background-color: #cadd2f !important; }
+            .add-event-icon { fill: white !important; }
+            .modal { display: none !important; }
         }
         @page {
-            size: A4;
+            size: 210mm 210mm; /* Square page size for printing */
             margin: 0;
         }
-
     </style>
 </head>
 <body>
-    <div class="page-a4">
+    <div class="square-page"> <!-- Renamed class -->
         <header class="header-agenda">
             <div class="versa-logo-container"></div>
             <h1>Datas Importantes</h1>
@@ -391,9 +288,7 @@
             <!-- Os blocos dos meses serão gerados por JavaScript -->
         </main>
 
-        <footer class="page-footer">
-            6
-        </footer>
+        
     </div>
 
     <!-- Modal para Adicionar/Editar Evento -->
@@ -424,8 +319,8 @@
             const DIAS_SEMANA = ["D", "S", "T", "Q", "Q", "S", "S"];
 
             let currentYear = new Date().getFullYear();
-            let events = loadEvents(); // { 'YYYY-MM-DD': [{text: 'Evento 1', id: 'uuid'}, ...] }
-            let selectedDate = null; // 'YYYY-MM-DD'
+            let events = loadEvents(); 
+            let selectedDate = null; 
             let currentlySelectedDayCell = null;
 
             function generateUUID() {
@@ -434,30 +329,36 @@
                 );
             }
 
-            function formatDate(year, month, day) { // month is 0-indexed
+            function formatDate(year, month, day) { 
                 return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             }
             
-            function parseDate(dateString) { // YYYY-MM-DD
+            function parseDate(dateString) { 
                 const [year, month, day] = dateString.split('-').map(Number);
-                return { year, month: month -1, day }; // month back to 0-indexed
+                return { year, month: month -1, day }; 
             }
 
             function loadEvents() {
                 const storedEvents = localStorage.getItem('agendaEvents');
                 if (storedEvents) {
                     const parsedEvents = JSON.parse(storedEvents);
-                    // Limpar eventos mais antigos que 1 ano - opcional, mas "por um ano" pode implicar isso
                     const oneYearAgo = new Date();
                     oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+                    oneYearAgo.setHours(0,0,0,0); // Normalize
                     
                     Object.keys(parsedEvents).forEach(dateKey => {
-                        const eventDate = new Date(dateKey + "T00:00:00"); // Adiciona T00:00:00 para evitar problemas de fuso horário na comparação
-                        if (eventDate < oneYearAgo) {
-                            delete parsedEvents[dateKey];
+                         // Ensure dateKey is in YYYY-MM-DD format before creating Date object
+                        const dateParts = dateKey.split('-');
+                        if (dateParts.length === 3) {
+                            const eventDate = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]));
+                            if (eventDate < oneYearAgo) {
+                                delete parsedEvents[dateKey];
+                            }
+                        } else {
+                             delete parsedEvents[dateKey]; // Invalid key
                         }
                     });
-                    localStorage.setItem('agendaEvents', JSON.stringify(parsedEvents)); // Salva de volta se algo foi limpo
+                    localStorage.setItem('agendaEvents', JSON.stringify(parsedEvents));
                     return parsedEvents;
                 }
                 return {};
@@ -467,7 +368,7 @@
                 localStorage.setItem('agendaEvents', JSON.stringify(events));
             }
 
-            function createCalendar(month, year) { // month is 0-indexed
+            function createCalendar(month, year) { 
                 const monthBlock = document.createElement('div');
                 monthBlock.classList.add('month-block');
                 monthBlock.dataset.month = month;
@@ -475,7 +376,7 @@
 
                 const monthHeader = document.createElement('div');
                 monthHeader.classList.add('month-header');
-                monthHeader.textContent = NOME_MESES[month];
+                monthHeader.textContent = NOME_MESES[month].substring(0,3); // Abbreviate month names for space
                 monthBlock.appendChild(monthHeader);
 
                 const calendarContainer = document.createElement('div');
@@ -495,10 +396,10 @@
                 const firstDay = new Date(year, month, 1);
                 const lastDay = new Date(year, month + 1, 0);
                 const today = new Date();
-                today.setHours(0,0,0,0); // Normalizar para comparação de datas
+                today.setHours(0,0,0,0); 
 
                 let date = new Date(firstDay);
-                date.setDate(date.getDate() - firstDay.getDay()); // Começar do domingo anterior
+                date.setDate(date.getDate() - firstDay.getDay()); 
 
                 while (date <= lastDay || date.getDay() !== 0) {
                     const row = tbody.insertRow();
@@ -521,18 +422,12 @@
                                 cell.classList.add('selected-day');
                                 currentlySelectedDayCell = cell;
                             }
-
                             cell.addEventListener('click', () => handleDayClick(cell, cellDateFormatted));
                         } else {
                             cell.classList.add('not-current-month');
-                            // Opcional: mostrar dias do mês vizinho
-                            // cell.textContent = date.getDate();
-                        }
-                        if (date.getDay() === 0 || date.getDay() === 6) { // Domingo ou Sábado
-                           // cell.classList.add('weekend'); // Pode adicionar estilo para fim de semana
                         }
                         date.setDate(date.getDate() + 1);
-                        if (date.getMonth() !== month && date.getDay() === 0 && date > lastDay) break; // Parar se já passou do mês e é domingo
+                        if (date.getMonth() !== month && date.getDay() === 0 && date > lastDay) break; 
                     }
                      if (date.getMonth() !== month && date > lastDay) break;
                 }
@@ -543,14 +438,13 @@
                 const eventsListContainer = document.createElement('div');
                 eventsListContainer.classList.add('events-list-container');
                 const eventsTitle = document.createElement('h4');
-                eventsTitle.textContent = 'Eventos do Mês:';
+                eventsTitle.textContent = 'Eventos:'; // Shorter title
                 eventsListContainer.appendChild(eventsTitle);
                 const ul = document.createElement('ul');
                 eventsListContainer.appendChild(ul);
                 monthBlock.appendChild(eventsListContainer);
 
                 updateEventsListForMonth(monthBlock);
-
                 return monthBlock;
             }
 
@@ -561,12 +455,6 @@
                 selectedDate = dateStr;
                 cell.classList.add('selected-day');
                 currentlySelectedDayCell = cell;
-                
-                // Atualiza a lista de eventos para o dia selecionado ou para o mês
-                // Aqui vamos manter a lista de eventos do mês, e o modal abrirá para o dia
-                // updateEventsListForDay(cell.closest('.month-block'), dateStr);
-
-                // Abrir modal diretamente ao clicar no dia
                 openEventModal(dateStr);
             }
 
@@ -575,12 +463,12 @@
                 const year = parseInt(monthBlockElement.dataset.year);
                 const ul = monthBlockElement.querySelector('.events-list-container ul');
                 if (!ul) return;
-                ul.innerHTML = ''; // Limpa lista antiga
+                ul.innerHTML = ''; 
 
                 const eventsInMonth = [];
                 for (let day = 1; day <= 31; day++) {
                     const dateCheck = new Date(year, month, day);
-                    if (dateCheck.getMonth() !== month) break; // Sai se mudou o mês (ex: dia 31 em Fev)
+                    if (dateCheck.getMonth() !== month) break; 
                     
                     const dateKey = formatDate(year, month, day);
                     if (events[dateKey]) {
@@ -592,11 +480,15 @@
 
                 if (eventsInMonth.length === 0) {
                     const li = document.createElement('li');
-                    li.textContent = 'Nenhum evento neste mês.';
+                    li.textContent = 'Nenhum evento.'; // Shorter
                     li.style.fontStyle = 'italic';
                     ul.appendChild(li);
                 } else {
-                    eventsInMonth.sort((a,b) => new Date(a.date) - new Date(b.date)); // Ordena por data
+                    eventsInMonth.sort((a,b) => {
+                        const dateA = parseDate(a.date).day;
+                        const dateB = parseDate(b.date).day;
+                        return dateA - dateB;
+                    });
                     eventsInMonth.forEach(event => {
                         const li = document.createElement('li');
                         const eventTextSpan = document.createElement('span');
@@ -606,17 +498,16 @@
 
                         const deleteBtn = document.createElement('button');
                         deleteBtn.classList.add('delete-event-btn');
-                        deleteBtn.innerHTML = '×'; // Ou um ícone de lixeira
+                        deleteBtn.innerHTML = '×'; 
                         deleteBtn.title = "Excluir evento";
                         deleteBtn.onclick = (e) => {
-                            e.stopPropagation(); // Evita que o clique no botão propague para o LI ou dia
+                            e.stopPropagation(); 
                             deleteEvent(event.date, event.id);
                         };
                         li.appendChild(deleteBtn);
                         ul.appendChild(li);
                     });
                 }
-                 // Marcar dias com eventos visualmente
                 monthBlockElement.querySelectorAll('.calendar-table td.day-cell').forEach(cell => {
                     const cellDate = cell.dataset.date;
                     if (events[cellDate] && events[cellDate].length > 0) {
@@ -642,22 +533,29 @@
                 const { month, year } = parseDate(dateStr);
                 const monthBlockElement = monthGrid.querySelector(`.month-block[data-month="${month}"][data-year="${year}"]`);
                 if (monthBlockElement) {
-                    updateEventsListForMonth(monthBlockElement); // Isso também atualiza os marcadores 'has-event'
+                    updateEventsListForMonth(monthBlockElement); 
                 }
             }
-
 
             function openEventModal(dateStr = null) {
                 const dateToUse = dateStr || selectedDate;
                 if (!dateToUse) {
-                    alert("Por favor, selecione um dia no calendário primeiro.");
-                    return;
+                    const todayForModal = new Date();
+                    selectedDate = formatDate(todayForModal.getFullYear(), todayForModal.getMonth(), todayForModal.getDate());
+                     // Find today's cell and select it visually if page just loaded
+                    const todayCell = monthGrid.querySelector(`.day-cell[data-date="${selectedDate}"]`);
+                    if (todayCell && !todayCell.classList.contains('selected-day')) {
+                        if(currentlySelectedDayCell) currentlySelectedDayCell.classList.remove('selected-day');
+                        todayCell.classList.add('selected-day');
+                        currentlySelectedDayCell = todayCell;
+                    }
+                } else {
+                     selectedDate = dateToUse;
                 }
-                selectedDate = dateToUse; // Garante que selectedDate está atualizado
                 
-                const {year, month, day} = parseDate(dateToUse);
+                const {year, month, day} = parseDate(selectedDate);
                 eventDateInput.value = `${String(day).padStart(2, '0')}/${String(month + 1).padStart(2, '0')}/${year}`;
-                eventDescriptionInput.value = ''; // Limpa para novo evento
+                eventDescriptionInput.value = ''; 
                 modalTitle.textContent = "Adicionar Evento";
                 eventModal.style.display = 'flex';
                 eventDescriptionInput.focus();
@@ -677,6 +575,10 @@
                     alert("Por favor, insira uma descrição para o evento.");
                     return;
                 }
+                if (!selectedDate) { // Should not happen if modal opened correctly
+                    alert("Nenhuma data selecionada.");
+                    return;
+                }
 
                 if (!events[selectedDate]) {
                     events[selectedDate] = [];
@@ -689,7 +591,7 @@
             });
 
             function init() {
-                monthGrid.innerHTML = ''; // Limpa grid
+                monthGrid.innerHTML = ''; 
                 for (let i = 0; i < 12; i++) {
                     const monthBlock = createCalendar(i, currentYear);
                     monthGrid.appendChild(monthBlock);
