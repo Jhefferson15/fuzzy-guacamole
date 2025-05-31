@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capa Agenda Versa - A4</title>
+    <title>Boas-vindas Agenda Versa - Quadrado</title>
     <style>
         @page {
-            size: A4;
+            size: 210mm 210mm; /* Explicit square page size for printing */
             margin: 0;
         }
 
@@ -14,188 +14,177 @@
             margin: 0;
             padding: 0;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f0f0f0; /* Cor de fundo da página, caso o A4 não preencha tudo */
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alinha no topo para melhor visualização */
+            align-items: center;
             min-height: 100vh;
         }
 
-        .a4-page {
+        .square-page {
             width: 210mm;
-            height: 297mm;
+            height: 210mm;
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para visualização no browser */
-            overflow: hidden; /* Para garantir que nada saia da página */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
             position: relative;
-            padding: 20mm 15mm 15mm 20mm; /* Margens aproximadas (topo, direita, baixo, esquerda) */
+            padding: 15mm; /* Increased padding for better internal margins */
             box-sizing: border-box;
+            display: flex; /* Use flex to manage content flow */
+            flex-direction: column; /* Stack content vertically */
 
             background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='13' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='2.5' y1='2.5' x2='7.5' y2='7.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3Cline x1='2.5' y1='7.5' x2='7.5' y2='2.5' stroke='%23E0E0E0' stroke-width='0.6'/%3E%3C/svg%3E");
             background-repeat: repeat;
         }
 
         .content {
-            color: #333; /* Cor principal do texto */
-            line-height: 1.6;
-            font-size: 10pt; /* Tamanho de fonte base para A4 */
+            color: #333;
+            line-height: 1.45; /* Slightly adjusted line height */
+            font-size: 12pt;    /* Increased base font size from 8pt to 9pt */
+            flex-grow: 1; /* Allow content to take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Content starts from top */
         }
 
         /* --- Animation Styles START --- */
         :root {
-            --title-h-font-size: 28pt;
+            --title-h-font-size: 26pt; /* Increased from 18pt, original A4 was 28pt */
             --title-h-line-height-factor: 1.1;
             --title-h-effective-line: calc(var(--title-h-font-size) * var(--title-h-line-height-factor));
         }
 
         .header-title {
-            position: relative; /* Context for absolute positioning of children */
-            height: calc(3 * var(--title-h-effective-line)); /* Enough height for 3 lines */
-            margin-bottom: 15mm;
+            position: relative;
+            height: calc(3 * var(--title-h-effective-line));
+            margin-bottom: 1mm; /* Adjusted from 7mm, original A4 was 15mm */
             text-align: left;
-            font-family: 'Arial Black', 'Impact', sans-serif; /* Fontes mais "grossas" */
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            flex-shrink: 0; /* Prevent header from shrinking too much */
         }
 
-        .header-title > div { /* Common styles for title-1, title-2, title-3 */
+        .header-title > div {
             position: absolute;
             left: 0;
-            width: 100%; /* Ensure they span the width */
+            width: 100%;
             font-weight: bold;
             text-transform: uppercase;
             font-size: var(--title-h-font-size);
-            letter-spacing: -1px;
+            letter-spacing: -0.75px; /* Adjusted for better fit at this size */
             line-height: var(--title-h-line-height-factor);
         }
 
-        .title-1 {
-            color: #A0D9D3; /* Verde claro */
-            top: 0;
-            z-index: 1; /* Behind middle */
-            transition: top 1s ease-in-out; /* Animation for 1 second */
-        }
-        .title-2 {
-            color: #4DB8AE; /* Verde médio */
-            top: var(--title-h-effective-line); /* Positioned one line down */
-            z-index: 2; /* On top */
-            /* No transition for the static middle title */
-        }
-        .title-3 {
-            color: #3E507A; /* Azul escuro/roxo */
-            top: calc(2 * var(--title-h-effective-line)); /* Positioned two lines down */
-            z-index: 3; /* Behind middle */
-            transition: top 1s ease-in-out; /* Animation for 1 second */
-        }
+        .title-1 { color: #A0D9D3; top: 0; z-index: 1; transition: top 1s ease-in-out; }
+        .title-2 { color: #4DB8AE; top: var(--title-h-effective-line); z-index: 2; }
+        .title-3 { color: #3E507A; top: calc(2 * var(--title-h-effective-line)); z-index: 3; transition: top 1s ease-in-out; }
 
-        /* Swapped states when .header-title has .swapped class */
-        .header-title.swapped .title-1 {
-            top: calc(2 * var(--title-h-effective-line)); /* Moves to bottom position */
-        }
-        .header-title.swapped .title-3 {
-            top: 0; /* Moves to top position */
-        }
+        .header-title.swapped .title-1 { top: calc(2 * var(--title-h-effective-line)); }
+        .header-title.swapped .title-3 { top: 0; }
         /* --- Animation Styles END --- */
+
+        .text-body { /* Wrapper for main paragraphs to manage their flow */
+            flex-grow: 1; /* Allows this section to use available space */
+            overflow-y: auto; /* Fallback scroll if content is truly too long, though aiming to avoid */
+            /* Forcing no scroll: overflow-y: hidden; */
+        }
 
 
         .salutation {
-            font-size: 11pt;
-            margin-bottom: 8mm;
+            font-size: 12pt; /* Increased from 9pt, original A4 was 11pt */
+            margin-bottom: 6mm; /* Adjusted from 4mm, original A4 was 8mm */
             color: #444;
         }
 
         .paragraph {
-            margin-bottom: 5mm;
+            margin-bottom: 6mm; /* Adjusted from 3mm, original A4 was 5mm */
             text-align: justify;
         }
 
         .emphasis {
             text-align: center;
-            font-size: 10pt;
-            margin-top: 10mm;
-            margin-bottom: 10mm;
+            font-size: 12pt;  /* Kept at 9pt, original A4 was 10pt */
+            margin-top: 8mm;    /* Adjusted from 5mm, original A4 was 10mm */
+            margin-bottom: 8mm; /* Adjusted from 5mm, original A4 was 10mm */
             color: #555;
+            flex-shrink: 0;
         }
 
         .signature-block {
-            margin-top: 15mm;
+            margin-top: auto; /* Pushes to the bottom if using flex on .content */
+            padding-top: 8mm; /* Add some space above signature if it's pushed down */
             text-align: right;
-            font-size: 10pt;
+            font-size: 12pt; /* Kept at 9pt, original A4 was 10pt */
+            flex-shrink: 0; /* Prevent signature from shrinking */
         }
 
         .signature-line {
-            margin-bottom: 2mm;
+            margin-bottom: 1.5mm; /* Adjusted from 1mm */
         }
 
         .team-name {
             font-weight: bold;
-            color: #3E507A; /* Mesma cor do título 3 */
-            display: inline-block; /* Para alinhar com a imagem */
+            color: #3E507A;
+            display: inline-block;
             vertical-align: middle;
         }
 
         .logo {
-            width: 60px; /* Ajuste o tamanho do logo conforme necessário */
+            width: 40px; /* Increased from 30px, original A4 was 60px */
             height: auto;
             margin-left: 5px;
-            vertical-align: middle; /* Alinha verticalmente com o texto */
+            vertical-align: middle;
         }
         
         /* Estilos para impressão */
         @media print {
             body {
-                background-color: #fff; /* Fundo branco para impressão */
-                display: block; /* Reset display for printing */
+                background-color: #fff; display: block; align-items: flex-start;
             }
-            .a4-page {
-                margin: 0;
-                box-shadow: none; /* Remove sombra na impressão */
-                width: 100%; /* Ocupa a largura da página de impressão */
-                height: 100%; /* Ocupa a altura da página de impressão */
-                padding: 20mm 15mm 15mm 20mm; /* Mantenha as margens internas */
+            .square-page {
+                width: 210mm; height: 210mm; margin: 0 auto; padding: 15mm; /* Consistent padding */
+                box-shadow: none; overflow: visible; background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
             }
-            /* Optionally disable animation for print */
-            .header-title > div {
-                transition: none !important;
-            }
-            .header-title.swapped .title-1,
-            .header-title.swapped .title-3 {
-                /* Revert to original positions for print if swapped */
-            }
+            .content { color: #333 !important; }
+            .text-body { overflow-y: visible; } /* Ensure all text prints */
+            .header-title > div { transition: none !important; }
             .header-title.swapped .title-1 { top: 0; }
+            .header-title .title-2 { top: var(--title-h-effective-line); }
             .header-title.swapped .title-3 { top: calc(2 * var(--title-h-effective-line)); }
-
         }
-
     </style>
 </head>
 <body>
-    <div class="a4-page">
+    <div class="square-page">
         <div class="content">
             <div class="header-title" id="animatedHeaderTitle">
                 <div class="title-1">Boas-vindas</div>
                 <div class="title-2">Boas-vindas</div>
                 <div class="title-3">Boas-vindas</div>
             </div>
+            
+            <div class="text-body"> <!-- Added wrapper for main text -->
+                <p class="salutation">Estudante,</p>
 
-            <p class="salutation">Estudante,</p>
+                <p class="paragraph">
+                    Seja bem-vindo(a) ao Planner do Versa Pré-Vestibulares. Somos uma instituição de ensino
+                    moderna e de alto rendimento, focada no planejamento estratégico de estudo. Nosso objetivo é proporcionar
+                    uma transformação na educação por meio de soluções educacionais eficazes.
+                </p>
 
-            <p class="paragraph">
-                Seja bem-vindo(a) ao Planner do Versa Pré-Vestibulares. Somos uma instituição de ensino
-                moderna e de alto rendimento, focada no planejamento estratégico de estudo. Nosso objetivo é proporcionar
-                uma transformação na educação por meio de soluções educacionais eficazes.
-            </p>
+                <p class="paragraph">
+                    São inúmeros os relatos de estudantes que não conseguem organizar de maneira eficiente a sua rotina
+                    de estudos. Diante disso, resolvemos produzir este material. Nele você pode registrar e acompanhar vários
+                    indicadores da sua rotina: metrificação de simulados e redações; acompanhamento do plano de ensino;
+                    planejamento de estudo e de revisões; treinamento de estratégia de provas; mapeamento de déficits de
+                    aprendizagem, controle diário de tarefas e muito mais.
+                </p>
 
-            <p class="paragraph">
-                São inúmeros os relatos de estudantes que não conseguem organizar de maneira eficiente a sua rotina
-                de estudos. Diante disso, resolvemos produzir este material. Nele você pode registrar e acompanhar vários
-                indicadores da sua rotina: metrificação de simulados e redações; acompanhamento do plano de ensino;
-                planejamento de estudo e de revisões; treinamento de estratégia de provas; mapeamento de déficits de
-                aprendizagem, controle diário de tarefas e muito mais.
-            </p>
-
-            <p class="paragraph">
-                Faça bom uso deste material e conte com a nossa orientação para aproveitar ao máximo suas
-                funcionalidades.
-            </p>
+                <p class="paragraph">
+                    Faça bom uso deste material e conte com a nossa orientação para aproveitar ao máximo suas
+                    funcionalidades.
+                </p>
+            </div>
 
             <p class="emphasis">
                 Vamos juntos até a sua aprovação!
@@ -214,23 +203,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const animatedHeader = document.getElementById('animatedHeaderTitle');
-
             if (animatedHeader) {
-                // Initial 2-second pause before the first animation starts
                 setTimeout(() => {
-                    // Perform the first swap
                     animatedHeader.classList.add('swapped');
-                    
-                    // After the first swap (which takes 1s), set up the interval
-                    // The interval of 3000ms means:
-                    // - 1s for the animation to complete
-                    // - 2s paused in the new state
-                    // Then it toggles and repeats.
                     setInterval(() => {
                         animatedHeader.classList.toggle('swapped');
-                    }, 3000); // Total cycle time: 1s animation + 2s pause = 3s
-                    
-                }, 2000); // Wait 2 seconds before starting the first animation cycle
+                    }, 3000); 
+                }, 2000); 
             }
         });
     </script>
