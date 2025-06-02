@@ -1,363 +1,71 @@
 {
-  "bookReference": "Biologia - Livro 05 - Frente C",
+  "bookReference": "Biologia - Livro 04 - Frente B",
   "modules": [
     {
-      "moduleTitle": "MÓDULO 17: SISTEMA DIGESTÓRIO",
-      "sourceReference": "Frente C // L05 (p. 524-529)",
+      "moduleTitle": "MÓDULO 13: EMBRIOLOGIA HUMANA: ETAPAS INICIAIS E POTENCIAL CELULAR",
+      "sourceReference": "Frente B // L04 (p. 416-421)",
       "flashcards": [
         {
-          "id": "M17C01",
+          "id": "M13B01",
           "leftColumnNodes": [
-            "Amilase Salivar (Ptialina)",
-            "Peristaltismo",
-            "Pepsina",
-            "Quimo",
-            "Gastrina",
-            "Secretina",
-            "Colecistoquinina (CCK)",
-            "Bile"
+            "Zigoto",
+            "Mórula",
+            "Blastocisto",
+            "Gastrulação",
+            "Células-tronco totipotentes",
+            "Células-tronco pluripotentes",
+            "Sinciciotrofoblasto"
           ],
           "rightColumnNodes": [
             {
-              "text": "Enzima presente na saliva que inicia a digestão do amido, convertendo-o em maltose.",
+              "text": "Célula diploide primordial resultante da fusão dos pronúcleos masculino e feminino, marcando o início ontogenético de um novo indivíduo.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Contrações musculares involuntárias que movimentam o bolo alimentar ao longo do tubo digestório.",
+              "text": "Estágio embrionário inicial, pré-implantação, caracterizado por um aglomerado compacto de blastômeros, cujas células ainda retêm totipotência.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Enzima ativada pelo HCl no estômago, responsável pela digestão de proteínas em peptonas.",
+              "text": "Estrutura embrionária que sucede a mórula, contendo uma cavidade (blastocele), uma massa celular interna (embrioblasto) e uma camada externa (trofoblasto), sendo o estágio de implantação uterina.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Massa pastosa e ácida resultante da digestão do bolo alimentar no estômago.",
+              "text": "Processo morfogenético crítico que transforma o embrião bilaminar em trilaminar, estabelecendo os três folhetos germinativos (ectoderma, mesoderma, endoderma) e os eixos corporais primários.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Hormônio produzido pelo estômago que estimula a secreção de suco gástrico.",
+              "text": "Células com a capacidade intrínseca de gerar um organismo completo e funcional, incluindo todos os tecidos embrionários e estruturas extraembrionárias como placenta e anexos.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Hormônio liberado pelo duodeno em resposta à acidez do quimo, estimulando o pâncreas a secretar suco rico em bicarbonato.",
+              "text": "Células derivadas da massa celular interna do blastocisto, capazes de se diferenciar em qualquer tipo celular dos três folhetos germinativos, mas não de formar independentemente as estruturas extraembrionárias necessárias para um organismo completo.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Hormônio liberado pelo duodeno em resposta a gorduras e proteínas no quimo, estimulando a liberação da bile e enzimas pancreáticas.",
+              "text": "Componente externo e invasivo do trofoblasto, caracterizado por uma massa citoplasmática multinucleada que erode o endométrio materno, facilita a nidação e secreta hCG para sustentar o corpo lúteo.",
               "isDistractor": false,
               "distractorExplanation": ""
             },
             {
-              "text": "Produzida no fígado e armazenada na vesícula biliar; emulsifica gorduras facilitando a ação das lipases.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Enzima que digere lipídeos no intestino delgado, secretada pelo pâncreas.",
+              "text": "Fase do desenvolvimento embrionário marcada pela formação da placa neural, pregas neurais e tubo neural, originando o sistema nervoso central; sucede a gastrulação.",
               "isDistractor": true,
-              "distractorExplanation": "Esta é a Lipase Pancreática. A bile não é uma enzima, mas auxilia a lipase."
+              "distractorExplanation": "Esta é a definição de Neurulação, um processo de desenvolvimento posterior e distinto dos itens da coluna 1, embora relacionado à embriogênese."
             },
             {
-              "text": "Produto final da digestão no intestino delgado, rico em nutrientes absorvíveis.",
+              "text": "Anexo embrionário que forma uma bolsa preenchida por líquido, envolvendo e protegendo o embrião contra choques mecânicos e desidratação.",
               "isDistractor": true,
-              "distractorExplanation": "Este é o Quilo. O Quimo é a massa formada no estômago."
-            }
-          ],
-          "gabarito": [
-            {"leftIndex": 0, "rightIndex": 0},
-            {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 2},
-            {"leftIndex": 3, "rightIndex": 3},
-            {"leftIndex": 4, "rightIndex": 4},
-            {"leftIndex": 5, "rightIndex": 5},
-            {"leftIndex": 6, "rightIndex": 6},
-            {"leftIndex": 7, "rightIndex": 7}
-          ]
-        },
-        {
-          "id": "M17C02",
-          "leftColumnNodes": [
-            "Suco Pancreático",
-            "Enteroquinase",
-            "Vilosidades e Microvilosidades",
-            "Intestino Grosso (Funções)",
-            "Fígado (Função na digestão)",
-            "Desaminação",
-            "Quilomícrons"
-          ],
-          "rightColumnNodes": [
-            {
-              "text": "Secreção alcalina rica em enzimas (amilase, lipase, tripsinogênio, quimiotripsinogênio) que atua no duodeno.",
-              "isDistractor": false,
-              "distractorExplanation": ""
+              "distractorExplanation": "Esta é a descrição do Âmnio, um anexo embrionário. Embora relevante para o desenvolvimento, não é um dos termos da coluna da esquerda."
             },
             {
-              "text": "Enzima da mucosa intestinal que ativa o tripsinogênio em tripsina.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Projeções da mucosa intestinal que aumentam drasticamente a superfície de contato para absorção de nutrientes.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Absorção de água e eletrólitos, formação das fezes e produção de vitaminas (K, B12) pela flora bacteriana.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Produção da bile, essencial para a emulsificação de gorduras.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Processo metabólico ocorrido no fígado que remove o grupo amino dos aminoácidos, levando à formação de ureia.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Partículas lipoproteicas formadas nas células intestinais para transportar triglicerídeos (reconstituídos) pela linfa e sangue.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Armazenamento de glicogênio e liberação de glicose.",
+              "text": "Série de divisões mitóticas rápidas que o zigoto sofre, resultando em um aumento no número de células (blastômeros) sem aumento significativo no tamanho total do embrião.",
               "isDistractor": true,
-              "distractorExplanation": "Embora seja uma função do fígado, não está diretamente ligada à 'função na digestão' como a produção de bile, mas ao metabolismo de carboidratos."
-            },
-            {
-              "text": "Principal local de digestão química e absorção da maioria dos nutrientes.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a descrição do Intestino Delgado como um todo, não especificamente de uma das opções da esquerda."
-            }
-          ],
-          "gabarito": [
-            {"leftIndex": 0, "rightIndex": 0},
-            {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 2},
-            {"leftIndex": 3, "rightIndex": 3},
-            {"leftIndex": 4, "rightIndex": 4},
-            {"leftIndex": 5, "rightIndex": 5},
-            {"leftIndex": 6, "rightIndex": 6}
-          ]
-        }
-      ]
-    },
-    {
-      "moduleTitle": "MÓDULO 18: SISTEMA RESPIRATÓRIO",
-      "sourceReference": "Frente C // L05 (p. 532-537)",
-      "flashcards": [
-        {
-          "id": "M18C01",
-          "leftColumnNodes": [
-            "Fossas Nasais (Função)",
-            "Epiglote",
-            "Alvéolos Pulmonares",
-            "Hematose",
-            "Inspiração (Mecanismo)",
-            "Expiração (Mecanismo)",
-            "Controle Respiratório (Principal Estímulo)"
-          ],
-          "rightColumnNodes": [
-            {
-              "text": "Filtração, umedecimento e aquecimento do ar inspirado.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Estrutura cartilaginosa que fecha a glote durante a deglutição, impedindo a entrada de alimento nas vias aéreas.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Pequenas bolsas de ar nos pulmões, revestidas por epitélio pavimentoso simples, onde ocorrem as trocas gasosas.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Processo de troca gasosa (O₂ e CO₂) entre o ar alveolar e o sangue nos capilares pulmonares, por difusão.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Contração do diafragma (desce) e intercostais externos (elevam costelas), aumentando o volume torácico e diminuindo a pressão intrapulmonar.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Relaxamento do diafragma (sobe) e intercostais externos, diminuindo o volume torácico e aumentando a pressão intrapulmonar (geralmente passivo).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Aumento da concentração de CO₂ (e consequente queda do pH) no sangue, detectado pelo bulbo.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Transporte de oxigênio no sangue, majoritariamente ligado à hemoglobina.",
-              "isDistractor": true,
-              "distractorExplanation": "Isso descreve a Oxiemoglobina e o transporte de O2, não uma das opções da esquerda."
-            },
-            {
-              "text": "Membranas serosas que revestem os pulmões e a cavidade torácica.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a descrição das Pleuras."
-            }
-          ],
-          "gabarito": [
-            {"leftIndex": 0, "rightIndex": 0},
-            {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 2},
-            {"leftIndex": 3, "rightIndex": 3},
-            {"leftIndex": 4, "rightIndex": 4},
-            {"leftIndex": 5, "rightIndex": 5},
-            {"leftIndex": 6, "rightIndex": 6}
-          ]
-        }
-      ]
-    },
-    {
-      "moduleTitle": "MÓDULO 19: SISTEMA CIRCULATÓRIO",
-      "sourceReference": "Frente C // L05 (p. 540-545)",
-      "flashcards": [
-        {
-          "id": "M19C01",
-          "leftColumnNodes": [
-            "Nó Sinoatrial (Marcapasso)",
-            "Sístole Ventricular",
-            "Pequena Circulação (Pulmonar)",
-            "Grande Circulação (Sistêmica)",
-            "Artérias Coronárias",
-            "Válvulas Cardíacas (Função)",
-            "Linfa"
-          ],
-          "rightColumnNodes": [
-            {
-              "text": "Estrutura no átrio direito que gera espontaneamente o impulso elétrico, iniciando o ciclo cardíaco.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Contração dos ventrículos, bombeando sangue para as artérias pulmonar (do VD) e aorta (do VE).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Trajeto do sangue: VD → Artéria Pulmonar → Pulmões (hematose) → Veias Pulmonares → AE.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Trajeto do sangue: VE → Artéria Aorta → Corpo (trocas teciduais) → Veias Cavas → AD.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Vasos sanguíneos responsáveis pela irrigação e nutrição do próprio músculo cardíaco (miocárdio).",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Impedir o refluxo de sangue entre as câmaras cardíacas ou entre os ventrículos e as grandes artérias.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Fluido originado do líquido intersticial, recolhido por vasos próprios, importante na remoção de resíduos, transporte de lipídios e defesa imunológica.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Vasos que levam sangue dos tecidos para o coração, geralmente com baixa pressão e contendo válvulas internas.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a descrição geral das Veias."
-            },
-            {
-              "text": "Fase de relaxamento das câmaras cardíacas, permitindo seu enchimento com sangue.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a descrição da Diástole."
-            }
-          ],
-          "gabarito": [
-            {"leftIndex": 0, "rightIndex": 0},
-            {"leftIndex": 1, "rightIndex": 1},
-            {"leftIndex": 2, "rightIndex": 2},
-            {"leftIndex": 3, "rightIndex": 3},
-            {"leftIndex": 4, "rightIndex": 4},
-            {"leftIndex": 5, "rightIndex": 5},
-            {"leftIndex": 6, "rightIndex": 6}
-          ]
-        }
-      ]
-    },
-    {
-      "moduleTitle": "MÓDULO 20: SISTEMA EXCRETOR",
-      "sourceReference": "Frente C // L05 (p. 548-551)",
-      "flashcards": [
-        {
-          "id": "M20C01",
-          "leftColumnNodes": [
-            "Néfron",
-            "Filtração Glomerular",
-            "Reabsorção Tubular",
-            "Secreção Tubular",
-            "ADH (Hormônio Antidiurético)",
-            "Aldosterona",
-            "Renina-Angiotensina-Aldosterona (Sistema)"
-          ],
-          "rightColumnNodes": [
-            {
-              "text": "Unidade funcional do rim, composta pelo glomérulo, cápsula de Bowman e túbulos renais, responsável pela formação da urina.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Passagem de água e pequenos solutos do sangue do glomérulo para a cápsula de Bowman, impulsionada pela pressão arterial.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Retorno de substâncias úteis (glicose, aminoácidos, água, íons) do filtrado tubular de volta para o sangue nos capilares peritubulares.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Transporte ativo de substâncias indesejáveis (íons H+, K+, creatinina, fármacos) do sangue para o interior dos túbulos renais, para eliminação.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Liberado pela neuroipófise, aumenta a permeabilidade dos túbulos distais e ductos coletores à água, promovendo sua reabsorção e concentrando a urina.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Liberado pelo córtex adrenal, promove a reabsorção de Na+ (e água por osmose) e a secreção de K+ nos túbulos renais, elevando a pressão arterial.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Mecanismo hormonal complexo ativado pela queda da pressão arterial, resultando em vasoconstrição e aumento da reabsorção de sódio e água para restaurar a pressão.",
-              "isDistractor": false,
-              "distractorExplanation": ""
-            },
-            {
-              "text": "Principal excreta nitrogenada em mamíferos, produzida no fígado a partir do ciclo da ornitina.",
-              "isDistractor": true,
-              "distractorExplanation": "Esta é a descrição da Ureia, que é uma substância, não um processo ou hormônio regulador listado à esquerda."
-            },
-            {
-              "text": "Hormônio produzido pelo coração que promove a excreção de sódio e água, diminuindo a pressão arterial.",
-              "isDistractor": true,
-              "distractorExplanation": "Este é o Peptídeo Natriurético Atrial (PNA)."
+              "distractorExplanation": "Descreve o processo de Clivagem (ou segmentação), que leva à formação da mórula, mas não é uma das estruturas ou tipos celulares específicos listados na coluna da esquerda."
             }
           ],
           "gabarito": [
