@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bujo Berserker - Dynamic Centering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Nosifer&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-glow: #33ff77; 
+            --green-dark-shadow: #005015; 
+            --green-mid-glow: #15cc55; 
+            --text-base-color: #f0f0f0; 
+            --bg-color: #020202; 
+            --container-bg-start: rgba(5, 20, 10, 0.2);
+            --container-bg-mid: rgba(3, 12, 7, 0.4);
+            --container-bg-end: #050505;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 4vh; 
+        }
+
+        #bujo-capa-container {
+            width: 85vmin;
+            height: 85vmin;
+            max-width: 850px;
+            max-height: 850px;
+            
+            background: 
+                radial-gradient(ellipse at center, var(--container-bg-start) 0%, var(--container-bg-mid) 40%, var(--container-bg-end) 85%),
+                #070707; 
+            
+            border: 1px solid rgba(20, 80, 30, 0.15); 
+            border-radius: 25px; 
+            box-shadow: 
+                inset 0 0 50px 10px rgba(0, 0, 0, 0.85), 
+                0 0 25px 5px rgba(5, 25, 10, 0.15);  
+            
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; 
+        }
+
+        #bujo-capa-container::before { 
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%; 
+            width: 200%; height: 200%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-size: 150px 150px; 
+            opacity: 0.025; 
+            animation: animatedNoise 30s infinite linear alternate;
+            pointer-events: none;
+            z-index: 0; 
+        }
+
+        @keyframes animatedNoise {
+            0% { transform: translate(0,0) rotate(0deg); }
+            25% { transform: translate(2%, -3%) rotate(0.5deg); }
+            50% { transform: translate(-2%, 2%) rotate(-0.5deg); }
+            75% { transform: translate(3%, 1%) rotate(0.2deg); }
+            100% { transform: translate(0,0) rotate(0deg); }
+        }
+
+
+        .titulo-atras {
+            font-family: 'Creepster', cursive;
+            font-size: clamp(7rem, 25vmin, 16rem); 
+            font-weight: normal;
+            line-height: 0.8; 
+            color: var(--text-base-color);
+            
+            position: absolute;
+            z-index: 1; 
+            
+            top: 50%;
+            /* 'left' será definido por JavaScript */
+            transform: translateY(-50%); /* Apenas para o alinhamento vertical */
+            
+            white-space: nowrap; 
+            letter-spacing: -0.04em; /* AJUSTE: Compacta um pouco o texto */
+                        
+            text-shadow: 
+                0 0 6px color-mix(in srgb, var(--green-glow) 65%, transparent),
+                0 0 10px color-mix(in srgb, var(--green-glow) 55%, transparent),
+                0 0 18px color-mix(in srgb, var(--green-glow) 45%, transparent),
+                1px 2px 1px color-mix(in srgb, var(--green-dark-shadow) 70%, transparent),
+                2px 4px 2px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
+                1px 6px 6px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
+                0px 0px 2px rgba(0,0,0,1);
+
+            mix-blend-mode: difference;
+            pointer-events: none;
+            animation: textGlowFlicker 6s infinite alternate ease-in-out;
+            /* Importante: Evitar text-align: center aqui, pois o JS controlará o 'left' */
+        }
+        
+        @keyframes textGlowFlicker { 
+            0%, 100% {
+                text-shadow: 
+                    0 0 6px color-mix(in srgb, var(--green-glow) 65%, transparent),
+                    0 0 10px color-mix(in srgb, var(--green-glow) 55%, transparent),
+                    0 0 18px color-mix(in srgb, var(--green-glow) 45%, transparent),
+                    1px 2px 1px color-mix(in srgb, var(--green-dark-shadow) 70%, transparent),
+                    2px 4px 2px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
+                    1px 6px 6px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
+                    0px 0px 2px rgba(0,0,0,1);
+                opacity: 0.95;
+            }
+            50% {
+                text-shadow: 
+                    0 0 8px color-mix(in srgb, var(--green-glow) 75%, transparent),
+                    0 0 15px color-mix(in srgb, var(--green-glow) 65%, transparent),
+                    0 0 25px color-mix(in srgb, var(--green-glow) 55%, transparent),
+                    1px 1px 1px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
+                    2px 3px 2px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
+                    1px 5px 5px color-mix(in srgb, var(--green-dark-shadow) 40%, transparent),
+                    0px 0px 1px rgba(0,0,0,0.8);
+                opacity: 1;
+            }
+        }
+        
+        #personagem-imagem {
+            position: relative; 
+            z-index: 2; 
+            max-width: 90%; 
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(2px 10px 22px rgba(0, 0, 0, 0.85)); 
+            animation: characterBreathe 5s infinite ease-in-out;
+        }
+
+        @keyframes characterBreathe { 
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(2px 10px 22px rgba(0, 0, 0, 0.85)) brightness(1);
+            }
+            50% {
+                transform: scale(1.015); 
+                filter: drop-shadow(3px 12px 28px rgba(0, 0, 0, 0.95)) brightness(1.03);
+            }
+        }
+
+        .titulo-frente {
+            font-family: 'UnifrakturMaguntia', cursive; 
+            font-size: clamp(3.8rem, 13vmin, 7.5rem); 
+            font-weight: normal; 
+            color: var(--green-glow);
+            position: absolute;
+            z-index: 3; 
+            top: 8%; 
+            left: 50%;
+            transform: translateX(-50%); 
+            text-align: center;
+            width: auto; 
+            white-space: nowrap; 
+            
+            text-shadow: 
+                0 0 5px var(--green-glow),
+                0 0 10px var(--green-mid-glow),
+                0 0 15px var(--green-mid-glow),
+                1px 1px 0px var(--green-dark-shadow),
+                -1px -1px 0px var(--green-dark-shadow),
+                1px -1px 0px var(--green-dark-shadow),
+                -1px 1px 0px var(--green-dark-shadow),
+                0 0 10px rgba(0,0,0,0.7); 
+
+            animation: frontTextIntro 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
+                       frontTextPulseGothic 2.8s 2.5s infinite alternate ease-in-out;
+            opacity: 0; 
+            transform-origin: center center;
+        }
+
+        @keyframes frontTextIntro {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px) scale(0.7);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateX(-50%) translateY(5px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes frontTextPulseGothic {
+            from {
+                text-shadow: 
+                    0 0 5px var(--green-glow),
+                    0 0 10px var(--green-mid-glow),
+                    0 0 15px var(--green-mid-glow),
+                    1px 1px 0px var(--green-dark-shadow), -1px -1px 0px var(--green-dark-shadow),
+                    1px -1px 0px var(--green-dark-shadow), -1px 1px 0px var(--green-dark-shadow),
+                    0 0 10px rgba(0,0,0,0.7);
+                color: var(--green-glow);
+                transform: translateX(-50%) scale(1);
+            }
+            to {
+                text-shadow: 
+                    0 0 8px var(--green-glow),
+                    0 0 16px var(--green-mid-glow),
+                    0 0 24px var(--green-mid-glow),
+                    1px 1px 0px var(--green-dark-shadow), -1px -1px 0px var(--green-dark-shadow),
+                    1px -1px 0px var(--green-dark-shadow), -1px 1px 0px var(--green-dark-shadow),
+                    0 0 15px rgba(0,0,0,0.85);
+                color: color-mix(in srgb, var(--green-glow) 90%, #fff 10%); 
+                transform: translateX(-50%) scale(1.03);
+            }
+        }
+
+        #bujo-capa-container::after { 
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            box-shadow: inset 0 0 80px 35px rgba(0,0,0,0.88); 
+            pointer-events: none;
+            z-index: 4; 
+            border-radius: inherit; 
+        }
+
+    </style>
+</head>
+<body>
+    <main id="bujo-capa-container">
+        <h1 class="titulo-atras">BERSERKER</h1>
+        <img id="personagem-imagem" src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Sanemi Shinazugawa - Demon Slayer">
+        <h2 class="titulo-frente">Bujo</h2> 
+    </main>
+
+    <script>
+        function adjustBackgroundText() {
+            const container = document.getElementById('bujo-capa-container');
+            const backgroundText = document.querySelector('.titulo-atras');
+
+            if (!container || !backgroundText) {
+                console.warn("Container ou texto de fundo não encontrado para ajuste.");
+                return;
+            }
+
+            // Força o navegador a recalcular estilos e dimensões antes de prosseguir
+            // Isso pode ajudar a obter valores mais precisos, especialmente no carregamento inicial
+            window.getComputedStyle(backgroundText).fontSize; 
+            window.getComputedStyle(container).width;
+
+            const containerWidth = container.clientWidth;
+            // scrollWidth dá a largura total do conteúdo, mesmo que não esteja visível
+            const textContentWidth = backgroundText.scrollWidth; 
+
+            // Calcula o 'left' offset para centralizar o CONTEÚDO do texto
+            // Se o texto tem 300px e o container 100px, o offset será (100 - 300) / 2 = -100px.
+            // Isso significa que o canto esquerdo do texto começa 100px antes do canto esquerdo do container.
+            const desiredLeftOffset = (containerWidth - textContentWidth) / 2;
+            
+            backgroundText.style.left = `${desiredLeftOffset}px`;
+
+            // console.log(`Container: ${containerWidth}px, Text: ${textContentWidth}px, Left Offset: ${desiredLeftOffset}px`);
+        }
+
+        // Ajusta no carregamento inicial
+        window.addEventListener('load', adjustBackgroundText);
+        // Ajusta em cada redimensionamento da janela
+        window.addEventListener('resize', adjustBackgroundText);
+
+        // Uma chamada inicial pode ser útil se o 'load' demorar ou para fontes carregadas via JS
+        // mas 'load' geralmente é suficiente para garantir que as dimensões estejam disponíveis.
+        // Se ainda houver problemas no carregamento inicial, pode-se tentar um setTimeout pequeno:
+        // setTimeout(adjustBackgroundText, 50); // Pequeno delay para garantir renderização
+
+        console.log("Bujo Berserker - Dynamic Centering script active!");
+    </script>
+</body>
+</html>
