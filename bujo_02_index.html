@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bujo Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --theme-green-dark: #0A3619; /* Darker green from image accents */
+            --theme-green-medium: #1E793C; /* Medium green */
+            --theme-green-light: #6AAA7F; /* Lighter, desaturated green for accents */
+            --theme-black: #1a1a1a;
+            --theme-off-white: #f9f9f9;
+            --theme-light-gray: #e0e0e0;
+            --theme-text-main: #2c2c2c;
+            --theme-text-subtle: #555;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--theme-text-main);
+            line-height: 1.6;
+        }
+
+        .bujo-container {
+            background-color: var(--theme-off-white);
+            border: 1px solid var(--theme-light-gray);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 700px; /* Controls "squareness" somewhat */
+            /* aspect-ratio: 3/4; /* More rectangular like a page */
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Ensures rounded corners clip content */
+        }
+
+        .bujo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--theme-green-dark);
+        }
+
+        .bujo-header .theme-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%; /* Make it circular if desired, or keep square */
+            object-fit: cover;
+            border: 2px solid var(--theme-green-medium);
+        }
+
+        .bujo-header h1 {
+            font-family: 'Special Elite', cursive;
+            font-size: 3em;
+            color: var(--theme-green-dark);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .index-content {
+            display: flex;
+            gap: 30px; /* Space between columns */
+            flex-grow: 1; /* Allows content to take available space */
+            overflow-y: auto; /* Scroll if content exceeds height */
+            max-height: 60vh; /* Limit height to encourage "page" feel */
+            padding-right: 10px; /* For scrollbar spacing */
+        }
+
+        /* Custom scrollbar for webkit browsers */
+        .index-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .index-content::-webkit-scrollbar-track {
+            background: var(--theme-light-gray);
+            border-radius: 4px;
+        }
+        .index-content::-webkit-scrollbar-thumb {
+            background: var(--theme-green-medium);
+            border-radius: 4px;
+        }
+        .index-content::-webkit-scrollbar-thumb:hover {
+            background: var(--theme-green-dark);
+        }
+
+
+        .index-column {
+            flex: 1; /* Each column takes equal space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .index-entry {
+            display: flex;
+            align-items: baseline; /* Aligns number and text nicely */
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted var(--theme-green-light);
+            font-size: 0.95em;
+        }
+        .index-entry:last-child {
+            border-bottom: none;
+        }
+
+        .page-number {
+            font-family: 'Special Elite', cursive;
+            font-weight: bold;
+            color: var(--theme-green-dark);
+            min-width: 35px; /* Ensures numbers align nicely */
+            margin-right: 10px;
+        }
+
+        .entry-title {
+            color: var(--theme-text-subtle);
+            flex-grow: 1;
+        }
+        .entry-title a {
+            color: var(--theme-text-subtle);
+            text-decoration: none;
+        }
+        .entry-title a:hover {
+            color: var(--theme-green-medium);
+            text-decoration: underline;
+        }
+
+
+        .bujo-footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid var(--theme-light-gray);
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--theme-text-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bujo-footer .theme-icon-small {
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .bujo-container {
+                padding: 20px;
+                width: 95%;
+            }
+            .bujo-header h1 {
+                font-size: 2.2em;
+            }
+            .bujo-header .theme-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+            .index-content {
+                flex-direction: column; /* Stack columns on small screens */
+                gap: 0;
+                max-height: none; /* Allow full scroll on mobile */
+            }
+            .index-column {
+                margin-bottom: 10px; /* Space between stacked "columns" */
+            }
+            .index-entry {
+                font-size: 0.9em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bujo-container">
+        <header class="bujo-header">
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Theme Icon" class="theme-icon">
+            <h1>Index</h1>
+        </header>
+
+        <main class="index-content">
+            <div class="index-column">
+                <div class="index-entry"><span class="page-number">001</span> <span class="entry-title"><a href="#page1">Calendário 2024</a></span></div>
+                <div class="index-entry"><span class="page-number">002</span> <span class="entry-title"><a href="#page2">Metas Anuais</a></span></div>
+                <div class="index-entry"><span class="page-number">003</span> <span class="entry-title"><a href="#page3">Future Log Jan-Mar</a></span></div>
+                <div class="index-entry"><span class="page-number">004</span> <span class="entry-title"><a href="#page4">Future Log Abr-Jun</a></span></div>
+                <div class="index-entry"><span class="page-number">005</span> <span class="entry-title"><a href="#page5">Livros para Ler</a></span></div>
+                <div class="index-entry"><span class="page-number">006</span> <span class="entry-title"><a href="#page6">Filmes para Assistir</a></span></div>
+                <div class="index-entry"><span class="page-number">007</span> <span class="entry-title"><a href="#page7">Wishlist</a></span></div>
+                <div class="index-entry"><span class="page-number">008</span> <span class="entry-title"><a href="#page8">Ideias de Projetos</a></span></div>
+                <div class="index-entry"><span class="page-number">009</span> <span class="entry-title"><a href="#page9">Contatos Importantes</a></span></div>
+                <div class="index-entry"><span class="page-number">010</span> <span class="entry-title"><a href="#page10">Tracker de Hábitos</a></span></div>
+                <div class="index-entry"><span class="page-number">011</span> <span class="entry-title"><a href="#page11">Janeiro - Capa</a></span></div>
+                <div class="index-entry"><span class="page-number">012</span> <span class="entry-title"><a href="#page12">Janeiro - Visão Mensal</a></span></div>
+                <div class="index-entry"><span class="page-number">013</span> <span class="entry-title"><a href="#page13">Janeiro - Semana 1</a></span></div>
+                <div class="index-entry"><span class="page-number">014</span> <span class="entry-title"><a href="#page14">Janeiro - Semana 2</a></span></div>
+                <div class="index-entry"><span class="page-number">015</span> <span class="entry-title"><a href="#page15">Anotações Gerais</a></span></div>
+                 <div class="index-entry"><span class="page-number">016</span> <span class="entry-title"><a href="#page16">Página de Testes</a></span></div>
+                <div class="index-entry"><span class="page-number">017</span> <span class="entry-title"><a href="#page17">Brain Dump</a></span></div>
+                <div class="index-entry"><span class="page-number">018</span> <span class="entry-title"><a href="#page18">Checklist Viagem</a></span></div>
+            </div>
+            <div class="index-column">
+                <div class="index-entry"><span class="page-number">019</span> <span class="entry-title"><a href="#page19">Fevereiro - Capa</a></span></div>
+                <div class="index-entry"><span class="page-number">020</span> <span class="entry-title"><a href="#page20">Fevereiro - Visão Mensal</a></span></div>
+                <div class="index-entry"><span class="page-number">021</span> <span class="entry-title"><a href="#page21">Coleção de Citações</a></span></div>
+                <div class="index-entry"><span class="page-number">022</span> <span class="entry-title"><a href="#page22">Rotina Matinal</a></span></div>
+                <div class="index-entry"><span class="page-number">023</span> <span class="entry-title"><a href="#page23">Rotina Noturna</a></span></div>
+                <div class="index-entry"><span class="page-number">024</span> <span class="entry-title"><a href="#page24">Ideias para Presentes</a></span></div>
+                <div class="index-entry"><span class="page-number">025</span> <span class="entry-title"><a href="#page25">Receitas Favoritas</a></span></div>
+                <div class="index-entry"><span class="page-number">026</span> <span class="entry-title"><a href="#page26">Tracker de Humor</a></span></div>
+                <div class="index-entry"><span class="page-number">027</span> <span class="entry-title"><a href="#page27">Março - Capa</a></span></div>
+                <div class="index-entry"><span class="page-number">028</span> <span class="entry-title"><a href="#page28">Março - Visão Mensal</a></span></div>
+                <div class="index-entry"><span class="page-number">029</span> <span class="entry-title"><a href="#page29">Planejamento Semanal</a></span></div>
+                <div class="index-entry"><span class="page-number">030</span> <span class="entry-title"><a href="#page30">Metas de Fitness</a></span></div>
+                <div class="index-entry"><span class="page-number">031</span> <span class="entry-title"><a href="#page31">Log de Gratidão</a></span></div>
+                <div class="index-entry"><span class="page-number">032</span> <span class="entry-title"><a href="#page32">Finanças - Tracker</a></span></div>
+                <div class="index-entry"><span class="page-number">033</span> <span class="entry-title"><a href="#page33">Página de Doodles</a></span></div>
+                <div class="index-entry"><span class="page-number">034</span> <span class="entry-title"><a href="#page34">Aniversários</a></span></div>
+                <div class="index-entry"><span class="page-number">035</span> <span class="entry-title"><a href="#page35">Contas e Senhas (Seguro)</a></span></div>
+                <div class="index-entry"><span class="page-number">036</span> <span class="entry-title"><a href="#page36">Índice Vazio</a></span></div>
+            </div>
+        </main>
+
+        <footer class="bujo-footer">
+            Página do Índice
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Theme Icon Small" class="theme-icon-small">
+        </footer>
+    </div>
+
+</body>
+</html>
