@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuJo Key</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --theme-green-dark: #1A4314; /* Um verde escuro da sua imagem */
+            --theme-green-medium: #2D6A4F; /* Um verde médio */
+            --theme-green-light: #4CAF50; /* Um verde mais vibrante como acento */
+            --theme-green-accent: #00FF00; /* Verde neon para destaques pontuais, se necessário */
+            --text-color: #333;
+            --border-color: #ccc;
+            --border-color-dark: #999;
+            --background-color: #ffffff;
+            --page-shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e9e9e9; /* Fundo cinza claro para destacar a página */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        .bujo-page {
+            background-color: var(--background-color);
+            width: 480px; /* Tenta manter uma proporção de página */
+            max-width: 90%;
+            min-height: 680px; /* Ajuste conforme necessário */
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--page-shadow);
+            border-radius: 8px; /* Bordas levemente arredondadas */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-family: 'Archivo Black', sans-serif; /* Fonte mais impactante para o título */
+            text-align: center;
+            color: var(--theme-green-dark);
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--theme-green-light);
+            padding-bottom: 10px;
+        }
+
+        .legend-content {
+            flex-grow: 1;
+        }
+
+        .legend-section {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .legend-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .items-column {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Duas colunas para itens */
+            gap: 10px 20px; /* Espaçamento entre linhas e colunas */
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95em;
+        }
+
+        .symbol {
+            width: 28px; /* Largura fixa para alinhar os símbolos */
+            height: 28px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 1.2em; /* Tamanho do símbolo */
+            color: var(--theme-green-medium); /* Cor para os símbolos */
+            font-weight: bold;
+        }
+
+        .symbol.color-swatch {
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--border-color-dark);
+            border-radius: 3px;
+            font-size: 1em; /* Reset para não afetar tamanho do texto interno se houver */
+        }
+        .symbol.highlight-swatch {
+            width: 25px;
+            height: 12px;
+            opacity: 0.7;
+            border: 1px solid var(--border-color-dark);
+            border-radius: 2px;
+        }
+
+        .section-label-column {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg); /* Para ler de baixo para cima na vertical */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 15px; /* Espaço entre itens e rótulo */
+            margin-left: 10px; /* Espaço do conteúdo para o rótulo */
+            border-left: 2px solid var(--theme-green-light); /* Linha verde como no exemplo */
+        }
+
+        .section-label {
+            font-weight: bold;
+            color: var(--theme-green-medium);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+
+        .footer-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            border-radius: 4px; /* Pequeno arredondamento para o ícone */
+            border: 1px solid var(--theme-green-dark); /* Borda sutil */
+        }
+
+        /* Cores específicas para os swatches */
+        .color-school { background-color: #42A5F5; /* Azul */ }
+        .color-personal { background-color: #FFCA28; /* Amarelo */ }
+        .color-social { background-color: #66BB6A; /* Verde (diferente do tema principal) */ }
+        .color-errands { background-color: #EF5350; /* Vermelho */ }
+        .color-extracurricular { background-color: #AB47BC; /* Roxo */ }
+
+        .highlight-productive { background-color: #64B5F6; /* Azul claro */ }
+        .highlight-moderate { background-color: #FFD54F; /* Amarelo claro */ }
+        .highlight-not-productive { background-color: #BDBDBD; /* Cinza */ }
+
+    </style>
+</head><body>
+
+    <div class="bujo-page">
+        <header>
+            <h1>Legend</h1>
+        </header>
+
+        <main class="legend-content">
+            <div class="legend-section">
+                <div class="items-column">
+                    <div class="legend-item"><span class="symbol">□</span> Tarefa</div>
+                    <div class="legend-item"><span class="symbol">○</span> Evento</div>
+                    <div class="legend-item"><span class="symbol">•</span> Nota</div>
+                    <div class="legend-item"><span class="symbol">♡</span> Citação/Motivação</div>
+                </div>
+                <div class="section-label-column">
+                    <span class="section-label">Bullets</span>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="items-column">
+                    <div class="legend-item"><span class="symbol">!</span> Prazo/Importante</div>
+                    <div class="legend-item"><span class="symbol">*</span> Prioridade</div>
+                    <div class="legend-item"><span class="symbol">$</span> Despesa</div>
+                    <div class="legend-item"><span class="symbol">☕</span> Comida/Refeição</div>
+                    <div class="legend-item"><span class="symbol">🧘</span> Relaxamento</div>
+                    <div class="legend-item"><span class="symbol">💪</span> Exercício</div>
+                </div>
+                <div class="section-label-column">
+                    <span class="section-label">Marks</span>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="items-column">
+                    <div class="legend-item"><span class="symbol">➤</span> Iniciado</div>
+                    <div class="legend-item"><span class="symbol">✅</span> Completado</div>
+                    <div class="legend-item"><span class="symbol">✘</span> Irrelevante/Cancelado</div>
+                    <div class="legend-item"><span class="symbol">➢</span> Movido/Migrado</div>
+                </div>
+                <div class="section-label-column">
+                    <span class="section-label">Fills</span>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="items-column">
+                    <div class="legend-item"><span class="symbol color-swatch color-school"></span> Escola/Estudo</div>
+                    <div class="legend-item"><span class="symbol color-swatch color-personal"></span> Pessoal</div>
+                    <div class="legend-item"><span class="symbol color-swatch color-social"></span> Social</div>
+                    <div class="legend-item"><span class="symbol color-swatch color-errands"></span> Pendências</div>
+                    <div class="legend-item"><span class="symbol color-swatch color-extracurricular"></span> Extracurricular</div>
+                </div>
+                <div class="section-label-column">
+                    <span class="section-label">Colors</span>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="items-column">
+                    <div class="legend-item"><span class="symbol highlight-swatch highlight-productive"></span> Muito Produtivo</div>
+                    <div class="legend-item"><span class="symbol highlight-swatch highlight-moderate"></span> Moderado/Ok</div>
+                    <div class="legend-item"><span class="symbol highlight-swatch highlight-not-productive"></span> Pouco Produtivo</div>
+                </div>
+                <div class="section-label-column">
+                    <span class="section-label">Highlight</span>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Tema Icon" class="footer-icon">
+            <span>Pág. 1</span>
+        </footer>
+    </div>
+
+</body>
+</html>

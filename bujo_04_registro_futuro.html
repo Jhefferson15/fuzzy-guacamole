@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bujo - Registro Futuro</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --theme-green-dark: #0a3d23; /* Verde escuro da imagem */
+            --theme-green-medium: #1f6030; /* Verde médio */
+            --theme-green-light: #64a270; /* Verde claro, para destaques */
+            --text-color: #333;
+            --line-color: #e0e0e0;
+            --bg-color: #ffffff;
+            --font-handwritten: 'Caveat', cursive;
+            --font-sans: 'Roboto', sans-serif;
+            --icon-url: 'https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png';
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image:
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        .bujo-container {
+            width: 90vw;
+            height: 70vw;
+            max-width: 900px;
+            max-height: 700px;
+            aspect-ratio: 9 / 7; /* Para manter proporção mais quadrada/retangular */
+            background-color: var(--bg-color);
+            border: 1px solid #ccc;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Garante que o conteúdo interno respeite o border-radius */
+            position: relative;
+        }
+
+        .bujo-header {
+            padding: 15px 25px;
+            background-color: var(--theme-green-dark);
+            color: white;
+            text-align: center;
+            font-family: var(--font-handwritten);
+            font-size: 2.2em;
+            letter-spacing: 1px;
+            border-bottom: 3px solid var(--theme-green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bujo-header img.header-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid var(--theme-green-light);
+        }
+
+
+        .future-log-content {
+            display: flex;
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto; /* Para caso o conteúdo seja muito grande */
+        }
+
+        .page-column {
+            flex: 1;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espaço entre os meses */
+        }
+
+        .page-column:first-child {
+            border-right: 1px dashed var(--line-color); /* Divisória central */
+        }
+
+        .month-section {
+            display: flex;
+            flex-direction: column; /* Alterado para empilhar cabeçalho e eventos */
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--line-color);
+        }
+        .month-section:last-child {
+            border-bottom: none;
+        }
+
+        .month-header-content {
+            display: flex; /* Para alinhar nome do mês e calendário lado a lado */
+            align-items: flex-start; /* Alinha ao topo */
+            margin-bottom: 10px;
+        }
+
+        .month-name {
+            font-family: var(--font-handwritten);
+            font-size: 2.5em; /* Aumentado */
+            color: var(--theme-green-dark);
+            margin-right: 20px; /* Espaço entre nome do mês e calendário */
+            min-width: 80px; /* Para garantir espaço para nomes de meses mais longos */
+            line-height: 1;
+        }
+
+        .mini-calendar {
+            font-size: 0.75em;
+            border-collapse: collapse;
+            color: var(--text-color);
+        }
+
+        .mini-calendar th, .mini-calendar td {
+            text-align: center;
+            padding: 2px 4px;
+            min-width: 20px; /* Largura mínima das células */
+        }
+
+        .mini-calendar th {
+            color: var(--theme-green-medium);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .mini-calendar td.empty {
+            /* Células vazias antes/depois dos dias */
+        }
+        .mini-calendar td.today {
+            background-color: var(--theme-green-light);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .month-events {
+            margin-top: 5px; /* Espaço acima das linhas de evento */
+        }
+
+        .event-line {
+            border-bottom: 1px dotted var(--theme-green-medium);
+            height: 22px; /* Altura da linha */
+            margin-bottom: 6px;
+            background-image: linear-gradient(transparent 95%, var(--theme-green-light) 95%); /* Linha sutil no fundo */
+            background-size: 100% 22px;
+        }
+        .event-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .bujo-footer {
+            padding: 10px 25px;
+            border-top: 1px solid var(--line-color);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 0.9em;
+            color: var(--theme-green-medium);
+        }
+
+        .page-number-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+
+        /* Estilo para a barra de rolagem, se visível */
+        .future-log-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .future-log-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .future-log-content::-webkit-scrollbar-thumb {
+            background: var(--theme-green-medium);
+            border-radius: 4px;
+        }
+        .future-log-content::-webkit-scrollbar-thumb:hover {
+            background: var(--theme-green-dark);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bujo-container">
+        <header class="bujo-header">
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Tema Icon" class="header-icon">
+            Registro Futuro
+        </header>
+
+        <div class="future-log-content">
+            <div class="page-column" id="left-column">
+                <!-- Meses serão inseridos aqui pelo JS -->
+            </div>
+            <div class="page-column" id="right-column">
+                <!-- Meses serão inseridos aqui pelo JS -->
+            </div>
+        </div>
+
+        <footer class="bujo-footer">
+            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Ícone" class="page-number-icon">
+            <span id="page-number">1</span>
+        </footer>
+    </div>
+
+    <script>
+        const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+        const dayAbbreviations = ["D", "S", "T", "Q", "Q", "S", "S"]; // Domingo a Sábado
+        // Para começar a semana na Segunda:
+        // const dayAbbreviations = ["S", "T", "Q", "Q", "S", "S", "D"];
+
+
+        function generateMiniCalendar(year, month, today) { // month é 0-indexed
+            const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0 = Domingo, 1 = Segunda ...
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            let html = '<table class="mini-calendar">';
+            html += '<thead><tr>';
+            dayAbbreviations.forEach(day => html += `<th>${day}</th>`);
+            html += '</tr></thead><tbody>';
+
+            let date = 1;
+            for (let i = 0; i < 6; i++) { // Max 6 semanas
+                html += '<tr>';
+                for (let j = 0; j < 7; j++) { // 7 dias da semana
+                    if (i === 0 && j < firstDayOfMonth) {
+                        html += '<td class="empty"></td>';
+                    } else if (date > daysInMonth) {
+                        html += '<td class="empty"></td>';
+                    } else {
+                        let cellClass = '';
+                        if (today && date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                            cellClass = 'today';
+                        }
+                        html += `<td class="${cellClass}">${date}</td>`;
+                        date++;
+                    }
+                }
+                html += '</tr>';
+                if (date > daysInMonth) break; // Sai do loop de semanas se todos os dias foram preenchidos
+            }
+            html += '</tbody></table>';
+            return html;
+        }
+
+        function createMonthSection(year, monthIndex, numEventLines = 4) {
+            const today = new Date();
+            const monthElement = document.createElement('div');
+            monthElement.classList.add('month-section');
+
+            let eventLinesHtml = '';
+            for (let i = 0; i < numEventLines; i++) {
+                eventLinesHtml += '<div class="event-line"></div>';
+            }
+
+            monthElement.innerHTML = `
+                <div class="month-header-content">
+                    <div class="month-name">${monthNames[monthIndex]}</div>
+                    ${generateMiniCalendar(year, monthIndex, today)}
+                </div>
+                <div class="month-events">
+                    ${eventLinesHtml}
+                </div>
+            `;
+            return monthElement;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const leftColumn = document.getElementById('left-column');
+            const rightColumn = document.getElementById('right-column');
+            const currentYear = new Date().getFullYear();
+
+            // Adicionar os primeiros 6 meses do ano
+            // Exemplo: Jan, Fev, Mar na coluna esquerda
+            // Abr, Mai, Jun na coluna direita
+            const monthsToDisplay = [
+                { month: 0, column: leftColumn },  // Janeiro
+                { month: 1, column: leftColumn },  // Fevereiro
+                { month: 2, column: leftColumn },  // Março
+                { month: 3, column: rightColumn }, // Abril
+                { month: 4, column: rightColumn }, // Maio
+                { month: 5, column: rightColumn }  // Junho
+            ];
+
+            monthsToDisplay.forEach(item => {
+                const monthSection = createMonthSection(currentYear, item.month);
+                item.column.appendChild(monthSection);
+            });
+
+            // Exemplo de número de página (pode ser dinâmico se tiver mais páginas)
+            document.getElementById('page-number').textContent = 'FL 1-2'; // Future Log pages 1-2
+        });
+    </script>
+
+</body>
+</html>
