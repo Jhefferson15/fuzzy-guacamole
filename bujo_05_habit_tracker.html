@@ -6,6 +6,7 @@
     <title>Bujo Tracker Pro</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" type="image/png">
     <style>
+        /* ... (Your existing CSS) ... */
         :root {
             --theme-primary-green: #33ff33; /* Verde vibrante do cabelo/olhos da imagem tema */
             --theme-dark-green: #0A2A0A; /* Verde bem escuro, quase preto, para fundos/texto */
@@ -462,14 +463,13 @@
             opacity: 0.5;
             margin-bottom: 15px;
         }
-
     </style>
 </head>
 <body>
 
     <div class="bujo-container">
         <header class="bujo-header">
-            <div class="month-navigation">
+             <div class="month-navigation">
                  <button id="prev-month-btn" title="Mês Anterior">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6l6 6l1.41-1.41L10.83 12z"/></svg>
                 </button>
@@ -527,7 +527,7 @@
 
         <footer class="bujo-footer">
             <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Theme Icon" class="footer-icon">
-            <span id="page-number">Página 1</span>
+            <span id="page-number">Página 1</span> <!-- Updated this to match your request -->
         </footer>
     </div>
 
@@ -539,7 +539,7 @@
             const prevMonthBtn = document.getElementById('prev-month-btn');
             const nextMonthBtn = document.getElementById('next-month-btn');
             const viewSelector = document.getElementById('view-selector');
-            const pageNumberDisplay = document.getElementById('page-number'); // Ainda não usado dinamicamente
+            const pageNumberDisplay = document.getElementById('page-number');
 
             const viewPanels = {
                 'grid-check': document.getElementById('grid-view-check'),
@@ -550,33 +550,48 @@
                 'no-habits': document.getElementById('no-habits-info')
             };
             
+            // Try to load from localStorage first for immediate UI
             let habits = JSON.parse(localStorage.getItem('bujoTrackerProHabits')) || [];
             let currentDate = new Date();
             let currentMonth = currentDate.getMonth();
             let currentYear = currentDate.getFullYear();
-            let currentPage = 1; // Placeholder
+            let currentPage = 1; // Placeholder, sync with SuperBujo if needed for actual page number
 
             const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
             const dayShortNames = ["D", "S", "T", "Q", "Q", "S", "S"];
+            
+            const THIS_PAGE_URL = window.location.href; // Used to identify this page to parent
 
-            function saveHabits() {
+            function saveHabitsToLocalStorage() {
                 localStorage.setItem('bujoTrackerProHabits', JSON.stringify(habits));
             }
 
-            function getDaysInMonth(month, year) {
-                return new Date(year, month + 1, 0).getDate();
+            function syncHabitsWithParent() {
+                // Tell parent (Super Bujo script) to save current habits to Gist
+                if (window.parent && window.parent !== window) {
+                     console.log('[HabitTracker] Enviando dados para Super Bujo:', habits);
+                     window.parent.postMessage({
+                        type: 'SAVE_BUJO_PAGE_DATA',
+                        pageUrl: THIS_PAGE_URL, // Send current page URL as identifier
+                        payload: habits
+                    }, '*'); // Adjust targetOrigin if known and static
+                } else {
+                    console.warn('[HabitTracker] Não foi possível encontrar o script pai (Super Bujo) para sincronização.');
+                }
             }
 
-            function getMonthYearKey() {
-                return `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`; // Pad month for consistency
+            function getDaysInMonth(month, year) { /* ... (same as before) ... */ 
+                 return new Date(year, month + 1, 0).getDate();
             }
-
-            function ensureHabitProgressForMonth(habit, daysInMonth) {
+            function getMonthYearKey() { /* ... (same as before) ... */ 
+                return `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
+            }
+            function ensureHabitProgressForMonth(habit, daysInMonth) { /* ... (same as before) ... */ 
                 const monthYearKey = getMonthYearKey();
                 if (!habit.progress || typeof habit.progress[monthYearKey] === 'undefined') {
                     habit.progress = habit.progress || {};
                     habit.progress[monthYearKey] = Array(daysInMonth).fill(false);
-                } else if (habit.progress[monthYearKey].length !== daysInMonth) { // Adjust if month length changes (e.g. Feb)
+                } else if (habit.progress[monthYearKey].length !== daysInMonth) { 
                     const oldProgress = habit.progress[monthYearKey];
                     habit.progress[monthYearKey] = Array(daysInMonth).fill(false);
                     for (let i = 0; i < Math.min(oldProgress.length, daysInMonth); i++) {
@@ -586,7 +601,7 @@
                 return habit.progress[monthYearKey];
             }
             
-            function renderGridView(tableId, markType) {
+            function renderGridView(tableId, markType) { /* ... (same as before, ensure it uses the global `habits` variable) ... */ 
                 const table = document.getElementById(tableId);
                 if (!table) return;
                 const daysHeaderRow = table.querySelector('.days-header-row');
@@ -605,7 +620,7 @@
                 habitNameHeader.className = 'habit-name-col';
                 habitNameHeader.textContent = 'Hábito';
                 daysHeaderRow.appendChild(habitNameHeader.cloneNode(true)); 
-                const emptyDayNameHeader = document.createElement('th'); // Empty for alignment
+                const emptyDayNameHeader = document.createElement('th'); 
                 dayNamesHeaderRow.appendChild(emptyDayNameHeader);
 
                 for (let i = 1; i <= daysInMonth; i++) {
@@ -622,7 +637,7 @@
                 habits.forEach((habit, habitIndex) => {
                     const progressThisMonth = ensureHabitProgressForMonth(habit, daysInMonth);
                     const tr = document.createElement('tr');
-                    tr.classList.add('habit-row'); // For potential animation
+                    tr.classList.add('habit-row');
                     const habitNameCell = document.createElement('td');
                     habitNameCell.className = 'habit-name-cell';
                     
@@ -630,7 +645,7 @@
                     habitNameSpan.textContent = habit.name;
                     
                     const deleteBtn = document.createElement('button');
-                    deleteBtn.innerHTML = '&times;'; // Or an SVG icon
+                    deleteBtn.innerHTML = '&times;';
                     deleteBtn.className = 'delete-habit-btn';
                     deleteBtn.title = 'Excluir hábito';
                     deleteBtn.onclick = (e) => { e.stopPropagation(); deleteHabit(habitIndex, tr); };
@@ -647,7 +662,7 @@
                             dayCellDiv.classList.add('completed');
                             if (markType === 'check') {
                                 dayCellDiv.classList.add('default-grid-mark');
-                                dayCellDiv.innerHTML = '&#10004;'; // Checkmark HTML entity
+                                dayCellDiv.innerHTML = '&#10004;';
                             } else if (markType === 'dot') {
                                 dayCellDiv.classList.add('dot-grid-mark');
                             }
@@ -661,8 +676,7 @@
                     habitTrackerBody.appendChild(tr);
                 });
             }
-
-            function renderSummaryView() {
+            function renderSummaryView() { /* ... (same as before) ... */
                 const panel = viewPanels.summary;
                 panel.innerHTML = '';
                 const daysInMonth = getDaysInMonth(currentMonth, currentYear);
@@ -683,15 +697,13 @@
                     `;
                     panel.appendChild(item);
                 });
-                 // Animate progress bars after they are in DOM
                 setTimeout(() => {
                     panel.querySelectorAll('.progress-bar').forEach(bar => {
                         bar.style.width = bar.dataset.progress + '%';
                     });
-                }, 100); // Small delay for DOM update
-            }
-
-            function renderSegmentedBarsView() {
+                }, 100);
+             }
+            function renderSegmentedBarsView() { /* ... (same as before) ... */
                 const panel = viewPanels['segmented-bars'];
                 panel.innerHTML = '';
                 const daysInMonth = getDaysInMonth(currentMonth, currentYear);
@@ -719,11 +731,9 @@
                     panel.appendChild(item);
                 });
             }
-
-            function calculateStreaks(progressArray) {
+            function calculateStreaks(progressArray) { /* ... (same as before) ... */
                 let currentStreak = 0;
                 let longestStreak = 0;
-                // Calculate longest streak in the month
                 let tempCurrentStreakForLongest = 0;
                 for (let i = 0; i < progressArray.length; i++) {
                     if (progressArray[i]) {
@@ -735,7 +745,6 @@
                 }
                 longestStreak = Math.max(longestStreak, tempCurrentStreakForLongest);
                 
-                // Calculate current streak ending today (or last day of month if past/future)
                 const today = new Date();
                 const isCurrentDisplayMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
                 const lastDayToCheck = isCurrentDisplayMonth ? today.getDate() - 1 : progressArray.length - 1;
@@ -747,17 +756,13 @@
                         break; 
                     }
                 }
-                // If today is not marked, current streak is 0 for current month
                 if (isCurrentDisplayMonth && lastDayToCheck >= 0 && !progressArray[lastDayToCheck]) {
                      currentStreak = 0;
                 }
-
-
                 return { currentStreak, longestStreak };
-            }
-
-            function renderStreaksView() {
-                const panel = viewPanels.streaks;
+             }
+            function renderStreaksView() { /* ... (same as before) ... */
+                 const panel = viewPanels.streaks;
                 panel.innerHTML = '';
                 const daysInMonth = getDaysInMonth(currentMonth, currentYear);
                 
@@ -778,7 +783,7 @@
                 });
             }
             
-            function showNoHabitsMessage() {
+            function showNoHabitsMessage() { /* ... (same as before) ... */ 
                 for (const panelId in viewPanels) {
                     if (panelId !== 'no-habits') viewPanels[panelId].classList.add('hidden');
                 }
@@ -787,14 +792,13 @@
 
             function renderTracker() {
                 currentMonthYearDisplay.textContent = `${monthNames[currentMonth]} ${currentYear}`;
-                pageNumberDisplay.textContent = `Página ${currentPage}`; // Placeholder
+                pageNumberDisplay.textContent = `Página ${currentPage}`; // This is just a visual placeholder for now
                 
                 if (habits.length === 0) {
                     showNoHabitsMessage();
                     return;
                 }
                 
-                // Hide all panels first, including no-habits message
                 for (const panelId in viewPanels) {
                     viewPanels[panelId].classList.add('hidden');
                 }
@@ -804,19 +808,13 @@
                      viewPanels[selectedView].classList.remove('hidden');
                 }
 
-
-                if (selectedView === 'grid-check') {
-                    renderGridView('habit-tracker-table-check', 'check');
-                } else if (selectedView === 'grid-dot') {
-                    renderGridView('habit-tracker-table-dot', 'dot');
-                } else if (selectedView === 'summary') {
-                    renderSummaryView();
-                } else if (selectedView === 'segmented-bars') {
-                    renderSegmentedBarsView();
-                } else if (selectedView === 'streaks') {
-                    renderStreaksView();
-                }
-                saveHabits();
+                if (selectedView === 'grid-check') renderGridView('habit-tracker-table-check', 'check');
+                else if (selectedView === 'grid-dot') renderGridView('habit-tracker-table-dot', 'dot');
+                else if (selectedView === 'summary') renderSummaryView();
+                else if (selectedView === 'segmented-bars') renderSegmentedBarsView();
+                else if (selectedView === 'streaks') renderStreaksView();
+                
+                // No immediate Gist sync here, it happens on data change or explicit request
             }
 
             function addHabit() {
@@ -824,9 +822,10 @@
                 if (habitName) {
                     habits.push({ name: habitName, progress: {} });
                     newHabitInput.value = '';
-                    renderTracker(); // Will also hide no-habits message if it was shown
+                    saveHabitsToLocalStorage(); // Save locally first
+                    syncHabitsWithParent();     // Then sync with Gist via parent
+                    renderTracker();
                     
-                    // Animate the last added row in grid views
                     if(viewSelector.value === 'grid-check' || viewSelector.value === 'grid-dot') {
                         const tableBody = document.querySelector(`#${viewPanels[viewSelector.value].querySelector('table').id} .habit-tracker-body`);
                         if(tableBody && tableBody.lastElementChild) {
@@ -841,18 +840,20 @@
 
             function deleteHabit(habitIndex, rowElement) {
                 if (confirm(`Tem certeza que quer aniquilar o hábito "${habits[habitIndex].name}"?`)) {
-                    // Optional: animate row removal
+                    const performDelete = () => {
+                        habits.splice(habitIndex, 1);
+                        saveHabitsToLocalStorage();
+                        syncHabitsWithParent();
+                        renderTracker();
+                    };
+
                     if (rowElement) {
                         rowElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                         rowElement.style.opacity = '0';
                         rowElement.style.transform = 'translateX(-30px)';
-                        setTimeout(() => {
-                            habits.splice(habitIndex, 1);
-                            renderTracker();
-                        }, 300);
+                        setTimeout(performDelete, 300);
                     } else {
-                         habits.splice(habitIndex, 1);
-                         renderTracker();
+                         performDelete();
                     }
                 }
             }
@@ -866,7 +867,6 @@
                 const progressThisMonth = ensureHabitProgressForMonth(habits[habitIndex], daysInMonth);
                 progressThisMonth[dayIndex] = !progressThisMonth[dayIndex];
                 
-                // Visual feedback for the clicked cell
                 dayCellDiv.classList.toggle('completed');
                 if (viewSelector.value === 'grid-check') {
                     dayCellDiv.classList.toggle('default-grid-mark', progressThisMonth[dayIndex]);
@@ -875,35 +875,93 @@
                      dayCellDiv.classList.toggle('dot-grid-mark', progressThisMonth[dayIndex]);
                 }
                 
-                // Debounce full render if multiple clicks happen quickly or for non-grid views
-                // For simplicity now, just re-render non-grid views to update stats
+                saveHabitsToLocalStorage(); // Save locally on change
+                syncHabitsWithParent();     // Sync with Gist via parent
+
                 if (viewSelector.value === 'summary' || viewSelector.value === 'segmented-bars' || viewSelector.value === 'streaks') {
                     renderTracker(); 
-                } else {
-                    saveHabits(); // Save immediately for grid views
                 }
             }
 
-            addHabitBtn.addEventListener('click', addHabit);
-            newHabitInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault(); // Prevent form submission if it were in a form
-                    addHabit();
+            // --- Message Listener for data from Super Bujo ---
+            window.addEventListener('message', (event) => {
+                // IMPORTANT: Add origin check for security if the parent's origin is fixed and known
+                // if (event.origin !== 'expected-parent-origin') return;
+
+                if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED') {
+                    // Make sure this message is for this page.
+                    // The Super Bujo script should ideally send to the correct iframe directly,
+                    // but this check is an extra precaution if using a general broadcast.
+                    if (event.data.pageUrl !== THIS_PAGE_URL) {
+                        // console.log('[HabitTracker] Ignorando mensagem BUJO_PAGE_DATA_LOADED para outra URL:', event.data.pageUrl);
+                        return;
+                    }
+
+                    console.log('[HabitTracker] Dados recebidos do Super Bujo (Gist):', event.data.payload);
+                    const cloudHabits = event.data.payload;
+
+                    if (cloudHabits && Array.isArray(cloudHabits)) { // Ensure it's an array
+                        // Simple merge: Gist data overrides local if different.
+                        // More complex merging (e.g., based on timestamps) is possible but harder.
+                        const localHabitsJSON = localStorage.getItem('bujoTrackerProHabits');
+                        
+                        // Only update if cloud data is different from local, or if local is empty and cloud has data.
+                        // And ensure cloudHabits is not just an empty array if localHabits has content.
+                        if (JSON.stringify(cloudHabits) !== localHabitsJSON) {
+                             if (cloudHabits.length > 0 || !localHabitsJSON || JSON.parse(localHabitsJSON).length === 0) {
+                                console.log('[HabitTracker] Atualizando hábitos locais com dados do Gist.');
+                                habits = cloudHabits;
+                                saveHabitsToLocalStorage(); // Persist merged data locally
+                                renderTracker();
+                            } else {
+                                console.log('[HabitTracker] Dados do Gist estão vazios, mas local não. Mantendo local e sincronizando com Gist.');
+                                // This implies local data is newer or Gist was cleared.
+                                // We should probably send local data to Gist.
+                                syncHabitsWithParent();
+                            }
+                        } else {
+                            console.log('[HabitTracker] Dados locais e do Gist são idênticos. Nenhuma atualização necessária.');
+                        }
+                    } else if (cloudHabits === null && habits.length > 0) {
+                        // This means Gist had no file or an error, but we have local data.
+                        // So, we should try to save our local data to Gist.
+                        console.log('[HabitTracker] Gist não retornou dados (ou erro), mas existem dados locais. Tentando sincronizar local para Gist.');
+                        syncHabitsWithParent();
+                    } else {
+                         console.log('[HabitTracker] Gist não retornou dados válidos ou estava vazio, e local também vazio.');
+                    }
                 }
             });
+
+            // --- Initial Setup ---
+            addHabitBtn.addEventListener('click', addHabit);
+            newHabitInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') { e.preventDefault(); addHabit(); }
+            });
             prevMonthBtn.addEventListener('click', () => {
-                currentMonth--;
-                if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+                currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; }
                 renderTracker();
             });
             nextMonthBtn.addEventListener('click', () => {
-                currentMonth++;
-                if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+                currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; }
                 renderTracker();
             });
             viewSelector.addEventListener('change', renderTracker);
 
+            // Initial render with localStorage data
             renderTracker(); 
+
+            // Request data from parent (Super Bujo) on load.
+            // Super Bujo's iframe.onload should also send data automatically,
+            // but this is a fallback or explicit request.
+            if (window.parent && window.parent !== window) {
+                console.log('[HabitTracker] Solicitando dados iniciais do Super Bujo.');
+                window.parent.postMessage({
+                    type: 'REQUEST_BUJO_PAGE_DATA',
+                    pageUrl: THIS_PAGE_URL
+                }, '*'); // Adjust targetOrigin
+            }
+
         });
     </script>
 </body>
