@@ -3,507 +3,661 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujo Tracker Pro+</title>
+    <title>Bujo Tracker Pro v2</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" type="image/png">
     <style>
-        /* ... (Your existing root, fonts, body, bujo-container CSS) ... */
+        /* --- Importações e Reset --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&family=Roboto+Mono:wght@400&display=swap');
+
         :root {
-            --theme-primary-green: #33ff33; /* Verde vibrante do cabelo/olhos da imagem tema */
-            --theme-dark-green: #0A2A0A; /* Verde bem escuro, quase preto, para fundos/texto */
+            --theme-primary-green: #33ff33;
+            --theme-dark-green: #0A2A0A;
             --theme-medium-green: #2a5c2a;
             --theme-light-green: #6EBF6E;
-            
-            --page-bg: #f0f2f5; /* Um cinza muito claro para o fundo da página "bujo" */
-            --body-bg: #1c1c1c; /* Fundo escuro para o corpo da página, para destacar o bujo */
-            
-            --text-color-dark: #E0E0E0; /* Texto claro para fundos escuros */
-            --text-color-light: #222222; /* Texto escuro para fundos claros */
-            --border-color: #444; /* Bordas mais escuras e definidas */
+            --page-bg: #1a1d1a;
+            --content-bg: #242824;
+            --text-color: #E0E0E0;
+            --text-muted-color: #9e9e9e;
+            --border-color: #3a3f3a;
             --accent-color: var(--theme-primary-green);
             --completed-color: var(--theme-primary-green);
             --dot-color: var(--theme-primary-green);
-
-            --shadow-color: rgba(0, 200, 0, 0.3); /* Sombra com tom verde */
-            --container-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 1px var(--theme-dark-green);
+            --shadow-color: rgba(51, 255, 51, 0.2);
+            --shadow-strong: 0 8px 30px rgba(0,0,0,0.5);
+            --container-shadow: 0 0 0 1px var(--border-color), var(--shadow-strong);
+            --btn-primary-bg: var(--theme-medium-green);
+            --btn-primary-hover-bg: var(--theme-light-green);
+            --btn-danger-bg: #5c2a2a;
+            --btn-danger-hover-bg: #8e4444;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&family=Roboto+Mono:wght@400&display=swap');
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--body-bg); color: var(--text-color-dark); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 30px 20px; overflow-x: hidden; }
-        .bujo-container { width: 95%; max-width: 900px; min-height: 750px; background-color: var(--page-bg); border: 2px solid var(--theme-dark-green); box-shadow: var(--container-shadow); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; color: var(--text-color-light); }
-        .bujo-header { padding: 20px 25px; background: linear-gradient(135deg, var(--theme-dark-green), #1a3a1a); color: var(--text-color-dark); text-align: center; border-bottom: 2px solid var(--theme-primary-green); display: flex; justify-content: space-between; align-items: center; position: relative; }
-        .bujo-header::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2333ff33' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); z-index: 0; }
-        .bujo-header > * { z-index: 1; }
-        .bujo-header h1 { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 2em; margin: 0; color: var(--theme-primary-green); text-shadow: 0 0 5px var(--theme-primary-green), 0 0 10px var(--theme-primary-green); }
+        html, body { height: 100%; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .bujo-container {
+            width: 100%;
+            max-width: 950px;
+            height: calc(100% - 40px);
+            max-height: 800px;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--container-shadow);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- Cabeçalho --- */
+        .bujo-header {
+            padding: 18px 25px;
+            background: linear-gradient(135deg, var(--theme-dark-green), #1a3a1a);
+            color: var(--text-color);
+            border-bottom: 2px solid var(--theme-primary-green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .bujo-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: var(--theme-primary-green);
+            text-shadow: 0 0 5px var(--theme-primary-green), 0 0 10px var(--theme-primary-green);
+        }
+        .sync-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8em;
+            color: var(--text-muted-color);
+            transition: color 0.3s ease;
+        }
+        .sync-status.syncing { color: var(--accent-color); }
+        .sync-status-icon { width: 18px; height: 18px; }
+        .sync-status-icon.spinning { animation: spin 1s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* --- Controles --- */
+        .bujo-controls {
+            padding: 15px 25px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        .bujo-controls .control-group { display: flex; gap: 10px; }
+        .bujo-controls button, .bujo-controls select {
+            padding: 10px 18px;
+            background-color: var(--btn-primary-bg);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bujo-controls button:hover, .bujo-controls select:hover { background-color: var(--btn-primary-hover-bg); transform: translateY(-1px); }
         .month-navigation { display: flex; align-items: center; }
-        .month-navigation button { background: transparent; color: var(--theme-primary-green); border: 1px solid var(--theme-primary-green); padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 1.2em; margin: 0 8px; transition: all 0.3s ease; line-height: 1; }
-        .month-navigation button:hover { background-color: var(--theme-primary-green); color: var(--theme-dark-green); box-shadow: 0 0 10px var(--theme-primary-green); }
-        .month-navigation button:active { transform: scale(0.95); }
-        #current-month-year { font-size: 1.2em; font-weight: 600; min-width: 150px; text-align: center; color: #f0f0f0; }
+        .month-navigation button { background: transparent; border: 1px solid var(--border-color); padding: 8px; }
+        #current-month-year { font-size: 1.1em; font-weight: 600; min-width: 160px; text-align: center; }
 
-        .bujo-controls { padding: 15px 25px; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #d0d0d0; background-color: #e9ecef; flex-wrap: wrap; }
-        .new-habit-form { display: flex; flex-grow: 1; gap: 10px; }
-        .bujo-controls input[type="text"], .bujo-controls input[type="time"] { padding: 12px 15px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1em; background-color: #fff; color: var(--text-color-light); transition: border-color 0.3s, box-shadow 0.3s; }
-        .bujo-controls input[type="text"] { flex-grow: 1; }
-        .bujo-controls input[type="time"] { max-width: 110px; }
-        .bujo-controls input:focus { outline: none; border-color: var(--theme-primary-green); box-shadow: 0 0 0 3px rgba(51, 255, 51, 0.3); }
-        .bujo-controls button, .bujo-controls select { padding: 12px 18px; background-color: var(--theme-medium-green); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
-        .bujo-controls button:hover, .bujo-controls select:hover { background-color: var(--theme-light-green); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .bujo-controls select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px center; background-size: 10px 10px; padding-right: 40px; }
+        /* --- Área Principal --- */
+        .bujo-main {
+            flex-grow: 1;
+            padding: 10px 15px;
+            overflow-y: auto;
+        }
+        #habit-tracker-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        #habit-tracker-table thead th {
+            position: sticky;
+            top: 0;
+            background-color: var(--content-bg);
+            z-index: 10;
+            padding: 10px 5px;
+            font-size: 0.8em;
+            color: var(--text-muted-color);
+        }
+        #habit-tracker-table th.habit-name-col { width: 220px; text-align: left; padding-left: 15px; }
 
-        .bujo-main { flex-grow: 1; padding: 15px; overflow-y: auto; max-height: calc(100vh - 300px); /* Adjust for controls height */ }
-        /* ... (Your existing view-panel, fadeIn animation, table, th, td styles) ... */
-        .view-panel { animation: fadeIn 0.5s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        #habit-tracker-table-check, #habit-tracker-table-dot { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; margin-bottom: 20px; }
-        #habit-tracker-table-check th, #habit-tracker-table-dot th, #habit-tracker-table-check td, #habit-tracker-table-dot td { border: 1px solid #d9dde0; padding: 0; text-align: center; font-size: 0.75em; height: 40px; }
-        #habit-tracker-table-check thead th, #habit-tracker-table-dot thead th { background-color: #e9ecef; color: var(--text-color-light); font-weight: 600; position: sticky; top: -1px; z-index: 10; font-size: 0.7em; }
-        #habit-tracker-table-check thead th:first-child, #habit-tracker-table-dot thead th:first-child { border-top-left-radius: 6px; }
-        #habit-tracker-table-check thead th:last-child, #habit-tracker-table-dot thead th:last-child { border-top-right-radius: 6px; }
-        #habit-tracker-table-check th.habit-name-col, #habit-tracker-table-dot th.habit-name-col { width: 200px; text-align: left; padding-left: 10px; font-size: 0.85em; }
-        #habit-tracker-table-check td.habit-name-cell, #habit-tracker-table-dot td.habit-name-cell { text-align: left; padding: 0 10px; font-size: 0.9em; font-weight: 500; word-break: break-word; display: flex; align-items: center; justify-content: space-between; height: 100%; background-color: #f8f9fa; }
-        .habit-name-container { display: flex; flex-direction: column; }
-        .habit-time { font-size: 0.8em; color: #777; font-family: 'Roboto Mono', monospace; }
-        .habit-actions { display: flex; align-items: center; }
-        .day-cell { cursor: pointer; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); font-family: 'Roboto Mono', monospace; background-color: #fff; }
-        .day-cell:hover { transform: scale(1.1); box-shadow: 0 0 10px rgba(0,0,0,0.15); z-index: 5; border-radius: 4px; }
-        .day-cell.completed { transform: scale(1.05); }
-        .day-cell.completed.default-grid-mark { background-color: var(--completed-color); color: var(--theme-dark-green); font-weight: bold; font-size: 1.3em; }
-        .day-cell.completed.dot-grid-mark::before { content: ''; display: block; width: 12px; height: 12px; background-color: var(--dot-color); border-radius: 50%; box-shadow: 0 0 5px var(--dot-color); }
-        .day-cell.completed:hover { filter: brightness(1.1); }
-        .edit-habit-btn, .delete-habit-btn { background: transparent; border: none; cursor: pointer; font-size: 1.5em; padding: 0 5px; line-height: 1; transition: color 0.2s, transform 0.2s; }
-        .edit-habit-btn { color: #3498db; } .edit-habit-btn:hover { color: #2980b9; transform: scale(1.2); }
-        .delete-habit-btn { color: #e74c3c; margin-left: 5px; } .delete-habit-btn:hover { color: #c0392b; transform: scale(1.2); }
+        .habit-row { transition: background-color 0.2s ease; }
+        .habit-row.dragging { opacity: 0.5; background-color: var(--theme-medium-green); }
+        .habit-row.drag-over { border-bottom: 2px solid var(--accent-color); }
         
-        /* ... (Existing Summary, Segmented Bar, Streak, Footer, etc. styles) ... */
-        .summary-view, .streak-view { padding: 20px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .summary-item, .streak-item { background-color: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; box-shadow: 0 3px 6px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
-        .summary-item:hover, .streak-item:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        .summary-item h3, .streak-item h3 { margin: 0 0 12px 0; font-size: 1.15em; color: var(--theme-medium-green); font-weight: 600; }
-        .progress-bar-container { width: 100%; background-color: #e9ecef; border-radius: 6px; height: 22px; overflow: hidden; margin-top: 10px; }
-        .progress-bar { height: 100%; background: linear-gradient(90deg, var(--theme-light-green), var(--completed-color)); text-align: right; padding-right: 8px; color: var(--theme-dark-green); line-height: 22px; font-size: 0.85em; transition: width 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); font-weight: 600; border-radius: 6px 0 0 6px; }
-        .streak-item { border-left: 5px solid var(--theme-primary-green); }
-        .streak-info p { margin: 5px 0; font-size: 0.95em; }
-        .streak-info strong { color: var(--accent-color); font-weight: 700; font-family: 'Orbitron', sans-serif; margin-right: 3px; }
-        .segmented-bar-view { padding: 20px; display: flex; flex-direction: column; gap: 25px; }
-        .segmented-bar-item { background-color: #fff; padding: 15px 20px; border-radius: 8px; border: 1px solid #e0e0e0; box-shadow: 0 3px 6px rgba(0,0,0,0.08); }
-        .segmented-bar-item h3 { margin: 0 0 10px 0; font-size: 1.15em; color: var(--theme-medium-green); font-weight: 600; }
-        .segments-container { display: flex; width: 100%; height: 30px; border-radius: 5px; overflow: hidden; border: 1px solid #ccc; }
-        .segment { flex-grow: 1; background-color: #e9ecef; border-right: 1px solid #d0d0d0; transition: background-color 0.4s ease, transform 0.2s; position: relative; }
-        .segment:last-child { border-right: none; }
-        .segment.completed { background-color: var(--completed-color); box-shadow: inset 0 0 5px rgba(0,0,0,0.2); }
-        .bujo-footer { padding: 15px 25px; background-color: var(--theme-dark-green); border-top: 2px solid var(--theme-primary-green); display: flex; justify-content: flex-end; align-items: center; font-size: 0.9em; color: var(--text-color-dark); margin-top: auto; }
-        .footer-icon { width: 24px; height: 24px; margin-right: 10px; vertical-align: middle; filter: drop-shadow(0 0 3px var(--theme-primary-green)); transition: transform 0.3s ease; }
-        .hidden { display: none !important; }
-        .habit-row-enter { animation: habitEnter 0.5s ease-out; }
-        @keyframes habitEnter { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-        .no-habits-message { text-align: center; padding: 40px 20px; font-size: 1.1em; color: #777; }
+        .habit-name-cell {
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: grab;
+        }
+        .habit-row:active .habit-name-cell { cursor: grabbing; }
 
-        /* --- Modal Styling --- */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
-        .modal-overlay.visible { opacity: 1; visibility: visible; }
-        .modal-content { background-color: var(--page-bg); padding: 30px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.4); width: 90%; max-width: 450px; transform: scale(0.9); transition: transform 0.3s; }
-        .modal-overlay.visible .modal-content { transform: scale(1); }
-        .modal-content h3 { font-family: 'Orbitron', sans-serif; color: var(--theme-medium-green); margin-bottom: 20px; text-align: center; }
-        .modal-form-group { margin-bottom: 20px; }
-        .modal-form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
-        .modal-form-group input { width: 100%; padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; }
-        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
-        .modal-actions button { padding: 10px 25px; border-radius: 5px; border: none; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
-        #save-habit-changes-btn { background-color: var(--theme-medium-green); color: white; }
-        #save-habit-changes-btn:hover { background-color: var(--theme-light-green); }
-        #cancel-edit-btn { background-color: #ddd; color: #333; }
-        #cancel-edit-btn:hover { background-color: #ccc; }
+        .habit-info .habit-name { font-size: 1.05em; }
+        .habit-info .habit-time { font-family: 'Roboto Mono', monospace; font-size: 0.85em; color: var(--text-muted-color); }
+        .habit-icon { font-size: 1.5em; flex-shrink: 0; width: 24px; text-align: center; color: var(--accent-color); }
+        .habit-actions { margin-left: auto; display: flex; gap: 8px; }
+        .habit-actions button { background: transparent; border: none; color: var(--text-muted-color); cursor: pointer; padding: 5px; border-radius: 50%; }
+        .habit-actions button:hover { background-color: rgba(255,255,255,0.1); color: var(--text-color); }
+        
+        .day-cell {
+            text-align: center;
+            padding: 0;
+            border-left: 1px solid var(--border-color);
+        }
+        .day-cell-inner {
+            width: 100%; height: 45px;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .day-cell-inner:hover { transform: scale(1.15); background-color: var(--theme-medium-green); border-radius: 4px; z-index: 5; }
+        .day-cell-inner.completed { background-color: var(--accent-color); color: var(--theme-dark-green); font-weight: bold; font-size: 1.4em; }
+
+        /* --- Modal --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.open { opacity: 1; visibility: visible; }
+        .modal-content {
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px 30px; border-radius: 12px;
+            width: 90%; max-width: 480px;
+            box-shadow: var(--shadow-strong);
+            transform: scale(0.95); transition: transform 0.3s ease;
+        }
+        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-content h2 { margin-top: 0; margin-bottom: 25px; font-family: 'Orbitron'; color: var(--accent-color); text-align: center;}
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 8px; font-size: 0.9em; }
+        .form-group input {
+            width: 100%; padding: 12px; border: 1px solid var(--border-color);
+            border-radius: 6px; font-size: 1em; background-color: var(--page-bg);
+            color: var(--text-color); transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px var(--shadow-color); }
+        
+        .icon-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 10px; max-height: 150px; overflow-y: auto; padding: 10px; background-color: var(--page-bg); border-radius: 6px;}
+        .icon-option { font-size: 1.5em; cursor: pointer; text-align: center; padding: 5px; border-radius: 4px; transition: background-color 0.2s; }
+        .icon-option:hover { background-color: var(--theme-medium-green); }
+        .icon-option.selected { background-color: var(--accent-color); color: var(--theme-dark-green); }
+
+        .modal-actions { margin-top: 30px; display: flex; justify-content: flex-end; gap: 15px; }
+        .modal-actions button { padding: 12px 25px; }
+        .modal-actions #delete-habit-btn { background-color: var(--btn-danger-bg); }
+        .modal-actions #delete-habit-btn:hover { background-color: var(--btn-danger-hover-bg); }
+
+        /* --- Outros --- */
+        .hidden { display: none !important; }
+        .no-habits-message { text-align: center; padding: 60px 20px; font-size: 1.1em; color: var(--text-muted-color); }
     </style>
 </head>
 <body>
 
     <div class="bujo-container">
         <header class="bujo-header">
-             <div class="month-navigation">
-                 <button id="prev-month-btn" title="Mês Anterior">&lt;</button>
-                <h2 id="current-month-year">Janeiro 2024</h2>
-                <button id="next-month-btn" title="Próximo Mês">&gt;</button>
+            <h1>Habit Tracker</h1>
+            <div id="sync-status" class="sync-status" title="Status da Sincronização">
+                <span id="sync-status-text">Pronto</span>
+                <svg id="sync-status-icon" class="sync-status-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
-            <h1>HABIT TRACKER</h1>
         </header>
 
         <div class="bujo-controls">
-            <form id="new-habit-form" class="new-habit-form">
-                <input type="text" id="new-habit-input" placeholder="Novo hábito radical..." required>
-                <input type="time" id="new-habit-time" title="Horário do Hábito (opcional)">
-                <button type="submit" id="add-habit-btn" title="Adicionar Hábito">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 5px;"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
-                    Adicionar
+            <button id="add-habit-modal-btn" title="Adicionar Novo Hábito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v-2z"/></svg>
+                Adicionar
+            </button>
+            <div class="control-group">
+                <label for="sort-by" style="display: flex; align-items: center; font-size: 0.9em;">Ordenar:</label>
+                <select id="sort-by">
+                    <option value="manual">Manual</option>
+                    <option value="time">Por Horário</option>
+                    <option value="name">Por Nome</option>
+                </select>
+            </div>
+            <div class="month-navigation" style="margin-left: auto;">
+                 <button id="prev-month-btn" title="Mês Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6l6 6l1.41-1.41L10.83 12z"/></svg>
                 </button>
-            </form>
-            <select id="sort-selector" title="Ordenar por">
-                <option value="time">Ordenar por Horário</option>
-                <option value="name">Ordenar por Nome (A-Z)</option>
-                <option value="createdAt">Ordenar por Criação</option>
-            </select>
-            <select id="view-selector" title="Escolher Visualização">
-                <option value="grid-check">Grade (✓)</option>
-                <option value="grid-dot">Grade (●)</option>
-                <option value="summary">Resumo %</option>
-                <option value="segmented-bars">Progresso Mensal</option>
-                <option value="streaks">Sequências 🔥</option>
-            </select>
+                <h2 id="current-month-year"></h2>
+                <button id="next-month-btn" title="Próximo Mês">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L10 18l6-6l-6-6l-1.41 1.41L13.17 12z"/></svg>
+                </button>
+            </div>
         </div>
 
         <main class="bujo-main">
-            <!-- Grid Views -->
-            <div id="grid-view-check" class="view-panel"><table id="habit-tracker-table-check"><thead><tr class="days-header-row"></tr><tr class="day-names-header-row"></tr></thead><tbody class="habit-tracker-body"></tbody></table></div>
-            <div id="grid-view-dot" class="view-panel hidden"><table id="habit-tracker-table-dot"><thead><tr class="days-header-row"></tr><tr class="day-names-header-row"></tr></thead><tbody class="habit-tracker-body"></tbody></table></div>
-            <!-- Other Views -->
-            <div id="summary-view" class="view-panel hidden summary-view"></div>
-            <div id="segmented-bars-view" class="view-panel hidden segmented-bar-view"></div>
-            <div id="streaks-view" class="view-panel hidden streak-view"></div>
-            <!-- No Habits Message -->
-            <div id="no-habits-info" class="view-panel hidden no-habits-message">
-                <p>Nenhum hábito na área ainda! Adicione seu primeiro para começar.</p>
+            <table id="habit-tracker-table">
+                <thead>
+                    <tr class="days-header-row"></tr>
+                </thead>
+                <tbody class="habit-tracker-body"></tbody>
+            </table>
+            <div id="no-habits-info" class="no-habits-message hidden">
+                <h2>Comece sua Jornada!</h2>
+                <p>Nenhum hábito rastreado ainda. Clique em "Adicionar" para criar seu primeiro hábito.</p>
             </div>
         </main>
-
-        <footer class="bujo-footer">
-            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Theme Icon" class="footer-icon">
-            <span id="page-number">Página 1</span>
-        </footer>
     </div>
-    
-    <!-- Edit Habit Modal -->
-    <div id="edit-habit-modal" class="modal-overlay">
+
+    <!-- Modal para Adicionar/Editar Hábito -->
+    <div id="habit-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3>Editar Hábito</h3>
-            <div class="modal-form-group">
-                <label for="edit-habit-name">Nome do Hábito</label>
-                <input type="text" id="edit-habit-name" required>
-            </div>
-            <div class="modal-form-group">
-                <label for="edit-habit-time">Horário (opcional)</label>
-                <input type="time" id="edit-habit-time">
-            </div>
-            <div class="modal-actions">
-                <button id="cancel-edit-btn">Cancelar</button>
-                <button id="save-habit-changes-btn">Salvar</button>
-            </div>
+            <h2 id="modal-title">Adicionar Hábito</h2>
+            <form id="habit-form">
+                <input type="hidden" id="habit-id">
+                <div class="form-group">
+                    <label for="habit-name">Nome do Hábito</label>
+                    <input type="text" id="habit-name" required placeholder="Ex: Ler por 30 minutos">
+                </div>
+                <div class="form-group">
+                    <label for="habit-time">Horário (Opcional)</label>
+                    <input type="time" id="habit-time">
+                </div>
+                <div class="form-group">
+                    <label for="habit-icon">Ícone</label>
+                    <input type="hidden" id="habit-icon-input" value="🎯">
+                    <div id="icon-picker" class="icon-picker"></div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="delete-habit-btn" class="hidden">Excluir</button>
+                    <button type="button" id="cancel-habit-btn">Cancelar</button>
+                    <button type="submit" id="save-habit-btn">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 
+
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // DOM Elements
-        const newHabitForm = document.getElementById('new-habit-form');
-        const newHabitInput = document.getElementById('new-habit-input');
-        const newHabitTimeInput = document.getElementById('new-habit-time');
+        // --- Elementos do DOM ---
+        const habitModal = document.getElementById('habit-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const habitForm = document.getElementById('habit-form');
+        const habitIdInput = document.getElementById('habit-id');
+        const habitNameInput = document.getElementById('habit-name');
+        const habitTimeInput = document.getElementById('habit-time');
+        const habitIconInput = document.getElementById('habit-icon-input');
+        const iconPicker = document.getElementById('icon-picker');
+        const addHabitModalBtn = document.getElementById('add-habit-modal-btn');
+        const cancelHabitBtn = document.getElementById('cancel-habit-btn');
+        const deleteHabitBtn = document.getElementById('delete-habit-btn');
+        const sortBySelect = document.getElementById('sort-by');
+        const habitTrackerBody = document.querySelector('.habit-tracker-body');
+        const daysHeaderRow = document.querySelector('.days-header-row');
+        const noHabitsInfo = document.getElementById('no-habits-info');
         const currentMonthYearDisplay = document.getElementById('current-month-year');
         const prevMonthBtn = document.getElementById('prev-month-btn');
         const nextMonthBtn = document.getElementById('next-month-btn');
-        const viewSelector = document.getElementById('view-selector');
-        const sortSelector = document.getElementById('sort-selector');
-        const pageNumberDisplay = document.getElementById('page-number');
-        const editModal = document.getElementById('edit-habit-modal');
-        const editHabitNameInput = document.getElementById('edit-habit-name');
-        const editHabitTimeInput = document.getElementById('edit-habit-time');
-        const saveHabitChangesBtn = document.getElementById('save-habit-changes-btn');
-        const cancelEditBtn = document.getElementById('cancel-edit-btn');
+        const syncStatusText = document.getElementById('sync-status-text');
+        const syncStatusIcon = document.getElementById('sync-status-icon');
+        const syncStatusContainer = document.getElementById('sync-status');
         
-        const viewPanels = { /* ... as before ... */ }; // (Keep your viewPanels object)
-
-        // State
+        // --- Estado da Aplicação ---
         let habits = [];
         let currentDate = new Date();
         let currentMonth = currentDate.getMonth();
         let currentYear = currentDate.getFullYear();
-        let currentPage = 1; // Placeholder
-        let currentlyEditingHabitId = null;
+        let syncTimeout;
 
-        // Constants & Helpers
-        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-        const dayShortNames = ["D", "S", "T", "Q", "Q", "S", "S"];
         const THIS_PAGE_URL = window.location.href;
+        const ICONS = ['🎯', '🏃', '💧', '📖', '🧘', '💻', '🎨', '🎵', '💰', '🧹', '💪', '🧠', '🌱', '☀️', '🌙', '✅'];
+        const MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        const DAY_SHORT_NAMES = ["D", "S", "T", "Q", "Q", "S", "S"];
 
-        // --- Data Migration for old format ---
-        function migrateHabitData() {
-            let needsSave = false;
-            const migratedHabits = habits.map(habit => {
-                // If it's a simple string or doesn't have an ID, it's old format
-                if (typeof habit !== 'object' || !habit.id) {
-                    needsSave = true;
-                    return {
-                        id: Date.now() + Math.random(), // Simple unique ID
-                        name: typeof habit === 'string' ? habit : (habit.name || 'Hábito sem nome'),
-                        time: habit.time || null, // Add time property
-                        createdAt: habit.createdAt || new Date().toISOString(), // Add creation date
-                        progress: habit.progress || {}
-                    };
-                }
-                return habit;
-            });
-            if (needsSave) {
-                console.log('[HabitTracker] Migrando dados para o novo formato.');
-                habits = migratedHabits;
-                saveAndSync();
+        // --- Funções de Sincronização e Persistência ---
+        function saveToLocalStorage() {
+            localStorage.setItem('bujoTrackerHabits_v2', JSON.stringify(habits));
+        }
+
+        function updateSyncStatus(status, duration = 3000) {
+            clearTimeout(syncTimeout);
+            syncStatusIcon.classList.remove('spinning');
+            syncStatusIcon.innerHTML = `<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>`; // Checkmark
+
+            if (status === 'syncing') {
+                syncStatusContainer.classList.add('syncing');
+                syncStatusText.textContent = 'Sincronizando...';
+                syncStatusIcon.classList.add('spinning');
+                syncStatusIcon.innerHTML = `<line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>`; // Loader
+            } else if (status === 'synced') {
+                syncStatusContainer.classList.remove('syncing');
+                syncStatusText.textContent = 'Salvo na Nuvem';
+                syncTimeout = setTimeout(() => {
+                    syncStatusText.textContent = 'Pronto';
+                }, duration);
+            } else if (status === 'error') {
+                 syncStatusContainer.classList.remove('syncing');
+                 syncStatusText.textContent = 'Erro ao salvar';
+                 syncStatusIcon.innerHTML = `<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>`; // Alert
             }
         }
 
-        // --- Core Data Functions ---
-        function saveHabitsToLocalStorage() { /* ... as before ... */ }
-        function syncHabitsWithParent() { /* ... as before ... */ }
-        function saveAndSync() {
-            saveHabitsToLocalStorage();
-            syncHabitsWithParent();
+        function syncWithParent() {
+            if (window.parent && window.parent !== window) {
+                updateSyncStatus('syncing');
+                 window.parent.postMessage({
+                    type: 'SAVE_BUJO_PAGE_DATA',
+                    pageUrl: THIS_PAGE_URL,
+                    payload: habits
+                }, '*');
+                // Assume success after a short delay, as we don't get a direct response
+                setTimeout(() => updateSyncStatus('synced'), 1500);
+            } else {
+                console.warn('[HabitTracker] Script pai (Super Bujo) não encontrado.');
+                updateSyncStatus('error');
+            }
         }
-        function getDaysInMonth(month, year) { return new Date(year, month + 1, 0).getDate(); }
-        function getMonthYearKey(date = new Date(currentYear, currentMonth)) {
-            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-        }
-        function ensureHabitProgressForMonth(habit, daysInMonth) { /* ... as before ... */ }
 
-        // --- Sorting ---
-        function sortHabits() {
-            const sortBy = sortSelector.value;
-            habits.sort((a, b) => {
-                if (sortBy === 'time') {
-                    if (a.time && b.time) return a.time.localeCompare(b.time);
-                    if (a.time) return -1; // a has time, b doesn't, a comes first
-                    if (b.time) return 1;  // b has time, a doesn't, b comes first
-                    return 0; // neither has time
-                }
-                if (sortBy === 'name') {
-                    return a.name.localeCompare(b.name);
-                }
-                if (sortBy === 'createdAt') {
-                    return new Date(b.createdAt) - new Date(a.createdAt); // Newest first
-                }
-                return 0;
-            });
+        function saveAndRender() {
+            sortHabits(sortBySelect.value, false); // Re-sort before saving
+            saveToLocalStorage();
+            syncWithParent();
+            renderTracker();
         }
-        
-        // --- Rendering Functions ---
-        function renderGridView(tableId, markType) {
-            const table = document.getElementById(tableId);
-            if (!table) return;
-            const habitTrackerBody = table.querySelector('.habit-tracker-body');
-            // ... (rest of header rendering as before) ...
 
-            habitTrackerBody.innerHTML = '';
-            const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+        // --- Funções do Modal e CRUD de Hábitos ---
+        function openHabitModal(habit = null) {
+            habitForm.reset();
+            habitIdInput.value = habit ? habit.id : '';
+            habitNameInput.value = habit ? habit.name : '';
+            habitTimeInput.value = habit ? habit.time : '';
+            habitIconInput.value = habit ? habit.icon : ICONS[0];
+            modalTitle.textContent = habit ? 'Editar Hábito' : 'Adicionar Hábito';
+            deleteHabitBtn.classList.toggle('hidden', !habit);
+            renderIconPicker();
+            habitModal.classList.add('open');
+            habitNameInput.focus();
+        }
+
+        function closeHabitModal() {
+            habitModal.classList.remove('open');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const id = habitIdInput.value;
+            const habitData = {
+                name: habitNameInput.value.trim(),
+                time: habitTimeInput.value,
+                icon: habitIconInput.value,
+            };
+
+            if (id) { // Editando
+                const index = habits.findIndex(h => h.id === id);
+                if (index > -1) {
+                    habits[index] = { ...habits[index], ...habitData };
+                }
+            } else { // Adicionando
+                habits.push({
+                    id: Date.now().toString(),
+                    ...habitData,
+                    order: habits.length,
+                    progress: {}
+                });
+            }
+            closeHabitModal();
+            saveAndRender();
+        }
+
+        function handleDeleteHabit() {
+            const id = habitIdInput.value;
+            if (id && confirm('Tem certeza que deseja excluir este hábito permanentemente?')) {
+                habits = habits.filter(h => h.id !== id);
+                closeHabitModal();
+                saveAndRender();
+            }
+        }
+
+        // --- Funções de Renderização ---
+        function renderIconPicker() {
+            iconPicker.innerHTML = ICONS.map(icon =>
+                `<div class="icon-option ${icon === habitIconInput.value ? 'selected' : ''}" data-icon="${icon}">${icon}</div>`
+            ).join('');
+        }
+
+        function renderTracker() {
+            currentMonthYearDisplay.textContent = `${MONTH_NAMES[currentMonth]} ${currentYear}`;
+            renderHeader();
+            renderBody();
+            noHabitsInfo.classList.toggle('hidden', habits.length > 0);
+            document.getElementById('habit-tracker-table').classList.toggle('hidden', habits.length === 0);
+        }
+
+        function renderHeader() {
+            daysHeaderRow.innerHTML = '';
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
             
-            habits.forEach(habit => {
-                const progressThisMonth = ensureHabitProgressForMonth(habit, daysInMonth);
-                const tr = document.createElement('tr');
-                tr.classList.add('habit-row');
-                const habitNameCell = document.createElement('td');
-                habitNameCell.className = 'habit-name-cell';
-                
-                habitNameCell.innerHTML = `
-                    <div class="habit-name-container">
-                        <span>${habit.name}</span>
-                        ${habit.time ? `<span class="habit-time">${habit.time}</span>` : ''}
-                    </div>
-                    <div class="habit-actions">
-                        <button class="edit-habit-btn" data-habit-id="${habit.id}" title="Editar Hábito">✏️</button>
-                        <button class="delete-habit-btn" data-habit-id="${habit.id}" title="Excluir hábito">&times;</button>
-                    </div>
-                `;
-                tr.appendChild(habitNameCell);
+            const habitNameHeader = document.createElement('th');
+            habitNameHeader.className = 'habit-name-col';
+            habitNameHeader.textContent = 'Hábito';
+            daysHeaderRow.appendChild(habitNameHeader);
 
-                // ... (day cell rendering as before, but use habit.id) ...
-                for (let day = 0; day < daysInMonth; day++) {
-                    const td = document.createElement('td');
-                    const dayCellDiv = document.createElement('div');
-                    // ... set classes and content ...
-                    dayCellDiv.dataset.habitId = habit.id; // Use ID instead of index
-                    dayCellDiv.dataset.dayIndex = day;
-                    // ... append ...
-                    tr.appendChild(td);
-                }
+            for (let i = 1; i <= daysInMonth; i++) {
+                const th = document.createElement('th');
+                th.innerHTML = `${DAY_SHORT_NAMES[new Date(currentYear, currentMonth, i).getDay()]}<br>${i}`;
+                daysHeaderRow.appendChild(th);
+            }
+        }
+
+        function renderBody() {
+            habitTrackerBody.innerHTML = '';
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const monthKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
+
+            habits.forEach(habit => {
+                const progress = habit.progress[monthKey] || Array(daysInMonth).fill(false);
+                const tr = document.createElement('tr');
+                tr.className = 'habit-row';
+                tr.dataset.id = habit.id;
+                tr.draggable = true;
+
+                tr.innerHTML = `
+                    <td class="habit-name-cell">
+                        <span class="habit-icon">${habit.icon}</span>
+                        <div class="habit-info">
+                            <div class="habit-name">${habit.name}</div>
+                            ${habit.time ? `<div class="habit-time">${habit.time}</div>` : ''}
+                        </div>
+                        <div class="habit-actions">
+                            <button class="edit-habit-btn" title="Editar Hábito">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </button>
+                        </div>
+                    </td>
+                    ${Array.from({ length: daysInMonth }).map((_, dayIndex) => `
+                        <td class="day-cell">
+                            <div class="day-cell-inner ${progress[dayIndex] ? 'completed' : ''}" data-habit-id="${habit.id}" data-day-index="${dayIndex}">
+                                ${progress[dayIndex] ? '✓' : ''}
+                            </div>
+                        </td>
+                    `).join('')}
+                `;
                 habitTrackerBody.appendChild(tr);
             });
-            
-            // Add event listeners for new buttons
-            habitTrackerBody.querySelectorAll('.edit-habit-btn').forEach(btn => btn.addEventListener('click', handleEditClick));
-            habitTrackerBody.querySelectorAll('.delete-habit-btn').forEach(btn => btn.addEventListener('click', handleDeleteClick));
         }
 
-        // --- Other render functions (Summary, Segmented, Streaks) ---
-        // (These should be updated to iterate over `habits` which is now sorted)
-        function renderSummaryView() { /* ... as before, but will now be sorted ... */ }
-        function renderSegmentedBarsView() { /* ... as before, but will now be sorted ... */ }
-        function renderStreaksView() {
-            const panel = viewPanels.streaks;
-            panel.innerHTML = '';
-            
-            habits.forEach(habit => {
-                const { currentStreak, longestStreak } = calculateStreaks(habit); // Pass the whole habit
-                // ... (rest of the render logic as before) ...
-            });
-        }
-        
-        // --- **IMPROVED** Streak Calculation ---
-        function calculateStreaks(habit) {
-            let currentStreak = 0;
-            let longestStreak = 0;
-            let tempStreak = 0;
-
-            // Get all progress data and flatten it chronologically
-            const allProgress = [];
-            const sortedMonthKeys = Object.keys(habit.progress).sort();
-            sortedMonthKeys.forEach(key => {
-                allProgress.push(...habit.progress[key]);
-            });
-
-            // Calculate longest streak
-            for (const dayCompleted of allProgress) {
-                if (dayCompleted) {
-                    tempStreak++;
-                } else {
-                    longestStreak = Math.max(longestStreak, tempStreak);
-                    tempStreak = 0;
-                }
-            }
-            longestStreak = Math.max(longestStreak, tempStreak);
-
-            // Calculate current streak (ends today)
-            const today = new Date();
-            let dateToCheck = new Date(today);
-            
-            // Ignore future days
-            if (dateToCheck.getFullYear() > currentYear || (dateToCheck.getFullYear() === currentYear && dateToCheck.getMonth() > currentMonth)) {
-                // do nothing if we're looking at a future month
-            } else {
-                 while (true) {
-                    const monthKey = getMonthYearKey(dateToCheck);
-                    const dayIndex = dateToCheck.getDate() - 1;
-
-                    if (habit.progress[monthKey] && habit.progress[monthKey][dayIndex]) {
-                        currentStreak++;
-                        dateToCheck.setDate(dateToCheck.getDate() - 1); // Go to previous day
-                    } else {
-                        break; // Streak is broken
-                    }
-                }
-            }
-
-            return { currentStreak, longestStreak };
-        }
-        
-        function renderTracker() {
-            // ... (update month/year display) ...
-            if (habits.length === 0) { /* showNoHabitsMessage(); */ return; }
-            
-            sortHabits(); // Sort before rendering!
-
-            // ... (rest of the view switching logic) ...
-            
-            // ... (call appropriate render function) ...
-        }
-
-        // --- Action Handlers ---
-        function addHabit(event) {
-            event.preventDefault();
-            const habitName = newHabitInput.value.trim();
-            const habitTime = newHabitTimeInput.value || null;
-            if (habitName) {
-                const newHabit = {
-                    id: Date.now(),
-                    name: habitName,
-                    time: habitTime,
-                    createdAt: new Date().toISOString(),
-                    progress: {}
-                };
-                habits.push(newHabit);
-                newHabitInput.value = '';
-                newHabitTimeInput.value = '';
-                saveAndSync();
-                renderTracker();
-                // ... (animation for new row) ...
-            }
-        }
-        
-        function handleEditClick(event) {
-            const habitId = Number(event.currentTarget.dataset.habitId);
-            const habit = habits.find(h => h.id === habitId);
-            if (habit) {
-                currentlyEditingHabitId = habitId;
-                editHabitNameInput.value = habit.name;
-                editHabitTimeInput.value = habit.time;
-                editModal.classList.add('visible');
-            }
-        }
-        
-        function handleDeleteClick(event) {
-            const habitId = Number(event.currentTarget.dataset.habitId);
-            const habitIndex = habits.findIndex(h => h.id === habitId);
-            if (habitIndex > -1) {
-                if (confirm(`Tem certeza que quer aniquilar o hábito "${habits[habitIndex].name}"?`)) {
-                    habits.splice(habitIndex, 1);
-                    saveAndSync();
-                    renderTracker();
-                }
-            }
-        }
-
-        function saveEditedHabit() {
-            if (currentlyEditingHabitId === null) return;
-            const habitIndex = habits.findIndex(h => h.id === currentlyEditingHabitId);
-            if (habitIndex > -1) {
-                habits[habitIndex].name = editHabitNameInput.value.trim();
-                habits[habitIndex].time = editHabitTimeInput.value || null;
-                saveAndSync();
-                closeEditModal();
-                renderTracker();
-            }
-        }
-        
-        function closeEditModal() {
-            editModal.classList.remove('visible');
-            currentlyEditingHabitId = null;
-        }
-
-        function toggleDayCompletion(event) {
-            const dayCellDiv = event.currentTarget;
-            const habitId = Number(dayCellDiv.dataset.habitId);
-            const dayIndex = parseInt(dayCellDiv.dataset.dayIndex);
-            
+        // --- Funções de Interação e Lógica ---
+        function toggleDayCompletion(habitId, dayIndex) {
             const habit = habits.find(h => h.id === habitId);
             if (!habit) return;
 
-            // ... (rest of toggle logic as before, using `habit`) ...
-            saveAndSync();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const monthKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}`;
             
-            // Re-render other views if they are active
-            if (['summary', 'segmented-bars', 'streaks'].includes(viewSelector.value)) {
-                renderTracker(); 
+            if (!habit.progress[monthKey]) {
+                habit.progress[monthKey] = Array(daysInMonth).fill(false);
+            }
+            habit.progress[monthKey][dayIndex] = !habit.progress[monthKey][dayIndex];
+            
+            saveAndRender();
+        }
+
+        function sortHabits(sortBy, shouldRender = true) {
+            switch (sortBy) {
+                case 'time':
+                    habits.sort((a, b) => {
+                        if (!a.time && !b.time) return a.order - b.order;
+                        if (!a.time) return 1;
+                        if (!b.time) return -1;
+                        return a.time.localeCompare(b.time);
+                    });
+                    break;
+                case 'name':
+                    habits.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'manual':
+                default:
+                    habits.sort((a, b) => a.order - b.order);
+                    break;
+            }
+            // Update order property for manual sorting persistence
+            if (sortBy !== 'manual') {
+                habits.forEach((habit, index) => habit.order = index);
+            }
+            if (shouldRender) {
+                saveAndRender();
             }
         }
 
-        // --- Event Listeners & Initial Load ---
-        window.addEventListener('message', (event) => { /* ... as before ... */ });
+        // --- Event Listeners ---
+        addHabitModalBtn.addEventListener('click', () => openHabitModal());
+        cancelHabitBtn.addEventListener('click', closeHabitModal);
+        habitForm.addEventListener('submit', handleFormSubmit);
+        deleteHabitBtn.addEventListener('click', handleDeleteHabit);
+        sortBySelect.addEventListener('change', () => sortHabits(sortBySelect.value));
+        
+        habitModal.addEventListener('click', e => { if (e.target === habitModal) closeHabitModal(); });
+        iconPicker.addEventListener('click', e => {
+            if (e.target.classList.contains('icon-option')) {
+                habitIconInput.value = e.target.dataset.icon;
+                renderIconPicker();
+            }
+        });
+        
+        habitTrackerBody.addEventListener('click', e => {
+            const dayCell = e.target.closest('.day-cell-inner');
+            const editBtn = e.target.closest('.edit-habit-btn');
+            
+            if (dayCell) {
+                toggleDayCompletion(dayCell.dataset.habitId, parseInt(dayCell.dataset.dayIndex));
+            } else if (editBtn) {
+                const habitId = e.target.closest('.habit-row').dataset.id;
+                const habit = habits.find(h => h.id === habitId);
+                if(habit) openHabitModal(habit);
+            }
+        });
 
+        // Drag and Drop Logic
+        let draggedElement = null;
+        habitTrackerBody.addEventListener('dragstart', e => {
+            draggedElement = e.target;
+            e.target.classList.add('dragging');
+        });
+        habitTrackerBody.addEventListener('dragend', e => {
+            draggedElement.classList.remove('dragging');
+            draggedElement = null;
+        });
+        habitTrackerBody.addEventListener('dragover', e => {
+            e.preventDefault();
+            const target = e.target.closest('.habit-row');
+            if(target && target !== draggedElement) {
+                document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+                target.classList.add('drag-over');
+            }
+        });
+        habitTrackerBody.addEventListener('dragleave', e => {
+             e.target.closest('.habit-row')?.classList.remove('drag-over');
+        });
+        habitTrackerBody.addEventListener('drop', e => {
+            e.preventDefault();
+            document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+            const targetRow = e.target.closest('.habit-row');
+            if (targetRow && draggedElement) {
+                const draggedId = draggedElement.dataset.id;
+                const targetId = targetRow.dataset.id;
+                
+                const draggedIndex = habits.findIndex(h => h.id === draggedId);
+                const targetIndex = habits.findIndex(h => h.id === targetId);
+                
+                const [draggedItem] = habits.splice(draggedIndex, 1);
+                habits.splice(targetIndex, 0, draggedItem);
+                
+                habits.forEach((habit, index) => habit.order = index);
+                sortBySelect.value = 'manual';
+                saveAndRender();
+            }
+        });
+
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; } renderTracker();
+        });
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; } renderTracker();
+        });
+
+        // Listener para dados do script pai (Super Bujo)
+        window.addEventListener('message', event => {
+            if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED' && event.data.pageUrl === THIS_PAGE_URL) {
+                const cloudHabits = event.data.payload;
+                if (cloudHabits && Array.isArray(cloudHabits) && JSON.stringify(cloudHabits) !== JSON.stringify(habits)) {
+                    console.log('[HabitTracker] Recebendo dados da nuvem. Atualizando localmente.');
+                    habits = cloudHabits;
+                    saveToLocalStorage();
+                    renderTracker();
+                    updateSyncStatus('synced', 1000);
+                } else if (!cloudHabits && habits.length > 0) {
+                     console.log('[HabitTracker] Nuvem vazia, mas local tem dados. Enviando para a nuvem.');
+                     syncWithParent();
+                }
+            }
+        });
+        
+        // --- Inicialização ---
         function initialize() {
-            // Load, then migrate data if necessary
-            habits = JSON.parse(localStorage.getItem('bujoTrackerProHabits')) || [];
-            migrateHabitData();
+            const localData = localStorage.getItem('bujoTrackerHabits_v2');
+            habits = localData ? JSON.parse(localData) : [];
+            // Assegurar que dados antigos tenham a propriedade 'order'
+            habits.forEach((h, i) => { if (h.order === undefined) h.order = i; });
 
-            // Add event listeners
-            newHabitForm.addEventListener('submit', addHabit);
-            sortSelector.addEventListener('change', renderTracker);
-            viewSelector.addEventListener('change', renderTracker);
-            prevMonthBtn.addEventListener('click', () => { /* ... */ renderTracker(); });
-            nextMonthBtn.addEventListener('click', () => { /* ... */ renderTracker(); });
-            saveHabitChangesBtn.addEventListener('click', saveEditedHabit);
-            cancelEditBtn.addEventListener('click', closeEditModal);
-            
-            // Initial render
-            renderTracker();
-            
-            // Request data from parent
-            if (window.parent && window.parent !== window) { /* ... as before ... */ }
+            sortHabits(sortBySelect.value); // Ordena e renderiza
+
+            // Solicitar dados do pai
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({ type: 'REQUEST_BUJO_PAGE_DATA', pageUrl: THIS_PAGE_URL }, '*');
+            }
         }
-
+        
         initialize();
     });
     </script>
