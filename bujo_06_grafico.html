@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bujo - Relatório de Hábitos</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" type="image/png">
+    <!-- Importando Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* --- Importações e Reset --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --theme-primary-green: #33ff33;
+            --theme-dark-green: #0A2A0A;
+            --theme-medium-green: #2a5c2a;
+            --theme-light-green: #6EBF6E;
+            --page-bg: #1a1d1a;
+            --content-bg: #242824;
+            --text-color: #E0E0E0;
+            --text-muted-color: #9e9e9e;
+            --border-color: #3a3f3a;
+            --accent-color: var(--theme-primary-green);
+            --shadow-color: rgba(51, 255, 51, 0.2);
+            --shadow-strong: 0 8px 30px rgba(0,0,0,0.5);
+            --container-shadow: 0 0 0 1px var(--border-color), var(--shadow-strong);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .bujo-container {
+            width: 100%;
+            max-width: 1200px;
+            height: calc(100% - 40px);
+            max-height: 90vh;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--container-shadow);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- Cabeçalho e Controles --- */
+        .bujo-header {
+            padding: 18px 25px;
+            background: linear-gradient(135deg, var(--theme-dark-green), #1a3a1a);
+            border-bottom: 2px solid var(--theme-primary-green);
+            flex-shrink: 0;
+        }
+        .bujo-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            text-align: center;
+            color: var(--theme-primary-green);
+            text-shadow: 0 0 5px var(--theme-primary-green);
+        }
+        .bujo-controls {
+            padding: 15px 25px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        .bujo-controls label { font-weight: 500; }
+        .bujo-controls select {
+            padding: 8px 12px;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+        .bujo-controls select:focus { outline: 1px solid var(--accent-color); }
+        
+        /* --- Área Principal dos Gráficos --- */
+        .bujo-main {
+            flex-grow: 1;
+            padding: 25px;
+            overflow-y: auto;
+        }
+        .status-message {
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 1.2em;
+            color: var(--text-muted-color);
+        }
+        .charts-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+        .chart-container {
+            background-color: rgba(0,0,0,0.15);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .chart-container h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        /* Heatmap específico */
+        #completion-heatmap { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        #completion-heatmap th, #completion-heatmap td { text-align: center; padding: 2px; }
+        #completion-heatmap th { font-size: 0.7em; color: var(--text-muted-color); }
+        #completion-heatmap .habit-name-col { text-align: left; font-size: 0.8em; padding-left: 5px; width: 120px; }
+        #completion-heatmap .heatmap-cell {
+            width: 18px; height: 18px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        #completion-heatmap .heatmap-cell.completed { background-color: var(--accent-color); }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="bujo-container">
+        <header class="bujo-header">
+            <h1>Relatório de Hábitos</h1>
+        </header>
+        <div class="bujo-controls">
+            <label for="month-select">Mês:</label>
+            <select id="month-select"></select>
+            <label for="year-select">Ano:</label>
+            <select id="year-select"></select>
+        </div>
+        <main id="main-content" class="bujo-main">
+            <div id="loading-message" class="status-message">Carregando dados...</div>
+            <div id="no-data-message" class="status-message hidden">
+                <h2>Sem Dados</h2>
+                <p>Não há dados de hábitos para o período selecionado. Complete alguns hábitos no tracker!</p>
+            </div>
+            <div id="charts-grid" class="charts-grid hidden">
+                <div class="chart-container">
+                    <h3>Taxa de Sucesso Geral</h3>
+                    <canvas id="completionRateChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Desempenho por Hábito (%)</h3>
+                    <canvas id="habitPerformanceChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Atividade Diária</h3>
+                    <canvas id="dailyActivityChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Padrão Semanal</h3>
+                    <canvas id="weeklyPatternChart"></canvas>
+                </div>
+                <div class="chart-container" style="grid-column: span 2;">
+                    <h3>Análise de Sequências (Streaks)</h3>
+                    <canvas id="streakChart"></canvas>
+                </div>
+                <div class="chart-container" style="grid-column: span 2;">
+                    <h3>Mapa de Calor de Atividades</h3>
+                    <div id="heatmap-wrapper"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Elementos do DOM ---
+        const monthSelect = document.getElementById('month-select');
+        const yearSelect = document.getElementById('year-select');
+        const loadingMessage = document.getElementById('loading-message');
+        const noDataMessage = document.getElementById('no-data-message');
+        const chartsGrid = document.getElementById('charts-grid');
+        
+        // --- Estado da Aplicação ---
+        let allHabits = [];
+        const charts = {}; // Para armazenar instâncias de Chart.js
+        const THIS_PAGE_URL = window.location.href;
+        const MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+        // --- Configuração Global do Chart.js ---
+        Chart.defaults.color = 'rgba(224, 224, 224, 0.8)';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+        Chart.defaults.font.family = "'Poppins', sans-serif";
+
+        // --- Funções Auxiliares ---
+        function getDaysInMonth(month, year) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        // --- Funções de Inicialização ---
+        function populateSelectors() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth();
+
+            // Popula Meses
+            MONTH_NAMES.forEach((name, index) => {
+                const option = new Option(name, index);
+                monthSelect.add(option);
+            });
+            monthSelect.value = currentMonth;
+            
+            // Popula Anos (5 anos para trás e 1 para frente)
+            for (let y = currentYear - 5; y <= currentYear + 1; y++) {
+                const option = new Option(y, y);
+                yearSelect.add(option);
+            }
+            yearSelect.value = currentYear;
+        }
+
+        // --- Processamento de Dados e Criação de Gráficos ---
+        function processAndRenderCharts() {
+            const month = parseInt(monthSelect.value);
+            const year = parseInt(yearSelect.value);
+            const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+            
+            // Filtra os dados relevantes para o período
+            const relevantData = allHabits.map(habit => ({
+                ...habit,
+                progress: habit.progress[monthKey] || []
+            })).filter(habit => habit.progress.length > 0);
+
+            loadingMessage.classList.add('hidden');
+            if (relevantData.length === 0) {
+                noDataMessage.classList.remove('hidden');
+                chartsGrid.classList.add('hidden');
+                return;
+            }
+            noDataMessage.classList.add('hidden');
+            chartsGrid.classList.remove('hidden');
+
+            // Destroi gráficos antigos antes de criar novos
+            Object.values(charts).forEach(chart => chart.destroy());
+
+            // Cria cada gráfico com os dados filtrados
+            createCompletionRateChart(relevantData);
+            createHabitPerformanceChart(relevantData);
+            createDailyActivityChart(relevantData, month, year);
+            createWeeklyPatternChart(relevantData, month, year);
+            createStreakChart(relevantData);
+            createHeatmap(relevantData, month, year);
+        }
+
+        function createCompletionRateChart(data) {
+            let completed = 0;
+            let totalPossible = 0;
+            data.forEach(habit => {
+                completed += habit.progress.filter(Boolean).length;
+                totalPossible += habit.progress.length;
+            });
+            const missed = totalPossible - completed;
+
+            const ctx = document.getElementById('completionRateChart').getContext('2d');
+            charts.completionRate = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completos', 'Faltantes'],
+                    datasets: [{
+                        data: [completed, missed],
+                        backgroundColor: ['#33ff33', '#5c2a2a'],
+                        borderColor: '#242824',
+                        borderWidth: 3
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+        
+        function createHabitPerformanceChart(data) {
+            const labels = data.map(h => `${h.icon} ${h.name}`);
+            const percentages = data.map(h => {
+                const completed = h.progress.filter(Boolean).length;
+                return h.progress.length > 0 ? (completed / h.progress.length * 100) : 0;
+            });
+
+            const ctx = document.getElementById('habitPerformanceChart').getContext('2d');
+            charts.habitPerformance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '% de Sucesso',
+                        data: percentages,
+                        backgroundColor: 'rgba(51, 255, 51, 0.6)',
+                        borderColor: 'rgba(51, 255, 51, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Barras horizontais
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { x: { beginAtZero: true, max: 100 } }
+                }
+            });
+        }
+        
+        function createDailyActivityChart(data, month, year) {
+            const daysInMonth = getDaysInMonth(month, year);
+            const dailyCounts = Array(daysInMonth).fill(0);
+            
+            data.forEach(habit => {
+                habit.progress.forEach((isCompleted, dayIndex) => {
+                    if (isCompleted) dailyCounts[dayIndex]++;
+                });
+            });
+
+            const labels = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+            const ctx = document.getElementById('dailyActivityChart').getContext('2d');
+            charts.dailyActivity = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Hábitos Completos por Dia',
+                        data: dailyCounts,
+                        fill: true,
+                        backgroundColor: 'rgba(51, 255, 51, 0.2)',
+                        borderColor: '#33ff33',
+                        tension: 0.3
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        function createWeeklyPatternChart(data, month, year) {
+            const weeklyCounts = Array(7).fill(0); // 0=Dom, 1=Seg, ...
+            data.forEach(habit => {
+                habit.progress.forEach((isCompleted, dayIndex) => {
+                    if (isCompleted) {
+                        const dayOfWeek = new Date(year, month, dayIndex + 1).getDay();
+                        weeklyCounts[dayOfWeek]++;
+                    }
+                });
+            });
+
+            const ctx = document.getElementById('weeklyPatternChart').getContext('2d');
+            charts.weeklyPattern = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                    datasets: [{
+                        label: 'Total de Hábitos Completos',
+                        data: weeklyCounts,
+                        fill: true,
+                        backgroundColor: 'rgba(51, 255, 51, 0.3)',
+                        borderColor: '#33ff33',
+                        pointBackgroundColor: '#33ff33',
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+        
+        function createStreakChart(data) {
+            function calculateStreaks(progress) {
+                let currentStreak = 0, longestStreak = 0, tempStreak = 0;
+                // Longest
+                progress.forEach(done => {
+                    if (done) tempStreak++; else tempStreak = 0;
+                    if (tempStreak > longestStreak) longestStreak = tempStreak;
+                });
+                // Current
+                for (let i = progress.length - 1; i >= 0; i--) {
+                    if (progress[i]) currentStreak++; else break;
+                }
+                return { currentStreak, longestStreak };
+            }
+
+            const labels = data.map(h => `${h.icon} ${h.name}`);
+            const currentStreaks = data.map(h => calculateStreaks(h.progress).currentStreak);
+            const longestStreaks = data.map(h => calculateStreaks(h.progress).longestStreak);
+            
+            const ctx = document.getElementById('streakChart').getContext('2d');
+            charts.streaks = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        { label: 'Sequência Atual', data: currentStreaks, backgroundColor: 'rgba(110, 191, 110, 0.7)' },
+                        { label: 'Recorde do Mês', data: longestStreaks, backgroundColor: 'rgba(51, 255, 51, 0.7)' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+            });
+        }
+
+        function createHeatmap(data, month, year) {
+            const daysInMonth = getDaysInMonth(month, year);
+            const wrapper = document.getElementById('heatmap-wrapper');
+            
+            let tableHTML = '<table id="completion-heatmap"><thead><tr><th class="habit-name-col">Hábito</th>';
+            for (let i = 1; i <= daysInMonth; i++) tableHTML += `<th>${i}</th>`;
+            tableHTML += '</tr></thead><tbody>';
+
+            data.forEach(habit => {
+                tableHTML += `<tr><td class="habit-name-col">${habit.icon} ${habit.name}</td>`;
+                for (let i = 0; i < daysInMonth; i++) {
+                    const isCompleted = habit.progress[i];
+                    tableHTML += `<td><div class="heatmap-cell ${isCompleted ? 'completed' : ''}"></div></td>`;
+                }
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+            wrapper.innerHTML = tableHTML;
+        }
+
+        // --- Event Listeners ---
+        monthSelect.addEventListener('change', processAndRenderCharts);
+        yearSelect.addEventListener('change', processAndRenderCharts);
+
+        window.addEventListener('message', event => {
+            if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED' && event.data.pageUrl.includes('bujo_05_habit_tracker.html')) {
+                const cloudHabits = event.data.payload;
+                if (cloudHabits && Array.isArray(cloudHabits)) {
+                    allHabits = cloudHabits;
+                    processAndRenderCharts(); // Renderiza os gráficos com os dados recebidos
+                }
+            }
+        });
+
+        // --- Inicialização da Página ---
+        function initialize() {
+            populateSelectors();
+            
+            // Solicita os dados do tracker ao script pai
+            if (window.parent && window.parent !== window) {
+                // Precisamos pedir os dados que o tracker salva.
+                // Usamos a URL do tracker para que o script SuperBujo saiba de qual arquivo do Gist pegar os dados.
+                const habitTrackerURL = "https://raw.githack.com/Jhefferson15/fuzzy-guacamole/main/bujo_05_habit_tracker.html";
+                window.parent.postMessage({ type: 'REQUEST_BUJO_PAGE_DATA', pageUrl: habitTrackerURL }, '*');
+            } else {
+                loadingMessage.textContent = "Erro: esta página deve ser carregada dentro do Super Bujo.";
+            }
+        }
+        
+        initialize();
+    });
+    </script>
+</body>
+</html>
