@@ -1,0 +1,42 @@
+[
+  {
+    "id": "VC_AT01",
+    "title": "VersaCast: #Atualidades01 - Trump e China, Índia e Paquistão",
+    "discipline": "Geopolítica",
+    "speakers": ["Sofia Fonseca", "Professor Thiga"],
+    "duration": "19:29",
+    "platforms": {
+      "youtube": {
+        "videoId": "nvHE48b-H18",
+        "url_template": "https://www.youtube.com/watch?v={videoId}&t={startTimeSeconds}s"
+      }
+    },
+    "segments": [
+      {
+        "startTime": "00:01",
+        "dialogue_summary": "Introdução ao VersaCast sobre atualidades e geopolítica com Sofia Fonseca e Professor Thiga.",
+        "keywords": ["introdução", "abertura", "versacast", "atualidades", "geopolítica", "sofia fonseca", "professor thiga"]
+      },
+      {
+        "startTime": "00:26",
+        "dialogue_summary": "Discussão sobre a relação polêmica entre Trump e China, e a analogia da 'trampolência' econômica para 2025.",
+        "keywords": ["trump", "china", "pauta", "quente", "atualizações", "2025", "avião", "voo", "turbulência", "trampolência", "tarifasso", "unilateral", "protecionista", "dia da libertação"]
+      },
+      {
+        "startTime": "01:50",
+        "dialogue_summary": "Análise do método de negociação de Trump, a reação da China (Xi Jinping) e a trégua de 90 dias acordada em Genebra.",
+        "keywords": ["método trump", "negociação", "xi jinping", "méxico", "reação", "trégua", "90 dias", "genebra", "suíça", "elon musk", "bolsas", "mercados", "cadeias globais", "mão de obra chinesa", "deng xiaoping"]
+      },
+      {
+        "startTime": "09:55",
+        "dialogue_summary": "Início da discussão sobre o conflito entre Índia e Paquistão pela região da Caxemira, sua origem histórica, religiosa e a importância hídrica.",
+        "keywords": ["índia", "paquistão", "caxemira", "disputa", "rivalida", "histórica", "independência", "raj britânico", "gandhi", "pacifismo", "terrorismo", "hindu", "islâmico", "água", "hídrico", "recursos", "ganges", "indo", "bramaputra"]
+      },
+       {
+        "startTime": "16:05",
+        "dialogue_summary": "A influência da China no conflito Índia-Paquistão através da Nova Rota da Seda e o papel estratégico do Paquistão.",
+        "keywords": ["china", "nova rota da seda", "corredor do paquistão", "putin", "ucrânia", "heartland", "colinas de golã", "rio jordão", "geografia física", "bacia hidrográfica"]
+      }
+    ]
+  }
+]
