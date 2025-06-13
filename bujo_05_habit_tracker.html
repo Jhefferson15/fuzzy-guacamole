@@ -137,9 +137,6 @@
     </div>
 
     <script>
-        // O CÓDIGO JAVASCRIPT PERMANECE IDÊNTICO AO DA VERSÃO ANTERIOR,
-        // APENAS COM A CORREÇÃO DO TEMA PADRÃO 'kraft' PARA 'classic'.
-
         document.addEventListener('DOMContentLoaded', function() {
             const DOM = {
                 body: document.body, themeSwitcher: document.getElementById('theme-switcher'), monthYearTitle: document.getElementById('month-year-title'),
@@ -155,20 +152,61 @@
             let currentDate = new Date();
             let editingHabitId = null;
             let isInitialLoad = true;
+            let cloudDataLoaded = false; // <<< NOVO: Flag para controlar a sincronização inicial
             const weekDayInitials = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
-            const HabitLogic = {
-                save() { localStorage.setItem('bujoHabits', JSON.stringify(state.habits)); },
-                load() {
-                    const saved = localStorage.getItem('bujoHabits');
-                    if (saved) {
-                        state.habits = JSON.parse(saved);
+            // <<< NOVO: Listener para receber dados do script Tampermonkey
+            window.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED') {
+                    console.log('[HabitTracker] Dados recebidos do host (Gist):', event.data.payload);
+                    const loadedData = event.data.payload;
+
+                    // Se o Gist tiver dados (um array não vazio), usa eles.
+                    if (Array.isArray(loadedData) && loadedData.length > 0) {
+                        state.habits = loadedData;
                     } else {
+                        // Senão (Gist vazio ou primeira vez), cria hábitos padrão.
+                        console.log('[HabitTracker] Gist vazio ou primeira execução. Criando hábitos padrão.');
                         state.habits = [
                             { id: Date.now() + 1, name: 'Beber 2L de água', type: 'yes_no', days: {} },
                             { id: Date.now() + 2, name: 'Páginas lidas', type: 'counter', target: 10, days: {} }
                         ];
+                        // Ativa o flag para permitir o salvamento
+                        cloudDataLoaded = true;
+                        // Importante: Salva imediatamente os hábitos padrão no Gist.
+                        HabitLogic.save();
                     }
+                    
+                    if(!cloudDataLoaded) cloudDataLoaded = true; // Marca que os dados da nuvem foram carregados
+                    UIManager.render();     // Renderiza a interface com os dados corretos
+                }
+            });
+
+            const HabitLogic = {
+                // <<< MODIFICADO: Salva enviando mensagem para o script pai
+                save() {
+                    // Impede o salvamento antes que os dados iniciais da nuvem sejam carregados.
+                    // Isso evita sobreescrever dados bons com dados vazios ou padrão na inicialização.
+                    if (!cloudDataLoaded) {
+                        console.warn("[HabitTracker] Bloqueado salvamento prematuro antes da carga inicial.");
+                        return;
+                    }
+                    console.log("[HabitTracker] Enviando dados para o host para salvar no Gist...");
+                    window.parent.postMessage({
+                        type: 'SAVE_BUJO_PAGE_DATA',
+                        pageUrl: window.location.href, // O script pai usa isso para identificar a página
+                        payload: state.habits
+                    }, '*'); // '*' é aceitável no contexto de um userscript que controla o iframe
+                },
+                // <<< MODIFICADO: Carrega solicitando dados do script pai
+                load() {
+                    // Esta função não carrega mais diretamente. Ela dispara uma solicitação ao frame pai.
+                    // A manipulação dos dados ocorre no listener de 'message'.
+                    console.log("[HabitTracker] Solicitando dados do host (Gist)...");
+                    window.parent.postMessage({
+                        type: 'REQUEST_BUJO_PAGE_DATA',
+                        pageUrl: window.location.href
+                    }, '*');
                 },
                 isActiveOn(habit, date) {
                     const checkDate = new Date(date); checkDate.setHours(0,0,0,0);
@@ -182,7 +220,7 @@
                     const monthStart = new Date(year, month, 1);
                     const monthEnd = new Date(year, month + 1, 0);
                     const habitStart = habit.startDate ? new Date(habit.startDate + 'T00:00') : null;
-                    const habitEnd = habit.endDate ? new Date(habit.endDate + 'T00:00') : null;
+                    const habitEnd = habit.endDate ? new Date(- `T00:00`) : null;
                     if (habitEnd && habitEnd < monthStart) return false;
                     if (habitStart && habitStart > monthEnd) return false;
                     return true;
@@ -193,7 +231,10 @@
                 render() {
                     this.renderHeader();
                     this.renderBody();
-                    if (isInitialLoad) { this.scrollToToday(); isInitialLoad = false; }
+                    if (isInitialLoad && cloudDataLoaded) { // Só faz o scroll após os dados carregarem
+                        this.scrollToToday(); 
+                        isInitialLoad = false; 
+                    }
                 },
                 renderHeader() {
                     const today = new Date();
@@ -276,13 +317,19 @@
 
             const EventHandlers = {
                 init() {
+                    // <<< MODIFICADO: A chamada a load() agora apenas dispara a requisição.
+                    // A renderização real com dados acontecerá no listener de 'message'.
                     HabitLogic.load();
+
+                    // O localStorage de tema é local e pode continuar
                     const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
                     DOM.body.setAttribute('data-theme', savedTheme);
                     DOM.themeSwitcher.addEventListener('click', () => {
                         let newTheme = DOM.body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
                         DOM.body.setAttribute('data-theme', newTheme); localStorage.setItem('bujoTheme', newTheme);
                     });
+
+                    // O restante dos listeners permanece igual, pois eles chamam HabitLogic.save(), que já foi modificado.
                     const changeMonth = (offset) => { currentDate.setMonth(currentDate.getMonth() + offset); isInitialLoad = false; UIManager.render(); };
                     DOM.prevMonthBtn.addEventListener('click', () => changeMonth(-1));
                     DOM.nextMonthBtn.addEventListener('click', () => changeMonth(1));
@@ -371,6 +418,7 @@
                 }
             };
 
+            // Dispara a inicialização e a renderização inicial (que será vazia até os dados chegarem).
             EventHandlers.init();
             UIManager.render();
         });
