@@ -1,319 +1,501 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujo - Registro Futuro</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Calendário Anual - Meu Bullet Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&family=Inconsolata&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- Variáveis de Tema (Copiadas da capa para consistência) --- */
         :root {
-            --theme-green-dark: #0a3d23; /* Verde escuro da imagem */
-            --theme-green-medium: #1f6030; /* Verde médio */
-            --theme-green-light: #64a270; /* Verde claro, para destaques */
-            --text-color: #333;
-            --line-color: #e0e0e0;
-            --bg-color: #ffffff;
-            --font-handwritten: 'Caveat', cursive;
-            --font-sans: 'Roboto', sans-serif;
-            --icon-url: 'https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png';
+            --bg-color: #F1F5F8;
+            --dot-color: #CFD8DC;
+            --text-color: #3a3a3a;
+            --accent-color: #585858;
+            --button-bg: #3a3a3a;
+            --button-text: #F1F5F8;
+            --highlight-color: #a7b3b8;
+            --border-color: #e2e8f0;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        body[data-theme="flamingo"] {
+            --bg-color: #fff0f5;
+            --dot-color: #ffdde1;
+            --text-color: #c71585;
+            --accent-color: #db7093;
+            --button-bg: #c71585;
+            --button-text: #fff0f5;
+            --highlight-color: #f7acbe;
+            --border-color: #ffe4e9;
         }
+
+        /* --- Configurações Gerais --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: var(--font-sans);
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            background-image:
-                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
-                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
-                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
             background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
 
-        .bujo-container {
-            width: 90vw;
-            height: 70vw;
-            max-width: 900px;
-            max-height: 700px;
-            aspect-ratio: 9 / 7; /* Para manter proporção mais quadrada/retangular */
-            background-color: var(--bg-color);
-            border: 1px solid #ccc;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden; /* Garante que o conteúdo interno respeite o border-radius */
-            position: relative;
+        /* --- Estrutura Principal da Página --- */
+        .journal-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            animation: fadeIn 1s ease-out;
         }
 
-        .bujo-header {
-            padding: 15px 25px;
-            background-color: var(--theme-green-dark);
-            color: white;
+        /* --- Cabeçalho e Navegação --- */
+        .page-header {
             text-align: center;
-            font-family: var(--font-handwritten);
-            font-size: 2.2em;
-            letter-spacing: 1px;
-            border-bottom: 3px solid var(--theme-green-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 60px;
+            animation: slideDown 0.8s ease-out;
         }
-        .bujo-header img.header-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-            border-radius: 50%;
-            border: 2px solid var(--theme-green-light);
-        }
-
-
-        .future-log-content {
-            display: flex;
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto; /* Para caso o conteúdo seja muito grande */
-        }
-
-        .page-column {
-            flex: 1;
-            padding: 0 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Espaço entre os meses */
-        }
-
-        .page-column:first-child {
-            border-right: 1px dashed var(--line-color); /* Divisória central */
-        }
-
-        .month-section {
-            display: flex;
-            flex-direction: column; /* Alterado para empilhar cabeçalho e eventos */
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--line-color);
-        }
-        .month-section:last-child {
-            border-bottom: none;
-        }
-
-        .month-header-content {
-            display: flex; /* Para alinhar nome do mês e calendário lado a lado */
-            align-items: flex-start; /* Alinha ao topo */
+        .page-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 10px;
         }
-
-        .month-name {
-            font-family: var(--font-handwritten);
-            font-size: 2.5em; /* Aumentado */
-            color: var(--theme-green-dark);
-            margin-right: 20px; /* Espaço entre nome do mês e calendário */
-            min-width: 80px; /* Para garantir espaço para nomes de meses mais longos */
-            line-height: 1;
-        }
-
-        .mini-calendar {
-            font-size: 0.75em;
-            border-collapse: collapse;
-            color: var(--text-color);
-        }
-
-        .mini-calendar th, .mini-calendar td {
-            text-align: center;
-            padding: 2px 4px;
-            min-width: 20px; /* Largura mínima das células */
-        }
-
-        .mini-calendar th {
-            color: var(--theme-green-medium);
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-        .mini-calendar td.empty {
-            /* Células vazias antes/depois dos dias */
-        }
-        .mini-calendar td.today {
-            background-color: var(--theme-green-light);
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
-        }
-
-        .month-events {
-            margin-top: 5px; /* Espaço acima das linhas de evento */
-        }
-
-        .event-line {
-            border-bottom: 1px dotted var(--theme-green-medium);
-            height: 22px; /* Altura da linha */
-            margin-bottom: 6px;
-            background-image: linear-gradient(transparent 95%, var(--theme-green-light) 95%); /* Linha sutil no fundo */
-            background-size: 100% 22px;
-        }
-        .event-line:last-child {
-            margin-bottom: 0;
-        }
-
-        .bujo-footer {
-            padding: 10px 25px;
-            border-top: 1px solid var(--line-color);
+        .year-navigation {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            font-size: 0.9em;
-            color: var(--theme-green-medium);
+            gap: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .nav-button {
+            background: transparent; border: none; cursor: pointer;
+            color: var(--accent-color);
+            transition: transform 0.3s ease, color 0.3s ease;
+            padding: 5px;
+        }
+        .nav-button:hover { transform: scale(1.2); color: var(--text-color); }
+        .nav-button svg { width: 24px; height: 24px; }
+
+        /* --- Grade dos Meses --- */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            justify-content: center;
         }
 
-        .page-number-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            vertical-align: middle;
-            border-radius: 3px;
+        /* --- Container de Cada Mês --- */
+        .month-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(2px);
+            transition: all 0.5s ease;
+            min-height: 380px;
+        }
+        .month-header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px dotted var(--accent-color);
+            padding-bottom: 10px;
         }
 
-        /* Estilo para a barra de rolagem, se visível */
-        .future-log-content::-webkit-scrollbar {
-            width: 8px;
+        /* --- Mini Calendário --- */
+        .mini-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.9rem;
+            gap: 8px 4px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .future-log-content::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
+        .mini-calendar .day-name { font-weight: 700; color: var(--accent-color); }
+        .mini-calendar .day-number {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
+            position: relative;
+            border: 1.5px solid transparent; /* Espaço reservado para a borda */
         }
-        .future-log-content::-webkit-scrollbar-thumb {
-            background: var(--theme-green-medium);
-            border-radius: 4px;
+        .mini-calendar .day-number:not(.empty):hover {
+            background-color: var(--highlight-color);
+            color: var(--button-text);
         }
-        .future-log-content::-webkit-scrollbar-thumb:hover {
-            background: var(--theme-green-dark);
+        /* --- NOVO: Borda para o dia de hoje --- */
+        .mini-calendar .day-number.today {
+            border-color: var(--accent-color);
+            font-weight: 700;
+        }
+        .mini-calendar .day-number.selected {
+            background-color: var(--text-color);
+            color: var(--button-text);
+            font-weight: 700;
+            border-color: var(--text-color); /* Garante que a borda some ao selecionar */
+        }
+        .mini-calendar .day-number.has-event::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
         }
 
+        /* --- Lista de Eventos --- */
+        .event-section {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        .event-list {
+            list-style: none;
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            padding-right: 5px; /* Espaço para a barra de rolagem */
+        }
+        .event-list li {
+            display: flex; align-items: flex-start; padding: 8px 5px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        .event-list li:last-child { border-bottom: none; }
+        .event-list .event-icon {
+            flex-shrink: 0;
+            margin-top: 3px;
+            opacity: 0.6;
+        }
+        .event-text { flex-grow: 1; margin-left: 10px; line-height: 1.4; }
+        .delete-event-btn {
+            background: transparent; border: none; cursor: pointer;
+            color: var(--accent-color); opacity: 0.5;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 5px;
+        }
+        .delete-event-btn:hover { opacity: 1; color: #d32f2f; }
+        .delete-event-btn svg { width: 16px; height: 16px; }
+
+        /* --- MODAL (POPUP) DE EVENTO --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: var(--bg-color); padding: 30px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 90%; max-width: 450px;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.visible .modal-content { transform: scale(1); }
+        .modal-header { text-align: center; margin-bottom: 20px; }
+        .modal-title { font-family: 'Dancing Script', cursive; font-size: 2rem; margin-bottom: 5px; }
+        .modal-date { font-size: 0.9rem; color: var(--accent-color); }
+        .modal-body textarea {
+            width: 100%; min-height: 100px; padding: 10px;
+            border: 1px solid var(--border-color); border-radius: 8px;
+            background: transparent; font-family: 'Montserrat', sans-serif;
+            color: var(--text-color); font-size: 1rem; resize: vertical;
+        }
+        .modal-body textarea:focus { outline: none; border-color: var(--accent-color); }
+        .modal-footer { display: flex; justify-content: flex-end; gap: 15px; margin-top: 20px; }
+        .modal-button {
+            font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 0.9rem;
+            padding: 10px 25px; border: none; border-radius: 50px; cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .modal-button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .modal-button.primary { background-color: var(--button-bg); color: var(--button-text); }
+        .modal-button.secondary { background-color: transparent; color: var(--accent-color); border: 1px solid var(--border-color); }
+        .close-modal-btn {
+            position: absolute; top: 10px; right: 15px;
+            background: none; border: none; font-size: 2rem;
+            color: var(--accent-color); cursor: pointer; line-height: 1;
+        }
+
+        /* --- Botão de Tema --- */
+        #theme-switcher {
+            position: fixed; top: 25px; right: 25px;
+            background: transparent; border: 2px solid var(--accent-color);
+            color: var(--text-color); width: 45px; height: 45px;
+            border-radius: 50%; cursor: pointer; z-index: 100;
+            display: flex; justify-content: center; align-items: center;
+            transition: all 0.4s ease;
+        }
+        #theme-switcher:hover { transform: scale(1.1) rotate(90deg); background: var(--accent-color); color: var(--bg-color); }
+        #theme-switcher svg { width: 22px; height: 22px; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .page-header { margin-bottom: 40px; }
+            .page-title { font-size: 3rem; }
+            .year-navigation { font-size: 1.5rem; }
+            .calendar-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
     </style>
 </head>
-<body>
+<body data-theme="classic">
 
-    <div class="bujo-container">
-        <header class="bujo-header">
-            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Tema Icon" class="header-icon">
-            Registro Futuro
-        </header>
-
-        <div class="future-log-content">
-            <div class="page-column" id="left-column">
-                <!-- Meses serão inseridos aqui pelo JS -->
+    <button id="theme-switcher" title="Alterar Tema">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+    </button>
+    
+    <div class="journal-page">
+        <header class="page-header">
+            <h1 class="page-title">Calendário</h1>
+            <div class="year-navigation">
+                <button id="prev-year" class="nav-button" title="Ano Anterior"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <span id="current-year"></span>
+                <button id="next-year" class="nav-button" title="Próximo Ano"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
             </div>
-            <div class="page-column" id="right-column">
-                <!-- Meses serão inseridos aqui pelo JS -->
+        </header>
+        <main id="calendar-grid" class="calendar-grid"></main>
+    </div>
+
+    <!-- MODAL PARA ADICIONAR EVENTO -->
+    <div id="event-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal-btn" title="Fechar">×</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Adicionar Anotação</h3>
+                <p id="modal-date-display" class="modal-date"></p>
+            </div>
+            <div class="modal-body">
+                <textarea id="event-text-input" placeholder="Escreva sua nota, tarefa ou evento aqui..." rows="4"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-event-btn" class="modal-button secondary">Cancelar</button>
+                <button id="save-event-btn" class="modal-button primary">Salvar</button>
             </div>
         </div>
-
-        <footer class="bujo-footer">
-            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Ícone" class="page-number-icon">
-            <span id="page-number">1</span>
-        </footer>
     </div>
 
     <script>
-        const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-        const dayAbbreviations = ["D", "S", "T", "Q", "Q", "S", "S"]; // Domingo a Sábado
-        // Para começar a semana na Segunda:
-        // const dayAbbreviations = ["S", "T", "Q", "Q", "S", "S", "D"];
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- DOM Elements ---
+        const calendarGrid = document.getElementById('calendar-grid');
+        const currentYearEl = document.getElementById('current-year');
+        const prevYearBtn = document.getElementById('prev-year');
+        const nextYearBtn = document.getElementById('next-year');
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
 
+        // Modal Elements
+        const eventModal = document.getElementById('event-modal');
+        const modalDateDisplay = document.getElementById('modal-date-display');
+        const eventTextInput = document.getElementById('event-text-input');
+        const saveEventBtn = document.getElementById('save-event-btn');
+        const closeModalBtns = document.querySelectorAll('.close-modal-btn, .modal-overlay, #cancel-event-btn');
 
-        function generateMiniCalendar(year, month, today) { // month é 0-indexed
-            const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0 = Domingo, 1 = Segunda ...
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
+        // --- State and Constants ---
+        let currentYear = new Date().getFullYear();
+        let selectedDate = {}; // Objeto vazio para começar
+        let events = JSON.parse(localStorage.getItem('bujoEvents')) || {};
+        const today = new Date();
+        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        const dayNames = ["D", "S", "T", "Q", "Q", "S", "S"];
 
-            let html = '<table class="mini-calendar">';
-            html += '<thead><tr>';
-            dayAbbreviations.forEach(day => html += `<th>${day}</th>`);
-            html += '</tr></thead><tbody>';
+        // --- Theme Logic ---
+        const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
+        body.setAttribute('data-theme', savedTheme);
+        themeSwitcher.addEventListener('click', () => {
+            let newTheme = body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('bujoTheme', newTheme);
+        });
 
-            let date = 1;
-            for (let i = 0; i < 6; i++) { // Max 6 semanas
-                html += '<tr>';
-                for (let j = 0; j < 7; j++) { // 7 dias da semana
-                    if (i === 0 && j < firstDayOfMonth) {
-                        html += '<td class="empty"></td>';
-                    } else if (date > daysInMonth) {
-                        html += '<td class="empty"></td>';
-                    } else {
-                        let cellClass = '';
-                        if (today && date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                            cellClass = 'today';
-                        }
-                        html += `<td class="${cellClass}">${date}</td>`;
-                        date++;
-                    }
-                }
-                html += '</tr>';
-                if (date > daysInMonth) break; // Sai do loop de semanas se todos os dias foram preenchidos
-            }
-            html += '</tbody></table>';
-            return html;
-        }
+        // --- Event Data Logic ---
+        const saveEvents = () => localStorage.setItem('bujoEvents', JSON.stringify(events));
+        const getEventKey = (y, m, d) => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
-        function createMonthSection(year, monthIndex, numEventLines = 4) {
-            const today = new Date();
-            const monthElement = document.createElement('div');
-            monthElement.classList.add('month-section');
+        // --- Modal Logic ---
+        const openModal = () => {
+            modalDateDisplay.textContent = `${selectedDate.day} de ${monthNames[selectedDate.month]} de ${selectedDate.year}`;
+            eventTextInput.value = '';
+            eventModal.classList.add('visible');
+            eventTextInput.focus();
+        };
+        const closeModal = () => eventModal.classList.remove('visible');
 
-            let eventLinesHtml = '';
-            for (let i = 0; i < numEventLines; i++) {
-                eventLinesHtml += '<div class="event-line"></div>';
-            }
+        // --- Rendering Logic ---
+        const renderYear = () => {
+            currentYearEl.textContent = currentYear;
+            calendarGrid.innerHTML = '';
+            monthNames.forEach((name, index) => {
+                calendarGrid.appendChild(createMonth(currentYear, index));
+            });
+            updateAllEventMarkers();
+        };
 
-            monthElement.innerHTML = `
-                <div class="month-header-content">
-                    <div class="month-name">${monthNames[monthIndex]}</div>
-                    ${generateMiniCalendar(year, monthIndex, today)}
-                </div>
-                <div class="month-events">
-                    ${eventLinesHtml}
+        const createMonth = (year, month) => {
+            const monthContainer = document.createElement('div');
+            monthContainer.className = 'month-container';
+            monthContainer.id = `month-${year}-${month}`;
+            monthContainer.innerHTML = `
+                <h2 class="month-header">${monthNames[month]}</h2>
+                <div class="mini-calendar"></div>
+                <div class="event-section">
+                    <ul class="event-list"></ul>
                 </div>
             `;
-            return monthElement;
-        }
+            const miniCalendar = monthContainer.querySelector('.mini-calendar');
+            dayNames.forEach(name => miniCalendar.insertAdjacentHTML('beforeend', `<div class="day-name">${name}</div>`));
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const leftColumn = document.getElementById('left-column');
-            const rightColumn = document.getElementById('right-column');
-            const currentYear = new Date().getFullYear();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-            // Adicionar os primeiros 6 meses do ano
-            // Exemplo: Jan, Fev, Mar na coluna esquerda
-            // Abr, Mai, Jun na coluna direita
-            const monthsToDisplay = [
-                { month: 0, column: leftColumn },  // Janeiro
-                { month: 1, column: leftColumn },  // Fevereiro
-                { month: 2, column: leftColumn },  // Março
-                { month: 3, column: rightColumn }, // Abril
-                { month: 4, column: rightColumn }, // Maio
-                { month: 5, column: rightColumn }  // Junho
-            ];
+            for (let i = 0; i < firstDay; i++) miniCalendar.insertAdjacentHTML('beforeend', '<div class="day-number empty"></div>');
 
-            monthsToDisplay.forEach(item => {
-                const monthSection = createMonthSection(currentYear, item.month);
-                item.column.appendChild(monthSection);
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('div');
+                dayCell.className = 'day-number';
+                dayCell.textContent = day;
+                dayCell.dataset.day = day;
+                dayCell.dataset.month = month;
+                dayCell.dataset.year = year;
+                // --- MUDANÇA: Adiciona a classe 'today' ---
+                if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+                    dayCell.classList.add('today');
+                }
+                miniCalendar.appendChild(dayCell);
+            }
+            return monthContainer;
+        };
+        
+        const renderEventsForSelectedDay = () => {
+            if (!selectedDate.day) return;
+            const { year, month, day } = selectedDate;
+            const monthContainer = document.getElementById(`month-${year}-${month}`);
+            if (!monthContainer) return;
+            
+            const eventList = monthContainer.querySelector('.event-list');
+            const eventKey = getEventKey(year, month, day);
+            const dayEvents = events[eventKey] || [];
+
+            eventList.innerHTML = ''; // Limpa a lista antes de renderizar
+            dayEvents.forEach((eventText, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <svg class="event-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+                    <span class="event-text">${eventText.replace(/</g, "<").replace(/>/g, ">")}</span>
+                    <button class="delete-event-btn" data-index="${index}" title="Excluir"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                `;
+                eventList.appendChild(li);
             });
+        };
 
-            // Exemplo de número de página (pode ser dinâmico se tiver mais páginas)
-            document.getElementById('page-number').textContent = 'FL 1-2'; // Future Log pages 1-2
+        const updateAllEventMarkers = () => {
+             document.querySelectorAll('.day-number.has-event').forEach(d => d.classList.remove('has-event'));
+             for(const key in events) {
+                 if(events[key] && events[key].length > 0) {
+                     const [year, month, day] = key.split('-').map(Number);
+                     if(parseInt(year) === currentYear) {
+                         const dayEl = document.querySelector(`.day-number[data-year='${year}'][data-month='${month - 1}'][data-day='${day}']`);
+                         if(dayEl) dayEl.classList.add('has-event');
+                     }
+                 }
+             }
+        };
+
+        // --- Event Handlers ---
+        calendarGrid.addEventListener('click', (e) => {
+            const dayTarget = e.target.closest('.day-number:not(.empty)');
+            const deleteBtnTarget = e.target.closest('.delete-event-btn');
+
+            // --- MUDANÇA: LÓGICA DE CLIQUE APRIMORADA ---
+            if (dayTarget) {
+                const year = parseInt(dayTarget.dataset.year);
+                const month = parseInt(dayTarget.dataset.month);
+                const day = parseInt(dayTarget.dataset.day);
+                const eventKey = getEventKey(year, month, day);
+                const hasEvents = events[eventKey] && events[eventKey].length > 0;
+                
+                // Checa se está clicando no mesmo dia já selecionado
+                if (selectedDate.day === day && selectedDate.month === month && selectedDate.year === year) {
+                    // SEGUNDO CLIQUE: Abre o modal para adicionar novo evento
+                    openModal();
+                } else {
+                    // PRIMEIRO CLIQUE (ou clique em um novo dia)
+                    const prevSelected = document.querySelector('.day-number.selected');
+                    if (prevSelected) prevSelected.classList.remove('selected');
+                    dayTarget.classList.add('selected');
+
+                    selectedDate = { year, month, day };
+                    renderEventsForSelectedDay();
+
+                    // Se não tiver eventos, abre o modal imediatamente
+                    if (!hasEvents) {
+                        openModal();
+                    }
+                }
+            }
+
+            if (deleteBtnTarget) {
+                const index = parseInt(deleteBtnTarget.dataset.index);
+                const eventKey = getEventKey(selectedDate.year, selectedDate.month, selectedDate.day);
+                events[eventKey].splice(index, 1);
+                if(events[eventKey].length === 0) delete events[eventKey];
+                
+                saveEvents();
+                renderEventsForSelectedDay();
+                updateAllEventMarkers();
+            }
         });
-    </script>
+        
+        saveEventBtn.addEventListener('click', () => {
+            const eventText = eventTextInput.value.trim();
+            if (eventText) {
+                const eventKey = getEventKey(selectedDate.year, selectedDate.month, selectedDate.day);
+                if (!events[eventKey]) events[eventKey] = [];
+                
+                events[eventKey].push(eventText);
+                saveEvents();
+                renderEventsForSelectedDay();
+                updateAllEventMarkers();
+                closeModal();
+            }
+        });
 
+        closeModalBtns.forEach(btn => btn.addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); }));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && eventModal.classList.contains('visible')) closeModal(); });
+        prevYearBtn.addEventListener('click', () => { currentYear--; renderYear(); });
+        nextYearBtn.addEventListener('click', () => { currentYear++; renderYear(); });
+
+        // --- Initialization ---
+        renderYear();
+    });
+    </script>
 </body>
 </html>
