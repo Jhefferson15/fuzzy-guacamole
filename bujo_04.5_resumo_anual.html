@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Anual - Meu Bullet Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Tema (MESMAS DA PÁGINA DE CAPA) --- */
+        :root {
+            --bg-color: #F1F5F8;
+            --dot-color: #CFD8DC;
+            --text-color: #3a3a3a;
+            --accent-color: #585858;
+            --border-color: #E0E7EC;
+
+            /* Paleta de Cores para Gráficos (Tema Clássico) */
+            --c1: #3a3a3a; /* Corpo / Eficiência */
+            --c2: #82a0b3; /* Cardio / Foco */
+            --c3: #5d737e; /* Força / Disciplina */
+            --c4: #b0c4de; /* Caminhada / Mente */
+        }
+
+        body[data-theme="flamingo"] {
+            --bg-color: #fff0f5;
+            --dot-color: #ffdde1;
+            --text-color: #c71585;
+            --accent-color: #db7093;
+            --border-color: #ffe4e1;
+            
+            /* Paleta de Cores para Gráficos (Tema Flamingo) */
+            --c1: #c71585; 
+            --c2: #db7093; 
+            --c3: #f08080; 
+            --c4: #ffb6c1;
+        }
+
+        /* --- Configurações Gerais --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* --- Fundo e Layout Principal --- */
+        .journal-page {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .overview-container {
+            width: 100%;
+            max-width: 1200px;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* --- Cabeçalho da Página --- */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.7s ease-out;
+        }
+        .page-title-script {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+        .page-subtitle {
+            font-weight: 400;
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        /* --- Grid de Gráficos --- */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        /* --- Estilos de Seção/Card de Gráfico --- */
+        .chart-card {
+            background-color: var(--bg-color);
+            padding: 25px 30px;
+            border-radius: 4px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+            transition: background-color 0.5s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-card.full-width {
+            grid-column: 1 / -1; /* Ocupa a largura total */
+        }
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* --- Conteúdo do Gráfico (SVG e Legenda) --- */
+        .chart-content {
+            display: flex;
+            gap: 20px;
+            flex-grow: 1;
+            align-items: center;
+        }
+        .chart-svg-container {
+            flex-grow: 1;
+            position: relative;
+        }
+        .legend {
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-left: 15px;
+            flex-shrink: 0;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-color);
+        }
+        .legend-item .legend-color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* --- Estilos Específicos dos Gráficos SVG --- */
+        .chart-svg { width: 100%; height: auto; overflow: visible; }
+        .chart-svg .grid-line { stroke: var(--border-color); stroke-width: 1.5; stroke-dasharray: 3,4; }
+        .chart-svg .axis-line { stroke: var(--dot-color); stroke-width: 1.5; }
+        .chart-svg .axis-label { font-size: 11px; fill: var(--accent-color); font-family: 'Montserrat', sans-serif; }
+        .chart-svg .data-line { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.5s ease; }
+        .chart-svg .data-point { r: 4.5; fill: var(--bg-color); stroke-width: 2; cursor: pointer; transition: r 0.3s ease, fill 0.5s ease; }
+        .chart-svg .data-point:hover { r: 7; }
+        
+        /* Gráfico de Pizza */
+        .pie-slice { cursor: pointer; transition: transform 0.3s ease; }
+        .pie-slice:hover { transform: scale(1.05); }
+        .pie-chart-container { display: flex; align-items: center; justify-content: center; }
+
+        /* Gráfico de Barras */
+        .bar-rect { transition: fill 0.3s ease, filter 0.3s ease; cursor: pointer; }
+        .bar-rect:hover { filter: brightness(1.1); }
+        .bar-label { font-size: 10px; fill: var(--accent-color); text-anchor: middle; }
+
+        .chart-tooltip {
+            position: absolute; background-color: var(--button-bg, #3a3a3a); color: var(--button-text, #F1F5F8); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; pointer-events: none; opacity: 0; transform: translateY(-10px); transition: opacity 0.3s, transform 0.3s; z-index: 10;
+        }
+        
+        #theme-switcher { position: fixed; top: 25px; right: 25px; background: transparent; border: 2px solid var(--accent-color); color: var(--text-color); width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 100; display: flex; justify-content: center; align-items: center; transition: all 0.4s ease; }
+        #theme-switcher:hover { transform: scale(1.1) rotate(90deg); background: var(--accent-color); color: var(--bg-color); }
+        #theme-switcher svg { width: 22px; height: 22px; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 900px) {
+            .charts-grid { grid-template-columns: 1fr; }
+            .journal-page { padding: 20px; }
+        }
+        @media (max-width: 500px) {
+            .chart-content { flex-direction: column; }
+            .legend { flex-direction: row; flex-wrap: wrap; justify-content: center; border-top: 1px solid var(--border-color); padding-top: 15px; }
+        }
+    </style>
+</head>
+<body data-theme="classic">
+
+    <div class="journal-page">
+        <div class="overview-container">
+            
+            <header class="page-header">
+                <div class="page-title-script" id="current-year">2024</div>
+                <div class="page-subtitle">Resumo Anual</div>
+            </header>
+
+            <div class="charts-grid">
+                
+                <!-- Card: Corpo & Saúde -->
+                <div class="chart-card">
+                    <h3 class="card-title">Corpo & Saúde</h3>
+                    <div class="chart-content">
+                        <div class="chart-svg-container">
+                            <div id="body-tooltip" class="chart-tooltip"></div>
+                            <svg id="body-chart-svg" class="chart-svg" viewBox="0 0 350 200"></svg>
+                        </div>
+                        <div id="body-legend" class="legend"></div>
+                    </div>
+                </div>
+
+                <!-- Card: Mente & Bem-Estar -->
+                <div class="chart-card">
+                    <h3 class="card-title">Mente & Bem-Estar</h3>
+                    <div class="chart-content">
+                         <div class="chart-svg-container">
+                            <div id="mind-tooltip" class="chart-tooltip"></div>
+                            <svg id="mind-chart-svg" class="chart-svg" viewBox="0 0 350 200"></svg>
+                        </div>
+                        <div id="mind-legend" class="legend"></div>
+                    </div>
+                </div>
+
+                <!-- Card: Disciplina & Foco -->
+                <div class="chart-card">
+                    <h3 class="card-title">Disciplina & Foco</h3>
+                    <div class="chart-content">
+                        <div class="chart-svg-container">
+                            <div id="discipline-tooltip" class="chart-tooltip"></div>
+                            <svg id="discipline-chart-svg" class="chart-svg" viewBox="0 0 350 200"></svg>
+                        </div>
+                        <div id="discipline-legend" class="legend"></div>
+                    </div>
+                </div>
+
+                <!-- Card: Peso -->
+                <div class="chart-card">
+                    <h3 class="card-title">Acompanhamento de Peso (kg)</h3>
+                    <div class="chart-content">
+                        <div class="chart-svg-container">
+                            <div id="weight-tooltip" class="chart-tooltip"></div>
+                            <svg id="weight-chart-svg" class="chart-svg" viewBox="0 0 350 200"></svg>
+                        </div>
+                        <div id="weight-legend" class="legend"></div>
+                    </div>
+                </div>
+
+                <!-- Card: Gráfico de Pizza -->
+                <div class="chart-card">
+                    <h3 class="card-title">Distribuição de Foco</h3>
+                    <div class="chart-content pie-chart-container">
+                        <svg id="pie-chart-svg" class="chart-svg" viewBox="-1 -1 2 2" style="max-width: 200px;"></svg>
+                        <div id="pie-legend" class="legend"></div>
+                    </div>
+                </div>
+
+                <!-- Card: Gráfico de Barras -->
+                 <div class="chart-card">
+                    <h3 class="card-title">Projetos Concluídos</h3>
+                    <div class="chart-content">
+                        <div class="chart-svg-container">
+                             <div id="bar-tooltip" class="chart-tooltip"></div>
+                             <svg id="bar-chart-svg" class="chart-svg" viewBox="0 0 450 200"></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button id="theme-switcher" title="Alterar Tema">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+        </button>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- LÓGICA DO TEMA ---
+        const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
+        body.setAttribute('data-theme', savedTheme);
+        document.getElementById('theme-switcher').addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('bujoTheme', newTheme);
+        });
+
+        // --- DADOS E CONSTANTES ---
+        const MONTHS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+        const generateMonthlyData = (min, max) => Array.from({ length: 12 }, () => min + Math.random() * (max - min));
+        
+        // --- FUNÇÕES DE CRIAÇÃO DE GRÁFICOS ---
+
+        /**
+         * Cria um gráfico de linha com múltiplos datasets.
+         * @param {string} svgId - ID do elemento SVG.
+         * @param {string} tooltipId - ID do elemento do tooltip.
+         * @param {string} legendId - ID do elemento da legenda.
+         * @param {Array<Object>} datasets - Array de objetos {label, data, color}.
+         * @param {Object} yAxis - Objeto {min, max, step} para a escala Y.
+         */
+        function createLineChart(svgId, tooltipId, legendId, datasets, yAxis) {
+            const svg = document.getElementById(svgId);
+            const tooltip = document.getElementById(tooltipId);
+            const legend = document.getElementById(legendId);
+            if (!svg || !tooltip || !legend) return;
+
+            const width = 350, height = 200;
+            const p = { top: 15, right: 5, bottom: 25, left: 35 };
+            let svgContent = '', legendContent = '';
+
+            // Desenha eixos e linhas de grade
+            svgContent += `<line class="axis-line" x1="${p.left}" y1="${p.top}" x2="${p.left}" y2="${height - p.bottom}"></line>`;
+            svgContent += `<line class="axis-line" x1="${p.left}" y1="${height - p.bottom}" x2="${width - p.right}" y2="${height - p.bottom}"></line>`;
+            
+            for (let val = yAxis.min; val <= yAxis.max; val += yAxis.step) {
+                const y = (height - p.bottom) - ((val - yAxis.min) / (yAxis.max - yAxis.min)) * (height - p.top - p.bottom);
+                svgContent += `<line class="grid-line" x1="${p.left}" y1="${y}" x2="${width - p.right}" y2="${y}"></line>`;
+                svgContent += `<text class="axis-label" x="${p.left - 8}" y="${y + 4}" text-anchor="end">${val}</text>`;
+            }
+            MONTHS.forEach((month, i) => {
+                const x = p.left + (i / (MONTHS.length - 1)) * (width - p.left - p.right);
+                svgContent += `<text class="axis-label" x="${x}" y="${height - p.bottom + 15}" text-anchor="middle">${month}</text>`;
+            });
+
+            // Desenha linhas, pontos e cria legenda
+            datasets.forEach(set => {
+                let pointsStr = '', pointsHtml = '';
+                set.data.forEach((val, i) => {
+                    const x = p.left + (i / (MONTHS.length - 1)) * (width - p.left - p.right);
+                    const y = (height - p.bottom) - ((val - yAxis.min) / (yAxis.max - yAxis.min)) * (height - p.top - p.bottom);
+                    pointsStr += `${x},${y} `;
+                    pointsHtml += `<circle class="data-point" cx="${x}" cy="${y}" data-value="${set.label}: ${val.toFixed(1)}" style="stroke: var(${set.color});"></circle>`;
+                });
+                svgContent += `<polyline class="data-line" points="${pointsStr.trim()}" style="stroke: var(${set.color});"></polyline>`;
+                svgContent += pointsHtml;
+
+                legendContent += `<div class="legend-item"><div class="legend-color-dot" style="background-color: var(${set.color})"></div>${set.label}</div>`;
+            });
+            
+            svg.innerHTML = svgContent;
+            legend.innerHTML = legendContent;
+            setupTooltip(svg, tooltip);
+        }
+
+        /**
+         * Cria um gráfico de pizza.
+         * @param {string} svgId - ID do elemento SVG.
+         * @param {string} legendId - ID do elemento da legenda.
+         * @param {Array<Object>} data - Array de objetos {label, value, color}.
+         */
+        function createPieChart(svgId, legendId, data) {
+            const svg = document.getElementById(svgId);
+            const legend = document.getElementById(legendId);
+            if (!svg || !legend) return;
+
+            const total = data.reduce((sum, item) => sum + item.value, 0);
+            let cumulativePercent = 0, svgContent = '', legendContent = '';
+
+            data.forEach(item => {
+                const percent = item.value / total;
+                const startAngle = cumulativePercent * 2 * Math.PI;
+                cumulativePercent += percent;
+                const endAngle = cumulativePercent * 2 * Math.PI;
+
+                const startX = Math.cos(startAngle), startY = Math.sin(startAngle);
+                const endX = Math.cos(endAngle), endY = Math.sin(endAngle);
+                const largeArcFlag = percent > 0.5 ? 1 : 0;
+                
+                const pathData = `M ${startX} ${startY} A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY} L 0 0 Z`;
+                svgContent += `<path class="pie-slice" d="${pathData}" fill="var(${item.color})" data-label="${item.label}: ${item.value}%"></path>`;
+                
+                legendContent += `<div class="legend-item"><div class="legend-color-dot" style="background-color: var(${item.color})"></div>${item.label} (${item.value}%)</div>`;
+            });
+
+            svg.innerHTML = svgContent;
+            legend.innerHTML = legendContent;
+        }
+
+        /**
+         * Cria um gráfico de barras.
+         * @param {string} svgId - ID do elemento SVG.
+         * @param {string} tooltipId - ID do elemento do tooltip.
+         * @param {Array<Object>} data - Array de objetos {label, value}.
+         * @param {string} color - Variável de cor CSS para as barras.
+         */
+        function createBarChart(svgId, tooltipId, data, color) {
+            const svg = document.getElementById(svgId);
+            const tooltip = document.getElementById(tooltipId);
+            if (!svg || !tooltip) return;
+
+            const width = 450, height = 200;
+            const p = { top: 10, right: 10, bottom: 25, left: 20 };
+            const barWidth = (width - p.left - p.right) / data.length * 0.7;
+            const barSpacing = (width - p.left - p.right) / data.length * 0.3;
+            const maxValue = Math.max(...data.map(d => d.value));
+            
+            let svgContent = '';
+            data.forEach((d, i) => {
+                const x = p.left + i * (barWidth + barSpacing);
+                const barHeight = (d.value / maxValue) * (height - p.top - p.bottom);
+                const y = height - p.bottom - barHeight;
+                svgContent += `<rect class="bar-rect" x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" fill="var(${color})" data-value="${d.label}: ${d.value}"></rect>`;
+                svgContent += `<text class="bar-label" x="${x + barWidth / 2}" y="${height - p.bottom + 15}">${d.label}</text>`;
+            });
+            svg.innerHTML = svgContent;
+            setupTooltip(svg, tooltip, '.bar-rect');
+        }
+
+        // Função auxiliar para configurar tooltips
+        function setupTooltip(svg, tooltip, selector = '.data-point') {
+            svg.querySelectorAll(selector).forEach(point => {
+                point.addEventListener('mousemove', (e) => {
+                    tooltip.textContent = e.target.getAttribute('data-value');
+                    tooltip.style.opacity = '1';
+                    const svgRect = svg.getBoundingClientRect();
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    tooltip.style.left = `${e.clientX - svgRect.left - tooltipRect.width / 2}px`;
+                    tooltip.style.top = `${e.clientY - svgRect.top - tooltipRect.height - 15}px`;
+                });
+                point.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
+            });
+        }
+
+        // --- CHAMADAS PARA CRIAR OS GRÁFICOS COM DADOS DE EXEMPLO ---
+
+        createLineChart('body-chart-svg', 'body-tooltip', 'body-legend', [
+            { label: 'Corpo', data: generateMonthlyData(60, 90), color: '--c1' },
+            { label: 'Cardio', data: generateMonthlyData(20, 70), color: '--c2' },
+            { label: 'Força', data: generateMonthlyData(10, 50), color: '--c3' },
+        ], { min: 0, max: 100, step: 20 });
+
+        createLineChart('mind-chart-svg', 'mind-tooltip', 'mind-legend', [
+            { label: 'Mente', data: generateMonthlyData(40, 80), color: '--c1' },
+            { label: 'Prática', data: generateMonthlyData(10, 60), color: '--c2' },
+            { label: 'Meditação', data: generateMonthlyData(0, 50), color: '--c4' },
+        ], { min: 0, max: 100, step: 20 });
+        
+        createLineChart('discipline-chart-svg', 'discipline-tooltip', 'discipline-legend', [
+            { label: 'Fortitude', data: generateMonthlyData(50, 95), color: '--c1' },
+            { label: 'S/ Lanches', data: generateMonthlyData(20, 80), color: '--c2' },
+            { label: 'S/ Café', data: generateMonthlyData(10, 70), color: '--c3' },
+        ], { min: 0, max: 100, step: 20 });
+
+        createLineChart('weight-chart-svg', 'weight-tooltip', 'weight-legend', [
+            { label: 'Peso', data: generateMonthlyData(68, 75), color: '--c1' }
+        ], { min: 65, max: 80, step: 5 });
+
+        createPieChart('pie-chart-svg', 'pie-legend', [
+            { label: 'Trabalho', value: 45, color: '--c1' },
+            { label: 'Estudo', value: 25, color: '--c2' },
+            { label: 'Lazer', value: 20, color: '--c3' },
+            { label: 'Exercício', value: 10, color: '--c4' },
+        ]);
+
+        createBarChart('bar-chart-svg', 'bar-tooltip', MONTHS.map(m => ({
+            label: m,
+            value: Math.floor(Math.random() * 5)
+        })), '--c2');
+
+    });
+    </script>
+
+</body>
+</html>
