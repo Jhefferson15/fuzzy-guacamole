@@ -1,246 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuJo Key</title>
+    <title>Legenda - Meu Bullet Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap');
-
+        /* --- Variáveis de Tema --- */
         :root {
-            --theme-green-dark: #1A4314; /* Um verde escuro da sua imagem */
-            --theme-green-medium: #2D6A4F; /* Um verde médio */
-            --theme-green-light: #4CAF50; /* Um verde mais vibrante como acento */
-            --theme-green-accent: #00FF00; /* Verde neon para destaques pontuais, se necessário */
-            --text-color: #333;
-            --border-color: #ccc;
-            --border-color-dark: #999;
-            --background-color: #ffffff;
-            --page-shadow: rgba(0, 0, 0, 0.15);
+            --bg-color: #F1F5F8; --dot-color: #CFD8DC; --text-color: #3a3a3a; --accent-color: #585858;
+            --button-bg: #3a3a3a; --button-text: #F1F5F8; --color-red: #ffab91; --color-blue: #90caf9;
+            --color-green: #a5d6a7; --color-yellow: #fff59d; --color-purple: #b39ddb; --color-pink: #f48fb1;
+            --color-orange: #ffcc80; --color-teal: #80cbc4;
+        }
+        body[data-theme="flamingo"] {
+            --bg-color: #fff0f5; --dot-color: #ffdde1; --text-color: #c71585; --accent-color: #db7093;
+            --button-bg: #c71585; --button-text: #fff0f5;
         }
 
+        /* --- Configurações Gerais e Fundo --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e9e9e9; /* Fundo cinza claro para destacar a página */
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .journal-page {
+            position: relative; min-height: 100vh; width: 100%;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 20px 20px; padding: 40px 60px; animation: fadeIn 0.8s ease-out;
         }
 
-        .bujo-page {
-            background-color: var(--background-color);
-            width: 480px; /* Tenta manter uma proporção de página */
-            max-width: 90%;
-            min-height: 680px; /* Ajuste conforme necessário */
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px var(--page-shadow);
-            border-radius: 8px; /* Bordas levemente arredondadas */
-            display: flex;
-            flex-direction: column;
+        /* --- Container da Legenda --- */
+        .legend-container {
+            max-width: 1100px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px); border-radius: 10px; padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);
         }
 
-        header h1 {
-            font-family: 'Archivo Black', sans-serif; /* Fonte mais impactante para o título */
+        /* --- Título Principal da Página --- */
+        .page-title {
+            font-family: 'Dancing Script', cursive; font-size: 4rem; text-align: center;
+            color: var(--text-color); margin-bottom: 20px; font-weight: 700;
+            animation: slideDown 0.8s ease-out; border-bottom: 1px solid var(--dot-color);
+            padding-bottom: 20px; margin-bottom: 40px;
+        }
+
+        /* --- Conteúdo da Legenda --- */
+        .legend-content { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+        .legend-column { flex: 1; min-width: 250px; animation: slideUp 0.8s ease-out 0.2s backwards; }
+        .legend-column:nth-child(2) { animation-delay: 0.3s; } .legend-column:nth-child(3) { animation-delay: 0.4s; }
+
+        .column-title {
+            font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color);
+            margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--dot-color);
+        }
+
+        /* --- Lista de Ícones e Itens --- */
+        .key-list { list-style: none; }
+        .key-list li { display: flex; align-items: center; height: 40px; font-size: 1rem; }
+        .key-text { line-height: 1.5; }
+        .key-list br { display: block; content: ""; margin-top: 10px; }
+
+        /* --- LÓGICA DE ÍCONES (CSS para ícones simples) --- */
+        .key-icon {
+            width: 20px; height: 20px; margin-right: 20px;
+            position: relative; color: var(--accent-color);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .key-icon::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .icon-task::before { border: 2px solid var(--accent-color); border-radius: 2px; }
+        .icon-event::before { border: 2px solid var(--accent-color); border-radius: 50%; }
+        /* .icon-appointment é agora um marcador para o JS */
+
+        .icon-note::before { content: '•'; font-size: 24px; line-height: 0.8; }
+        .icon-priority::before { content: '!'; font-weight: 700; font-size: 18px; }
+        .icon-inspiration::before { content: '*'; font-size: 28px; line-height: 0.7; }
+        .icon-question::before { content: '?'; font-weight: 700; font-size: 18px; }
+        .icon-money::before { content: '$'; font-weight: 700; font-size: 18px; }
+        
+        .status-completed::before { background-color: var(--accent-color); border-color: var(--accent-color); }
+        .status-started::before { background: repeating-linear-gradient(-45deg, var(--dot-color), var(--dot-color) 2px, transparent 2px, transparent 4px); }
+        
+        /* NOVA FLECHA ATRAVESSANDO ÍCONE */
+        .status-migrated::after {
+            content: '→';
+            position: absolute;
+            left: -20%;
+            width: 140%;
+            font-size: 28px;
+            font-weight: bold;
             text-align: center;
-            color: var(--theme-green-dark);
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--theme-green-light);
-            padding-bottom: 10px;
         }
+        .status-cancelled::after { content: '×'; font-size: 24px; line-height: 1; font-weight: 400; }
 
-        .legend-content {
-            flex-grow: 1;
-        }
-
-        .legend-section {
-            display: flex;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed var(--border-color);
-        }
-        .legend-section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .items-column {
-            flex-grow: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Duas colunas para itens */
-            gap: 10px 20px; /* Espaçamento entre linhas e colunas */
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.95em;
-        }
-
-        .symbol {
-            width: 28px; /* Largura fixa para alinhar os símbolos */
-            height: 28px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 10px;
-            font-size: 1.2em; /* Tamanho do símbolo */
-            color: var(--theme-green-medium); /* Cor para os símbolos */
-            font-weight: bold;
-        }
-
-        .symbol.color-swatch {
-            width: 18px;
-            height: 18px;
-            border: 1px solid var(--border-color-dark);
-            border-radius: 3px;
-            font-size: 1em; /* Reset para não afetar tamanho do texto interno se houver */
-        }
-        .symbol.highlight-swatch {
-            width: 25px;
-            height: 12px;
-            opacity: 0.7;
-            border: 1px solid var(--border-color-dark);
-            border-radius: 2px;
-        }
-
-        .section-label-column {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg); /* Para ler de baixo para cima na vertical */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-left: 15px; /* Espaço entre itens e rótulo */
-            margin-left: 10px; /* Espaço do conteúdo para o rótulo */
-            border-left: 2px solid var(--theme-green-light); /* Linha verde como no exemplo */
-        }
-
-        .section-label {
-            font-weight: bold;
-            color: var(--theme-green-medium);
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.9em;
-            color: var(--text-color);
-        }
-
-        .footer-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-            border-radius: 4px; /* Pequeno arredondamento para o ícone */
-            border: 1px solid var(--theme-green-dark); /* Borda sutil */
-        }
-
-        /* Cores específicas para os swatches */
-        .color-school { background-color: #42A5F5; /* Azul */ }
-        .color-personal { background-color: #FFCA28; /* Amarelo */ }
-        .color-social { background-color: #66BB6A; /* Verde (diferente do tema principal) */ }
-        .color-errands { background-color: #EF5350; /* Vermelho */ }
-        .color-extracurricular { background-color: #AB47BC; /* Roxo */ }
-
-        .highlight-productive { background-color: #64B5F6; /* Azul claro */ }
-        .highlight-moderate { background-color: #FFD54F; /* Amarelo claro */ }
-        .highlight-not-productive { background-color: #BDBDBD; /* Cinza */ }
-
+        /* --- Códigos de Cor, Botão e Animações --- */
+        .color-swatch { border-radius: 4px; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; border: 1px solid rgba(0,0,0,0.1); }
+        .color-swatch:hover { transform: scale(1.2); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .color-swatch::after { content: attr(data-tooltip); position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); background-color: var(--button-bg); color: var(--button-text); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 10; }
+        .color-swatch:hover::after, .color-swatch.show-tooltip::after { opacity: 1; visibility: visible; }
+        #theme-switcher { position: fixed; top: 25px; right: 25px; background: transparent; border: 2px solid var(--accent-color); color: var(--text-color); width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 100; display: flex; justify-content: center; align-items: center; transition: all 0.4s ease; }
+        #theme-switcher:hover { transform: scale(1.1); background: var(--accent-color); color: var(--bg-color); }
+        #theme-switcher svg { width: 22px; height: 22px; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        #theme-switcher:hover svg { transform: rotate(180deg); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .journal-page { padding: 20px; } .legend-container { padding: 20px; } .legend-content { flex-direction: column; gap: 40px; } .page-title { font-size: 3rem; } .key-list li { height: auto; padding: 10px 0; } }
     </style>
-</head><body>
+</head>
+<body data-theme="classic">
 
-    <div class="bujo-page">
-        <header>
-            <h1>Legend</h1>
-        </header>
+    <button id="theme-switcher" title="Alterar Tema">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+    </button>
 
-        <main class="legend-content">
-            <div class="legend-section">
-                <div class="items-column">
-                    <div class="legend-item"><span class="symbol">□</span> Tarefa</div>
-                    <div class="legend-item"><span class="symbol">○</span> Evento</div>
-                    <div class="legend-item"><span class="symbol">•</span> Nota</div>
-                    <div class="legend-item"><span class="symbol">♡</span> Citação/Motivação</div>
+    <div class="journal-page">
+        <div class="legend-container">
+            <h1 class="page-title">Legenda</h1>
+            <main class="legend-content">
+                <div class="legend-column">
+                    <h2 class="column-title">Símbolos</h2>
+                    <ul class="key-list">
+                        <li><span class="key-icon icon-task"></span><span class="key-text">Tarefa</span></li>
+                        <li><span class="key-icon icon-event"></span><span class="key-text">Evento</span></li>
+                        <li><span class="key-icon icon-appointment"></span><span class="key-text">Compromisso</span></li>
+                        <li><span class="key-icon icon-note"></span><span class="key-text">Nota</span></li>
+                        <li><span class="key-icon icon-priority"></span><span class="key-text">Prioridade</span></li>
+                        <li><span class="key-icon icon-inspiration"></span><span class="key-text">Inspiração</span></li>
+                        <li><span class="key-icon icon-question"></span><span class="key-text">Pesquisar</span></li>
+                        <li><span class="key-icon icon-money"></span><span class="key-text">Finanças</span></li>
+                    </ul>
                 </div>
-                <div class="section-label-column">
-                    <span class="section-label">Bullets</span>
+                <div class="legend-column">
+                    <h2 class="column-title">Atualização de Status</h2>
+                    <ul class="key-list">
+                        <li><span class="key-icon icon-task status-completed"></span><span class="key-text">Concluído</span></li>
+                        <li><span class="key-icon icon-task status-started"></span><span class="key-text">Iniciado</span></li>
+                        <li><span class="key-icon icon-task status-migrated"></span><span class="key-text">Migrado</span></li>
+                        <li><span class="key-icon icon-task status-cancelled"></span><span class="key-text">Cancelado</span></li>
+                        <br>
+                        <li><span class="key-icon icon-event status-completed"></span><span class="key-text">Realizado</span></li>
+                        <li><span class="key-icon icon-event status-started"></span><span class="key-text">Iniciado</span></li>
+                        <li><span class="key-icon icon-event status-migrated"></span><span class="key-text">Adiado</span></li>
+                        <li><span class="key-icon icon-event status-cancelled"></span><span class="key-text">Cancelado</span></li>
+                        <br>
+                        <li><span class="key-icon icon-appointment status-completed"></span><span class="key-text">Realizado</span></li>
+                        <li><span class="key-icon icon-appointment status-started"></span><span class="key-text">Iniciado</span></li>
+                        <li><span class="key-icon icon-appointment status-migrated"></span><span class="key-text">Reagendado</span></li>
+                        <li><span class="key-icon icon-appointment status-cancelled"></span><span class="key-text">Cancelado</span></li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="legend-section">
-                <div class="items-column">
-                    <div class="legend-item"><span class="symbol">!</span> Prazo/Importante</div>
-                    <div class="legend-item"><span class="symbol">*</span> Prioridade</div>
-                    <div class="legend-item"><span class="symbol">$</span> Despesa</div>
-                    <div class="legend-item"><span class="symbol">☕</span> Comida/Refeição</div>
-                    <div class="legend-item"><span class="symbol">🧘</span> Relaxamento</div>
-                    <div class="legend-item"><span class="symbol">💪</span> Exercício</div>
+                <div class="legend-column">
+                    <h2 class="column-title">Códigos de Cor</h2>
+                    <ul class="key-list">
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-red);"></span><span class="key-text">Pessoal / Urgente</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-blue);"></span><span class="key-text">Trabalho</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-green);"></span><span class="key-text">Saúde / Bem-estar</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-yellow);"></span><span class="key-text">Estudos</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-purple);"></span><span class="key-text">Eventos Sociais</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-pink);"></span><span class="key-text">Família</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-orange);"></span><span class="key-text">Lazer / Hobbies</span></li>
+                        <li><span class="key-icon color-swatch" style="background-color: var(--color-teal);"></span><span class="key-text">Projetos</span></li>
+                    </ul>
                 </div>
-                <div class="section-label-column">
-                    <span class="section-label">Marks</span>
-                </div>
-            </div>
-
-            <div class="legend-section">
-                <div class="items-column">
-                    <div class="legend-item"><span class="symbol">➤</span> Iniciado</div>
-                    <div class="legend-item"><span class="symbol">✅</span> Completado</div>
-                    <div class="legend-item"><span class="symbol">✘</span> Irrelevante/Cancelado</div>
-                    <div class="legend-item"><span class="symbol">➢</span> Movido/Migrado</div>
-                </div>
-                <div class="section-label-column">
-                    <span class="section-label">Fills</span>
-                </div>
-            </div>
-
-            <div class="legend-section">
-                <div class="items-column">
-                    <div class="legend-item"><span class="symbol color-swatch color-school"></span> Escola/Estudo</div>
-                    <div class="legend-item"><span class="symbol color-swatch color-personal"></span> Pessoal</div>
-                    <div class="legend-item"><span class="symbol color-swatch color-social"></span> Social</div>
-                    <div class="legend-item"><span class="symbol color-swatch color-errands"></span> Pendências</div>
-                    <div class="legend-item"><span class="symbol color-swatch color-extracurricular"></span> Extracurricular</div>
-                </div>
-                <div class="section-label-column">
-                    <span class="section-label">Colors</span>
-                </div>
-            </div>
-
-            <div class="legend-section">
-                <div class="items-column">
-                    <div class="legend-item"><span class="symbol highlight-swatch highlight-productive"></span> Muito Produtivo</div>
-                    <div class="legend-item"><span class="symbol highlight-swatch highlight-moderate"></span> Moderado/Ok</div>
-                    <div class="legend-item"><span class="symbol highlight-swatch highlight-not-productive"></span> Pouco Produtivo</div>
-                </div>
-                <div class="section-label-column">
-                    <span class="section-label">Highlight</span>
-                </div>
-            </div>
-
-        </main>
-
-        <footer>
-            <img src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Tema Icon" class="footer-icon">
-            <span>Pág. 1</span>
-        </footer>
+            </main>
+        </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            /**
+             * SISTEMA DE DESENHO SVG PARA ÍCONES DE COMPROMISSO
+             */
+            function createTriangleSVG(status) {
+                const style = getComputedStyle(document.documentElement);
+                const accentColor = style.getPropertyValue('--accent-color').trim();
+                const dotColor = style.getPropertyValue('--dot-color').trim();
+
+                let fill = 'none';
+                let overlay = '';
+                let pattern = '';
+                let viewBox = '0 0 20 20'; // ViewBox padrão
+                
+                const trianglePath = `<path d="M10 2 L2 18 L18 18 Z" stroke="${accentColor}" stroke-width="2" stroke-linejoin="round" />`;
+
+                switch (status) {
+                    case 'completed':
+                        fill = accentColor;
+                        break;
+                    case 'started':
+                        pattern = `<defs><pattern id="stripe-pattern" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><path d="M 0,0 l 5,0" stroke="${dotColor}" stroke-width="2" /></pattern></defs>`;
+                        fill = 'url(#stripe-pattern)';
+                        break;
+                    case 'migrated':
+                        // Altera o viewBox para a flecha "atravessar" o ícone
+                        viewBox = '-4 0 28 20'; 
+                        // Desenha uma flecha completa usando um path
+                        overlay = `<path d="M-2 10 L22 10 M18 6 L22 10 L18 14" stroke="${accentColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />`;
+                        break;
+                    case 'cancelled':
+                        overlay = `<path d="M6 6 L14 14 M14 6 L6 14" stroke="${accentColor}" stroke-width="2.5" stroke-linecap="round" />`;
+                        break;
+                }
+
+                return `
+                    <svg width="20" height="20" viewBox="${viewBox}" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                        ${pattern}
+                        <g fill="${fill}">
+                            ${trianglePath}
+                        </g>
+                        ${overlay}
+                    </svg>
+                `;
+            }
+
+            // Encontra e substitui todos os ícones de compromisso
+            const appointmentIcons = document.querySelectorAll('.icon-appointment');
+            appointmentIcons.forEach(icon => {
+                let status = 'default';
+                if (icon.classList.contains('status-completed')) status = 'completed';
+                else if (icon.classList.contains('status-started')) status = 'started';
+                else if (icon.classList.contains('status-migrated')) status = 'migrated';
+                else if (icon.classList.contains('status-cancelled')) status = 'cancelled';
+                
+                const originalClasses = icon.className; // Guarda as classes
+                icon.innerHTML = createTriangleSVG(status);
+                icon.className = originalClasses; // Restaura as classes para referência futura
+                icon.classList.remove('status-completed', 'status-started', 'status-migrated', 'status-cancelled');
+            });
+
+
+            // --- LÓGICA DO TEMA ---
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const body = document.body;
+            const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
+            body.setAttribute('data-theme', savedTheme);
+            themeSwitcher.addEventListener('click', function() {
+                let newTheme = body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('bujoTheme', newTheme);
+                // Força um recarregamento para que o JS redesenhe os SVGs com as novas cores do tema.
+                // É a forma mais simples e garantida de atualizar as cores injetadas no SVG.
+                location.reload(); 
+            });
+        });
+    </script>
 </body>
 </html>
