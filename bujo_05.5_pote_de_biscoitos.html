@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pote de Biscoitos - Meu Bullet Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F1F5F8;
+            --dot-color: #CFD8DC;
+            --text-color: #3a3a3a;
+            --accent-color: #585858;
+            --border-color: #e2e8f0;
+            --input-bg-color: #FFFFFF;
+            --danger-color: #e53e3e;
+        }
+
+        /* --- Configurações Gerais --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .journal-page {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .log-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--bg-color);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            animation: fadeIn 0.8s ease-out;
+            transition: background-color 0.5s ease;
+        }
+        
+        /* --- Cabeçalho com Botão Discreto --- */
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideDown 0.7s ease-out;
+            position: relative;
+        }
+        .header-title-group { text-align: center; }
+        .page-title-script { font-family: 'Dancing Script', cursive; font-size: 4rem; line-height: 1; color: var(--text-color); margin-bottom: -10px; }
+        .page-subtitle { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--accent-color); }
+        #show-modal-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        #show-modal-btn:hover { background-color: var(--border-color); transform: scale(1.1); }
+        #show-modal-btn svg { width: 28px; height: 28px; }
+
+        /* --- Log de Conquistas com Ações de Edição --- */
+        .log-entry {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            animation: fadeIn 0.5s ease-out;
+        }
+        .log-date { flex-shrink: 0; text-align: center; font-weight: 700; color: var(--accent-color); }
+        .log-date-day { font-size: 1.5rem; display: block; }
+        .log-date-month { font-size: 0.8rem; text-transform: uppercase; display: block; }
+        .log-text { font-size: 1rem; line-height: 1.6; padding-top: 4px; padding-right: 60px; /* Espaço para os botões */ }
+
+        .log-actions {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .log-entry:hover .log-actions { opacity: 1; }
+        .action-btn { background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; }
+        .action-btn svg { width: 18px; height: 18px; }
+        .edit-btn { color: var(--accent-color); }
+        .edit-btn:hover { background-color: var(--border-color); }
+        .delete-btn { color: var(--danger-color); }
+        .delete-btn:hover { background-color: rgba(229, 62, 62, 0.1); }
+        .empty-log-message { text-align: center; padding: 40px; color: var(--accent-color); font-style: italic; }
+
+        /* --- Modal (Popup) --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal.visible { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            background-color: var(--input-bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal.visible .modal-content { transform: scale(1); }
+        #cookie-form { display: grid; gap: 20px; }
+        #cookie-date { font-family: 'Montserrat', sans-serif; border: 2px solid var(--border-color); background-color: transparent; padding: 10px; font-size: 1rem; color: var(--text-color); border-radius: 4px; }
+        #cookie-text { width: 100%; min-height: 120px; font-family: 'Montserrat', sans-serif; font-size: 1rem; line-height: 1.6; padding: 10px; border: 2px solid var(--border-color); border-radius: 4px; background-color: transparent; resize: vertical; color: var(--text-color); }
+        #cookie-text:focus, #cookie-date:focus { outline: none; border-color: var(--text-color); }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+        .modal-btn { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.2s ease; }
+        #save-cookie-btn { background-color: var(--text-color); color: var(--bg-color); }
+        #cancel-btn { background-color: var(--border-color); color: var(--accent-color); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="journal-page">
+        <div class="log-container">
+            <header class="page-header">
+                <div class="header-title-group">
+                    <div class="page-title-script">Pote de</div>
+                    <div class="page-subtitle">Biscoitos</div>
+                </div>
+                <button id="show-modal-btn" title="Adicionar Conquista">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+            </header>
+            
+            <div id="cookie-jar-log">
+                <!-- Conquistas salvas serão inseridas aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar/Editar -->
+    <div id="cookie-modal" class="modal">
+        <div class="modal-content">
+            <form id="cookie-form">
+                <input type="date" id="cookie-date" required>
+                <textarea id="cookie-text" placeholder="Descreva sua conquista..." required></textarea>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-btn" class="modal-btn">Cancelar</button>
+                    <button type="submit" id="save-cookie-btn" class="modal-btn">Adicionar ao Pote</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Referências DOM ---
+        const showModalBtn = document.getElementById('show-modal-btn');
+        const modal = document.getElementById('cookie-modal');
+        const cookieForm = document.getElementById('cookie-form');
+        const cancelButton = document.getElementById('cancel-btn');
+        const dateInput = document.getElementById('cookie-date');
+        const textInput = document.getElementById('cookie-text');
+        const saveButton = document.getElementById('save-cookie-btn');
+        const logContainer = document.getElementById('cookie-jar-log');
+
+        // --- Estado da Aplicação ---
+        let state = { cookies: [] };
+        let currentEditingId = null;
+        let cloudDataLoaded = false;
+
+        // --- Comunicação com Script Pai (Tampermonkey) ---
+        window.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED') {
+                console.log('[CookieJar] Dados recebidos do Gist:', event.data.payload);
+                const loadedData = event.data.payload;
+                
+                if (Array.isArray(loadedData) && loadedData.length > 0) {
+                    state.cookies = loadedData;
+                } else {
+                    state.cookies = []; // Inicia vazio se não houver nada no Gist
+                }
+                
+                cloudDataLoaded = true;
+                renderCookies();
+            }
+        });
+
+        const CookieLogic = {
+            save() {
+                if (!cloudDataLoaded) return; // Impede salvamento antes do carregamento inicial
+                
+                // Ordena sempre antes de salvar para manter consistência
+                state.cookies.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                console.log('[CookieJar] Enviando dados para salvar no Gist...');
+                window.parent.postMessage({
+                    type: 'SAVE_BUJO_PAGE_DATA',
+                    pageUrl: window.location.href,
+                    payload: state.cookies
+                }, '*');
+            },
+            load() {
+                console.log('[CookieJar] Solicitando dados do Gist...');
+                window.parent.postMessage({
+                    type: 'REQUEST_BUJO_PAGE_DATA',
+                    pageUrl: window.location.href
+                }, '*');
+            }
+        };
+
+        // --- Funções do Modal ---
+        function openModal() { modal.classList.add('visible'); }
+        function closeModal() { modal.classList.remove('visible'); }
+
+        // --- Renderização ---
+        function renderCookies() {
+            logContainer.innerHTML = ''; 
+
+            if (state.cookies.length === 0) {
+                logContainer.innerHTML = `<p class="empty-log-message">Seu pote de biscoitos está vazio. Adicione sua primeira vitória!</p>`;
+                return;
+            }
+
+            state.cookies.forEach(cookie => {
+                const entryElement = document.createElement('div');
+                entryElement.className = 'log-entry';
+                entryElement.dataset.id = cookie.id;
+
+                const date = new Date(cookie.date + 'T00:00:00');
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = date.toLocaleString('pt-BR', { month: 'short' }).replace('.', '');
+
+                entryElement.innerHTML = `
+                    <div class="log-date">
+                        <span class="log-date-day">${day}</span>
+                        <span class="log-date-month">${month}</span>
+                    </div>
+                    <p class="log-text">${cookie.text.replace(/\n/g, '<br>')}</p>
+                    <div class="log-actions">
+                        <button class="action-btn edit-btn" title="Editar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </button>
+                        <button class="action-btn delete-btn" title="Excluir">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                        </button>
+                    </div>
+                `;
+                logContainer.appendChild(entryElement);
+            });
+        }
+
+        // --- Event Listeners ---
+        showModalBtn.addEventListener('click', () => {
+            currentEditingId = null;
+            cookieForm.reset();
+            dateInput.value = new Date().toISOString().split('T')[0];
+            saveButton.textContent = 'Adicionar ao Pote';
+            openModal();
+        });
+        
+        cancelButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        cookieForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const dateValue = dateInput.value;
+            const textValue = textInput.value.trim();
+            
+            if (!dateValue || !textValue) return;
+
+            if (currentEditingId) { // Editando
+                const cookieIndex = state.cookies.findIndex(c => c.id === currentEditingId);
+                if (cookieIndex > -1) {
+                    state.cookies[cookieIndex].date = dateValue;
+                    state.cookies[cookieIndex].text = textValue;
+                }
+            } else { // Adicionando
+                state.cookies.push({
+                    id: Date.now(),
+                    date: dateValue,
+                    text: textValue
+                });
+            }
+            
+            CookieLogic.save(); // Salva na nuvem
+            renderCookies();    // Atualiza a tela
+            closeModal();
+        });
+
+        logContainer.addEventListener('click', (e) => {
+            const editBtn = e.target.closest('.edit-btn');
+            const deleteBtn = e.target.closest('.delete-btn');
+            
+            if (editBtn) {
+                const entryElement = editBtn.closest('.log-entry');
+                const cookieId = Number(entryElement.dataset.id);
+                const cookie = state.cookies.find(c => c.id === cookieId);
+                
+                if (cookie) {
+                    currentEditingId = cookie.id;
+                    dateInput.value = cookie.date;
+                    textInput.value = cookie.text;
+                    saveButton.textContent = 'Salvar Alterações';
+                    openModal();
+                }
+            }
+
+            if (deleteBtn) {
+                const entryElement = deleteBtn.closest('.log-entry');
+                const cookieId = Number(entryElement.dataset.id);
+                
+                if (confirm('Tem certeza de que deseja excluir esta conquista?')) {
+                    state.cookies = state.cookies.filter(c => c.id !== cookieId);
+                    CookieLogic.save(); // Salva na nuvem
+                    renderCookies();    // Atualiza a tela
+                }
+            }
+        });
+
+        // --- Inicialização ---
+        CookieLogic.load();
+
+    });
+    </script>
+</body>
+</html>
