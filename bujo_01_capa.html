@@ -11,19 +11,17 @@
     <style>
         /* --- Variáveis de Tema (CSS Variables) --- */
         :root {
-            /* Tema Padrão: Clássico/Creme */
-            --bg-color: #fdfaf4;
-            --dot-color: #e2ded5;
+            /* Tema Padrão: Azulado/Frio */
+            --bg-color: #F1F5F8;
+            --dot-color: #CFD8DC; /* Tom mais escuro para as bolinhas */
             --text-color: #3a3a3a;
             --accent-color: #585858;
             --button-bg: #3a3a3a;
-            --button-text: #fdfaf4;
-            --button-hover-bg: #585858;
-            /* Cor para o gradiente central. Um pouco de opacidade para ainda ver os pontos. */
-            --bg-spotlight-color: rgba(253, 250, 244, 0.95); 
+            --button-text: #F1F5F8;
+            --bg-spotlight-color: rgba(241, 245, 248, 0.95);
         }
 
-        /* Tema Flamingo/Rosa */
+        /* Tema Flamingo/Rosa (mantido como alternativa) */
         body[data-theme="flamingo"] {
             --bg-color: #fff0f5;
             --dot-color: #ffdde1;
@@ -31,7 +29,6 @@
             --accent-color: #db7093;
             --button-bg: #c71585;
             --button-text: #fff0f5;
-            --button-hover-bg: #db7093;
             --bg-spotlight-color: rgba(255, 240, 245, 0.95);
         }
 
@@ -69,30 +66,29 @@
             animation: fadeIn 1s ease-out forwards;
             position: relative;
             padding: 60px 80px;
-            /* Efeito Invertido: opaco no centro, transparente nas bordas */
             background: radial-gradient(ellipse at center, 
-                var(--bg-spotlight-color) 50%, /* Centro opaco */
-                transparent 85% /* Borda transparente */
+                var(--bg-spotlight-color) 50%,
+                transparent 85%
             );
             transition: background 0.5s ease;
         }
 
-        /* --- Nome Editável (Iniciais) --- */
+        /* --- Nome Editável com Largura Dinâmica --- */
+        .owner-name-container {
+            margin-bottom: 25px;
+            animation: slideUp 0.8s ease-out 0.2s backwards;
+        }
         .owner-name-input {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            letter-spacing: 2px;
+            font-family: 'Dancing Script', cursive; /* Fonte cursiva */
             background: transparent;
             border: none;
-            border-bottom: 1px dotted var(--accent-color);
-            color: var(--accent-color);
-            font-size: 1.2rem;
+            border-bottom: 1.5px dotted var(--accent-color);
+            color: var(--text-color); /* Cor principal para melhor leitura */
+            font-size: 2.2rem; /* Tamanho ajustado para cursiva */
             text-align: center;
-            width: 200px;
-            padding-bottom: 5px;
-            margin-bottom: 25px;
+            padding: 0 5px 5px 5px; /* Padding para a linha não ficar colada */
             transition: border-color 0.3s ease;
-            animation: slideUp 0.8s ease-out 0.2s backwards;
+            min-width: 150px; /* Largura mínima para o placeholder */
         }
         .owner-name-input:focus {
             outline: none;
@@ -103,11 +99,22 @@
             opacity: 0.8;
         }
 
+        /* Span oculto para medir a largura do texto do input */
+        .name-sizer-span {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            visibility: hidden;
+            white-space: pre; /* Essencial para medir corretamente */
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            padding: 0 5px; /* Deve corresponder ao padding horizontal do input */
+        }
+
         /* --- Título Principal --- */
         .main-title {
             line-height: 1.2;
             position: relative;
-            /* Animação de entrada e pulsação contínua */
             animation: 
                 slideUp 1s ease-out 0.4s backwards,
                 pulse 10s ease-in-out infinite 2s;
@@ -126,7 +133,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-color);
-            margin-left: 0.2em; /* Ajuste para alinhar com a fonte maior */
+            margin-left: 0.2em;
         }
         
         /* --- Ano e Botão --- */
@@ -164,7 +171,7 @@
             right: 25px;
             background: transparent;
             border: 2px solid var(--accent-color);
-            color: var(--text-color); /* A cor do ícone é herdada daqui */
+            color: var(--text-color);
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -178,7 +185,7 @@
         #theme-switcher:hover {
             transform: scale(1.1);
             background: var(--accent-color);
-            color: var(--bg-color); /* Inverte a cor do ícone no hover */
+            color: var(--bg-color);
         }
         #theme-switcher svg {
             width: 22px;
@@ -193,8 +200,6 @@
         /* --- Animações (Keyframes) --- */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Animação de pulsação aprimorada */
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.025); }
@@ -216,7 +221,6 @@
     <div class="journal-cover">
         
         <button id="theme-switcher" title="Alterar Tema">
-            <!-- Ícone SVG Minimalista para 'troca' ou 'ciclo' -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
                 <path d="M3 3v5h5"/>
@@ -226,7 +230,11 @@
         </button>
 
         <div class="content-wrapper">
-            <input type="text" id="owner-name" class="owner-name-input" placeholder="mhs">
+            <div class="owner-name-container">
+                <input type="text" id="owner-name" class="owner-name-input" placeholder="seu nome">
+            </div>
+            <!-- Span oculto para medir a largura do texto -->
+            <span id="name-sizer" class="name-sizer-span"></span>
 
             <h1 class="main-title">
                 <div class="title-script">Bullet</div>
@@ -243,22 +251,42 @@
         document.addEventListener('DOMContentLoaded', function() {
             const yearElement = document.getElementById('current-year');
             const ownerNameInput = document.getElementById('owner-name');
+            const nameSizer = document.getElementById('name-sizer');
             const themeSwitcher = document.getElementById('theme-switcher');
             const body = document.body;
 
-            // Define o ano atual dinamicamente
-            yearElement.textContent = new Date().getFullYear();
+            // --- LÓGICA PARA LARGURA DINÂMICA DO NOME ---
+            function updateNameWidth() {
+                // Pega o texto do input ou o placeholder se estiver vazio
+                const text = ownerNameInput.value || ownerNameInput.placeholder;
+                nameSizer.textContent = text;
+                // Mede a largura do span oculto
+                const newWidth = nameSizer.offsetWidth;
+                // Aplica a largura medida ao input
+                ownerNameInput.style.width = newWidth + 'px';
+            }
 
-            // Lógica para salvar e carregar o nome/iniciais
+            // Atualiza a largura quando o usuário digita
+            ownerNameInput.addEventListener('input', updateNameWidth);
+
+            // Carrega o nome salvo do localStorage
             const savedName = localStorage.getItem('bujoOwnerName');
             if (savedName) {
                 ownerNameInput.value = savedName;
             }
+
+            // Define a largura inicial ao carregar a página
+            updateNameWidth(); 
+
+            // Salva o nome ao ser alterado
             ownerNameInput.addEventListener('input', function() {
                 localStorage.setItem('bujoOwnerName', ownerNameInput.value);
             });
 
-            // Lógica para o botão de troca de tema
+
+            // --- LÓGICA DO TEMA E ANO ---
+            yearElement.textContent = new Date().getFullYear();
+            
             const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
             body.setAttribute('data-theme', savedTheme);
 
