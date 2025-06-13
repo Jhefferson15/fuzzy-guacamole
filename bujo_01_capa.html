@@ -3,291 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujo Berserker - Dynamic Centering</title>
+    <title>Meu Bullet Journal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Nosifer&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- Variáveis de Tema (CSS Variables) --- */
         :root {
-            --green-glow: #33ff77; 
-            --green-dark-shadow: #005015; 
-            --green-mid-glow: #15cc55; 
-            --text-base-color: #f0f0f0; 
-            --bg-color: #020202; 
-            --container-bg-start: rgba(5, 20, 10, 0.2);
-            --container-bg-mid: rgba(3, 12, 7, 0.4);
-            --container-bg-end: #050505;
+            /* Tema Padrão: Clássico/Creme */
+            --bg-color: #fdfaf4;
+            --dot-color: #e2ded5;
+            --text-color: #3a3a3a;
+            --accent-color: #585858;
+            --button-bg: #3a3a3a;
+            --button-text: #fdfaf4;
+            --button-hover-bg: #585858;
+            /* Cor para o gradiente central. Um pouco de opacidade para ainda ver os pontos. */
+            --bg-spotlight-color: rgba(253, 250, 244, 0.95); 
         }
 
+        /* Tema Flamingo/Rosa */
+        body[data-theme="flamingo"] {
+            --bg-color: #fff0f5;
+            --dot-color: #ffdde1;
+            --text-color: #c71585;
+            --accent-color: #db7093;
+            --button-bg: #c71585;
+            --button-text: #fff0f5;
+            --button-hover-bg: #db7093;
+            --bg-spotlight-color: rgba(255, 240, 245, 0.95);
+        }
+
+        /* --- Configurações Gerais --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
+        body {
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 4vh; 
+            color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow: hidden;
         }
 
-        #bujo-capa-container {
-            width: 85vmin;
-            height: 85vmin;
-            max-width: 850px;
-            max-height: 850px;
-            
-            background: 
-                radial-gradient(ellipse at center, var(--container-bg-start) 0%, var(--container-bg-mid) 40%, var(--container-bg-end) 85%),
-                #070707; 
-            
-            border: 1px solid rgba(20, 80, 30, 0.15); 
-            border-radius: 25px; 
-            box-shadow: 
-                inset 0 0 50px 10px rgba(0, 0, 0, 0.85), 
-                0 0 25px 5px rgba(5, 25, 10, 0.15);  
-            
+        /* --- Fundo de Pontos (Dotted Grid) --- */
+        .journal-cover {
             position: relative;
+            min-height: 100vh;
+            width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            overflow: hidden; 
+            align-items: center;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 2rem;
         }
 
-        #bujo-capa-container::before { 
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%; 
-            width: 200%; height: 200%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            background-size: 150px 150px; 
-            opacity: 0.025; 
-            animation: animatedNoise 30s infinite linear alternate;
-            pointer-events: none;
-            z-index: 0; 
-        }
-
-        @keyframes animatedNoise {
-            0% { transform: translate(0,0) rotate(0deg); }
-            25% { transform: translate(2%, -3%) rotate(0.5deg); }
-            50% { transform: translate(-2%, 2%) rotate(-0.5deg); }
-            75% { transform: translate(3%, 1%) rotate(0.2deg); }
-            100% { transform: translate(0,0) rotate(0deg); }
-        }
-
-
-        .titulo-atras {
-            font-family: 'Creepster', cursive;
-            font-size: clamp(7rem, 25vmin, 16rem); 
-            font-weight: normal;
-            line-height: 0.8; 
-            color: var(--text-base-color);
-            
-            position: absolute;
-            z-index: 1; 
-            
-            top: 50%;
-            /* 'left' será definido por JavaScript */
-            transform: translateY(-50%); /* Apenas para o alinhamento vertical */
-            
-            white-space: nowrap; 
-            letter-spacing: -0.04em; /* AJUSTE: Compacta um pouco o texto */
-                        
-            text-shadow: 
-                0 0 6px color-mix(in srgb, var(--green-glow) 65%, transparent),
-                0 0 10px color-mix(in srgb, var(--green-glow) 55%, transparent),
-                0 0 18px color-mix(in srgb, var(--green-glow) 45%, transparent),
-                1px 2px 1px color-mix(in srgb, var(--green-dark-shadow) 70%, transparent),
-                2px 4px 2px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
-                1px 6px 6px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
-                0px 0px 2px rgba(0,0,0,1);
-
-            mix-blend-mode: difference;
-            pointer-events: none;
-            animation: textGlowFlicker 6s infinite alternate ease-in-out;
-            /* Importante: Evitar text-align: center aqui, pois o JS controlará o 'left' */
-        }
-        
-        @keyframes textGlowFlicker { 
-            0%, 100% {
-                text-shadow: 
-                    0 0 6px color-mix(in srgb, var(--green-glow) 65%, transparent),
-                    0 0 10px color-mix(in srgb, var(--green-glow) 55%, transparent),
-                    0 0 18px color-mix(in srgb, var(--green-glow) 45%, transparent),
-                    1px 2px 1px color-mix(in srgb, var(--green-dark-shadow) 70%, transparent),
-                    2px 4px 2px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
-                    1px 6px 6px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
-                    0px 0px 2px rgba(0,0,0,1);
-                opacity: 0.95;
-            }
-            50% {
-                text-shadow: 
-                    0 0 8px color-mix(in srgb, var(--green-glow) 75%, transparent),
-                    0 0 15px color-mix(in srgb, var(--green-glow) 65%, transparent),
-                    0 0 25px color-mix(in srgb, var(--green-glow) 55%, transparent),
-                    1px 1px 1px color-mix(in srgb, var(--green-dark-shadow) 60%, transparent),
-                    2px 3px 2px color-mix(in srgb, var(--green-dark-shadow) 50%, transparent),
-                    1px 5px 5px color-mix(in srgb, var(--green-dark-shadow) 40%, transparent),
-                    0px 0px 1px rgba(0,0,0,0.8);
-                opacity: 1;
-            }
-        }
-        
-        #personagem-imagem {
-            position: relative; 
-            z-index: 2; 
-            max-width: 90%; 
-            max-height: 90%;
-            object-fit: contain;
-            filter: drop-shadow(2px 10px 22px rgba(0, 0, 0, 0.85)); 
-            animation: characterBreathe 5s infinite ease-in-out;
-        }
-
-        @keyframes characterBreathe { 
-            0%, 100% {
-                transform: scale(1);
-                filter: drop-shadow(2px 10px 22px rgba(0, 0, 0, 0.85)) brightness(1);
-            }
-            50% {
-                transform: scale(1.015); 
-                filter: drop-shadow(3px 12px 28px rgba(0, 0, 0, 0.95)) brightness(1.03);
-            }
-        }
-
-        .titulo-frente {
-            font-family: 'UnifrakturMaguntia', cursive; 
-            font-size: clamp(3.8rem, 13vmin, 7.5rem); 
-            font-weight: normal; 
-            color: var(--green-glow);
-            position: absolute;
-            z-index: 3; 
-            top: 8%; 
-            left: 50%;
-            transform: translateX(-50%); 
+        /* --- Conteúdo Principal com Efeito Spotlight --- */
+        .content-wrapper {
             text-align: center;
-            width: auto; 
-            white-space: nowrap; 
-            
-            text-shadow: 
-                0 0 5px var(--green-glow),
-                0 0 10px var(--green-mid-glow),
-                0 0 15px var(--green-mid-glow),
-                1px 1px 0px var(--green-dark-shadow),
-                -1px -1px 0px var(--green-dark-shadow),
-                1px -1px 0px var(--green-dark-shadow),
-                -1px 1px 0px var(--green-dark-shadow),
-                0 0 10px rgba(0,0,0,0.7); 
-
-            animation: frontTextIntro 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
-                       frontTextPulseGothic 2.8s 2.5s infinite alternate ease-in-out;
-            opacity: 0; 
-            transform-origin: center center;
+            animation: fadeIn 1s ease-out forwards;
+            position: relative;
+            padding: 60px 80px;
+            /* Efeito Invertido: opaco no centro, transparente nas bordas */
+            background: radial-gradient(ellipse at center, 
+                var(--bg-spotlight-color) 50%, /* Centro opaco */
+                transparent 85% /* Borda transparente */
+            );
+            transition: background 0.5s ease;
         }
 
-        @keyframes frontTextIntro {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px) scale(0.7);
-            }
-            60% {
-                opacity: 0.8;
-                transform: translateX(-50%) translateY(5px) scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0) scale(1);
-            }
+        /* --- Nome Editável (Iniciais) --- */
+        .owner-name-input {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px dotted var(--accent-color);
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            text-align: center;
+            width: 200px;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+            transition: border-color 0.3s ease;
+            animation: slideUp 0.8s ease-out 0.2s backwards;
+        }
+        .owner-name-input:focus {
+            outline: none;
+            border-bottom-color: var(--text-color);
+        }
+        .owner-name-input::placeholder {
+            color: var(--accent-color);
+            opacity: 0.8;
         }
 
-        @keyframes frontTextPulseGothic {
-            from {
-                text-shadow: 
-                    0 0 5px var(--green-glow),
-                    0 0 10px var(--green-mid-glow),
-                    0 0 15px var(--green-mid-glow),
-                    1px 1px 0px var(--green-dark-shadow), -1px -1px 0px var(--green-dark-shadow),
-                    1px -1px 0px var(--green-dark-shadow), -1px 1px 0px var(--green-dark-shadow),
-                    0 0 10px rgba(0,0,0,0.7);
-                color: var(--green-glow);
-                transform: translateX(-50%) scale(1);
-            }
-            to {
-                text-shadow: 
-                    0 0 8px var(--green-glow),
-                    0 0 16px var(--green-mid-glow),
-                    0 0 24px var(--green-mid-glow),
-                    1px 1px 0px var(--green-dark-shadow), -1px -1px 0px var(--green-dark-shadow),
-                    1px -1px 0px var(--green-dark-shadow), -1px 1px 0px var(--green-dark-shadow),
-                    0 0 15px rgba(0,0,0,0.85);
-                color: color-mix(in srgb, var(--green-glow) 90%, #fff 10%); 
-                transform: translateX(-50%) scale(1.03);
-            }
+        /* --- Título Principal --- */
+        .main-title {
+            line-height: 1.2;
+            position: relative;
+            /* Animação de entrada e pulsação contínua */
+            animation: 
+                slideUp 1s ease-out 0.4s backwards,
+                pulse 10s ease-in-out infinite 2s;
+        }
+        .title-script {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 6rem;
+            color: var(--text-color);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .title-sans {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 4.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            margin-left: 0.2em; /* Ajuste para alinhar com a fonte maior */
+        }
+        
+        /* --- Ano e Botão --- */
+        .year {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin: 40px 0 20px 0;
+            color: var(--accent-color);
+            animation: fadeIn 1s ease-out 1.2s backwards;
+        }
+        .enter-button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 50px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-out 1.4s backwards;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .enter-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
-        #bujo-capa-container::after { 
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            box-shadow: inset 0 0 80px 35px rgba(0,0,0,0.88); 
-            pointer-events: none;
-            z-index: 4; 
-            border-radius: inherit; 
+        /* --- Botão de Tema com Ícone SVG Minimalista --- */
+        #theme-switcher {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--text-color); /* A cor do ícone é herdada daqui */
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.4s ease, border-color 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+        }
+        #theme-switcher:hover {
+            transform: scale(1.1);
+            background: var(--accent-color);
+            color: var(--bg-color); /* Inverte a cor do ícone no hover */
+        }
+        #theme-switcher svg {
+            width: 22px;
+            height: 22px;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #theme-switcher:hover svg {
+            transform: rotate(180deg);
         }
 
+
+        /* --- Animações (Keyframes) --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Animação de pulsação aprimorada */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.025); }
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .title-script { font-size: 4.5rem; }
+            .title-sans { font-size: 3rem; }
+            .content-wrapper {
+                padding: 40px 15px;
+                background: radial-gradient(ellipse at center, var(--bg-spotlight-color) 60%, transparent 95%);
+            }
+        }
     </style>
 </head>
-<body>
-    <main id="bujo-capa-container">
-        <h1 class="titulo-atras">BERSERKER</h1>
-        <img id="personagem-imagem" src="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" alt="Sanemi Shinazugawa - Demon Slayer">
-        <h2 class="titulo-frente">Bujo</h2> 
-    </main>
+<body data-theme="classic">
+
+    <div class="journal-cover">
+        
+        <button id="theme-switcher" title="Alterar Tema">
+            <!-- Ícone SVG Minimalista para 'troca' ou 'ciclo' -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M21 21v-5h-5"/>
+            </svg>
+        </button>
+
+        <div class="content-wrapper">
+            <input type="text" id="owner-name" class="owner-name-input" placeholder="mhs">
+
+            <h1 class="main-title">
+                <div class="title-script">Bullet</div>
+                <div class="title-sans">Journal</div>
+            </h1>
+
+            <p class="year" id="current-year"></p>
+
+            <button class="enter-button">Abrir Diário</button>
+        </div>
+    </div>
 
     <script>
-        function adjustBackgroundText() {
-            const container = document.getElementById('bujo-capa-container');
-            const backgroundText = document.querySelector('.titulo-atras');
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            const ownerNameInput = document.getElementById('owner-name');
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const body = document.body;
 
-            if (!container || !backgroundText) {
-                console.warn("Container ou texto de fundo não encontrado para ajuste.");
-                return;
+            // Define o ano atual dinamicamente
+            yearElement.textContent = new Date().getFullYear();
+
+            // Lógica para salvar e carregar o nome/iniciais
+            const savedName = localStorage.getItem('bujoOwnerName');
+            if (savedName) {
+                ownerNameInput.value = savedName;
             }
+            ownerNameInput.addEventListener('input', function() {
+                localStorage.setItem('bujoOwnerName', ownerNameInput.value);
+            });
 
-            // Força o navegador a recalcular estilos e dimensões antes de prosseguir
-            // Isso pode ajudar a obter valores mais precisos, especialmente no carregamento inicial
-            window.getComputedStyle(backgroundText).fontSize; 
-            window.getComputedStyle(container).width;
+            // Lógica para o botão de troca de tema
+            const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
+            body.setAttribute('data-theme', savedTheme);
 
-            const containerWidth = container.clientWidth;
-            // scrollWidth dá a largura total do conteúdo, mesmo que não esteja visível
-            const textContentWidth = backgroundText.scrollWidth; 
-
-            // Calcula o 'left' offset para centralizar o CONTEÚDO do texto
-            // Se o texto tem 300px e o container 100px, o offset será (100 - 300) / 2 = -100px.
-            // Isso significa que o canto esquerdo do texto começa 100px antes do canto esquerdo do container.
-            const desiredLeftOffset = (containerWidth - textContentWidth) / 2;
-            
-            backgroundText.style.left = `${desiredLeftOffset}px`;
-
-            // console.log(`Container: ${containerWidth}px, Text: ${textContentWidth}px, Left Offset: ${desiredLeftOffset}px`);
-        }
-
-        // Ajusta no carregamento inicial
-        window.addEventListener('load', adjustBackgroundText);
-        // Ajusta em cada redimensionamento da janela
-        window.addEventListener('resize', adjustBackgroundText);
-
-        // Uma chamada inicial pode ser útil se o 'load' demorar ou para fontes carregadas via JS
-        // mas 'load' geralmente é suficiente para garantir que as dimensões estejam disponíveis.
-        // Se ainda houver problemas no carregamento inicial, pode-se tentar um setTimeout pequeno:
-        // setTimeout(adjustBackgroundText, 50); // Pequeno delay para garantir renderização
-
-        console.log("Bujo Berserker - Dynamic Centering script active!");
+            themeSwitcher.addEventListener('click', function() {
+                let newTheme = body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('bujoTheme', newTheme);
+            });
+        });
     </script>
+
 </body>
 </html>
