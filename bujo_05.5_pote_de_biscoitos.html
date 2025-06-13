@@ -49,12 +49,11 @@
             transition: background-color 0.5s ease;
         }
         
-        /* --- Cabeçalho com Botão Discreto --- */
+        /* --- Cabeçalho e Botões --- */
         .page-header {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             margin-bottom: 40px;
             animation: slideDown 0.7s ease-out;
             position: relative;
@@ -62,47 +61,45 @@
         .header-title-group { text-align: center; }
         .page-title-script { font-family: 'Dancing Script', cursive; font-size: 4rem; line-height: 1; color: var(--text-color); margin-bottom: -10px; }
         .page-subtitle { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--accent-color); }
-        #show-modal-btn {
+        .header-actions { display: flex; align-items: center; margin-left: 20px; }
+        
+        /* --- NOVO: Estilos para o Botão de Sincronização --- */
+        #sync-btn, #show-modal-btn {
             background: transparent;
             border: none;
             color: var(--accent-color);
             cursor: pointer;
             padding: 10px;
             border-radius: 50%;
-            margin-left: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background-color 0.2s, transform 0.2s;
-        }
-        #show-modal-btn:hover { background-color: var(--border-color); transform: scale(1.1); }
-        #show-modal-btn svg { width: 28px; height: 28px; }
-
-        /* --- Log de Conquistas com Ações de Edição --- */
-        .log-entry {
             position: relative;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            animation: fadeIn 0.5s ease-out;
         }
+        #sync-btn:hover, #show-modal-btn:hover { background-color: var(--border-color); transform: scale(1.1); }
+        #sync-btn svg, #show-modal-btn svg { width: 28px; height: 28px; }
+
+        #sync-btn .icon { transition: opacity 0.2s, transform 0.2s; }
+        #sync-btn .icon-loading {
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.7);
+            animation: spin 1.5s linear infinite;
+        }
+        #sync-btn.syncing .icon-synced, #sync-btn.loading .icon-synced { opacity: 0; transform: scale(0.7); }
+        #sync-btn.syncing .icon-loading, #sync-btn.loading .icon-loading { opacity: 1; transform: scale(1); }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        /* --- FIM DOS ESTILOS NOVOS --- */
+
+
+        /* --- Log de Conquistas (sem alterações) --- */
+        .log-entry { position: relative; display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border-color); animation: fadeIn 0.5s ease-out; }
         .log-date { flex-shrink: 0; text-align: center; font-weight: 700; color: var(--accent-color); }
         .log-date-day { font-size: 1.5rem; display: block; }
         .log-date-month { font-size: 0.8rem; text-transform: uppercase; display: block; }
-        .log-text { font-size: 1rem; line-height: 1.6; padding-top: 4px; padding-right: 60px; /* Espaço para os botões */ }
-
-        .log-actions {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            gap: 8px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        .log-text { font-size: 1rem; line-height: 1.6; padding-top: 4px; padding-right: 60px; }
+        .log-actions { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 8px; opacity: 0; transition: opacity 0.3s ease; }
         .log-entry:hover .log-actions { opacity: 1; }
         .action-btn { background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; }
         .action-btn svg { width: 18px; height: 18px; }
@@ -112,33 +109,10 @@
         .delete-btn:hover { background-color: rgba(229, 62, 62, 0.1); }
         .empty-log-message { text-align: center; padding: 40px; color: var(--accent-color); font-style: italic; }
 
-        /* --- Modal (Popup) --- */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
+        /* --- Modal (sem alterações) --- */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .modal.visible { opacity: 1; pointer-events: auto; }
-        .modal-content {
-            background-color: var(--input-bg-color);
-            padding: 30px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-        }
+        .modal-content { background-color: var(--input-bg-color); padding: 30px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: scale(0.95); transition: transform 0.3s ease; }
         .modal.visible .modal-content { transform: scale(1); }
         #cookie-form { display: grid; gap: 20px; }
         #cookie-date { font-family: 'Montserrat', sans-serif; border: 2px solid var(--border-color); background-color: transparent; padding: 10px; font-size: 1rem; color: var(--text-color); border-radius: 4px; }
@@ -161,9 +135,16 @@
                     <div class="page-title-script">Pote de</div>
                     <div class="page-subtitle">Biscoitos</div>
                 </div>
-                <button id="show-modal-btn" title="Adicionar Conquista">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
+                <!-- NOVO: Wrapper para os botões de ação -->
+                <div class="header-actions">
+                    <button id="sync-btn" title="Sincronizado">
+                        <svg class="icon icon-synced" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                        <svg class="icon icon-loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>
+                    </button>
+                    <button id="show-modal-btn" title="Adicionar Conquista">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                </div>
             </header>
             
             <div id="cookie-jar-log">
@@ -189,52 +170,92 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // --- Referências DOM ---
-        const showModalBtn = document.getElementById('show-modal-btn');
-        const modal = document.getElementById('cookie-modal');
-        const cookieForm = document.getElementById('cookie-form');
-        const cancelButton = document.getElementById('cancel-btn');
-        const dateInput = document.getElementById('cookie-date');
-        const textInput = document.getElementById('cookie-text');
-        const saveButton = document.getElementById('save-cookie-btn');
-        const logContainer = document.getElementById('cookie-jar-log');
+        const dom = {
+            showModalBtn: document.getElementById('show-modal-btn'),
+            modal: document.getElementById('cookie-modal'),
+            cookieForm: document.getElementById('cookie-form'),
+            cancelButton: document.getElementById('cancel-btn'),
+            dateInput: document.getElementById('cookie-date'),
+            textInput: document.getElementById('cookie-text'),
+            saveButton: document.getElementById('save-cookie-btn'),
+            logContainer: document.getElementById('cookie-jar-log'),
+            syncBtn: document.getElementById('sync-btn'), // <<< NOVO
+        };
 
         // --- Estado da Aplicação ---
         let state = { cookies: [] };
         let currentEditingId = null;
         let cloudDataLoaded = false;
+        let syncTimeout = null; // <<< NOVO
 
-        // --- Comunicação com Script Pai (Tampermonkey) ---
+        // --- Lógica de UI ---
+        const UIManager = {
+            openModal() { dom.modal.classList.add('visible'); },
+            closeModal() { dom.modal.classList.remove('visible'); },
+            // <<< NOVO: Função para controlar o ícone de sincronização
+            setSyncStatus(status) { // 'loading', 'syncing', 'synced'
+                dom.syncBtn.classList.remove('loading', 'syncing');
+                if (status === 'loading' || status === 'syncing') {
+                    dom.syncBtn.classList.add(status);
+                    dom.syncBtn.title = status === 'loading' ? 'Carregando da nuvem...' : 'Sincronizando...';
+                } else {
+                    dom.syncBtn.title = 'Sincronizado. Clique para forçar a atualização.';
+                }
+            },
+            renderCookies() {
+                dom.logContainer.innerHTML = ''; 
+                if (state.cookies.length === 0) {
+                    dom.logContainer.innerHTML = `<p class="empty-log-message">Seu pote de biscoitos está vazio. Adicione sua primeira vitória!</p>`;
+                    return;
+                }
+                state.cookies.forEach(cookie => {
+                    const entryElement = document.createElement('div');
+                    entryElement.className = 'log-entry';
+                    entryElement.dataset.id = cookie.id;
+                    const date = new Date(cookie.date + 'T00:00:00');
+                    const day = date.getDate().toString().padStart(2, '0');
+                    const month = date.toLocaleString('pt-BR', { month: 'short' }).replace('.', '');
+                    entryElement.innerHTML = `
+                        <div class="log-date"><span class="log-date-day">${day}</span><span class="log-date-month">${month}</span></div>
+                        <p class="log-text">${cookie.text.replace(/\n/g, '<br>')}</p>
+                        <div class="log-actions">
+                            <button class="action-btn edit-btn" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                            <button class="action-btn delete-btn" title="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>
+                        </div>
+                    `;
+                    dom.logContainer.appendChild(entryElement);
+                });
+            }
+        };
+
+        // --- Comunicação e Lógica de Dados ---
         window.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED') {
                 console.log('[CookieJar] Dados recebidos do Gist:', event.data.payload);
                 const loadedData = event.data.payload;
-                
-                if (Array.isArray(loadedData) && loadedData.length > 0) {
-                    state.cookies = loadedData;
-                } else {
-                    state.cookies = []; // Inicia vazio se não houver nada no Gist
-                }
-                
+                state.cookies = (Array.isArray(loadedData) && loadedData.length > 0) ? loadedData : [];
                 cloudDataLoaded = true;
-                renderCookies();
+                UIManager.setSyncStatus('synced');
+                UIManager.renderCookies();
             }
         });
 
         const CookieLogic = {
             save() {
-                if (!cloudDataLoaded) return; // Impede salvamento antes do carregamento inicial
-                
-                // Ordena sempre antes de salvar para manter consistência
+                if (!cloudDataLoaded) return;
+                clearTimeout(syncTimeout);
+                UIManager.setSyncStatus('syncing');
                 state.cookies.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                console.log('[CookieJar] Enviando dados para salvar no Gist...');
+                console.log('[CookieJar] Enviando dados para salvar no Gist...', state.cookies);
                 window.parent.postMessage({
                     type: 'SAVE_BUJO_PAGE_DATA',
                     pageUrl: window.location.href,
                     payload: state.cookies
                 }, '*');
+                syncTimeout = setTimeout(() => UIManager.setSyncStatus('synced'), 3500);
             },
             load() {
+                UIManager.setSyncStatus('loading');
                 console.log('[CookieJar] Solicitando dados do Gist...');
                 window.parent.postMessage({
                     type: 'REQUEST_BUJO_PAGE_DATA',
@@ -243,113 +264,67 @@
             }
         };
 
-        // --- Funções do Modal ---
-        function openModal() { modal.classList.add('visible'); }
-        function closeModal() { modal.classList.remove('visible'); }
-
-        // --- Renderização ---
-        function renderCookies() {
-            logContainer.innerHTML = ''; 
-
-            if (state.cookies.length === 0) {
-                logContainer.innerHTML = `<p class="empty-log-message">Seu pote de biscoitos está vazio. Adicione sua primeira vitória!</p>`;
-                return;
-            }
-
-            state.cookies.forEach(cookie => {
-                const entryElement = document.createElement('div');
-                entryElement.className = 'log-entry';
-                entryElement.dataset.id = cookie.id;
-
-                const date = new Date(cookie.date + 'T00:00:00');
-                const day = date.getDate().toString().padStart(2, '0');
-                const month = date.toLocaleString('pt-BR', { month: 'short' }).replace('.', '');
-
-                entryElement.innerHTML = `
-                    <div class="log-date">
-                        <span class="log-date-day">${day}</span>
-                        <span class="log-date-month">${month}</span>
-                    </div>
-                    <p class="log-text">${cookie.text.replace(/\n/g, '<br>')}</p>
-                    <div class="log-actions">
-                        <button class="action-btn edit-btn" title="Editar">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </button>
-                        <button class="action-btn delete-btn" title="Excluir">
-                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                        </button>
-                    </div>
-                `;
-                logContainer.appendChild(entryElement);
-            });
-        }
-
         // --- Event Listeners ---
-        showModalBtn.addEventListener('click', () => {
+        dom.showModalBtn.addEventListener('click', () => {
             currentEditingId = null;
-            cookieForm.reset();
-            dateInput.value = new Date().toISOString().split('T')[0];
-            saveButton.textContent = 'Adicionar ao Pote';
-            openModal();
+            dom.cookieForm.reset();
+            dom.dateInput.value = new Date().toISOString().split('T')[0];
+            dom.saveButton.textContent = 'Adicionar ao Pote';
+            UIManager.openModal();
         });
         
-        cancelButton.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
+        dom.cancelButton.addEventListener('click', UIManager.closeModal);
+        dom.modal.addEventListener('click', (e) => {
+            if (e.target === dom.modal) UIManager.closeModal();
         });
 
-        cookieForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const dateValue = dateInput.value;
-            const textValue = textInput.value.trim();
-            
-            if (!dateValue || !textValue) return;
+        // <<< NOVO: Listener para forçar a sincronização
+        dom.syncBtn.addEventListener('click', () => {
+            if (dom.syncBtn.classList.contains('loading') || dom.syncBtn.classList.contains('syncing')) return;
+            CookieLogic.load();
+        });
 
-            if (currentEditingId) { // Editando
+        dom.cookieForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const dateValue = dom.dateInput.value;
+            const textValue = dom.textInput.value.trim();
+            if (!dateValue || !textValue) return;
+            if (currentEditingId) {
                 const cookieIndex = state.cookies.findIndex(c => c.id === currentEditingId);
                 if (cookieIndex > -1) {
                     state.cookies[cookieIndex].date = dateValue;
                     state.cookies[cookieIndex].text = textValue;
                 }
-            } else { // Adicionando
-                state.cookies.push({
-                    id: Date.now(),
-                    date: dateValue,
-                    text: textValue
-                });
+            } else {
+                state.cookies.push({ id: Date.now(), date: dateValue, text: textValue });
             }
-            
-            CookieLogic.save(); // Salva na nuvem
-            renderCookies();    // Atualiza a tela
-            closeModal();
+            CookieLogic.save();
+            UIManager.renderCookies();
+            UIManager.closeModal();
         });
 
-        logContainer.addEventListener('click', (e) => {
+        dom.logContainer.addEventListener('click', (e) => {
             const editBtn = e.target.closest('.edit-btn');
             const deleteBtn = e.target.closest('.delete-btn');
-            
             if (editBtn) {
                 const entryElement = editBtn.closest('.log-entry');
                 const cookieId = Number(entryElement.dataset.id);
                 const cookie = state.cookies.find(c => c.id === cookieId);
-                
                 if (cookie) {
                     currentEditingId = cookie.id;
-                    dateInput.value = cookie.date;
-                    textInput.value = cookie.text;
-                    saveButton.textContent = 'Salvar Alterações';
-                    openModal();
+                    dom.dateInput.value = cookie.date;
+                    dom.textInput.value = cookie.text;
+                    dom.saveButton.textContent = 'Salvar Alterações';
+                    UIManager.openModal();
                 }
             }
-
             if (deleteBtn) {
                 const entryElement = deleteBtn.closest('.log-entry');
                 const cookieId = Number(entryElement.dataset.id);
-                
                 if (confirm('Tem certeza de que deseja excluir esta conquista?')) {
                     state.cookies = state.cookies.filter(c => c.id !== cookieId);
-                    CookieLogic.save(); // Salva na nuvem
-                    renderCookies();    // Atualiza a tela
+                    CookieLogic.save();
+                    UIManager.renderCookies();
                 }
             }
         });
