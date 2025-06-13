@@ -1,461 +1,347 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujo - Relatório de Hábitos</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/Jhefferson15/fuzzy-guacamole/refs/heads/main/bujo_01_capa.png" type="image/png">
-    <!-- Importando Chart.js via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard - Meu Bullet Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- Importações e Reset --- */
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap');
-
+        /* --- Variáveis de Tema --- */
         :root {
-            --theme-primary-green: #33ff33;
-            --theme-dark-green: #0A2A0A;
-            --theme-medium-green: #2a5c2a;
-            --theme-light-green: #6EBF6E;
-            --page-bg: #1a1d1a;
-            --content-bg: #242824;
-            --text-color: #E0E0E0;
-            --text-muted-color: #9e9e9e;
-            --border-color: #3a3f3a;
-            --accent-color: var(--theme-primary-green);
-            --shadow-color: rgba(51, 255, 51, 0.2);
-            --shadow-strong: 0 8px 30px rgba(0,0,0,0.5);
-            --container-shadow: 0 0 0 1px var(--border-color), var(--shadow-strong);
+            --bg-color: #F1F5F8;
+            --dot-color: #CFD8DC;
+            --text-color: #3a3a3a;
+            --accent-color: #585858;
+            --border-color: #e2e8f0;
+            --card-bg-color: #FFFFFF;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { height: 100%; }
+        body[data-theme="flamingo"] {
+            --bg-color: #fff0f5;
+            --dot-color: #ffdde1;
+            --text-color: #c71585;
+            --accent-color: #db7093;
+            --border-color: #ffe4e1;
+            --card-bg-color: #fffafa;
+        }
 
+        /* --- Configurações Gerais --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--page-bg);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-color);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .journal-page {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
         }
-
-        .bujo-container {
+        .dashboard-container {
             width: 100%;
-            max-width: 1200px;
-            height: calc(100% - 40px);
-            max-height: 90vh;
-            background-color: var(--content-bg);
+            max-width: 1100px;
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            animation: fadeIn 0.8s ease-out;
+            transition: background-color 0.5s ease;
+        }
+        
+        /* --- Cabeçalho e Títulos de Seção --- */
+        .page-header { text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 30px; margin-bottom: 30px; animation: slideDown 0.7s ease-out; }
+        .page-title-script { font-family: 'Dancing Script', cursive; font-size: 4.5rem; line-height: 1; color: var(--text-color); }
+        .page-subtitle { font-weight: 400; font-size: 1.2rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-color); margin-top: 10px; }
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px dotted var(--border-color); }
+
+        /* --- Grade de KPIs (Cards) --- */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+        .kpi-card {
+            background-color: var(--card-bg-color);
             border: 1px solid var(--border-color);
-            box-shadow: var(--container-shadow);
-            border-radius: 12px;
+            border-radius: 8px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+        }
+        .kpi-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; }
+        .kpi-title { font-size: 0.8rem; font-weight: 700; color: var(--accent-color); }
+        .kpi-icon { color: var(--accent-color); }
+        .kpi-icon svg { width: 24px; height: 24px; }
+        .kpi-body .kpi-value { font-size: 1.8rem; font-weight: 700; line-height: 1.1; color: var(--text-color); }
+        .kpi-body .kpi-unit { font-size: 0.8rem; font-weight: 400; color: var(--accent-color); margin-left: 4px; }
+        .kpi-footer { margin-top: 10px; }
+        .progress-bar { width: 100%; height: 8px; background-color: var(--border-color); border-radius: 4px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background-color: var(--accent-color); border-radius: 4px; transition: width 0.5s ease; }
 
-        /* --- Cabeçalho e Controles --- */
-        .bujo-header {
-            padding: 18px 25px;
-            background: linear-gradient(135deg, var(--theme-dark-green), #1a3a1a);
-            border-bottom: 2px solid var(--theme-primary-green);
-            flex-shrink: 0;
-        }
-        .bujo-header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8em;
-            text-align: center;
-            color: var(--theme-primary-green);
-            text-shadow: 0 0 5px var(--theme-primary-green);
-        }
-        .bujo-controls {
-            padding: 15px 25px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(0,0,0,0.1);
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
-        .bujo-controls label { font-weight: 500; }
-        .bujo-controls select {
-            padding: 8px 12px;
-            background-color: var(--page-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.9em;
-        }
-        .bujo-controls select:focus { outline: 1px solid var(--accent-color); }
+        /* --- Gráficos (Estilos unificados) --- */
+        .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .chart-wrapper { display: flex; flex-direction: column; }
+        .chart-container { position: relative; width: 100%; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--card-bg-color); flex-grow: 1; }
+        .chart-svg { width: 100%; height: auto; overflow: visible; }
+        .legend { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+        .legend-square { width: 12px; height: 12px; border-radius: 3px; }
+        .chart-tooltip { position: absolute; background-color: var(--text-color); color: var(--bg-color); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; pointer-events: none; opacity: 0; transform: translateY(-10px); transition: opacity 0.3s, transform 0.3s; z-index: 10; }
         
-        /* --- Área Principal dos Gráficos --- */
-        .bujo-main {
-            flex-grow: 1;
-            padding: 25px;
-            overflow-y: auto;
-        }
-        .status-message {
-            text-align: center;
-            padding: 80px 20px;
-            font-size: 1.2em;
-            color: var(--text-muted-color);
-        }
-        .charts-grid {
-            display: grid;
-            gap: 25px;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        }
-        .chart-container {
-            background-color: rgba(0,0,0,0.15);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .chart-container h3 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-align: center;
-            color: var(--text-color);
-            font-weight: 400;
-        }
-        
-        /* Heatmap específico */
-        #completion-heatmap { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        #completion-heatmap th, #completion-heatmap td { text-align: center; padding: 2px; }
-        #completion-heatmap th { font-size: 0.7em; color: var(--text-muted-color); }
-        #completion-heatmap .habit-name-col { text-align: left; font-size: 0.8em; padding-left: 5px; width: 120px; }
-        #completion-heatmap .heatmap-cell {
-            width: 18px; height: 18px;
-            background-color: rgba(255,255,255,0.05);
-            border-radius: 3px;
-        }
-        #completion-heatmap .heatmap-cell.completed { background-color: var(--accent-color); }
-        .hidden { display: none; }
+        /* --- Botão de Tema --- */
+        #theme-switcher { position: fixed; top: 25px; right: 25px; background: transparent; border: 2px solid var(--accent-color); color: var(--text-color); width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 100; display: flex; justify-content: center; align-items: center; transition: all 0.4s ease; }
+        #theme-switcher:hover { transform: scale(1.1) rotate(90deg); background: var(--accent-color); color: var(--bg-color); }
+        #theme-switcher svg { width: 22px; height: 22px; }
+
+        /* --- Animações e Responsividade --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) { .kpi-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-<body>
+<body data-theme="classic">
 
-    <div class="bujo-container">
-        <header class="bujo-header">
-            <h1>Relatório de Hábitos</h1>
-        </header>
-        <div class="bujo-controls">
-            <label for="month-select">Mês:</label>
-            <select id="month-select"></select>
-            <label for="year-select">Ano:</label>
-            <select id="year-select"></select>
+    <div class="journal-page">
+        <div class="dashboard-container">
+            
+            <header class="page-header">
+                <div class="page-title-script" id="month-name">Novembro</div>
+                <div class="page-subtitle">Painel de Progresso</div>
+            </header>
+
+            <section>
+                <div class="kpi-grid" id="kpi-grid-container">
+                    <!-- Cards gerados por JavaScript -->
+                </div>
+            </section>
+            
+            <section>
+                <h2 class="section-title">Tendências Detalhadas</h2>
+                <div class="charts-grid" id="line-charts-container">
+                    <!-- Gráficos de linha gerados por JavaScript -->
+                </div>
+            </section>
         </div>
-        <main id="main-content" class="bujo-main">
-            <div id="loading-message" class="status-message">Carregando dados...</div>
-            <div id="no-data-message" class="status-message hidden">
-                <h2>Sem Dados</h2>
-                <p>Não há dados de hábitos para o período selecionado. Complete alguns hábitos no tracker!</p>
-            </div>
-            <div id="charts-grid" class="charts-grid hidden">
-                <div class="chart-container">
-                    <h3>Taxa de Sucesso Geral</h3>
-                    <canvas id="completionRateChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3>Desempenho por Hábito (%)</h3>
-                    <canvas id="habitPerformanceChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3>Atividade Diária</h3>
-                    <canvas id="dailyActivityChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3>Padrão Semanal</h3>
-                    <canvas id="weeklyPatternChart"></canvas>
-                </div>
-                <div class="chart-container" style="grid-column: span 2;">
-                    <h3>Análise de Sequências (Streaks)</h3>
-                    <canvas id="streakChart"></canvas>
-                </div>
-                <div class="chart-container" style="grid-column: span 2;">
-                    <h3>Mapa de Calor de Atividades</h3>
-                    <div id="heatmap-wrapper"></div>
-                </div>
-            </div>
-        </main>
+
+        <button id="theme-switcher" title="Alterar Tema">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+        </button>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- Elementos do DOM ---
-        const monthSelect = document.getElementById('month-select');
-        const yearSelect = document.getElementById('year-select');
-        const loadingMessage = document.getElementById('loading-message');
-        const noDataMessage = document.getElementById('no-data-message');
-        const chartsGrid = document.getElementById('charts-grid');
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
         
-        // --- Estado da Aplicação ---
-        let allHabits = [];
-        const charts = {}; // Para armazenar instâncias de Chart.js
-        const THIS_PAGE_URL = window.location.href;
-        const MONTH_NAMES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-
-        // --- Configuração Global do Chart.js ---
-        Chart.defaults.color = 'rgba(224, 224, 224, 0.8)';
-        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
-        Chart.defaults.font.family = "'Poppins', sans-serif";
-
-        // --- Funções Auxiliares ---
-        function getDaysInMonth(month, year) {
-            return new Date(year, month + 1, 0).getDate();
-        }
-
-        // --- Funções de Inicialização ---
-        function populateSelectors() {
-            const now = new Date();
-            const currentYear = now.getFullYear();
-            const currentMonth = now.getMonth();
-
-            // Popula Meses
-            MONTH_NAMES.forEach((name, index) => {
-                const option = new Option(name, index);
-                monthSelect.add(option);
-            });
-            monthSelect.value = currentMonth;
-            
-            // Popula Anos (5 anos para trás e 1 para frente)
-            for (let y = currentYear - 5; y <= currentYear + 1; y++) {
-                const option = new Option(y, y);
-                yearSelect.add(option);
-            }
-            yearSelect.value = currentYear;
-        }
-
-        // --- Processamento de Dados e Criação de Gráficos ---
-        function processAndRenderCharts() {
-            const month = parseInt(monthSelect.value);
-            const year = parseInt(yearSelect.value);
-            const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
-            
-            // Filtra os dados relevantes para o período
-            const relevantData = allHabits.map(habit => ({
-                ...habit,
-                progress: habit.progress[monthKey] || []
-            })).filter(habit => habit.progress.length > 0);
-
-            loadingMessage.classList.add('hidden');
-            if (relevantData.length === 0) {
-                noDataMessage.classList.remove('hidden');
-                chartsGrid.classList.add('hidden');
-                return;
-            }
-            noDataMessage.classList.add('hidden');
-            chartsGrid.classList.remove('hidden');
-
-            // Destroi gráficos antigos antes de criar novos
-            Object.values(charts).forEach(chart => chart.destroy());
-
-            // Cria cada gráfico com os dados filtrados
-            createCompletionRateChart(relevantData);
-            createHabitPerformanceChart(relevantData);
-            createDailyActivityChart(relevantData, month, year);
-            createWeeklyPatternChart(relevantData, month, year);
-            createStreakChart(relevantData);
-            createHeatmap(relevantData, month, year);
-        }
-
-        function createCompletionRateChart(data) {
-            let completed = 0;
-            let totalPossible = 0;
-            data.forEach(habit => {
-                completed += habit.progress.filter(Boolean).length;
-                totalPossible += habit.progress.length;
-            });
-            const missed = totalPossible - completed;
-
-            const ctx = document.getElementById('completionRateChart').getContext('2d');
-            charts.completionRate = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Completos', 'Faltantes'],
-                    datasets: [{
-                        data: [completed, missed],
-                        backgroundColor: ['#33ff33', '#5c2a2a'],
-                        borderColor: '#242824',
-                        borderWidth: 3
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false }
-            });
-        }
-        
-        function createHabitPerformanceChart(data) {
-            const labels = data.map(h => `${h.icon} ${h.name}`);
-            const percentages = data.map(h => {
-                const completed = h.progress.filter(Boolean).length;
-                return h.progress.length > 0 ? (completed / h.progress.length * 100) : 0;
-            });
-
-            const ctx = document.getElementById('habitPerformanceChart').getContext('2d');
-            charts.habitPerformance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: '% de Sucesso',
-                        data: percentages,
-                        backgroundColor: 'rgba(51, 255, 51, 0.6)',
-                        borderColor: 'rgba(51, 255, 51, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    indexAxis: 'y', // Barras horizontais
-                    responsive: true, maintainAspectRatio: false,
-                    scales: { x: { beginAtZero: true, max: 100 } }
-                }
-            });
-        }
-        
-        function createDailyActivityChart(data, month, year) {
-            const daysInMonth = getDaysInMonth(month, year);
-            const dailyCounts = Array(daysInMonth).fill(0);
-            
-            data.forEach(habit => {
-                habit.progress.forEach((isCompleted, dayIndex) => {
-                    if (isCompleted) dailyCounts[dayIndex]++;
-                });
-            });
-
-            const labels = Array.from({ length: daysInMonth }, (_, i) => i + 1);
-            const ctx = document.getElementById('dailyActivityChart').getContext('2d');
-            charts.dailyActivity = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Hábitos Completos por Dia',
-                        data: dailyCounts,
-                        fill: true,
-                        backgroundColor: 'rgba(51, 255, 51, 0.2)',
-                        borderColor: '#33ff33',
-                        tension: 0.3
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false }
-            });
-        }
-
-        function createWeeklyPatternChart(data, month, year) {
-            const weeklyCounts = Array(7).fill(0); // 0=Dom, 1=Seg, ...
-            data.forEach(habit => {
-                habit.progress.forEach((isCompleted, dayIndex) => {
-                    if (isCompleted) {
-                        const dayOfWeek = new Date(year, month, dayIndex + 1).getDay();
-                        weeklyCounts[dayOfWeek]++;
-                    }
-                });
-            });
-
-            const ctx = document.getElementById('weeklyPatternChart').getContext('2d');
-            charts.weeklyPattern = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-                    datasets: [{
-                        label: 'Total de Hábitos Completos',
-                        data: weeklyCounts,
-                        fill: true,
-                        backgroundColor: 'rgba(51, 255, 51, 0.3)',
-                        borderColor: '#33ff33',
-                        pointBackgroundColor: '#33ff33',
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false }
-            });
-        }
-        
-        function createStreakChart(data) {
-            function calculateStreaks(progress) {
-                let currentStreak = 0, longestStreak = 0, tempStreak = 0;
-                // Longest
-                progress.forEach(done => {
-                    if (done) tempStreak++; else tempStreak = 0;
-                    if (tempStreak > longestStreak) longestStreak = tempStreak;
-                });
-                // Current
-                for (let i = progress.length - 1; i >= 0; i--) {
-                    if (progress[i]) currentStreak++; else break;
-                }
-                return { currentStreak, longestStreak };
-            }
-
-            const labels = data.map(h => `${h.icon} ${h.name}`);
-            const currentStreaks = data.map(h => calculateStreaks(h.progress).currentStreak);
-            const longestStreaks = data.map(h => calculateStreaks(h.progress).longestStreak);
-            
-            const ctx = document.getElementById('streakChart').getContext('2d');
-            charts.streaks = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        { label: 'Sequência Atual', data: currentStreaks, backgroundColor: 'rgba(110, 191, 110, 0.7)' },
-                        { label: 'Recorde do Mês', data: longestStreaks, backgroundColor: 'rgba(51, 255, 51, 0.7)' }
-                    ]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
-            });
-        }
-
-        function createHeatmap(data, month, year) {
-            const daysInMonth = getDaysInMonth(month, year);
-            const wrapper = document.getElementById('heatmap-wrapper');
-            
-            let tableHTML = '<table id="completion-heatmap"><thead><tr><th class="habit-name-col">Hábito</th>';
-            for (let i = 1; i <= daysInMonth; i++) tableHTML += `<th>${i}</th>`;
-            tableHTML += '</tr></thead><tbody>';
-
-            data.forEach(habit => {
-                tableHTML += `<tr><td class="habit-name-col">${habit.icon} ${habit.name}</td>`;
-                for (let i = 0; i < daysInMonth; i++) {
-                    const isCompleted = habit.progress[i];
-                    tableHTML += `<td><div class="heatmap-cell ${isCompleted ? 'completed' : ''}"></div></td>`;
-                }
-                tableHTML += '</tr>';
-            });
-
-            tableHTML += '</tbody></table>';
-            wrapper.innerHTML = tableHTML;
-        }
-
-        // --- Event Listeners ---
-        monthSelect.addEventListener('change', processAndRenderCharts);
-        yearSelect.addEventListener('change', processAndRenderCharts);
-
-        window.addEventListener('message', event => {
-            if (event.data && event.data.type === 'BUJO_PAGE_DATA_LOADED' && event.data.pageUrl.includes('bujo_05_habit_tracker.html')) {
-                const cloudHabits = event.data.payload;
-                if (cloudHabits && Array.isArray(cloudHabits)) {
-                    allHabits = cloudHabits;
-                    processAndRenderCharts(); // Renderiza os gráficos com os dados recebidos
-                }
-            }
+        // --- LÓGICA DO TEMA ---
+        const savedTheme = localStorage.getItem('bujoTheme') || 'classic';
+        body.setAttribute('data-theme', savedTheme);
+        document.getElementById('theme-switcher').addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'classic' ? 'flamingo' : 'classic';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('bujoTheme', newTheme);
+            renderAll();
         });
 
-        // --- Inicialização da Página ---
-        function initialize() {
-            populateSelectors();
+        // --- PALETA DE CORES DOS GRÁFICOS (FIXA) ---
+        const colorKey = {
+            'Pessoal / Urgente': '#F8AFA6', 'Trabalho': '#81B1D5', 'Saúde / Bem-estar': '#8dd3c7',
+            'Estudos': '#ffffB3', 'Eventos Sociais': '#bebada', 'Família': '#fB8072',
+            'Lazer / Hobbies': '#fdb462', 'Projetos': '#80b1d3', 'Finanças Positivo': '#b2df8a',
+            'Finanças Negativo': '#fb8072', 'Finanças Neutro': '#fdb462'
+        };
+
+        // --- ÍCONES SVG PARA OS CARDS ---
+        const icons = {
+            project: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l10.455-4L22 6v12l-9.545 4L2 18z"></path><path d="M12 22V12"></path><path d="M22 6l-10 4.5L2 6"></path><path d="M17 9.5L12 12"></path></svg>`,
+            energy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>`,
+            calories: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4.5c3 0 5.5 2.5 5.5 5.5 0 2.7-2.3 5-5.5 5.5S9 12.7 9 10s2.5-5.5 5.5-5.5z"></path><path d="M16.5 15.5c-3 3-7.5 3-10.5 0s-3-7.5 0-10.5"></path></svg>`,
+            training: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0"></path><path d="M2 8h20"></path><path d="M12 1v2"></path><path d="M12 15v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-7"></path><path d="M10 15v7a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2v-7"></path></svg>`,
+            savings: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`,
+            networth: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>`,
+            sleep: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`,
+            focus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M20.4 14.5c.2.8.4 1.5.4 2.3 0 3.9-3.1 7-7 7s-7-3.1-7-7c0-.8.2-1.5.4-2.3"></path><path d="M3.6 9.5c-.2-.8-.4-1.5-.4-2.3 0-3.9 3.1-7 7-7s7 3.1 7 7c0 .8-.2 1.5-.4 2.3"></path></svg>`,
+            reading: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`,
+            mood: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>`
+        };
+        
+        // --- FUNÇÕES AUXILIARES ---
+        const monthName = new Date().toLocaleString('pt-BR', { month: 'long' });
+        document.getElementById('month-name').textContent = monthName.charAt(0).toUpperCase() + monthName.slice(1);
+        const rand = (min, max) => min + Math.random() * (max - min);
+        
+        // --- RENDERIZAÇÃO ---
+        
+        function renderKpiGrid() {
+            const container = document.getElementById('kpi-grid-container');
+            container.innerHTML = '';
             
-            // Solicita os dados do tracker ao script pai
-            if (window.parent && window.parent !== window) {
-                // Precisamos pedir os dados que o tracker salva.
-                // Usamos a URL do tracker para que o script SuperBujo saiba de qual arquivo do Gist pegar os dados.
-                const habitTrackerURL = "https://raw.githack.com/Jhefferson15/fuzzy-guacamole/main/bujo_05_habit_tracker.html";
-                window.parent.postMessage({ type: 'REQUEST_BUJO_PAGE_DATA', pageUrl: habitTrackerURL }, '*');
-            } else {
-                loadingMessage.textContent = "Erro: esta página deve ser carregada dentro do Super Bujo.";
-            }
+            const kpiData = [
+                { title: 'Progresso do Projeto', value: rand(60,85).toFixed(0), unit: '%', icon: 'project', hasProgress: true },
+                { title: 'Taxa de Poupança', value: rand(15,40).toFixed(0), unit: '%', icon: 'savings', hasProgress: true },
+                { title: 'Patrimônio Líquido', value: rand(25000, 35000)/1000, unit: 'k R$', icon: 'networth' },
+                { title: 'Pontuação do Sono', value: rand(70,95).toFixed(0), unit: '/100', icon: 'sleep' },
+                { title: 'Tempo de Foco', value: rand(2,5).toFixed(1), unit: 'h', icon: 'focus' },
+                { title: 'Sequência de Leitura', value: Math.round(rand(5, 25)), unit: 'dias', icon: 'reading' },
+                { title: 'Média de Humor', value: rand(7.5, 9.0).toFixed(1), unit: '/10', icon: 'mood' },
+                { title: 'Energia (Estimativa)', value: rand(7.8, 9.5).toFixed(1), unit: '/ 10', icon: 'energy'},
+                { title: 'Balanço Calórico', value: Math.round(rand(2300, 2600)), unit: 'kcal', icon: 'calories'},
+                { title: 'Treino (Mês)', value: rand(20, 30).toFixed(1), unit: 'h', icon: 'training'},
+            ];
+
+            kpiData.forEach(kpi => {
+                const card = document.createElement('div');
+                card.className = 'kpi-card';
+                card.innerHTML = `
+                    <div class="kpi-header">
+                        <span class="kpi-title">${kpi.title}</span>
+                        <div class="kpi-icon">${icons[kpi.icon]}</div>
+                    </div>
+                    <div class="kpi-body">
+                        <span class="kpi-value">${kpi.value.toLocaleString('pt-BR')}</span>
+                        <span class="kpi-unit">${kpi.unit}</span>
+                    </div>
+                    ${kpi.hasProgress ? `
+                    <div class="kpi-footer">
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: ${kpi.value}%; background-color:${colorKey['Pessoal / Urgente']};"></div>
+                        </div>
+                    </div>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderLineCharts() {
+            const container = document.getElementById('line-charts-container');
+            container.innerHTML = '';
+            const genData = (len, min, max) => Array.from({length: len}, () => rand(min, max));
+
+            const allChartData = [
+                {
+                    title: 'Desempenho Físico',
+                    datasets: [
+                        { label: 'Saúde / Bem-estar', data: genData(31, 6, 9) },
+                        { label: 'Lazer / Hobbies', data: genData(31, 5, 8) }
+                    ],
+                    colors: [colorKey['Saúde / Bem-estar'], colorKey['Lazer / Hobbies']]
+                },
+                {
+                    title: 'Produtividade & Foco',
+                    datasets: [
+                        { label: 'Trabalho', data: genData(31, 7, 10) },
+                        { label: 'Projetos', data: genData(31, 5, 9) },
+                        { label: 'Estudos', data: genData(31, 4, 8) }
+                    ],
+                    colors: [colorKey['Trabalho'], colorKey['Projetos'], colorKey['Estudos']]
+                },
+                 {
+                    title: 'Balanço Financeiro',
+                    datasets: [
+                        { label: 'Receitas', data: genData(31, 8, 10) },
+                        { label: 'Investimentos', data: genData(31, 4, 7) },
+                        { label: 'Despesas', data: genData(31, 3, 6) }
+                    ],
+                    colors: [colorKey['Finanças Positivo'], colorKey['Finanças Neutro'], colorKey['Finanças Negativo']]
+                },
+                {
+                    title: 'Qualidade de Vida',
+                    datasets: [
+                        { label: 'Qualidade do Sono', data: genData(31, 6, 10) },
+                        { label: 'Nível de Estresse (Inv)', data: genData(31, 2, 7).map(v => 10 - v) }, // Invertido
+                        { label: 'Energia Percebida', data: genData(31, 5, 9) }
+                    ],
+                    colors: [colorKey['Saúde / Bem-estar'], colorKey['Pessoal / Urgente'], colorKey['Lazer / Hobbies']]
+                }
+            ];
+            
+            allChartData.forEach(chartConfig => {
+                const chartId = `chart-${chartConfig.title.replace(/\s/g, '-')}`;
+                const tooltipId = `tooltip-${chartConfig.title.replace(/\s/g, '-')}`;
+                const wrapper = document.createElement('div');
+                wrapper.className = 'chart-wrapper';
+                
+                let legendHtml = `<div class="legend" style="color: ${getComputedStyle(body).getPropertyValue('--accent-color')};">`;
+                chartConfig.datasets.forEach((d, i) => {
+                    legendHtml += `<div class="legend-item"><span class="legend-square" style="background-color: ${chartConfig.colors[i]};"></span> ${d.label}</div>`;
+                });
+                legendHtml += '</div>';
+
+                wrapper.innerHTML = `
+                    ${legendHtml}
+                    <div class="chart-container">
+                        <div id="${tooltipId}" class="chart-tooltip"></div>
+                        <svg id="${chartId}" class="chart-svg" viewBox="0 0 400 200"></svg>
+                    </div>
+                `;
+                container.appendChild(wrapper);
+                createLineChart(chartId, tooltipId, chartConfig.datasets, chartConfig.colors);
+            });
         }
         
-        initialize();
+        function createLineChart(svgId, tooltipId, datasets, colors) {
+            const svg = document.getElementById(svgId);
+            const tooltip = document.getElementById(tooltipId);
+            const width = 400, height = 200, p = { t: 10, r: 10, b: 20, l: 30 };
+            const maxY = Math.max(10, ...datasets.flatMap(d => d.data));
+
+            let content = '';
+            [0, 0.5, 1].forEach(tick => {
+                const y = p.t + (height - p.t - p.b) * (1 - tick);
+                content += `<line class="grid-line" x1="${p.l}" y1="${y}" x2="${width - p.r}" y2="${y}" style="stroke: var(--border-color); stroke-width: 1; stroke-dasharray: 2,3;"></line>`;
+                content += `<text class="axis-label" x="${p.l - 8}" y="${y + 4}" text-anchor="end" style="font-size: 10px; fill: var(--accent-color);">${Math.round(maxY * tick)}</text>`;
+            });
+
+            datasets.forEach((dataset, index) => {
+                let points = '';
+                let pointsHtml = '';
+                dataset.data.forEach((val, i) => {
+                    const x = p.l + ((width - p.l - p.r) / (30)) * i;
+                    const y = p.t + (height - p.t - p.b) * (1 - (val || 0) / maxY);
+                    points += `${x},${y} `;
+                    pointsHtml += `<circle class="data-point" cx="${x}" cy="${y}" data-value="${dataset.label}: ${val.toFixed(1)}" style="stroke: ${colors[index]}; r: 4; fill: var(--card-bg-color); stroke-width: 2; cursor: pointer;"></circle>`;
+                });
+                content += `<polyline class="data-line" points="${points}" style="stroke: ${colors[index]}; fill: none; stroke-width: 2.5;"></polyline>`;
+                content += pointsHtml;
+            });
+            svg.innerHTML = content;
+
+             svg.querySelectorAll('.data-point').forEach(point => {
+                point.addEventListener('mouseover', (e) => {
+                    tooltip.textContent = e.target.getAttribute('data-value');
+                    tooltip.style.opacity = '1';
+                    const svgRect = svg.getBoundingClientRect();
+                    const pointX = parseFloat(e.target.getAttribute('cx'));
+                    const pointY = parseFloat(e.target.getAttribute('cy'));
+                    tooltip.style.left = `${pointX * (svgRect.width / width) - (tooltip.offsetWidth / 2)}px`;
+                    tooltip.style.top = `${pointY * (svgRect.height / height) - tooltip.offsetHeight - 10}px`;
+                });
+                point.addEventListener('mouseout', () => { tooltip.style.opacity = '0'; });
+            });
+        }
+        
+        function renderAll() {
+            renderKpiGrid();
+            renderLineCharts();
+        }
+
+        renderAll();
     });
     </script>
 </body>
